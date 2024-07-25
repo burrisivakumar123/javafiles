@@ -1,0 +1,3357 @@
+Web Application
+===============
+A web application is a collection of web resource programs having the capability to generate web pages.
+
+We have two types of web pages.
+
+1) Static web pages / Passive web pages
+---------------------------------------
+A web page which shows same content is called static web page.
+ex:
+	Home page 
+	aboutus page
+	contactus page
+	services page
+	facebook login page
+	and etc.
+
+
+2) Dynamic web pages / Active web pages
+---------------------------------------- 
+A web page which shows dynamic content is called dynamic web paeg.
+ex:
+	live cricket score page 
+	stock market share value page 
+	gmail inbox page
+	live news page 
+	and etc.
+
+We have two types of web resource programs.
+
+1) Static web resource program 
+-----------------------------
+A web resource program which is used to generate static web pages is called static web resource program.
+ex:
+	html program
+	CSS program 
+	bootstrap program 
+	angularjs program 
+	and etc.
+
+2) Dynamic web resource program 
+---------------------------------
+A web resource program which is used to generate dynamic web pages is called dynamic web resource program.
+ex:
+	servlet program 
+	jsp program 
+	and etc.
+
+Based on the position and execution these web resources programs are classified into two types.
+
+1) Client side web resource program 
+----------------------------------
+A web resource program which execute at client side is called client side web resource program.
+ex:
+	html program 
+	css program 
+	bootstrap program
+	angularjs program
+	reactjs program 
+	and etc.
+
+
+2) Server side web resource program 
+------------------------------------
+A web resource program which executes at server side is called server side web resource program.
+ex:
+	servlet program 
+	jsp program 
+	and etc.
+
+
+Web application and Web Resource program Execution
+==================================================
+Java program executes manually.
+
+Web application and web resource program executed at the time when they have requested.
+
+Hence there is no chance to executing web application and web resource program manually.
+
+Diagram: servlet1.1
+
+With respect to the diagram
+---------------------------
+1) Enduser will give the request to web resource program.
+
+2) Web server will trap the request and it will pass the request to appropriate web resource prog.
+
+3) Web resource program executes the logic to process the request.
+
+4) Web resource program communicates with database software if neccessary.
+
+5) Web resource program gives the output to web server.
+
+6) Web server will send the output to browser window as dynamic response.
+
+
+
+Web Server
+==========
+It is a piece of software which is used to automate whole process of web application and web resource program execution.
+
+ex:
+	Tomcat , Resin and etc.
+
+
+Responsibilities of web server
+------------------------------
+1) It takes contineous request from client.
+
+2) It passes that request to appropriate web resource program.
+
+3) It provides environment to deploy and undeploy the web applications.
+
+4) It allows client side web resource programs to execute at browser window.
+
+5) It will add middle ware services only to deployed web applications.
+
+6) It gathers the result and send to browser window as dynamic response.
+
+7) It will automate whole process of web application and web resource program execution.
+
+Web Container
+=============
+It is a software application or a program which is used to manage whole life cycle of web resource program i.e from birth to death.
+
+Servlet container manage whole life cycle of servlet program.
+
+JSP container manage whole life cycle of jsp program.
+
+Some part of industry consider servlet container and jsp container are web containers.
+
+Every server is designed to support servlet container and jsp container so we don't need to arrange it seperately.
+
+ 
+Tomcat
+========
+Type			:	Web Server 
+
+Version			:	Tomcat 9.X
+
+Creator			:	James Duncan Davidson
+
+Vendor			:	Apache Software Foundation 
+
+website			:	www.tomcat.apache.org
+
+Port No			:	8080
+
+Servlet container	:	Catalina
+
+JSP container		:	Jasper 
+
+Download link		:
+
+https://drive.google.com/file/d/1u547booDvVY630rN4drEQ8c8lU0In7T6/view?usp=drive_link	
+
+
+Installation 
+=============
+Double click to Tomcat software --> Yes --> Next --> I Agree --> select full ---> 
+Next --> 
+
+server shutdown port : 1 
+connector port : 8080 
+
+Adminstrator login 
+	username : admin 
+  	password : admin  ---> Next --> Next --> Install.
+
+
+
+Steps to setup tomcat server to manual mode 
+============================================
+services --> click to  Apache Tomcat --> click to stop link --> double click to apache tomcat
+---> startup type : manual --> apply --> ok.
+ 
+Servlet
+=======
+Servlet is a dynamic web resource program which enhanced the functionality of web server or proxy server or IDE's server.
+
+or
+
+Servlet is a java based dynamic web resource program which is used to generate dynamic web pages.
+
+or
+
+Servlet is a single instance multithread java based web resource program which is used to develop web applications.
+
+Diagram: servlet1.2
+
+
+
+Servlet API
+============
+API is a collection of packages.
+ex:
+	javax.servlet       package
+	javax.servlet.http  package
+
+
+
+First Web Application development having servlet program as web resource program
+================================================================================
+Diagram: servlet1.3
+
+
+Deployment Directory Structure
+-----------------------------
+DateApp
+|
+|---Java Resources
+|	|
+	|------src
+		|
+		|---com.ihub.www
+			|
+			|---DateSrv.java
+|---WebContent
+	|
+	|-----WEB-INF
+		|
+		|----web.xml
+Note:
+-----
+In above application we need to add "servlet-api.jar" file in project build path.
+	
+Important terminologies
+=======================
+javax.servlet.Servlet(I)
+	|
+	|  implements 
+	|
+javax.servlet.GenericServlet(AC)
+	|
+	|  extends 
+	|
+javax.servlet.http.HttpServlet(C)
+	|
+	|  extends 
+
+
+
+Deployment Directory Structure
+===============================
+DateApp
+|
+|---Java Resources
+	|
+	|------src
+		|
+		|---com.ihub.www
+			|
+			|---DateSrv.java
+|
+|---WebContent
+	|
+	|----WEB-INF
+		|
+		|----web.xml 
+Note:
+-----
+In above application we need to add "servlet-api.jar" file in project build path.
+
+step1:
+-----
+	Launch eclipse IDE by choosing workspace location.
+
+step2:
+-----
+	Create a dynamic web project i.e DateApp.
+	ex:
+		File --> New --> Dynamic web project --> 
+		Project Name : DateApp
+		Dynamic web module version : 3.0
+		--> Next --> Next --> Generate web.xml file (click) --> Finish. 
+	
+step3:
+-----
+	Add "servlet-api.jar" file in project build path.
+	ex:
+		right click to DateApp ---> build path --> configure build path -->
+		libraries --> select classpath --> click add external jars --> 
+		select servlet-api.jar file --> open --> apply and close.
+
+step4:
+------
+	Create a "com.ihub.www"	 package inside "java resources/src" folder.
+	ex:
+		right click to src folder --> new --> 
+		package --> Name : com.ihub.www --> Finish.
+
+step5:
+------
+	Create a "DateSrv.java" file inside "com.ihub.www" package.
+
+	ex:
+		right click to com.ihub.www pkg --> new --> class --> 
+		name --> DateSrv  --> finish.
+
+DateSrv.java
+-------------
+package com.ihub.www;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.Date;
+import javax.servlet.GenericServlet;
+import javax.servlet.ServletException;
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
+
+public class DateSrv extends  GenericServlet
+{
+	public void service(ServletRequest req,ServletResponse res)throws ServletException,IOException
+	{
+		PrintWriter pw=res.getWriter();
+		res.setContentType("text/html");
+		
+		Date d=new Date();
+		
+		pw.println("<center><h1>Date and Time : <br> "+d+"</h1></center>");
+		
+		pw.close();
+		
+	}
+}
+
+step6:
+----
+	Configure servlet program in web.xml file.
+
+web.xml
+-------
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  
+  <servlet>
+  	<servlet-name>DateSrv</servlet-name>
+  	<servlet-class>com.ihub.www.DateSrv</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+  	<servlet-name>DateSrv</servlet-name>
+  	<url-pattern>/test</url-pattern>
+  </servlet-mapping>
+  
+</web-app>
+
+step7:
+-----
+	Add Tomcat 9 server to eclipse IDE.
+	ex:
+		window --> preferences --> Server --> Runtime Environments --> 
+		click to Add button --> Apache --> Tomcat 9  --> Next --> click to browse button
+		--> select Tomcat 9.0 folder from c drive --> open --> apply and close.
+
+
+step8:
+-----
+	Change the admin port number of Tomcat server.
+	ex:
+		servers --> double click to tomcat server --> Tomcat admin port : 1 -->  ctrl+s
+
+step9:
+------
+	Run the dynamic web project.
+	ex:
+		right click to DateApp --> run as --> Run on server ---> 
+		Apache Tomcat 9 --> Finish.
+
+step10:
+------
+	Test the application by using below request url.
+	ex:
+		http://localhost:8080/DateApp/test
+
+Note:
+-----
+	If we do any mistake in web.xml file then we will get 404 error.
+
+	If we do any mistake in servelt file then we will get 500 error.
+
+	
+
+
+Types of URL Patterns
+=====================
+Every servlet contains URL Pattern.
+
+Our client, server and other web resource programs will recognize each servlet program with the help url pattern.
+
+URL pattern will hide technology name or class name from the outsider for security reason.
+
+We have three types of url patterns.
+
+1) Exact match url pattern
+
+2) Directory match url pattern 
+
+3) Extension match url pattern
+
+Every server is designed to support above three url patterns.
+
+
+1) Exact match url pattern
+---------------------------
+It starts with '/' forward slash symbol followed by a name.
+
+web.xml
+-------
+	<url-pattern>/test</url-pattern>
+
+Request url
+-----------
+	http://localhost:8080/DateApp/test    // valid 
+	http://localhost:8080/DateApp/rest    // invalid 
+	http://localhost:8080/DateApp/x/test  // invalid
+
+
+2) Directory match url pattern 
+-------------------------------
+It starts with '/' forward symbol and ends with '*' symbol. 
+
+web.xml
+-------
+	<url-pattern>/x/y/*</url-pattern>
+
+Request url
+----------
+	http://localhost:8080/DateApp/test       //invalid
+	http://localhost:8080/DateApp/x/y/z      //valid
+	http://localhost:8080/DateApp/x/y/z/test //valid   
+
+
+3) Extension match url pattern
+------------------------------
+It starts with '*' symbol having some extension.
+
+web.xml
+------
+	<url-pattern>*.do</url-pattern>
+
+Request url
+----------
+	http://localhost:8080/DateApp/a/b/c   //invalid 
+	http://localhost:8080/DateApp/a/b/c.do //valid 
+	http://localhost:8080/DateApp/test.do  //valid 	
+
+
+MIME Types 
+============
+MIME stands for Multipurpose Internet Mail Extension.
+
+MIME describes in how many formats we can display the output in servlets.
+
+1) text/html 
+--------------
+	It will display the output in html format.
+
+
+2) text/xml 
+----------
+	It will display the output in xml format.
+
+
+3) application/ms-word 
+-------------------
+	It will display the output in word format.
+
+
+4) application/vnd.ms-excel 
+---------------------------
+	It will display the output in excel format.
+
+
+
+Deployment Directory Structure
+------------------------------
+MIMEApp
+|
+|---Java Resources
+	|
+	|------src
+		|
+		|---com.ihub.www
+			|
+			|---TestSrv1.java
+			|---TestSrv2.java
+			|---TestSrv3.java
+			|---TestSrv4.java						
+|
+|---WebContent
+	|
+	|----WEB-INF
+		|
+		|----web.xml 
+Note:
+-----
+In above application we need to add "servlet-api.jar" file in project build path.
+
+TestSrv1.java
+------------
+package com.ihub.www;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.GenericServlet;
+import javax.servlet.ServletException;
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
+
+public class TestSrv1 extends GenericServlet
+{
+	public void service(ServletRequest req,ServletResponse res)throws ServletException,IOException
+	{
+		PrintWriter pw=res.getWriter();
+		res.setContentType("text/html");
+		
+		pw.println("<table border='1'>");
+		pw.println("<tr><th>SNO</th><th>SNAME</th><th>SADD</th></tr>");
+		pw.println("<tr><td>101</td><td>Alan</td><td>USA</td></tr>");
+		pw.println("<tr><td>102</td><td>Jose</td><td>UAE</td></tr>");
+		pw.println("<tr><td>103</td><td>Mark</td><td>UK</td></tr>");
+		pw.println("</table>");
+		
+		pw.close();
+	}
+}
+
+TestSrv2.java
+-------------
+package com.ihub.www;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.GenericServlet;
+import javax.servlet.ServletException;
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
+
+public class TestSrv2 extends GenericServlet
+{
+	public void service(ServletRequest req,ServletResponse res)throws ServletException,IOException
+	{
+		PrintWriter pw=res.getWriter();
+		res.setContentType("text/xml");
+		
+		pw.println("<table border='1'>");
+		pw.println("<tr><th>SNO</th><th>SNAME</th><th>SADD</th></tr>");
+		pw.println("<tr><td>101</td><td>Alan</td><td>USA</td></tr>");
+		pw.println("<tr><td>102</td><td>Jose</td><td>UAE</td></tr>");
+		pw.println("<tr><td>103</td><td>Mark</td><td>UK</td></tr>");
+		pw.println("</table>");
+		
+		pw.close();
+	}
+}
+
+TestSrv3.java
+------------
+package com.ihub.www;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.GenericServlet;
+import javax.servlet.ServletException;
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
+
+public class TestSrv3 extends GenericServlet
+{
+	public void service(ServletRequest req,ServletResponse res)throws ServletException,IOException
+	{
+		PrintWriter pw=res.getWriter();
+		res.setContentType("application/ms-word");
+		
+		pw.println("<table border='1'>");
+		pw.println("<tr><th>SNO</th><th>SNAME</th><th>SADD</th></tr>");
+		pw.println("<tr><td>101</td><td>Alan</td><td>USA</td></tr>");
+		pw.println("<tr><td>102</td><td>Jose</td><td>UAE</td></tr>");
+		pw.println("<tr><td>103</td><td>Mark</td><td>UK</td></tr>");
+		pw.println("</table>");
+		
+		pw.close();
+	}
+}
+
+TestSrv4.java
+-------------
+package com.ihub.www;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.GenericServlet;
+import javax.servlet.ServletException;
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
+
+public class TestSrv4 extends GenericServlet
+{
+	public void service(ServletRequest req,ServletResponse res)throws ServletException,IOException
+	{
+		PrintWriter pw=res.getWriter();
+		res.setContentType("application/vnd.ms-excel");
+		
+		pw.println("<table border='1'>");
+		pw.println("<tr><th>SNO</th><th>SNAME</th><th>SADD</th></tr>");
+		pw.println("<tr><td>101</td><td>Alan</td><td>USA</td></tr>");
+		pw.println("<tr><td>102</td><td>Jose</td><td>UAE</td></tr>");
+		pw.println("<tr><td>103</td><td>Mark</td><td>UK</td></tr>");
+		pw.println("</table>");
+		
+		pw.close();
+	}
+}
+
+web.xml
+--------
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  
+  <servlet>
+  	<servlet-name>TestSrv1</servlet-name>
+  	<servlet-class>com.ihub.www.TestSrv1</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>TestSrv1</servlet-name>
+  	<url-pattern>/html</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>TestSrv2</servlet-name>
+  	<servlet-class>com.ihub.www.TestSrv2</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>TestSrv2</servlet-name>
+  	<url-pattern>/xml</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>TestSrv3</servlet-name>
+  	<servlet-class>com.ihub.www.TestSrv3</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>TestSrv3</servlet-name>
+  	<url-pattern>/word</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>TestSrv4</servlet-name>
+  	<servlet-class>com.ihub.www.TestSrv4</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>TestSrv4</servlet-name>
+  	<url-pattern>/excel</url-pattern>
+  </servlet-mapping>
+  
+</web-app>
+
+Request url
+-----------
+	http://localhost:8080/MIMEApp/html 
+	http://localhost:8080/MIMEApp/xml
+	http://localhost:8080/MIMEApp/word
+	http://localhost:8080/MIMEApp/excel
+
+Types of communication
+======================
+We can communicate to servlet program in three ways.
+
+1) Browser to servlet communication 
+
+2) HTML to servlet communication 
+
+3) Servlet to servlet communication 
+
+In browser to servlet communication we need to type our request url in browser address bar.
+
+Typing request url in browser address bar is quit complex.
+
+To overcome this limitation we need to use HTML to servlet communication.
+
+In html to servlet communication we can give the request to servlet program by using html based hyperlink or form page.
+
+A request which is generated by using hyperlink does not carry the data.
+
+A request which is generated by using form page will carry the data.
+
+In html based hyperlink to servlet communication we need to type our request url as href url.
+
+ex:
+	<a href="http://localhost:8080/DateApp/test"> click Here </a>
+
+In html based form page to servlet communication we need ot type our request url as action url.
+
+ex:
+	<form action="http://localhost:8080/DateApp/test">
+		-
+		-
+		-
+	</form>	
+
+
+
+Example application on HTML based hyperlink to Servlet communication
+=====================================================================
+Diagram: servlet3.1
+
+Deployment Directory Structure
+------------------------------
+WishApp
+|
+|---Java Resources
+|	|
+	|------src
+		|
+		|---com.ihub.www
+			|
+			|---WishSrv.java
+|---WebContent 
+	|
+	|----index.html 
+	|
+	|----WEB-INF
+		|	
+		|----web.xml 
+Note:
+----
+In above application we need to add "servlet-api.jar" file in project build path.
+
+
+It is never recommanded to extends a servlet class with GenericServlet class because it won't give HTTP protocol features.
+
+It is always recommanded to extends a servlet class with HttpServlet class because it will give HTTP protocol features.
+
+
+index.html
+----------
+
+<center>
+	<h1>
+		<a  href="test"> getMsg </a>
+	</h1>
+</center>
+
+
+web.xml
+-------
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  
+  <servlet>
+  	<servlet-name>WishSrv</servlet-name>
+  	<servlet-class>com.ihub.www.WishSrv</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>WishSrv</servlet-name>
+  	<url-pattern>/test</url-pattern>
+  </servlet-mapping>
+  
+  <welcome-file-list>
+  	<welcome-file>index.html</welcome-file>
+  </welcome-file-list>
+  
+  
+</web-app>
+
+WishSrv.java
+-----------
+package com.ihub.www;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.Calendar;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+public class WishSrv extends HttpServlet
+{
+	public void service(HttpServletRequest req,HttpServletResponse res)throws ServletException,IOException
+	{
+		PrintWriter pw=res.getWriter();
+		res.setContentType("text/html");
+		
+		Calendar c=Calendar.getInstance();
+		int h=c.get(Calendar.HOUR_OF_DAY);
+		
+		if(h<12)
+			pw.println("<center><h1>Good Morning </h1></center>");
+		else if(h<16)
+			pw.println("<center><h1>Good Afternoon </h1></center>");
+		else if(h<20)
+			pw.println("<center><h1>Good Evening </h1></center>");
+		else
+			pw.println("<center><h1>Good Night</h1></center>");
+		pw.close();
+	}
+}
+
+Request url
+---------
+	http://localhost:8080/WishApp/
+
+
+Example application on HTML based form page to Servlet communication
+=====================================================================
+Diagram: servlet3.2
+
+Deployment Directory Structure
+------------------------------
+VoteApp
+|
+|---Java Resources
+|	|
+	|------src
+		|
+		|---com.ihub.www
+			|
+			|---VoteSrv.java
+|---WebContent 
+	|
+	|----form.html 
+	|
+	|----WEB-INF
+		|	
+		|----web.xml 
+Note:
+----
+In above application we need to add "servlet-api.jar" file in project build path.
+
+We can send the request to servlet program in two methodologies.
+
+1) GET methodology 
+----------------
+	It will carry limited amount of data.
+
+2) POST methodology 
+----------------
+	It will carry unlimited amount of data.
+
+While working with HttpServlet class , it is never recommanded to use service(-,-) method because it is not designed according to HTTP protocol.
+
+It is always recommanded to use doXxx(-,-) methods because they have designed according to HTTP protocol.
+
+We have seven doXxx(-,-) methods.
+
+1) doGet(-,-)
+2) doPost(-,-)
+3) doPut(-,-)
+4) doDelete(-,-)
+5) doOption(-,-)
+6) doTrace(-,-)
+7) doHead(-,-)
+
+prototype of doXxx(-,-)
+-----------------------
+protected void doGet(HttpServletRequest req,HttpServletResponse res)throws
+							 ServletException,IOException
+{
+	
+}
+
+
+form.html
+---------
+
+
+<form action="test"  method="GET"> 
+
+	Name: <input type="text" name="t1"/> <br>
+	
+	Age: <input type="text" name="t2"/> <br>
+	
+	<input type="submit" value="vote"/>
+
+</form>
+
+
+web.xml
+-------
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  
+  <servlet>
+  	<servlet-name>VoteSrv</servlet-name>
+  	<servlet-class>com.ihub.www.VoteSrv</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>VoteSrv</servlet-name>
+  	<url-pattern>/test</url-pattern>
+  </servlet-mapping>
+  
+  <welcome-file-list>
+  	<welcome-file>form.html</welcome-file>
+  </welcome-file-list>
+  
+</web-app>
+
+VoteSrv.java
+-------------
+package com.ihub.www;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+public class VoteSrv extends HttpServlet 
+{
+	protected void doGet(HttpServletRequest req,HttpServletResponse res)throws ServletException,IOException
+	{
+		PrintWriter pw=res.getWriter();
+		res.setContentType("text/html");
+		
+		//reading form data 
+		
+		String name=req.getParameter("t1");
+		String sage=req.getParameter("t2");
+		//convert string age to int 
+		int age=Integer.parseInt(sage);
+		
+		if(age<18)
+			pw.println("<center><h1 style='color:red'>"+name+" U r not eligible to vote </h1></center>");
+		else
+			pw.println("<center><h1 style='color:green'>"+name+" U r eligible to vote </h1></center>");	
+	
+		pw.close();
+	}
+}
+
+
+Request url
+--------
+	http://localhost:8080/VoteApp/
+
+Servlet to Database Communication
+=================================
+Diagram: servlet4.1
+
+Deployment Directory structure
+------------------------------
+DBApp
+|
+|---Java Resources
+	|
+	|-------src
+		|
+		|---com.ihub.www
+			|
+			|---DBSrv.java
+|
+|----WebContent
+	|
+	|---form.html
+	|
+	|---WEB-INF
+		|
+		|----web.xml 
+		|
+		|------lib
+			|	
+			|---ojdbc11.jar
+
+Note:
+-----
+In above application we need to add "servlet-api.jar" and "ojdbc11.jar" file in project build path.
+
+Copy and paste ojdbc11.jar file inside "WEB-INF/lib" folder seperately.
+
+
+student table
+-------------
+drop table student;
+
+create table student(sno number(3),sname varchar2(10),sadd varchar2(12));
+
+
+form.html
+----------
+
+<form action="test" method="GET">
+	
+	<table align="center">
+		<tr>
+			<td>No:</td>
+			<td><input type="text" name="t1"/></td>
+		</tr>
+		<tr>
+			<td>Name:</td>
+			<td><input type="text" name="t2"/></td>
+		</tr>
+		<tr>
+			<td>Address:</td>
+			<td><input type="text" name="t3"/></td>
+		</tr>
+		<tr>
+			<td><input type="reset" value="reset"/></td>
+			<td><input type="submit" value="submit"/></td>
+		</tr>
+	</table>
+</form>
+
+web.xml
+-------
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  
+  <servlet>
+  	<servlet-name>DBSrv</servlet-name>
+  	<servlet-class>com.ihub.www.DBSrv</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>DBSrv</servlet-name>
+  	<url-pattern>/test</url-pattern>
+  </servlet-mapping>
+  
+  <welcome-file-list>
+  	<welcome-file>form.html</welcome-file>
+  </welcome-file-list>
+  
+</web-app>
+
+DBSrv.java
+------------
+package com.ihub.www;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+public class DBSrv extends HttpServlet 
+{
+	protected void doGet(HttpServletRequest req,HttpServletResponse res)throws ServletException,IOException
+	{
+		PrintWriter pw=res.getWriter();
+		res.setContentType("text/html");
+		
+		//reading form data 
+		String sno=req.getParameter("t1");
+		int no=Integer.parseInt(sno);
+		String name=req.getParameter("t2");
+		String add=req.getParameter("t3");
+		
+		//insert the data into database 
+		Connection con=null;
+		PreparedStatement ps=null;
+		int result=0;
+		String qry=null;
+		try
+		{
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE","system","admin");
+			qry="insert into student values(?,?,?)";
+			ps=con.prepareStatement(qry);
+			
+			//set the vaues
+			ps.setInt(1,no);
+			ps.setString(2, name);
+			ps.setString(3, add);
+			
+			//execute the query
+			result=ps.executeUpdate();
+			
+			if(result==0)
+				pw.println("<center><h1>Record Not Inserted</h1></center>");
+			else
+				pw.println("<center><h1>Record Inserted</h1></center>");
+			
+			ps.close();
+			con.close();
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+		
+		pw.close();
+	}
+}
+
+Request url
+---------
+	http://localhost:8080/DBApp/
+
+
+
+Form Validation
+================
+The process of checking format and pattern of form data is called form validation and such logic is called form validation logic.
+
+There are two ways to perform form validation.
+
+1) Client side form validation 
+
+2) Server side form validation 
+
+
+1) Client side form validation
+----------------------------
+Validation which is performed at client side is called client side form validation.
+
+To perform client side form validation we need to use javascript.
+
+
+2) Server side form validation
+----------------------------
+Validation which is performed at server side is called server side form validation.
+
+To perform server side form validation we need to use servlets/filters.
+
+
+Deployment Directory structure
+-------------------------------
+ValidationApp
+|
+|---Java Resources
+|	|
+	|-----src		
+		|
+		|---com.ihub.wwww
+			|
+			|----TestSrv.java
+|---WebContent
+	|
+	|-----form.html
+	|
+	|-----validation.js
+	|
+	|-----WEB-INF
+		|
+		|---web.xml 
+
+Note:
+-----
+In above application we need to add "servlet-api.jar" file in project build path.
+
+
+form.html
+---------
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<!--  adding external javascript file -->
+		<script language="javascript" src="validation.js"></script>
+	</head>
+	<body>
+			<form name="myform" action="test" method="GET" onsubmit="return validate()">
+	
+				Name: <input type="text" name="t1"/> <br>
+	
+				Age: <input type="text" name="t2"/> <br>
+				
+				<!--  hidden box field -->
+				<input type="hidden" name="vflag" value="no"/> 
+	
+				<input type="submit" value="submit"/>
+	
+			</form>
+	</body>
+</html>
+
+web.xml
+--------
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+ 	
+ 	<servlet>
+ 		<servlet-name>TestSrv</servlet-name>
+ 		<servlet-class>com.ihub.www.TestSrv</servlet-class>
+ 	</servlet>
+ 	<servlet-mapping>
+ 		<servlet-name>TestSrv</servlet-name>
+ 		<url-pattern>/test</url-pattern>
+ 	</servlet-mapping>
+ 	
+ 	<welcome-file-list>
+ 		<welcome-file>form.html</welcome-file>
+ 	</welcome-file-list>
+ 
+</web-app>
+	
+
+validation.js
+--------------
+function validate()
+{
+	
+	//reading form data
+	var name=document.myform.t1.value;
+	var age=document.myform.t2.value;
+	document.myform.vflag.value="yes";
+	
+	if(name=="")
+	{
+		alert("Name is mandatory");
+		document.myform.t1.focus();
+		return false;
+	}
+	
+	if(age=="")
+	{
+		alert("Age is mandatory");
+		document.myform.t2.focus();
+		return false;
+	}
+	else
+	{
+		if(isNaN(age))
+		{
+			alert("Age must be numeric");
+			document.myform.t2.value="";
+			document.myform.t2.focus();
+			return false;
+		}
+	}
+
+
+	return true;
+}
+
+
+TestSrv.java
+------------
+package com.ihub.www;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+public class TestSrv extends HttpServlet 
+{
+	protected void doGet(HttpServletRequest req,HttpServletResponse res)throws ServletException,IOException
+	{
+		PrintWriter pw=res.getWriter();
+		res.setContentType("text/html");
+		
+		//reading form data
+		String name=req.getParameter("t1");
+		String sage=req.getParameter("t2");
+		String status=req.getParameter("vflag");
+		int age=0;
+		
+		if(status.equals("no"))
+		{
+			if(name=="" || name==null || name.length()==0)
+			{
+				pw.println("<center><h1>Name is mandatory</h1></center>");
+				return;
+			}
+			if(sage=="" || sage==null || sage.length()==0)
+			{
+				pw.println("<center><h1>Age is mandatory</h1></center>");
+				return;
+			}
+			else
+			{
+				try
+				{
+					age=Integer.parseInt(sage);
+				}
+				catch(NumberFormatException nfe)
+				{
+					pw.println("<center><h1>Age must be numeric</h1></center>");
+					return;
+				}
+			}
+		}
+		
+		if(status.equals("yes"))
+		{
+			age=Integer.parseInt(sage);
+		}
+		
+		if(age<18)
+			pw.println("<center><h1>U r not eligible to vote </h1></center>");
+		else
+			pw.println("<center><h1>U r eligible to vote </h1></center>");
+		
+		pw.close();
+	}
+}
+
+Request url
+----------
+	http://localhost:8080/ValidationApp/
+
+Q) What is the difference between GET and POST methodology?
+
+GET 						POST
+-----------					--------
+It is a default methodology.			It is not a default methodology.
+
+It sends the request fastly.			It sends the request bit slow.
+
+It will carry limited amount of data.		It will carry unlimited amount of data.
+
+It is not suitable for secure data.		It is suitable for secure data.
+
+It is not suitable for encryption and 		It is suitable for encryption and file uploading.
+file uploading.
+
+To process GET methodology we will use 		To process POST methodology we will use 
+doGet(-,-) method.				doPost(-,-) method.
+
+
+
+
+File Uploading
+==============
+The process of capturing a file from client machine file system and storing in a server machine file system is called file uploading and reverse is called file downloading.
+
+While dealing with matrimonial applications, job portal applications, profile management applications we need to upload and download a file.
+
+There is no specific API in servlet to perform file uploading.
+
+Here we need to take the support of third party API called JAVAZOOM API.
+
+JAVAZOOM API comes in zip format and once if we extracted then we will get three jar files.
+ex:
+	uploadbean.jar (main jar file)
+	struts.jar     (dependent jar file)    
+	cos.jar        (dependent jar file)  
+
+We can place file component in a form page as follow.
+ex:
+	<input type="file" name="f1"/>
+
+
+JAVAZOOM API Download link : 
+
+https://drive.google.com/file/d/1LB0WSJvSCCVOgz7xNwyuYtmy_0_TfJzq/view?usp=drive_link
+
+Deployment Directory Structure
+-----------------------------
+UploadApp
+|
+|---Java Resources
+|	|
+	|-----src
+		|	
+		|---com.ihub.www
+			|
+			|---TestSrv.java
+|
+|---WebContent
+	|
+	|-----form.html
+	|
+	|-----WEB-INF
+		|
+		|-----web.xml 
+		|
+		|-------lib
+			|
+			|---uploadbean.jar
+			|---struts.jar
+			|---cos.jar
+
+Note:
+------
+In above application we need to add "servlet-api.jar" and "uploadbean.jar" file in project build path.
+
+Copy and paste javazoom jar files inside "WEB-INF/lib" folder seperately.
+
+
+form.html
+----------
+
+<form action="test" method="POST" enctype="multipart/form-data">
+	
+	File1: <input type="file" name="f1"/> <br>
+	
+	File2: <input type="file" name="f2"/> <br> 
+	
+	<input type="submit" value="upload"/>
+	
+</form>
+
+
+web.xml
+--------
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+ 
+ 	<servlet>
+ 		<servlet-name>TestSrv</servlet-name>
+ 		<servlet-class>com.ihub.www.TestSrv</servlet-class>
+ 	</servlet>
+ 	<servlet-mapping>
+ 		<servlet-name>TestSrv</servlet-name>
+ 		<url-pattern>/test</url-pattern>
+ 	</servlet-mapping>
+ 	
+ 	<welcome-file-list>
+ 		<welcome-file>form.html</welcome-file>
+ 	</welcome-file-list>
+ 
+</web-app>
+
+
+TestSrv.java
+------------
+package com.ihub.www;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import javazoom.upload.MultipartFormDataRequest;
+import javazoom.upload.UploadBean;
+
+public class TestSrv extends HttpServlet 
+{
+	protected void doPost(HttpServletRequest req,HttpServletResponse res)throws ServletException,IOException
+	{
+		PrintWriter pw=res.getWriter();
+		res.setContentType("text/html");
+		
+		//file uploading logic 
+		try
+		{
+			UploadBean ub=new UploadBean();
+			ub.setFolderstore("C:\\sudheer");
+			ub.setOverwrite(false);
+			MultipartFormDataRequest nreq=new MultipartFormDataRequest(req);
+			ub.store(nreq);
+			
+			pw.println("<center><h1> Files are uploaded successfully </h1></center>");
+			
+		}
+		catch(Exception e)
+		{
+			pw.println(e);
+		}
+		
+		pw.close();
+	}
+}
+
+Request url
+----------
+	http://localhost:8080/UploadApp/
+
+
+
+Servlet Life Cycle Methods
+==========================
+We have three life cycle methods in servlets.
+
+1)  public void init(ServletConfig config)throws ServletException 
+-----------------------------------------------------------------
+	It is used for instantiation event.
+	This method will execute just before servlet object creation.
+
+
+2)  public void service(ServletRequest req,ServletResponse res)throws ServletException,IOException
+-----------------------------------------------------------------
+	It is used for request arrival event.
+	This method will execute when request goes to servlets.
+
+3)  public void destroy() 
+------------------------
+	It is used for destruction event.
+	This method will execute just before servlet object destruction.
+
+Diagram: servlet5.1
+
+
+Deployment Directory Structure
+-----------------------------
+LifeCycleApp
+|
+|---Java Resources
+|	|
+	|-----src
+		|	
+		|---com.ihub.www
+			|
+			|---TestSrv.java
+|
+|---WebContent
+	|
+	|-----index.html
+	|
+	|-----WEB-INF
+		|
+		|-----web.xml 
+
+Note:
+------
+In above application we need to add "servlet-api.jar" file in project build path.
+
+
+index.html
+----------
+<center>
+	<h1>
+		<a href="test"> click Here </a>
+	</h1>
+</center>
+
+web.xml
+-------
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  
+  	<servlet>
+  		<servlet-name>TestSrv</servlet-name>
+  		<servlet-class>com.ihub.www.TestSrv</servlet-class>
+  	</servlet>
+  	<servlet-mapping>
+  		<servlet-name>TestSrv</servlet-name>
+  		<url-pattern>/test</url-pattern>
+  	</servlet-mapping>
+  	
+  	<welcome-file-list>
+  		<welcome-file>index.html</welcome-file>
+  	</welcome-file-list>
+  
+</web-app>
+
+
+TestSrv.java
+------------
+package com.ihub.www;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletConfig;
+import javax.servlet.ServletException;
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
+import javax.servlet.http.HttpServlet;
+
+public class TestSrv extends HttpServlet 
+{
+	public void init(ServletConfig config)throws ServletException
+	{
+		System.out.println("init-method");
+	}
+	
+	public void service(ServletRequest req,ServletResponse res)throws ServletException,IOException
+	{
+		PrintWriter pw=res.getWriter();
+		res.setContentType("text/html");
+		System.out.println("service-method");
+		pw.println("<center><h1> This is service method </h1></center>");
+		
+		
+	}
+	
+	public void destroy()
+	{
+		System.out.println("destroy-method");
+	}
+}
+
+Request url
+-----------
+	http://localhost:8080/LifeCycleApp/
+
+
+
+ServletConfig object
+====================
+A ServletConfig is an interface which is present in javax.servlet package.
+
+A ServletConfig object is used to read configuration information from web.xml file.
+
+A ServletConfig object created by web container for every servlet.
+
+We can create ServletConfig object by using getServletConfig() method.
+
+ex:
+	ServletConfig config=getServletConfig();
+
+A ServletConfig object contains following methods.
+
+
+1)public String getInitParameter(String name);
+-------------------------------------
+	It will return parameter value based on specified parameter name.
+
+2)public Enumeration getInitParameterNames();
+-----------------------------------------------------
+	It will return enumeration of all initialized parameter names.
+
+3)public ServletContext getServletContext();
+-------------------------------------------------------
+	It will return ServletContext object.
+
+4)public String getServletName();
+-----------------------------------------------	
+	It will return Servlet name.
+
+Deployment Directory Structure
+-----------------------------
+ConfigApp
+|
+|---Java Resources
+|	|
+	|-----src
+		|	
+		|---com.ihub.www
+			|
+			|---TestSrv.java
+|
+|---WebContent
+	|
+	|-----index.html
+	|
+	|-----WEB-INF
+		|
+		|-----web.xml 
+
+Note:
+------
+In above application we need to add "servlet-api.jar" file in project build path.
+
+
+index.html
+-----------
+<center>
+	<h1>
+		<a href="test"> Click Here </a>
+	</h1>
+</center>
+
+web.xml
+-------
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  
+  	<servlet>
+  		<servlet-name>TestSrv</servlet-name>
+  		<servlet-class>com.ihub.www.TestSrv</servlet-class>
+  		<init-param>
+  			<param-name>driver</param-name>
+  			<param-value>oracle.jdbc.driver.OracleDriver</param-value>
+  		</init-param>
+  		<init-param>
+  			<param-name>url</param-name>
+  			<param-value>jdbc:oracle:thin:@localhost:1521:XE</param-value>
+  		</init-param>
+  	</servlet>
+  	
+  	<servlet-mapping>
+  		<servlet-name>TestSrv</servlet-name>
+  		<url-pattern>/test</url-pattern>
+  	</servlet-mapping>
+  	
+  	<welcome-file-list>
+  		<welcome-file>index.html</welcome-file>
+  	</welcome-file-list>
+  	
+  
+</web-app>
+
+TestSrv.java
+------------
+package com.ihub.www;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.Enumeration;
+
+import javax.servlet.ServletConfig;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+public class TestSrv extends HttpServlet 
+{
+	protected void doGet(HttpServletRequest req,HttpServletResponse res)throws ServletException,IOException
+	{
+		PrintWriter pw=res.getWriter();
+		res.setContentType("text/html");
+		
+		ServletConfig config=getServletConfig();
+		
+		pw.println(config.getInitParameter("driver")+"<br>");
+		pw.println(config.getInitParameter("url")+"<br>");
+		
+		
+		Enumeration<String> e=config.getInitParameterNames();
+		while(e.hasMoreElements())
+		{
+			String s=e.nextElement();
+			pw.println(s+"<br>");
+		}
+		
+		pw.println(config.getServletName()+"<br>");
+		
+		pw.close();
+	}
+}
+
+Request url
+----------
+	http://localhost:8080/ConfigApp/
+
+ServletContext object
+=====================
+ServletContext is an interface which is present in javax.servlet package.
+
+ServletContext object is used to read configuration information from web.xml file which is global.
+
+ServletContext object is created by the web container for every web application.
+
+We can create ServletContext object as follow.
+
+ex:
+	ServletContext context=getServletContext(); 
+
+	or 
+
+	ServletConfig config=getServletConfig();
+	ServletContext context=config.getServletContext();
+
+We have following list of methods in ServletContext object.
+
+1)public String getInitParameter(String name);
+-------------------------------------
+	It will return parameter value based on specified parameter name.
+
+2)public Enumeration getInitParameterNames();
+-----------------------------------------------------
+	It will return enumeration of all initialized parameter names.
+
+3)public void setAttribute(String name,Object obj);
+---------------------------------------------------------
+	It will set the attribute.
+
+4)public Object getAttribute(String name);
+----------------------------------------
+	It will return the attribute  value.
+
+5)public void removeAttribute(String name);
+-----------------------------------------------------------
+	It will remove the attribute.
+
+
+Deployment Directory Structure
+------------------------------
+ContextApp
+|
+|---Java Resources
+	|
+	|------src
+		|
+		|---TestSrv.java
+|
+|---WebContent
+	|
+	|----index.html
+	|
+	|----WEB-INF
+		|
+		|---web.xml 
+Note:
+----
+In above application we need to add "servlet-api.jar" file in project build path.
+
+
+index.html
+-----------
+<center>
+	<h1>
+		<a href="test"> click Here </a>
+	</h1>
+</center>
+
+
+web.xml
+-------
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  
+  <servlet>
+  	<servlet-name>TestSrv</servlet-name>
+  	<servlet-class>com.ihub.www.TestSrv</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>TestSrv</servlet-name>
+  	<url-pattern>/test</url-pattern>
+  </servlet-mapping>
+  
+  <context-param>
+  	<param-name>driver</param-name>
+  	<param-value>oracle.jdbc.driver.OracleDriver</param-value>
+  </context-param>
+  
+  <context-param>
+  	<param-name>url</param-name>
+  	<param-value>jdbc:oracle:thin:@localhost:1521:XE</param-value>
+  </context-param>
+  
+  <welcome-file-list>
+  	<welcome-file>index.html</welcome-file>
+  </welcome-file-list>
+  
+</web-app>
+
+TestSrv.java
+------------
+package com.ihub.www;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.Enumeration;
+
+import javax.servlet.ServletContext;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+public class TestSrv extends HttpServlet 
+{
+	protected void doGet(HttpServletRequest req,HttpServletResponse res)throws ServletException,IOException
+	{
+		PrintWriter pw=res.getWriter();
+		res.setContentType("text/html");
+		
+		ServletContext context=getServletContext();
+		
+		pw.println(context.getInitParameter("driver")+"<br>");
+		pw.println(context.getInitParameter("url")+"<br>");
+		
+		Enumeration<String> e=context.getInitParameterNames();
+		while(e.hasMoreElements())
+		{
+			String s=e.nextElement();
+			pw.println(s+"<br>");
+		}
+		
+		context.setAttribute("name","Alan");
+		context.setAttribute("age",30);
+		
+		pw.println(context.getAttribute("name")+"<br>");
+		pw.println(context.getAttribute("age")+"<br>");
+		
+		context.removeAttribute("name");
+		context.removeAttribute("age");
+		
+		
+		pw.close();
+	}
+}
+
+
+Request url
+---------
+	http://localhost:8080/ContextApp/
+
+
+
+
+Servlet Filters
+================
+Filter is an object which is executed at the time of preprocessing and postprocessing of the request.
+
+Diagram:  servlet6.1
+
+Filter is used to perfor following task.
+
+1) To count number of request coming to the application 
+
+2) To perform form validation
+
+3) To perform encryption and decryption
+
+and etc.
+
+
+Like Servlets, Filter is having it's own Filter API.
+
+A javax.servlet package gave three interfaces of Filter API.
+
+1) Filter 
+
+2) FilterConfig 
+
+3) FilterChain 
+
+1)Filter Interface
+================
+For creating any filter, we must and should implements the Filter interface.
+
+Filter interface provides the following 3 life cycle methods for filter.
+
+
+i)public void init(FilterConfig config)
+----------------------------------
+	
+	IT is used to initialize the filter.
+	It invokes only once .
+
+
+ii)public void doFilter(HttpServletRequest req,HttpServletResponse res,FilterChain chain)
+----------------------------------------------------------
+	This method is invoked every time when user request to any resources to which
+	the filter is mappend.
+
+	IT is used to perform filtering task.	
+	
+iii)public void destroy()
+---------------------------
+	This method is invoked only once when filter is taken out of the service.
+
+
+2)FilterChain
+==============
+It is responsible to invoke the next filter or resource in the chain.
+
+FilterChain contains only one method.
+
+i)public void doFilter(HttpServletRequest req,HttpServletResponse res)
+------------------------------------
+	It passes the control to the next filter or resource.
+
+	
+3)FilterConfig
+===============
+For every filter our servlet container creates FilterConfig object.
+It is one per filter.
+
+
+
+
+Deployment Directory Structure
+------------------------------
+FilterApp
+|
+|---Java Resources
+	|
+	|------src
+		|
+		|---com.ihub.www
+			|
+			|---MyFilter.java
+			|---MyServlet.java
+|---Web Content
+	|
+	|-----index.html
+	|
+	|-----WEB-INF
+		|
+		|-----web.xml 
+Note:
+-----
+In above application we need to add "servlet-api.jar" file in project build path.
+
+index.html
+----------
+<center>
+	<h1>
+		<a href="test"> click Here </a>
+	</h1>
+</center>
+
+web.xml
+--------
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  
+  <servlet>
+  	<servlet-name>MyServlet</servlet-name>
+  	<servlet-class>com.ihub.www.MyServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>MyServlet</servlet-name>
+  	<url-pattern>/test</url-pattern>
+  </servlet-mapping>
+  
+  <filter>
+  	<filter-name>MyFilter</filter-name>
+  	<filter-class>com.ihub.www.MyFilter</filter-class>
+  </filter>
+  <filter-mapping>
+  	<filter-name>MyFilter</filter-name>
+  	<url-pattern>/test</url-pattern>
+  </filter-mapping>
+  
+  <welcome-file-list>
+  	<welcome-file>index.html</welcome-file>
+  </welcome-file-list>
+  
+</web-app>
+
+
+MyFilter.java
+---------------
+package com.ihub.www;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.Filter;
+import javax.servlet.FilterChain;
+import javax.servlet.FilterConfig;
+import javax.servlet.ServletException;
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
+
+public class MyFilter implements Filter
+{
+	@Override
+	public void init(FilterConfig config)throws ServletException
+	{
+		
+	}
+
+	@Override
+	public void doFilter(ServletRequest req, ServletResponse res, FilterChain chain)
+			throws IOException, ServletException {
+		
+		PrintWriter pw=res.getWriter();
+		res.setContentType("text/html");
+		
+		pw.println("<center><h1> Filter Invoked Before </h1></center><br>");
+		
+		chain.doFilter(req, res);
+		
+		pw.println("<center><h1> Filter Invoked After </h1></center><br>");
+		
+		
+	}
+	
+	@Override
+	public void destroy()
+	{
+		
+	}
+
+}
+
+MyServlet.java
+---------------
+package com.ihub.www;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+public class MyServlet extends HttpServlet
+{
+	protected void doGet(HttpServletRequest req,HttpServletResponse res)throws ServletException,IOException
+	{
+		PrintWriter pw=res.getWriter();
+		res.setContentType("text/html");
+		
+		pw.println("<center><h1> Servlet Executed </h1></center><br>");
+		
+		
+	}
+}
+
+Request url
+-----------
+	http://localhost:8080/FilterApp/test
+
+Servlet To Servlet Communication
+=================================
+Servlet to servlet communication is also known as servlet chaining.
+
+Servlet to servlet communication is possible in three ways.
+
+1) forwarding the request 
+
+2) Including the response 
+
+3) Send Redirection 
+
+
+1) forwarding the request
+-------------------------
+In forwarding the request , output of source servlet program will be discarded and output of destination servlet program goes to browser window as dynamic response.
+
+To forward the request we need to use RequestDispatcher object.
+
+RequestDispatcher is an interface which is present in javax.servlet package.
+
+We can create RequestDispatcher object by using getRequestDispatcher() method of HttpServletRequest.
+ex:
+	
+	RequestDispatcher rd=req.getRequestDispatcher("destination");
+	rd.forward(req,res);
+
+
+2) Including the response 
+--------------------------
+In including the response, the output of source servlet program and output of destination servlet program combinely goes to browser window as dynamic response.
+
+Here only output of destination program will include in source servlet program but not code.
+
+For including the response we need to use RequestDispatcher object.
+
+RequestDispatcher is an interface which is present in javax.servlet package.
+
+We can create RequestDispatcher object by using getRequestDispatcher() method of HttpServletRequest object.
+ex:
+	RequestDispatcher rd=req.getRequestDispatcher("destination");
+	rd.include(req,res);
+
+
+Deployment Directory Structure
+-------------------------------
+STSApp1
+|
+|---Java Resources
+|	|
+	|-------src
+		|	
+		|---com.ihub.www
+			|
+			|---TestSrv1.java
+			|---TestSrv2.java
+	
+|---WebContent
+|	|
+	|------form.html
+	|
+	|------WEB-INF
+		|
+		|---------web.xml 
+Note:
+-----
+In above application we need to add "servlet-api.jar" file in project build path.
+
+form.html
+----------
+<form action="test1" method="GET">
+	
+	<table align="center">
+		
+		<tr>
+			<td>UserName:</td>
+			<td><input type="text" name="t1"/></td>
+		</tr>	
+		<tr>
+			<td>Password:</td>
+			<td><input type="password" name="t2"/></td>
+		</tr>	
+		<tr>
+			<td><input type="reset" value="reset"/></td>
+			<td><input type="submit" value="submit"/></td>
+		</tr>	
+		
+	</table>
+	
+</form>
+
+web.xml
+--------
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  
+  <servlet>
+  	<servlet-name>TestSrv1</servlet-name>
+  	<servlet-class>com.ihub.www.TestSrv1</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>TestSrv1</servlet-name>
+  	<url-pattern>/test1</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>TestSrv2</servlet-name>
+  	<servlet-class>com.ihub.www.TestSrv2</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>TestSrv2</servlet-name>
+  	<url-pattern>/test2</url-pattern>
+  </servlet-mapping>
+  
+  <welcome-file-list>
+  	<welcome-file>form.html</welcome-file>
+  </welcome-file-list>
+  
+</web-app>
+
+TestSrv1.java
+--------------
+package com.ihub.www;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+public class TestSrv1 extends HttpServlet 
+{
+	protected void doGet(HttpServletRequest req,HttpServletResponse res)throws ServletException,IOException 
+	{
+		PrintWriter pw=res.getWriter();
+		res.setContentType("text/html");
+		
+		//reading form data 
+		String uname=req.getParameter("t1");
+		String pass=req.getParameter("t2");
+		
+		if(pass.equals("admin"))
+		{
+			RequestDispatcher rd=req.getRequestDispatcher("test2");
+			rd.forward(req, res);
+		}
+		else
+		{
+			pw.println("<center><b style='color:red'>Incorrect! username or password</b></center>");
+			RequestDispatcher rd=req.getRequestDispatcher("form.html");
+			rd.include(req, res);
+		}
+		
+		pw.close();
+	}
+}
+
+TestSrv2.java
+--------------
+package com.ihub.www;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+public class TestSrv2 extends HttpServlet 
+{
+	protected void doGet(HttpServletRequest req,HttpServletResponse res)throws ServletException,IOException 
+	{
+		PrintWriter pw=res.getWriter();
+		res.setContentType("text/html");
+		
+		pw.println("<center><h1>Login Successfully!!</h1></center>");
+		
+		pw.close();
+		
+	}
+}
+
+Request url
+----------
+	http://localhost:8080/STSApp1/
+
+
+
+
+
+3) Send Redirection 
+===================
+It is used to send the request to the application which is present in same server or different server.
+
+It sends always new request.
+
+It uses browser window to send the request.
+
+It works inside as well as outside of the servr.
+
+We can perform send redirection by using sendRedirect() method of HttpServletResponse object.
+ex:
+	res.sendRedirect("url");
+
+Deployment Directory Structure
+------------------------------
+STSApp2
+|
+|---Java Resources
+	|
+	|-----src
+		|
+		|---com.ihub.www
+			|
+			|---TestSrv.java
+|
+|---WebContent
+	|
+	|-----index.html
+	|
+	|-----WEB-INF
+		|
+		|-----web.xml 
+Note:
+-----
+In above application we need to add "servlet-api.jar" file in project build path.
+
+index.html
+----------
+<center>
+	
+	<h1>
+			<a href="test?t1=flights"> Flights </a>  <br><br>
+			
+			<a href="test?t1=hotels"> Hotels </a>  <br><br>
+			
+			<a href="test?t1=railways"> Trains </a>
+		
+	</h1>
+
+</center>
+
+web.xml
+--------
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  
+  <servlet>
+  	<servlet-name>TestSrv</servlet-name>
+  	<servlet-class>com.ihub.www.TestSrv</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>TestSrv</servlet-name>
+  	<url-pattern>/test</url-pattern> 
+  </servlet-mapping>
+  
+  <welcome-file-list>
+  	<welcome-file>index.html</welcome-file>
+  </welcome-file-list>
+  
+</web-app>
+
+
+TestSrv.java
+----------
+package com.ihub.www;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+public class TestSrv extends HttpServlet 
+{
+	protected void doGet(HttpServletRequest req,HttpServletResponse res)throws ServletException,IOException
+	{
+		PrintWriter pw=res.getWriter();
+		res.setContentType("text/html");
+		
+		//reading the data from request 
+		String value=req.getParameter("t1");
+		
+		//redirect the response
+		res.sendRedirect("http://www.makemytrip.com/"+value);
+		
+		pw.close();
+	}
+}
+
+Request url
+------------
+	http://localhost:8080/STSApp2/
+
+
+
+Q) How to enable <load-on-startup> and what happens if we enable <load-on-startup> ?
+
+We can enable <load-on-startup> in web.xml file.
+
+ex:
+	<web-app>
+		<servlet>
+			<servlet-name>....</servlet-name>
+			<servlet-class>....</servlet-class>
+			<load-on-startup>1</load-on-startup>	
+		</servlet>
+		<servlet-mapping>
+			<servlet-name>....</servlet-name>
+			<url-pattern>/test</url-pattern>
+		</servlet-mapping>
+	</web-app>
+
+If we enable <load-on-startup> then our servlet container will create servlet object during the server startup or during the deployment of web application.
+
+In general, servlet object will be ready before we give the request.
+
+
+
+Assignment
+============
+Q) Write a java program to display common characters in two strings?
+
+Note:
+-----
+	Ignore the cases.
+
+input:
+	Hendry
+	Ray
+
+output:
+	ry
+
+Stateless Behaviour of web application
+======================================
+Diagram: servlet8.1
+
+Above diagram demostrates stateless behaviour of web application.
+
+In stateless behaviour of web application , while processing form2 data we can't access form1 data.
+
+By default every servlet web application is a stateless web application.
+
+To overcome this limitation we need to use Session Tracking. 
+
+
+Deployment Directory Structure
+------------------------------
+StatelessApp
+|
+|---Java Resources
+|	|
+	|------src
+		|
+		|----com.ihub.www
+			|			
+			|---TestSrv1.java
+			|---TestSrv2.java
+|---WebContent
+|	|
+	|------form.html
+	|
+	|------WEB-INF
+		|
+		|----web.xml 
+Note:
+------
+In above application we need to add "servlet-api.jar" file in project build path.
+
+form.html
+---------
+
+<form action="test1" method="GET">
+	
+	Name: <input type="text" name="t1"/> <br>
+	
+	Father Name: <input type="text" name="t2"/> <br>
+	
+	Maritial Status : 
+	<input type="checkbox" name="t3" value="married"/> MARRIED
+	<input type="checkbox" name="t3" value="single"/> SINGLE   <br>
+	
+	<input type="submit" value="submit"/>
+	
+</form>
+
+web.xml
+---------
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  
+  <servlet>
+  	<servlet-name>TestSrv1</servlet-name>
+  	<servlet-class>com.ihub.www.TestSrv1</servlet-class>
+  	<load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>TestSrv1</servlet-name>
+  	<url-pattern>/test1</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>TestSrv2</servlet-name>
+  	<servlet-class>com.ihub.www.TestSrv2</servlet-class>
+  	<load-on-startup>2</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>TestSrv2</servlet-name>
+  	<url-pattern>/test2</url-pattern>
+  </servlet-mapping>
+  
+  <welcome-file-list>
+  	<welcome-file>form.html</welcome-file>
+  </welcome-file-list>
+  
+</web-app>
+
+TestSrv1.java
+-------------
+package com.ihub.www;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+public class TestSrv1 extends HttpServlet 
+{
+	protected void doGet(HttpServletRequest req,HttpServletResponse res)throws ServletException,IOException
+	{
+		PrintWriter pw=res.getWriter();
+		res.setContentType("text/html");
+		
+		//reading form data 
+		String name=req.getParameter("t1");
+		String fname=req.getParameter("t2");
+		String ms=req.getParameter("t3");
+		
+		if(ms.equals("married"))
+		{
+			pw.println("<form action='test2' method='GET'>");
+			pw.println("Spouse Name : <input type='text' name='f2t1'/> <br>");
+			pw.println("No of Child : <input type='text' name='f2t2'/> <br>");
+			pw.println("<input type='submit' value='submit'/>");
+			pw.println("</form>");
+		}
+		else
+		{
+			pw.println("<form action='test2' method='GET'>");
+			pw.println("When will u marry : <input type='text' name='f2t1'/> <br>");
+			pw.println("Why will u marry : <input type='text' name='f2t2'/> <br>");
+			pw.println("<input type='submit' value='submit'/>");
+			pw.println("</form>");
+		}
+		pw.close();
+	}
+}
+
+TestSrv2.java
+-------------
+package com.ihub.www;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+public class TestSrv2 extends HttpServlet 
+{
+	protected void doGet(HttpServletRequest req,HttpServletResponse res)throws ServletException,IOException
+	{
+		PrintWriter pw=res.getWriter();
+		res.setContentType("text/html");
+		
+		//reading form 1 data
+		String name=req.getParameter("t1");
+		String fname=req.getParameter("t2");
+		String ms=req.getParameter("t3");
+		
+		//reading form 2 data
+		String val1=req.getParameter("f2t1");
+		String val2=req.getParameter("f2t2");
+		
+		pw.println("Form 1 Data : "+name+" "+fname+" "+ms+"<br>");
+		pw.println("Form 2 Data : "+val1+" "+val2+"<br>");
+		
+		pw.close();
+	}
+}
+
+Request url
+---------
+	http://localhost:8080/StatelessApp/
+
+
+Q) How many scopes are there in servlets?
+
+We have three scopes in servlets.
+
+1) Request scope : HttpServletRequest 
+
+2) Session scope : HttpSession 
+
+3) Application scope : ServletContext
+
+
+
+
+
+Session
+=======
+The process of continue and related operations performed in a web application with multiple request and response is called session.
+
+ex:
+	starting of java class and ending of java class is one session
+	signin to gmail and signout from gmail is one session
+
+In stateless web application , No web resource program can access previous request data while 
+processing the current request during a session.
+
+To overcome this limitation we need to use Session Tracking.
+
+
+Session Tracking / Session Management 
+=====================================
+Session tracking is used to make our application as statefull web application even though our HTTP protocol is stateless.
+
+In stateless web application , no web resource program can access previous request data while processing the current request during a session.
+
+In statefull web application, all web resource programs can access previous request data while processing the current request during a session.
+
+There are four techniques to perform session tracking.
+
+1) Using Hidden box fields 
+
+2) HttpCookies 
+
+3) HttpSession with Cookies 
+
+4) URL Rewriting 
+
+
+
+3) HttpSession with Cookies 
+---------------------------
+In this technique, for every request a unique session ID will be generated.
+
+This ID used by the web container to identify that user is a old user or new user.
+
+Diagram: servlet8.2
+
+HttpSession is an interface which is present in javax.servlet package.
+
+We can create HttpSession object as follow.
+ex:
+	HttpSession session=req.getSession();
+
+	or
+
+	HttpSession session=req.getSession(boolean value);
+
+The main objective of HttpSession are 
+
+1) To bind the data 
+
+2) To manipulate the data which is present in HttpSession.
+
+
+form.html
+----------
+
+<form action="test1" method="GET">
+	
+	Name: <input type="text" name="t1"/> <br>
+	
+	Father Name: <input type="text" name="t2"/> <br>
+	
+	Maritial Status : 
+	<input type="checkbox" name="t3" value="married"/> MARRIED
+	<input type="checkbox" name="t3" value="single"/> SINGLE   <br>
+	
+	<input type="submit" value="submit"/>
+	
+</form>
+
+web.xml
+-------
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  
+  <servlet>
+  	<servlet-name>TestSrv1</servlet-name>
+  	<servlet-class>com.ihub.www.TestSrv1</servlet-class>
+  	<load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>TestSrv1</servlet-name>
+  	<url-pattern>/test1</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>TestSrv2</servlet-name>
+  	<servlet-class>com.ihub.www.TestSrv2</servlet-class>
+  	<load-on-startup>2</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>TestSrv2</servlet-name>
+  	<url-pattern>/test2</url-pattern>
+  </servlet-mapping>
+  
+  <welcome-file-list>
+  	<welcome-file>form.html</welcome-file>
+  </welcome-file-list>
+  
+</web-app>
+
+TestSrv1.java
+--------------
+package com.ihub.www;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+public class TestSrv1 extends HttpServlet 
+{
+	protected void doGet(HttpServletRequest req,HttpServletResponse res)throws ServletException,IOException
+	{
+		PrintWriter pw=res.getWriter();
+		res.setContentType("text/html");
+		
+		//reading form data 
+		String name=req.getParameter("t1");
+		String fname=req.getParameter("t2");
+		String ms=req.getParameter("t3");
+		
+		//store the data in HttpSession
+		HttpSession session=req.getSession();
+		session.setAttribute("pname",name);
+		session.setAttribute("pfname",fname);
+		session.setAttribute("pms",ms);
+		
+		if(ms.equals("married"))
+		{
+			pw.println("<form action='test2' method='GET'>");
+			pw.println("Spouse Name : <input type='text' name='f2t1'/> <br>");
+			pw.println("No of Child : <input type='text' name='f2t2'/> <br>");
+			pw.println("<input type='submit' value='submit'/>");
+			pw.println("</form>");
+		}
+		else
+		{
+			pw.println("<form action='test2' method='GET'>");
+			pw.println("When will u marry : <input type='text' name='f2t1'/> <br>");
+			pw.println("Why will u marry : <input type='text' name='f2t2'/> <br>");
+			pw.println("<input type='submit' value='submit'/>");
+			pw.println("</form>");
+		}
+		pw.close();
+	}
+}
+
+TestSrv2.java
+----------
+package com.ihub.www;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+public class TestSrv2 extends HttpServlet 
+{
+	protected void doGet(HttpServletRequest req,HttpServletResponse res)throws ServletException,IOException
+	{
+		PrintWriter pw=res.getWriter();
+		res.setContentType("text/html");
+		
+		//reading form1 data from HttpSession
+		HttpSession session=req.getSession(false);
+		String name=(String)session.getAttribute("pname");
+		String fname=(String)session.getAttribute("pfname");
+		String ms=(String)session.getAttribute("pms");
+		
+		
+		//reading form 2 data
+		String val1=req.getParameter("f2t1");
+		String val2=req.getParameter("f2t2");
+		
+		pw.println("Form 1 Data : "+name+" "+fname+" "+ms+"<br>");
+		pw.println("Form 2 Data : "+val1+" "+val2+"<br>");
+		
+		pw.close();
+	}
+}
+
+Request url
+---------
+	http://localhost:8080/StatelessApp/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

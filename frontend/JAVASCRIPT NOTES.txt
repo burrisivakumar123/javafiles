@@ -1,0 +1,4882 @@
+Q)What is the difference between Java and JavaScript?
+
+Java					JavaScript
+---------				----------
+It is a non-scripting language.		It is a scripting language.
+
+We can run invidually.			We can't run individually.
+
+It does not required browser window 	It requires browser window execution.
+for execution.
+
+It is a object oriented programming	It is a object based programming language.
+language.
+
+It is a complex language.		It is a easy language.
+
+History of JavaScript
+=====================
+The original name of javascript is LiveScript.
+
+LiveScript was developed by Netscape Corporation in 1990.
+
+In 1995, Brenden Eich the popular scientist of Netscape Corporation renamed LiveScript to JavaScript.
+
+JavaScript is developed by using C language syntax's.
+
+The official name of JavaScript is ECMA script.
+
+ECMA stands for European Company Manufacturer Association.
+
+
+Advantages of JavaScript
+==========================
+1) It is a weakly typed checking language.
+
+2) It is used to perform client side form validation.
+
+3) It is used to develop interactive web pages.
+
+4) It is used to display dialog and pop-up boxes.
+
+5) It is used to add dynamic content to a web page.
+
+6) It supports Date and Time.
+
+7) It supports Drag and Drop menu.
+
+8) It supports objects like Arrays,Strings,RegEx and etc.
+
+9) It supports cookies and etc.
+
+and etc.
+
+syntax
+-------
+	<script type="text/javascript" language="javascript">
+		
+		-
+		- //code to be execute 
+		-
+		
+	</script>
+
+	Here type and language attribute is optional.
+
+
+Sublime Editor
+==============
+Download link : https://www.sublimetext.com/download
+
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script type="text/javascript" language="javascript">
+				document.writeln("Hello World");
+		</script>
+</body>
+</html>
+
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+				document.writeln("Hello World Javascript");
+		</script>
+</body>
+</html>
+
+ex:
+----
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+				document.writeln("Welcome to JavaScript");
+				document.writeln("This is ihub talent");
+		</script>
+</body>
+</html>
+
+We can't declare markup language inside scripting language directly.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+				document.writeln("Welcome to JavaScript");
+				<br>
+				document.writeln("This is ihub talent");
+		</script>
+</body>
+</html>
+o/p:
+	Error 
+
+To overcome this limitation we need to use below code.
+
+ex:
+----
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+				document.writeln("Welcome to JavaScript");
+				document.writeln("<br>");
+				document.writeln("This is ihub talent");
+		</script>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+				document.writeln("<h1>Welcome to JavaScript</h1>");
+				document.writeln("<br>");
+				document.writeln("<p style='color:red'>This is ihub talent</p>");
+		</script>
+</body>
+</html>
+
+If a document contains HTML,CSS and JavaScript is a called DHTML.
+
+DHTML stands for Dynamic HyperText Markup Language.
+
+
+Types of JavaScript 
+===================
+We have two types of javascript.
+
+1) Internal javascript 
+
+2) External javascript 
+
+
+
+1) Internal javascript 
+----------------------
+In internal javascript, we will maintain html code and javascript code in a .html file.
+
+Advantages:
+
+> There is a no confusion of multiple files.
+
+> We can understand HTML code and JavaScript easily.
+
+Disadvantage:
+
+> If code is increases then it will increase the confusion.
+
+
+2) External javascript
+----------------------
+In external javascript we will maintain HTML code in .html file and javascript code in .js file.
+
+Advantages:
+
+> If code is increases then it will not increase the confusion.
+
+> We can maintain HTML code and javscript code seperately.
+
+Disadvantages:
+
+> There is a confusion of multiple files.
+
+
+JavaScript Engine
+=================
+JavaScript engine allows javascipt code to execute in a browser window.
+
+It is used to converts user understandable scripting language to machine understandable scripting language.
+
+By default every browser contains javascript engine.
+
+We have following list of javascript engines.
+
+ex:
+	Browser 		JavaScript Engine
+	----------		------------------
+	Chrome 			V8 Engine 
+	Mozilla			Spider Monkey 
+	Edge			Chakra
+	and etc.	
+
+
+Comments in JavaScript
+=======================
+Comments are created for documentation purpose.
+
+Comments are used to improve readability of our code.
+
+According to javascript we have two types of comments.
+
+1) Single Line Comment 
+-----------------
+	It is used to comment a single line.
+	ex:
+		// comment here 
+
+2) Multiple line comment 
+--------------------
+	It is more convenient because we can comment single line as well as multiple lines.
+	ex:
+		/*
+			-
+			- comment here 
+			-
+		*/
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+			//display Hello World
+			document.writeln("Hello World");
+		</script>
+</body>
+</html>
+
+
+Output statement in JavaScript
+===============================
+We have following output statements in javascript.
+
+1) document.writeln() 
+
+2) console.log() 
+
+Output statement is used to display the data or userdefined statements.
+
+
+1) document.writeln() 
+---------------------
+It is used to display the output on browser window.
+
+ex:
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+				document.writeln("This is javascript output stmt");
+		</script>
+</body>
+</html>
+
+
+2) console.log()
+-------------
+It is used to display the output on browser console.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+				console.log("Output Stmt in JavaScript");
+		</script>
+</body>
+</html>
+
+
+Code Java interview Question
+==========================
+Q) Write a java program to display reverse of a given array?
+
+
+class Test 
+{
+	public static void main(String[] args)
+	{
+		char[] carr={'h','e','l','l','o'};
+
+		int j=carr.length-1;
+
+		for(int i=0;i<carr.length;i++,j--)
+		{
+				if(i<j)
+				{
+					char temp=carr[j];
+					carr[j]=carr[i];
+					carr[i]=temp;	
+				}
+
+				System.out.print(carr[i]+" ");
+		}
+
+	}
+}
+
+Types of variables in JavaScript
+================================
+A name which is given to a memory location is called variable.
+
+A variable is used to store the data.
+
+Javascript variables having same rules which are there for identifiers.
+
+Rule1:
+-----
+Javascript variable must and should starts with alphabet, underscore or dollar symbol but not with digits.
+ex:
+	var  emp123;
+	var  _empsal;
+	var  $alary;
+	var  1abcd; // invalid 
+
+Rule2:
+------
+Every javascript variable is a case sensitive.
+ex:
+	var  a;
+	var  A;
+
+In javascript we have two types of variables.
+
+1) Local variables 
+
+2) Global variables 
+
+
+1) Local variables 
+---------------------
+A variable which is declare inside the function or a block is called local variable.
+
+A local variable we can access within the function only.
+
+ex:1
+----
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+				function f1()
+				{
+					//local variable
+					var i=10;
+					document.writeln(i);
+				}
+				//calling
+				f1();
+		</script>
+</body>
+</html>
+
+ex:2
+----
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+				function f1()
+				{
+					//local variable
+					var i=10;
+					document.writeln(i+"<br>");
+				}
+				function f2()
+				{
+					document.writeln(i+"<br>");
+				}
+				//calling
+				f1();
+				f2();
+		</script>
+</body>
+</html>
+
+2) Global variables 
+--------------------
+A variable which is declare outside the function or a block is called global variable.
+
+Global variable we can access within the function and outside the function.
+
+ex:1
+------
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+			//global variable
+			var i=10;
+
+			function f1()
+			{
+				document.writeln(i+"<br>");
+			}	
+			//calling
+			f1();	
+		</script>
+</body>
+</html>
+
+ex:2
+-----
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+			//global variable
+			var i=10;
+
+			function f1()
+			{
+				document.writeln(i+"<br>");
+			}	
+			function f2()
+			{
+				document.writeln(i+"<br>");
+			}
+			//calling
+			f1();	
+			f2();
+		</script>
+</body>
+</html>
+
+
+JavaScript Datatypes
+=====================
+Datatype describes what type of value we want to store inside a variable.
+
+Javascript is a dynamically typed language so we should not declare datatype at the time of variable declaration.
+
+To declare a variable we will use "var" keyword.
+
+JavaScript engine will assignment perticular datatype based on the variable value.
+
+In javascript , we have two types of datatypes.
+
+1) Primitive Datatypes 
+
+2) Non-Primitive Datatypes 
+
+
+1) Primitive Datatypes
+----------------------
+We have following list of primitive datatypes.
+ex:
+	datatype		description
+	--------		------------
+	number			It is used to represent numbers
+	string			It is used to represent strings
+	boolean			It is used to represent booleans
+	undefined		It is used to represent undefined
+	null			It is used to represent null
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+			var i=10;
+			document.writeln(i+"<br>");
+
+			var j=10.56;
+			document.writeln(j+"<br>");
+		</script>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+			var i='Ihub';
+			document.writeln(i+"<br>");
+
+			var j="Talent";
+			document.writeln(j+"<br>");
+		</script>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+			var i=true;
+			document.writeln(i+"<br>");
+
+			var j=false;
+			document.writeln(j+"<br>");
+		</script>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+			var i;
+			document.writeln(i+"<br>"); //undefined
+
+			var j=null;
+			document.writeln(j+"<br>"); //null
+
+		</script>
+</body>
+</html>
+
+
+2) Non-Primitive Datatypes
+--------------------------
+We have following list of non-primitive datatypes.
+
+ex:
+	datatype		description
+	--------		------------
+	Object			It is used to create an instance through which we can access the 
+				members.
+	
+	Arrays			It is used to represent similar elements.
+
+	RegEx			It is used to represent regular expression.
+
+
+JavaScript Operators
+====================
+Operator is a symbol which is used to perform some operations on operands.
+ex:
+	c = a + b;
+
+	Here = and + are operators.
+	Here a,b and c are operands.
+
+We have following list of operators in javascript.
+
+1) Arithmetic operators 
+
+2) Conditional operators 
+
+3) Logical operators 
+
+4) Bitwise operators 
+
+5) Assignment operators
+
+6) Special operators 
+
+1) Arithmetic operators
+------------------------
+We have following list of arithmetic operators.
+ex:
+	operator		description
+	---------		----------
+	%			modules
+	/			division
+	*			multiplication
+	+			addition
+	-			subtraction
+	++			incrementation 
+	--			decrementation
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+			document.writeln((10 + 10)+"<br>"); //20
+
+			document.writeln((10 - 20)+"<br>"); //-10
+
+			document.writeln((10 / 2)+"<br>"); //5
+
+			document.writeln((10 / 20 )+"<br>"); //0.5
+
+			document.writeln((10 % 2)+"<br>"); //0
+
+			document.writeln((10 % 20)+"<br>"); //10
+		</script>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+			var i=10;
+
+			document.writeln(i++ * 3);
+			
+		</script>
+</body>
+</html>
+
+
+ex:
+--
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+			var i=13;
+
+			document.writeln(i++ + ++i);//28
+
+		</script>
+</body>
+</html>
+
+ex:
+----
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+			var i=13;
+
+			--i;
+
+			document.writeln(i-- + --i);// 22
+
+		</script>
+</body>
+</html>
+
+2) Conditional operators 
+------------------------
+We have following list of conditional operators.
+
+ex:
+	operator		description
+	-------			------------
+	<			less than 
+	<=			less than equals to 
+	>			greater than
+	>=			greater then equals to 
+	==			equals to 
+	!= 			not equals to 
+
+ex:
+----
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+			
+			document.writeln((10<20)+"<br>");//true 
+			document.writeln((10>20)+"<br>");//false
+			document.writeln((10<=10)+"<br>");//true
+			document.writeln((10>=20)+"<br>");//false
+
+
+		</script>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+			
+			document.writeln((10 == 10)+"<br>");//true 
+			document.writeln((10 == 20)+"<br>");//false
+			document.writeln((10 != 10)+"<br>");//false
+			document.writeln((10 != 20)+"<br>");//true 
+
+
+		</script>
+</body>
+</html>
+
+
+Q) Write a java program to perform sum of two numbers?
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+			
+			var a=10, b=20;
+
+			var c = a + b;
+
+			document.writeln("sum of two numbers is = "+c);
+			
+		</script>
+</body>
+</html>
+
+3) Logical operators
+--------------------
+We have following list of logical operators.
+
+ex:
+	operator		description
+	---------		-----------
+	&&			Logical AND 
+	||			Logical OR 
+	!			Logical NOT
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+			var i = (5>2) && (6<10);
+			document.writeln(i+"<br>");//true 
+
+			var j = (5>20) && (6<10);
+			document.writeln(j+"<br>");//false 
+
+		</script>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+			var i = (5>20) || (6<10);
+			document.writeln(i+"<br>");//true 
+
+			var j = (5>20) || (60<10);
+			document.writeln(j+"<br>");//false 
+
+		</script>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+			var i = !(5>10);
+			document.writeln(i+"<br>");//true 
+
+			var j = !(5>2);
+			document.writeln(j+"<br>");//false 
+
+		</script>
+</body>
+</html>
+
+4) Bitwise operators
+====================
+We have following list of bitwise operators.
+ex:
+	operator		description 
+	----------		-----------
+	&			Bitwise AND 
+	|			Bitwise OR 
+	^			Bitwise XOR 
+	~			Bitwise NOT
+	>>			Right Shift
+	<<			Left Shift 
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+			var a=10,b=5;
+			var c = a & b;
+			document.writeln(c);//0
+
+			/*
+				10 - 1010
+				5  - 0101
+				----------
+				&  - 0000
+			*/
+		</script>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+			var a=10,b=5;
+			var c = a | b;
+			document.writeln(c);//15
+
+			/*
+				10 - 1010
+				5  - 0101
+				----------
+				|  - 1111
+			*/
+		</script>
+</body>
+</html>
+
+ex:
+----
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+			var a=10,b=15;
+			var c = a ^ b;
+			document.writeln(c);//5
+
+			/*
+				10 - 1010
+				15 - 1111
+				----------
+				^  - 0101
+			*/
+		</script>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+			var a = ~10;
+
+			document.writeln(a);//-11
+		</script>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+			var a = ~23;
+
+			document.writeln(a);//-24
+		</script>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+			var a = ~(-9);
+
+			document.writeln(a);//8
+		</script>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+			var i=10>>4;
+			document.writeln(i);//0
+		</script>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+			var i=100 >> 4; // 100/16
+			document.writeln(i);//6
+		</script>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+			var i=10 << 3;
+			document.writeln(i);//80
+		</script>
+</body>
+</html>
+
+
+5) Assignment operators
+========================
+We have following list of assignment operators.
+
+ex:
+	operator	description
+	-------		-----------
+	+=		addition and equals to 		
+	-=		subtraction and equals to 
+	*=		multiplication and equals to 
+	/=		division and equals to 
+	%=		modules and equals to 
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+			var i=10;
+
+			i+=5;
+
+			document.writeln(i);//15
+		</script>
+</body>
+</html>
+	
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+			var i=10;
+
+			i-=5;
+
+			document.writeln(i);//5
+		</script>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+			var i=10;
+
+			i*=5;
+
+			document.writeln(i);//50
+		</script>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+			var i=10;
+
+			i/=5;
+
+			document.writeln(i);//2
+		</script>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+			var i=10;
+
+			i%=5;
+
+			document.writeln(i);//0
+		</script>
+</body>
+</html>
+
+
+6)Special operators
+--------------------
+We have following list of special operators.
+
+ex:
+	operator	description
+	--------	------------
+	?:		conditonal operator 
+	new 		It is used to create a instance 
+	typeof		It is used return type of an instance.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+			(1)?document.writeln("Hi"):document.writeln("Bye");// Hi
+		</script>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+			(0)?document.writeln("Hi"):document.writeln("Bye");//Bye
+		</script>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+			(-1)?document.writeln("Hi"):document.writeln("Bye");//Hi
+		</script>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+			(5>2)?document.writeln("Hi"):document.writeln("Bye");
+		</script>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+			((5>2) && (6<1))?document.writeln("Hi"):document.writeln("Bye");
+		</script>
+</body>
+</html>
+
+ex:
+----
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+			(10 >> 6)?document.writeln("Hi"):document.writeln("Bye");
+		</script>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+			var a=10;
+			document.writeln(typeof(a)+"<br>");
+
+			var b=true;
+			document.writeln(typeof(b)+"<br>");
+
+			var c="bye";
+			document.writeln(typeof(c)+"<br>");
+
+			var d=null;
+			document.writeln(typeof(d)+"<br>");
+
+			var e;
+			document.writeln(typeof(e)+"<br>");
+
+		</script>
+</body>
+</html>
+
+
+
+Q) Write a javascript program to find out greatest of two numbers?
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+			var a=5,b=10;
+			(a>b)?document.writeln(a+" is greatest"):document.writeln(b+" is greatest");
+
+		</script>
+</body>
+</html>
+
+or
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+			var val1=prompt("Enter the first number :");
+			var val2=prompt("Enter the second number :");
+
+			//convert string inputs to number type 
+			var a=parseInt(val1);
+			var b=parseInt(val2);
+
+			(a>b)?document.writeln(a+" is greatest"):document.writeln(b+" is greatest");
+
+		</script>
+</body>
+</html>
+
+JavaScript If ELSE STMT
+=======================
+We have three forms of JavaScript IF ELSE STMT.
+
+1) IF STMT 
+
+2) IF ELSE STMT 
+
+3) IF ELSE IF STMT 
+
+1) IF STMT 
+-----------
+It will evaluate the code only if our condition is true.
+
+syntax:
+-----
+	if(condition)
+	{
+		-
+		- //code to be execute 
+		-
+	}
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+			if(5,4,3,2,1,0)
+			{
+				document.writeln("Hello"); //nothing 
+			}
+		</script>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+			if(0,1,2,3,4,5)
+			{
+				document.writeln("Hello"); //Hello
+			}
+		</script>
+</body>
+</html>
+
+Q) Write a java program to find out greatest of two numbers?
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+			var a=10, b=5;
+
+			if(a>b)
+				document.writeln(a+" is greatest");
+
+			if(b>a)
+				document.writeln(b+" is greatest");
+		</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+2) IF ELSE STMT 
+-----------------
+It will evaluate the code either our condition is true or false.
+
+syntax:
+	if(condition)
+	{
+		-
+		- //code to be execute if cond is true 
+		-
+	}
+	else
+	{
+		-
+		- //code to be execute if cond is false 
+		-
+	}
+	
+ex:
+---
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+			if(!(5>2))
+			{
+				document.writeln("Yes");
+			}
+			else
+			{
+				document.writeln("No");
+			}
+		</script>
+</body>
+</html>
+
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+			if(!false)
+			{
+				document.writeln("Yes");
+			}
+			else
+			{
+				document.writeln("No");
+			}
+		</script>
+</body>
+</html>
+
+
+Q) Write a javascript program to check given number is even or odd?
+
+ex:
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+			var val=prompt("Enter the number :");
+			var n=parseInt(val);
+			if(n%2==0)
+				document.writeln("It is even number");
+			else
+				document.writeln("It is odd number ");
+		</script>
+</body>
+</html>
+
+
+3) IF ELSE IF STMT 
+------------------
+It will evaluate the code based on multiple conditions.
+
+syntax:
+-----
+	if(cond1)
+	{		
+		- //code to be execute if cond1 is true 
+	}
+	else if(Cond2)
+	{
+		- //code to be execute if cond2 is true 	
+	}
+	else if(cond3
+	{
+		- //code to be execute if cond3 is true 
+	}
+	else
+	{
+		- //code to be execute if all conditions are false.
+	}
+
+ex:
+===
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+			var ch='t';
+			if(ch=='a')
+				document.writeln("It is a vowel");
+			else if(ch=='e')
+				document.writeln("It is a vowel");
+			else if(ch=='i')
+				document.writeln("It is a vowel");
+			else if(ch=='o')
+				document.writeln("It is a vowel");
+			else if(ch=='u')
+				document.writeln("It is a vowel");
+			else
+				document.writeln("It is not a vowel");
+		</script>
+</body>
+</html>
+
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+			var opt=prompt("Enter the option ");
+			if(opt==100)
+				document.writeln("It is police number");
+			else if(opt==103)
+				document.writeln("It is enquiry number");
+			else if(opt==108)
+				document.writeln("It is emergency number");
+			else
+				document.writeln("Invalid option");
+		</script>
+</body>
+</html>
+
+JavaScript Switch
+==================
+It will evalute the code based on multiple conditions.
+
+It is similar to if else if statement.
+
+Javascript switch is more convenient because we can pass numbers, strings, characters and etc.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+			var n=103;
+
+			switch(n)
+			{
+				case 100 : document.writeln("It is police number"); break;
+				case 103 : document.writeln("It is enquiry number"); break;
+				case 108 : document.writeln("It is emergency number"); break;	
+				default: document.writeln("invalid option");
+			}
+
+		</script>
+</body>
+</html>
+
+ex:
+--
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+			var n=10.3;
+
+			switch(n)
+			{
+				case 10.1 : document.writeln("stmt1"); break;
+				case 10.2 : document.writeln("stmt2"); break;
+				case 10.3 : document.writeln("stmt3"); break;	
+				default: document.writeln("Not Found");
+			}
+
+		</script>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+			var ch='e';
+
+			switch(ch)
+			{
+				case 'a' : document.writeln("It is a vowel"); break;
+				case 'e' : document.writeln("It is a vowel"); break;
+				case 'i' : document.writeln("It is a vowel"); break;
+				case 'o' : document.writeln("It is a vowel"); break;
+				case 'u' : document.writeln("It is a vowel"); break;
+				default: document.writeln("It is not a vowel");
+			}
+
+		</script>
+</body>
+</html>
+
+
+
+JavaScript LOOPS
+================
+LOOPS are used to execute the code repeatedly.
+
+we have  four types of loops.
+
+1) do while loop
+
+2) while loop
+
+3) for loop
+
+4) for in loop 
+
+1) do while loop
+-----------------
+It will evaluate the code untill our condition is true.
+
+syntax:
+	do
+	{
+		-
+		- //code to be evaluate 
+		-	
+	}while(condition);
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+			var i=1;
+			do
+			{
+				document.writeln(i);
+
+				i++;
+				
+			}while(i<=10);
+		</script>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+			var i=11;
+			do
+			{
+				document.writeln(i); //11
+
+				i++;
+
+			}while(i<=10);
+		</script>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+			var i=1,sum=0;
+			do
+			{
+				sum+=i;
+
+				i++;
+
+			}while(i<=10);
+
+			document.writeln(sum);
+		</script>
+</body>
+</html>
+
+
+2) while loop
+-------------
+It will evaluate the source code untill our condition is true.
+
+syntax:
+-------
+	while(condition)
+	{
+		-
+		- //code to be evaluate 
+		-
+	}
+
+ex:
+----
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+			var i=1;
+
+			while(i<=10)
+			{
+					document.writeln(i);  //1 2 3 4 5 6 7 8 9 10
+
+					i++;
+			}
+		</script>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+			var i=1, n=5;
+
+			while(i<=10)
+			{
+					document.writeln(n+" * "+i+" = "+n*i+"<br>");  
+					i++;
+			}
+		</script>
+</body>
+</html>
+
+
+3) for loop
+----------
+It will evaluate the code untill our condition is true.
+
+syntax:
+------
+	for(initializatoin ; condition ; incrementation/decrementation)
+	{
+		-
+		- //code to be evaluate 
+		-
+	}
+ex:
+----
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+			for(var i=1;i<=10;i++)
+			{
+				document.writeln(i); // 1 3 5 7 9 
+				i++;
+			}
+		</script>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+			for(var i=10;i>=1;i--)
+			{
+				document.writeln(i); //infinite 10
+
+				i++;
+			}
+		</script>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+			var n=5,fact=1;
+
+			for(var i=n;i>=1;i--)
+			{
+				fact*=i;
+			}
+			document.writeln(fact);
+		</script>
+</body>
+</html>
+
+
+Assignment
+==========
+Q) Write a javascript program to display reverse of  given number?
+
+input:
+	123
+
+output:
+	321
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+			var n=123;
+			var rem,rev=0;
+			while(n>0)
+			{
+				rem=n%10;
+				rev=rev*10+rem;
+				n=parseInt(n/10);
+			}
+			document.writeln(rev);
+		</script>
+</body>
+</html>
+
+
+
+4) for in loop 
+--------------
+It is used to iterate the elements from array.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+			var  arr=[10,20,30];
+
+			for(var i in arr)
+			{
+				document.writeln(arr[i]);
+			}
+		</script>
+</body>
+</html>
+
+ex:
+----
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+			var  arr=['a','b','c'];
+
+			for(var i in arr)
+			{
+				document.writeln(arr[i]);
+			}
+		</script>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+			var  arr=["hi","hello","bye"];
+
+			for(var i in arr)
+			{
+				document.writeln(arr[i]);
+			}
+		</script>
+</body>
+</html>
+
+
+JavaScript Functions
+====================
+JavaScript functions are block of code which is used to perform perticular task.
+
+Javascript function must declare using function keyword followed by a name and paranthesis i.e ().
+
+Javascript function contains alphabets, underscore , dollar symbol same like javascript variables.
+
+Javascript function contains parameters and each parameter seperated with comma.
+
+syntax:
+	function <function_name>
+	{
+		-
+		- //code to be evaluate 
+		-
+	}
+
+Functions are executed when we invoke or when event occurs.
+
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+			function f1()
+			{
+				document.writeln("This is my first function");
+			}
+
+			f1();
+		</script>
+</body>
+</html>
+
+ex:
+----
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+			function f1()
+			{
+				document.bgColor="#FFFF00";
+			}
+
+			f1();
+		</script>
+</body>
+</html>
+
+ex:
+----
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<button onclick="f1()"> click here </button>
+		<script>
+			function f1()
+			{
+				document.writeln("This is my second function");
+			}
+		</script>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+
+		<script>
+			function f1(i,j)
+			{
+				document.writeln(i+" "+j);
+			}
+
+			f1(10,20);
+
+		</script>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+
+		<script>
+			function f1(i,j)
+			{
+				return i+j;
+			}
+
+			document.writeln(f1(10,20));
+
+		</script>
+</body>
+</html>
+
+Every function is a case sensitive.
+
+ex:
+---
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+
+		<script>
+			function f1()
+			{
+				document.writeln("Hello");
+			}
+
+			F1();// F1 is not defined 
+
+		</script>
+</body>
+</html>
+
+One function can call another function also.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+
+		<script>
+			function f1()
+			{
+				document.writeln("stmt1");
+				f2();
+			}
+			function f2()
+			{
+				document.writeln("stmt2");
+			}
+
+			f1();
+
+		</script>
+</body>
+</html>
+
+Interview Questions
+====================
+Q) What is the difference between == and === ? 
+
+==
+---
+It is used to compare two values.
+
+ex:
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>	
+			document.writeln((10 == 10)+"<br>"); // true 
+			document.writeln((10 == "10")+"<br>"); // true 
+			document.writeln((0 == false)+"<br>"); // true 
+			document.writeln((1 == true)+"<br>"); //true 
+		</script>
+</body>
+</html>	
+
+===
+-----
+It is used to check values and datatypes are same or not.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>	
+			document.writeln((10 === 10)+"<br>"); // true 
+			document.writeln((10 === "10")+"<br>"); // false 
+			document.writeln((0 === false)+"<br>"); // false 
+			document.writeln((1 === true)+"<br>"); //false
+		</script>
+</body>
+</html>
+
+
+
+
+Q) How many functions are there in javascript ?
+
+We have three types of functions in javascript.
+
+1) Named Function 
+
+2) Anonymous Function 
+
+3) Arrow Function 
+
+
+
+1) Named Function 
+-----------------
+These types of functions contains name at the time of definition.
+
+ex:
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+
+		<script>
+			
+			function f1()
+			{
+				document.writeln("Named Function");
+			}	
+
+			f1();
+
+		</script>
+</body>
+</html>
+
+
+2) Anonymous Function 
+---------------------
+These types of functions don’t contain any name.
+They are declared dynamically at runtime.
+
+ex:
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+
+		<script>
+			
+			var f1=function()
+			{
+				document.writeln("Anonymous Function");
+			}
+
+			f1();	
+		</script>
+</body>
+</html>
+
+3) Arrow Function 
+------------------
+According to ES6 standard we need to use arrow function.
+
+Arrow functions are more secured when compare to named function and anonymous function.
+
+ex:
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+
+		<script>
+			
+			var f1=()=>
+			{
+				document.writeln("Arrow Function");
+			}
+
+			f1();
+
+		</script>
+</body>
+</html>
+
+
+Q) What is JavaScript Closure?
+
+Javascript closure is a functions bundled together along with lexical scope.
+
+Javascript closure is create automatically whenever function is created.
+
+In general, javascript closure means we can access outer function data in a inner function.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+
+		<script>
+			//lexical scope
+			var a=10;
+
+			function f1()
+			{
+				//lexical scope 
+				var b=20;
+
+				function f2()
+				{
+					document.writeln(a+" "+b);
+				}
+
+				//calling
+				f2();
+			}
+
+			//calling 
+			f1();
+
+		</script>
+</body>
+</html>
+
+
+JavaScript Objects
+==================
+A javascript object is an entity which is having state and behaviours.
+
+In general, javascript object is a collection of properties and functions.
+
+Javascript is a object based language because everything is present in objects.
+
+Javascript is a template based but not class based.We don't need to create a class to get the object.We can create object directly.
+
+There are three ways to create javascript objects.
+
+There are three ways to create objects in javascript.
+
+1) By using object literal
+
+2) By creating instance of an object i.e using new operator 
+
+3) By using object constructor  i.e using new operator 
+
+
+1) By using object literal
+--------------------------
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+
+		<script>
+			
+				emp={
+					eid:101,
+					ename:"Alan",
+					esal:10000
+				};
+				document.writeln("Employee Id :"+emp.eid+"<br>");
+				document.writeln("Employee Name :"+emp.ename+"<br>");
+				document.writeln("Employee Salary :"+emp.esal+"<br>");
+
+		</script>
+</body>
+</html>
+
+2) By creating instance of an object
+-------------------------------------
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+
+		<script>
+				var emp=new Object();
+				emp.eid=201;
+				emp.ename="Jack";
+				emp.esal=20000;
+				
+				document.writeln("Employee Id :"+emp.eid+"<br>");
+				document.writeln("Employee Name :"+emp.ename+"<br>");
+				document.writeln("Employee Salary :"+emp.esal+"<br>");
+
+		</script>
+</body>
+</html>
+
+3) By using object constructor  
+----------------------------------
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+
+		<script>
+				function emp(eid,ename,esal)
+				{
+					this.eid=eid;
+					this.ename=ename;
+					this.esal=esal;
+				}
+				var e=new emp(301,"Lara",30000);
+				
+				document.writeln("Employee Id :"+e.eid+"<br>");
+				document.writeln("Employee Name :"+e.ename+"<br>");
+				document.writeln("Employee Salary :"+e.esal+"<br>");
+
+		</script>
+</body>
+</html>
+
+
+JavaScript Arrays
+=================
+In javascript , Array is an object which contains similar elements.
+
+Array index always starts with '0' because it is a logical process.
+
+There are three ways to create an array in javascript.
+
+1)By using array literal
+
+2)By creating instance of an array i.e using new operator.
+
+3)By creating array constructor i.e using new operator.
+
+
+1) Using array Literal 
+----------------------
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+
+		<script>
+				var arr=[10,20,30];
+
+				for(var i in arr)
+				{
+					document.writeln(arr[i]);
+				}
+
+		</script>
+</body>
+</html>
+
+2) By creating instance of an array 
+-------------------------------------
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+
+		<script>
+				var arr=new Array();
+				arr[0]=10;
+				arr[1]=20;
+				arr[2]=30;
+				arr[3]=40;
+
+				for(var i in arr)
+				{
+					document.writeln(arr[i]);
+				}
+
+		</script>
+</body>
+</html>
+
+3) By creating array constructor
+-------------------------------
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+
+		<script>
+				var arr=new Array(10,20,30,40,50,60);
+
+				for(var i in arr)
+				{
+					document.writeln(arr[i]);
+				}
+
+		</script>
+</body>
+</html>
+
+
+JavaScript Strings
+=================
+In javascript , string is an object which contains collection of characters.
+
+There are two ways to create a string in javascript.
+
+1)By using string literal
+
+2)By creating instance of a string.
+
+
+1) Using string literal
+-----------------------
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+
+		<script>
+			var str="ihubtalent";
+			document.writeln(str);		
+
+		</script>
+</body>
+</html>
+
+
+2) By creating instance of a string
+-----------------------------------
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+
+		<script>
+			var str=new String("bhaskar");
+			document.writeln(str);		
+
+		</script>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+
+		<script>
+			var str1="bhaskar";
+			document.writeln(str1.length+"<br>");	//7
+
+			var str2="bhaskar";
+			document.writeln(str2.toUpperCase()+"<br>");//BHASKAR
+
+			var str3="BHASKAR";
+			document.writeln(str3.toLowerCase()+"<br>");//bhaskar
+
+			var str4="bhaskar";
+			document.writeln(str4.charAt(1)+"<br>");
+			
+		</script>
+</body>
+</html>
+
+Interview Programs
+==================
+
+Q) Write a javascript program to display reverse of a string ?
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+
+		<script>
+			
+			var str="hello";
+			var carr=str.split('');
+			for(var i=carr.length-1;i>=0;i--)
+			{
+				document.writeln(carr[i]);
+			}
+
+		</script>
+</body>
+</html>
+
+
+Q) Write a javascript program to perform sum of array elements?
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+
+		<script>
+			
+			var arr=[10,20,30,40];
+
+			var sum=0;
+
+			for(var i in arr)
+			{
+				sum+=arr[i];
+			}
+
+			document.writeln(sum);
+		</script>
+</body>
+</html>
+
+
+Q) Write a javascript program to display below loop pattern?
+
+*
+* * 
+* * * 
+* * * * 
+
+ex:
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+
+		<script>
+			
+			for(var i=1;i<=4;i++)
+			{
+				for(var j=1;j<=i;j++)
+				{
+					document.writeln("*");
+				}
+				//new line
+				document.writeln("<br>");
+			}
+		</script>
+</body>
+</html>
+
+BOM - (Browser Object Model)
+============================
+Browser object model is used interact with browser window.
+
+A default object for every browser is window object.
+
+It means we can call all the functions of window directly or using window.
+
+ex:
+	alert("Hello World");
+
+	or
+
+	window.alert("Hello World");
+
+
+window object
+==============
+It is used to create a window in a browser.
+
+Every browser contains window object.
+
+It is not a object of javascript.It is an object of browser.
+
+Javscript objects are Arrays,Strings,Date,RegEx and etc.
+
+It is used to perform browser related programming.
+
+We can use window object to perform following task.
+
+1) We can display dialog boxes and pop-up boxes.
+
+2) It is used to determine width and hight of the window.
+
+3) We can add scroll to browser window.
+
+4) Open and close the window.
+
+5) We can achieve Javascript history.
+
+and etc.
+
+We have following list of functions present in window object.
+
+1) alert() 
+-----------
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>	
+			function f1()
+			{
+				alert("Yahoo! you have clicked");
+			}
+		</script>
+
+		<button onclick="f1()"> clickMe </button>
+</body>
+</html>
+
+
+2) prompt()
+------------
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>	
+			function f1()
+			{
+				var name=prompt("Enter the Name :");
+				alert("Welcome :"+name);
+			}
+		</script>
+
+		<button onclick="f1()"> Insert Data </button>
+</body>
+</html>
+
+
+
+3) confirm() 
+------------
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>	
+			function f1()
+			{
+				var v=confirm("R u sure ?");
+				if(v==true)
+				{
+					alert("ok");
+				}
+				else
+				{
+					alert("cancel");
+				}
+			}
+		</script>
+
+		<button onclick="f1()"> Delete </button>
+</body>
+</html>
+
+
+
+4) innerWidth and innerHeight
+------------------------------
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>	
+				var w=window.innerWidth;
+				var h=window.innerHeight;
+				document.writeln("Width :"+w+"<br>");	
+				document.writeln("Height :"+h+"<br>");
+		</script>
+
+		
+</body>
+</html>
+
+
+
+5) open()
+-----------
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>	
+				function f1()
+				{
+					open("http://www.google.com");
+				}
+		</script>
+
+		<button onclick="f1()"> Open </button>
+</body>
+</html>
+
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>	
+				function f1()
+				{
+					open("http://www.google.com","_self");
+				}
+		</script>
+
+		<button onclick="f1()"> Open </button>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>	
+				function f1()
+				{
+					open("http://www.google.com","_blank");
+				}
+		</script>
+
+		<button onclick="f1()"> Open </button>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>	
+				function f1()
+				{
+					open("http://www.google.com","_blank","width=100px,height=100px");
+				}
+		</script>
+
+		<button onclick="f1()"> Open </button>
+</body>
+</html>
+
+
+
+
+6) close()
+---------
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>	
+				var myId;
+
+				function f1()
+				{
+			myId=open("http://www.ihubtalent.com","_blank","width=100px,height=100px");
+				}
+				function f2()
+				{
+					myId.close();
+				}
+		</script>
+
+		<button onclick="f1()"> Open </button>
+
+		<button onclick="f2()"> Close </button>
+</body>
+</html>
+
+
+
+
+7) moveTo()
+-----------
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>	
+				var myId;
+
+				function f1()
+				{
+			myId=open("http://www.ihubtalent.com","_blank","width=100px,height=100px");
+				}
+				function f2()
+				{
+					myId.close();
+				}
+
+				function f3()
+				{
+					myId.moveTo(200,100);
+				}
+		</script>
+
+		<button onclick="f1()"> Open </button>
+
+		<button onclick="f2()"> Close </button>
+
+		<button onclick="f3()"> Move To </button>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+8) moveBy()
+------------
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>	
+				var myId;
+
+				function f1()
+				{
+			myId=open("","_blank","width=100px,height=100px");
+				}
+				function f2()
+				{
+					myId.close();
+				}
+
+				function f3()
+				{
+					myId.moveBy(100,100);
+				}
+		</script>
+
+		<button onclick="f1()"> Open </button>
+
+		<button onclick="f2()"> Close </button>
+
+		<button onclick="f3()"> Move Bye </button>
+</body>
+</html>
+
+
+
+
+9) setTimeout()
+---------------
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>	
+				function f1()
+				{
+					setTimeout(function(){
+						alert("Yahoo! This is javscript class");
+					},4000);
+				}
+		</script>
+
+		<button onclick="f1()"> start </button>
+</body>
+</html>
+
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>	
+				function f1()
+				{
+					setTimeout(Anim,5000);
+				}
+				function Anim()
+				{
+					alert("This is settimeout function");
+				}
+		</script>
+
+		<button onclick="f1()"> start </button>
+</body>
+</html>
+
+
+
+
+
+
+
+10) clearTimeout()
+------------------
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+				var myId;	
+				function f1()
+				{
+					myId=setTimeout(Anim,5000);
+				}
+				function Anim()
+				{
+					alert("This is settimeout function");
+				}
+				function f2()
+				{
+					clearTimeout(myId);
+				}
+		</script>
+
+		<button onclick="f1()"> start </button>
+
+		<button onclick="f2()"> stop </button>
+</body>
+</html>
+
+
+
+
+11) setInterval() 
+-----------------
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+	<style>
+		div
+		{
+			width:200px;
+			height: 200px;
+			background-color: red;
+		}
+	</style>
+</head>
+<body>
+		<script type="text/javascript">
+				var a=0;
+				setInterval(function(){
+
+				var target=document.getElementById('myId');	
+
+				a = a + 10;
+
+				target.style.marginLeft=a+"px";	
+
+
+				},1000);		
+
+		</script>
+		<div id="myId"></div>
+
+</body>
+</html>
+
+
+
+12) clearInterval() 
+-------------------
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+	<style>
+		div
+		{
+			width:200px;
+			height: 200px;
+			background-color: red;
+		}
+	</style>
+</head>
+<body>
+		<script type="text/javascript">
+				var a=0;
+				var myId=setInterval(Anim,1000);
+
+				function Anim()
+				{
+					var target=document.getElementById("myId");
+					a = a + 10;
+					if(a==100)
+					{
+						clearInterval(myId);
+					}
+					target.style.marginLeft=a+"px";	
+				}	
+
+				
+
+		</script>
+		<div id="myId"></div>
+
+	
+
+</body>
+</html>
+
+window history
+===============
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+	<style>
+		a 
+		{
+			text-decoration: none;
+			font-size:40px;
+			color:violet;
+		}
+	</style>
+</head>
+<body>
+		<a href="javascript:history.back()"> Previous </a>
+		&nbsp;&nbsp;
+		<a href="javascript:history.forward()"> Next </a>
+</body>
+</html>
+
+
+localStorage
+=============
+A localStorage properties allows us to save key/value pairs in a browser window.
+
+A localStorage allows us to store the data with no-expiry.It means our data will not be 
+delete even if we close the browser.It will be present for next day.
+
+A localStorage is a read-only.
+
+To add the data in a localStorage we need to use setItem(key,value) function.
+
+To read the data from localStorage we need to use getItem(key) function.
+
+To remove perticular data from localStorage we need to use removeItem(key) function.
+
+To remove all the data from localStorage we need to use clear() function.
+
+ex:
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+				localStorage.setItem("name","Alan");
+				localStorage.setItem("age",32);
+
+				document.writeln(localStorage.getItem("name")+"<br>");
+				document.writeln(localStorage.getItem("age")+"<br>");
+
+				localStorage.removeItem("age");
+				document.writeln(localStorage.getItem("name")+"<br>");
+				document.writeln(localStorage.getItem("age")+"<br>");
+
+				localStorage.clear();
+				document.writeln(localStorage.getItem("name")+"<br>");
+				document.writeln(localStorage.getItem("age")+"<br>");
+
+
+		</script>
+</body>
+</html>
+
+
+
+sessionStorage
+==============
+A sessionStorage properties allows us to save key/value pair in a browser window.
+
+A sessionStorage store the data with respect to one session.It means our data will be deleted
+once if we close the browser window.
+
+To add the data in a sessionStorage we need to use setItem(key,value) function.
+
+To read the data from sessionStorage we need to use getItem(key) function.
+
+To remove perticular data from sessionStorage we need to use removeItem(key) function.
+
+To remove all the data from sessionStorage we need to use clear() function.
+
+ex:
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+				sessionStorage.setItem("name","Jose");
+				sessionStorage.setItem("age",45);
+
+				document.writeln(sessionStorage.getItem("name")+"<br>");
+				document.writeln(sessionStorage.getItem("age")+"<br>");
+
+				sessionStorage.removeItem("name");
+				document.writeln(sessionStorage.getItem("name")+"<br>");
+				document.writeln(sessionStorage.getItem("age")+"<br>");
+
+				sessionStorage.clear();
+				document.writeln(sessionStorage.getItem("name")+"<br>");
+				document.writeln(sessionStorage.getItem("age")+"<br>");
+
+		</script>
+</body>
+</html>
+
+
+
+DOM - Document Object Model
+============================
+Whenever HTML document loaded in a browser window then it becomes DOM.
+
+DOM is used to convert our HTML document to tree node structure.
+
+A document is a root node for our entire HTML document.
+
+DOM always looks for tree nodes.
+
+1) Element node 
+
+2) Attribute node 
+
+3) Text node 
+
+Diagram: frontend23.1
+
+Using document object we can add dynamic content to web page.
+
+A document is a property of window. It means we can call the document director or using window.
+ex:
+	document.write();
+
+	or
+
+	window.document.write();
+
+A document object contains following methods.
+
+
+1) document.write()
+--------------------
+It is used to display data or custom messages without space.
+
+ex:
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+				document.write("Ihub");
+				document.write("Talent");
+
+		</script>
+</body>
+</html>
+
+
+2) document.writeln()
+----------------------
+It will display the output with space at last.
+
+ex:
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+				document.writeln("Ihub");
+				document.writeln("Talent");
+
+		</script>
+</body>
+</html>
+
+
+3) document.getElementById()
+----------------------------
+It is used to read the elements based on id.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		Name: <input type="text" id="t1"/> 
+		<button onclick="f1()"> submit </button>
+
+		<script>
+			function f1()
+			{
+				var name=document.getElementById('t1').value;
+				document.writeln("Welcome :"+name);
+			}
+		</script>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		Name: <input type="text" id="t1"/> 
+		<button onclick="f1()"> submit </button>
+		<br><br>
+		<div id="result"></div>
+
+		<script>
+			function f1()
+			{
+				var name=document.getElementById('t1').value;
+				document.getElementById('result').innerHTML="Welcome :"+name;
+			}
+		</script>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		Name: <input type="text" id="t1"/> 
+		<button onclick="f1()"> submit </button>
+
+
+		<script>
+			function f1()
+			{
+				var val=document.getElementById('t1').tagName;
+				document.writeln(val);
+			}
+		</script>
+</body>
+</html>
+
+
+Javascript program to perform sum of two numbers
+=================================================
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<table align="center">
+			<tr>
+				<td>No1:</td>
+				<td><input type="text" id="t1"/></td>
+			</tr>
+			<tr>
+				<td>No2:</td>
+				<td><input type="text" id="t2"/></td>
+			</tr>
+			<tr>
+				<td>&nbsp;</td>
+				<td><button onclick="f1()">ADD</button></td>
+			</tr>
+			<tr>
+				<td>Result:</td>
+				<td><input type="text" id="t3"/></td>
+			</tr>	
+		</table>
+
+		<script>
+			function f1()
+			{
+				var a=parseInt(document.getElementById('t1').value);
+				var b=parseInt(document.getElementById('t2').value);
+				var c=a+b;
+				document.getElementById('t3').value=c;
+			}
+		</script>
+</body>
+</html>
+
+
+Javascript program to hide and show portion of a form page
+==========================================================
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+	<fieldset id="per_id">	
+		<legend>Permanent Address</legend>
+		<table align="center">
+			<tr>
+				<td>House No:</td>
+				<td><input type="text" id="t1"/></td>
+			</tr>
+			<tr>
+				<td>City:</td>
+				<td><input type="text" id="t2"/></td>
+			</tr>
+			<tr>
+				<td>Locality: </td>
+				<td><input type="text" id="t3"/></td>
+			</tr>
+		</table>
+	</fieldset>
+
+	<br>
+	<input type="checkbox" id="box" onclick="f1()"/>	
+	Current Address is same as Permanent Address?
+	<br>
+	<br>
+
+	<fieldset id="cur_id">	
+		<legend>Current Address</legend>
+		<table align="center">
+			<tr>
+				<td>House No:</td>
+				<td><input type="text" id="t1"/></td>
+			</tr>
+			<tr>
+				<td>City:</td>
+				<td><input type="text" id="t2"/></td>
+			</tr>
+			<tr>
+				<td>Locality: </td>
+				<td><input type="text" id="t3"/></td>
+			</tr>
+		</table>
+	</fieldset>
+
+	<script type="text/javascript">
+		function f1()
+		{
+			if(document.getElementById('box').checked)
+			{
+				document.getElementById('cur_id').style.display="none";
+			}
+			else
+			{
+				document.getElementById('cur_id').style.display="block";
+			}
+		}
+	</script>
+</body>
+</html>
+
+document.getElementsByName()
+============================
+It is used to read the elements by using specified name.
+
+
+ex:
+----
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<input type="text" name="t1"/>
+
+		<button onclick="f1()"> submit </button>
+
+		<script>
+			function f1()
+			{
+				var name=document.getElementsByName("t1")[0].value;
+				document.writeln("Welcome :"+name);
+			}
+		</script>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<input type="text" name="t1"/>
+
+		<button onclick="f1()"> submit </button>
+
+		<script>
+			function f1()
+			{
+				var name=document.getElementsByName("t1").length;
+				document.writeln("Welcome :"+name);
+			}
+		</script>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<input type="text" name="t1"/>
+
+		<button onclick="f1()"> submit </button>
+
+		<script>
+			function f1()
+			{
+				var name=document.getElementsByName("t1")[0].tagName;
+				document.writeln("Welcome :"+name);
+			}
+		</script>
+</body>
+</html>
+
+Javascript program to add two text field values
+================================================
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<table align="center">
+			<tr>
+				<td>First Name:</td>
+				<td><input type="text" name="t1"/></td>
+			</tr>
+			<tr>
+				<td>Last Name:</td>
+				<td><input type="text" name="t2"/></td>
+			</tr>
+			<tr>
+				<td>&nbsp;</td>
+				<td><button onclick="f1()">ADD</button></td>
+			</tr>
+			<tr>
+				<td>Result:</td>
+				<td><div id="myId"></div></td>
+			</tr>
+		</table>
+		<script>
+			function f1()
+			{
+				var fname=document.getElementsByName('t1')[0].value;
+				var lname=document.getElementsByName('t2')[0].value;
+				var result=fname+' '+lname;
+				document.getElementById('myId').innerHTML=result;
+			}
+		</script>
+</body>
+</html>
+
+Javascript program to select multiple checkboxes
+=================================================
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		
+		Course Completed? <br> <br>
+		<button onclick="f1()"> select all </button> <br> <br>
+
+		<input type="checkbox" name="t1" value="html"/> HTML  <br>
+		<input type="checkbox" name="t1" value="css"/> CSS  <br>
+		<input type="checkbox" name="t1" value="js"/> JAVASCRIPT  <br>
+		<input type="checkbox" name="t1" value="bootstrap"/> BOOTSTRAP  <br>
+
+		<script>
+			function f1()
+			{
+				var x=document.getElementsByName('t1');
+
+				for(var i=0;i<x.length;i++)
+				{
+					if(x[i].type="checkbox")
+					{
+						x[i].checked=true;
+					}
+				}
+			}
+		</script>
+</body>
+</html>
+
+
+document.getElementsTagName()
+=============================
+It is used to read the elements by using specified tag name.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<input type="text" name="t1" id="t1"/>	
+
+		<button onclick="f1()"> submit </button>
+
+		<script>
+			function f1()
+			{
+				var val=document.getElementsByTagName('input').length;
+				document.writeln(val);
+			}
+		</script>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<input type="text" name="t1" id="t1"/>	
+
+		<button onclick="f1()"> submit </button>
+
+		<script>
+			function f1()
+			{
+				var val=document.getElementsByTagName('input')[0].value;
+				document.writeln(val);
+			}
+		</script>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<div>This is division1</div>
+		<div>This is division2</div>
+		<div>This is division3</div>
+
+		<button onclick="f1()"> change </button>
+
+		<script>
+			function f1()
+			{
+				var x=document.getElementsByTagName('div');	
+				x[0].innerHTML="This is First change";
+				x[1].innerHTML="This is Second change";	
+				x[2].innerHTML="This is Third change";		
+			}
+		</script>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<div>This is division1</div>
+		<div>This is division2</div>
+		<div>This is division3</div>
+
+		<button onclick="f1()"> change </button>
+
+		<script>
+			function f1()
+			{
+				var x=document.getElementsByTagName('div');	
+				x[0].innerHTML="This is First change";
+				x[1].innerHTML="This is Second change";	
+				x[2].innerHTML="This is Third change";
+
+				x[0].style.color="blue";
+				x[1].style.backgroundColor="cyan";
+				x[2].style.textAlign="center";		
+			}
+		</script>
+</body>
+</html>
+
+
+
+
+document.getElementsByClassName()
+=================================
+It is used to read elements by using specified class name.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+	<style>
+		.myClass
+		{
+			text-align: center;
+			color:blue;
+			background-color: cyan;
+		}
+	</style>
+</head>
+<body>
+		<div class="myClass"> This is Div Tag</div>
+
+		<br>
+		<button onclick="f1()"> submit </button>
+
+		<script>
+			function f1()
+			{
+				var val=document.getElementsByClassName('myClass').length;	
+				document.writeln(val);
+			}
+		</script>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+	<style>
+		.myClass
+		{
+			text-align: center;
+			color:blue;
+			background-color: cyan;
+		}
+	</style>
+</head>
+<body>
+		<div class="myClass"> This is Div Tag</div>
+
+		<br>
+		<button onclick="f1()"> submit </button>
+
+		<script>
+			function f1()
+			{
+				var val=document.getElementsByClassName('myClass')[0].tagName;	
+				document.writeln(val);
+			}
+		</script>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+	<style>
+		.myClass
+		{
+			text-align: center;
+			color:blue;
+			background-color: cyan;
+		}
+	</style>
+</head>
+<body>
+		<div class="myClass"> This is Div Tag</div>
+
+		<br>
+		<button onclick="f1()"> submit </button>
+
+		<script>
+			function f1()
+			{
+				var val=document.getElementsByClassName('myClass')[0].innerHTML;	
+				document.writeln(val);
+			}
+		</script>
+</body>
+</html>
+
+
+document.addEventListener()
+===========================
+It is used to add handler to a function.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<h1> Please click Here </h1>
+		
+		<script>
+			
+			document.addEventListener("click",f1);
+
+			function f1()
+			{
+				alert("You have clicked!");
+			}
+
+		</script>	
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<h1 id="myId"> Mouse Over Here  </h1>
+
+		<script>
+
+			var y=document.getElementById('myId');
+			
+			y.addEventListener("mouseover",f1);
+
+			function f1()
+			{
+				alert("Yahoo your mouse is over!");
+			}
+
+		</script>	
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<h1 id="myId"> Mouse Over and out Here  </h1>
+
+		<script>
+
+			var y=document.getElementById('myId');
+			
+			y.addEventListener("mouseout",f1);
+
+			function f1()
+			{
+				alert("Yahoo your mouse is out!");
+			}
+
+		</script>	
+</body>
+</html>
+
+Javascript program to convert feet to inches
+============================================
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<table align="center">
+			<tr>
+				<td>Feet</td>
+				<td>&nbsp;</td>
+				<td>Inches</td>
+			</tr>
+			<tr>
+				<td><input type="text" id="feet"/></td>
+				<td><big>=</big></td>
+				<td><input type="text" id="inches"/></td>
+			</tr>
+		</table>
+		<script>
+				
+			var feet=document.getElementById('feet');
+			var inches=document.getElementById('inches');
+			feet.addEventListener('input',function(){
+				var f=this.value;
+				var i=f*12;
+				inches.value=i;
+			})
+
+			inches.addEventListener('input',function(){
+				var i=this.value;
+				var f=i/12;
+				if(!Number.isInteger(f))
+				{
+					f=f.toFixed(2);
+				}
+				feet.value=f;
+			})
+
+		</script>
+
+</body>
+</html>
+
+
+
+removeEventListener()
+======================
+It is used to remove the handler from function.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<h1 id="hover"> Mouse over and out Here</h1>
+
+		<button onclick="f2()">  stop event </button>
+
+		<div id="result"></div>
+		
+
+		<script type="text/javascript">
+			
+			var y=document.getElementById('hover');
+			y.addEventListener('mouseover',f1);
+
+			function f1()
+			{
+			document.getElementById('result').innerHTML+="<p>Mouse over Here </p>"; 
+			}
+
+			function f2()
+			{
+				y.removeEventListener('mouseover',f1);
+				document.getElementById('result').innerHTML+="<p>Event Stop!</p>"; 
+			}
+
+		</script>
+
+</body>
+</html>
+
+JavaScript Date
+================
+JavaScript date object is used to display date and time.
+
+Using javascript date we can display timer on the web page.
+
+ex:
+----
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+			var d=new Date();
+			var h=d.getHours();
+			var m=d.getMinutes();
+			var s=d.getSeconds();
+			document.writeln(h+":"+m+":"+s);
+		</script>
+</body>
+</html>
+
+ex:
+----
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+			var date=new Date();
+			var d=date.getDate();
+			var m=date.getMonth()+1;
+			var y=date.getFullYear();
+			document.writeln(d+"/"+m+"/"+y);
+		</script>
+</body>
+</html>
+
+
+JavaScript timer
+=================
+
+index.html
+----------
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+	
+	<!-- add external css -->
+	<link rel="stylesheet" href="mystyles.css">
+
+</head>
+<body>
+			<h1 id="result"></h1>
+
+			<script>
+				
+				window.onload=function(){getTime();}
+
+				function getTime()
+				{
+					var date=new Date();
+					var h=date.getHours();
+					var m=date.getMinutes();
+					var s=date.getSeconds();
+
+					m=check(m);
+					s=check(s);
+
+					document.getElementById('result').innerHTML=h+":"+m+":"+s;
+				}
+
+				function check(i)
+				{
+					if(i<10)
+					{
+						i = "0"+i;
+					}	
+					return i;
+				}
+
+				setInterval(getTime,1000);
+
+			</script>
+</body>
+</html>
+
+mystyles.css
+-----------
+*
+{
+	margin:0;
+	padding:0;
+}
+body
+{
+	height: 100vh;
+	background:linear-gradient(yellow,red);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+h1
+{
+   color:#FFFFFF;
+}
+
+
+Javascript Interview Questions
+===============================
+
+Q) What is the difference between innerText and innerHTML ?
+
+
+innerText
+----------
+The innerText property can be used to write the dynamic text on the html document. 
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+<body>
+		<button onclick="f1()"> click Here </button>	
+
+		<h1 id="result"></h1>
+
+		<script>
+			
+			function f1()
+			{
+document.getElementById('result').innerText="<p style='color:red'>javascript innerText</p>";
+			}
+
+		</script>
+</body>
+</html>
+
+innerHTML
+----------
+The innerText property can be used to write the dynamic HTML code on the html document.
+
+ex:
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+<body>
+		<button onclick="f1()"> click Here </button>	
+
+		<h1 id="result"></h1>
+
+		<script>
+			
+			function f1()
+			{
+document.getElementById('result').innerHTML="<p style='color:red'>javascript innerHTML</p>";
+			}
+
+		</script>
+</body>
+</html>
+
+
+
+Q) What is JavaScript Hoisting ?
+
+Hoisting is a default behaviour of javascript in which all the declarations are move from bottom to top.
+
+ex:
+----
+		<script>				<script>
+			i=10;					var i;
+			document.writeln(i); ==>		i=10;
+			var i;					document.writeln(i);
+		</script>				</script>
+
+ex:
+
+		<script>				<script>
+			f1();					function f1()
+			function f1()				{
+			{						document.writeln("Hello");
+			document.writeln("Hello"); ==>		}
+			}					f1();
+		</script>				</script>
+
+
+Javascript program to convert feet to inches
+============================================
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<table align="center">
+			<tr>
+				<td>Feet</td>
+				<td>&nbsp;</td>
+				<td>Inches</td>
+			</tr>
+			<tr>
+				<td><input type="text" id="feet"/></td>
+				<td><big>=</big></td>
+				<td><input type="text" id="inches"/></td>
+			</tr>
+		</table>
+		<script>
+				
+			var feet=document.getElementById('feet');
+			var inches=document.getElementById('inches');
+			feet.addEventListener('input',function(){
+				var f=this.value;
+				var i=f*12;
+				inches.value=i;
+			})
+
+			inches.addEventListener('input',function(){
+				var i=this.value;
+				var f=i/12;
+				if(!Number.isInteger(f))
+				{
+					f=f.toFixed(2);
+				}
+				feet.value=f;
+			})
+
+		</script>
+
+</body>
+</html>
+
+
+
+removeEventListener()
+======================
+It is used to remove the handler from function.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<h1 id="hover"> Mouse over and out Here</h1>
+
+		<button onclick="f2()">  stop event </button>
+
+		<div id="result"></div>
+		
+
+		<script type="text/javascript">
+			
+			var y=document.getElementById('hover');
+			y.addEventListener('mouseover',f1);
+
+			function f1()
+			{
+			document.getElementById('result').innerHTML+="<p>Mouse over Here </p>"; 
+			}
+
+			function f2()
+			{
+				y.removeEventListener('mouseover',f1);
+				document.getElementById('result').innerHTML+="<p>Event Stop!</p>"; 
+			}
+
+		</script>
+
+</body>
+</html>
+
+JavaScript Date
+================
+JavaScript date object is used to display date and time.
+
+Using javascript date we can display timer on the web page.
+
+ex:
+----
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+			var d=new Date();
+			var h=d.getHours();
+			var m=d.getMinutes();
+			var s=d.getSeconds();
+			document.writeln(h+":"+m+":"+s);
+		</script>
+</body>
+</html>
+
+ex:
+----
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+			var date=new Date();
+			var d=date.getDate();
+			var m=date.getMonth()+1;
+			var y=date.getFullYear();
+			document.writeln(d+"/"+m+"/"+y);
+		</script>
+</body>
+</html>
+
+
+JavaScript timer
+=================
+
+index.html
+----------
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+	
+	<!-- add external css -->
+	<link rel="stylesheet" href="mystyles.css">
+
+</head>
+<body>
+			<h1 id="result"></h1>
+
+			<script>
+				
+				window.onload=function(){getTime();}
+
+				function getTime()
+				{
+					var date=new Date();
+					var h=date.getHours();
+					var m=date.getMinutes();
+					var s=date.getSeconds();
+
+					m=check(m);
+					s=check(s);
+
+					document.getElementById('result').innerHTML=h+":"+m+":"+s;
+				}
+
+				function check(i)
+				{
+					if(i<10)
+					{
+						i = "0"+i;
+					}	
+					return i;
+				}
+
+				setInterval(getTime,1000);
+
+			</script>
+</body>
+</html>
+
+mystyles.css
+-----------
+*
+{
+	margin:0;
+	padding:0;
+}
+body
+{
+	height: 100vh;
+	background:linear-gradient(yellow,red);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+h1
+{
+   color:#FFFFFF;
+}
+
+
+Javascript Interview Questions
+===============================
+
+Q) What is the difference between innerText and innerHTML ?
+
+
+innerText
+----------
+The innerText property can be used to write the dynamic text on the html document. 
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+<body>
+		<button onclick="f1()"> click Here </button>	
+
+		<h1 id="result"></h1>
+
+		<script>
+			
+			function f1()
+			{
+document.getElementById('result').innerText="<p style='color:red'>javascript innerText</p>";
+			}
+
+		</script>
+</body>
+</html>
+
+innerHTML
+----------
+The innerText property can be used to write the dynamic HTML code on the html document.
+
+ex:
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+<body>
+		<button onclick="f1()"> click Here </button>	
+
+		<h1 id="result"></h1>
+
+		<script>
+			
+			function f1()
+			{
+document.getElementById('result').innerHTML="<p style='color:red'>javascript innerHTML</p>";
+			}
+
+		</script>
+</body>
+</html>
+
+
+
+Q) What is JavaScript Hoisting ?
+
+Hoisting is a default behaviour of javascript in which all the declarations are move from bottom to top.
+
+ex:
+----
+		<script>				<script>
+			i=10;					var i;
+			document.writeln(i); ==>		i=10;
+			var i;					document.writeln(i);
+		</script>				</script>
+
+ex:
+
+		<script>				<script>
+			f1();					function f1()
+			function f1()				{
+			{						document.writeln("Hello");
+			document.writeln("Hello"); ==>		}
+			}					f1();
+		</script>				</script>
+
+
+Q)Differences between  var , let and const?
+
+var				let				const
+-----				-----				--------
+It is a functional scope.	It is a block scope.		It is a block scope.
+
+It can be declare without	It can be declare		It can't be declare 
+initialization.			without initialization. 	without initialization.
+
+It can be updated.		It can be updated.		It can't be updated.
+
+It can be redeclared.		It can't be redeclared.		It can't be redeclared.
+
+It can access without		It can be access without	It can’t be access without	
+initialization as it default	initialization as it 		initialization.
+value is undefined.		default value is 
+				undefined.
+
+
+
+Q) What is spread operator in JavaScript?
+
+The spread operator is used to spreading an array.
+Ex:
+	<script>
+		function f1(arg1,arg2,arg3){
+			document.writeln (arg1+" "+arg2+" "+arg3);
+		}
+		var arr = [5, 6, 7, 8];
+		addFourNumbers(...arr);
+	</script>
+
+
+Q) Explain JavaScript promises?
+
+Promises are used to handle multiple asynchronous operations in JavaScript.
+ex:
+
+<script>
+	var promise = new Promise(function(resolve, reject) {
+		const x = "ihubtalent";
+		const y = "ihubtalent1";
+		if(x === y) {
+			resolve();
+		} else {
+			reject();
+		}
+	});
+	promise.
+	then(function () {
+		console.log('Success, You are a GEEK');
+	}).
+	catch(function () {
+		console.log('Some error has occurred');
+	});
+</script>
+
+Object Oriented Programming System / Structure (OOPS)
+======================================================
+It is used to deal with real world entities using programming language.
+
+We have following list of object oriented features.
+
+ex:
+	class
+	object
+	abstraction
+	encapsulation
+	inheritance 
+	and 
+	polymorphism
+
+JavaScript is not a object oriented programming language . It is a object based programming language.
+
+
+Q)What is class in JavaScript?
+
+A JavaScript class is not an object.
+It is a template for JavaScript objects.
+Use the class keyword to create a class.
+A class keyword is used to declare a class with any particular name.
+According to JavaScript naming conventions, the name of the class always starts 
+with an uppercase letter.
+Ex:
+	<script>
+	class Example
+	{
+		-
+		-//code to be declare
+		-
+	}
+</script>
+
+
+
+
+Q)What is Constructor in JavaScript?
+
+A JavaScript constructor is a special type of method which is used to initialize and create an object.
+
+It is called when memory is allocated for an object.
+
+The constructor keyword is used to declare a constructor method.
+
+The class can contain one constructor method only.
+
+JavaScript allows us to use parent class constructor through super keyword.
+Ex:
+	class Example
+	{
+		constructor()
+		{
+			-
+			-// code to be declare
+			-
+		}
+	}
+
+
+Q)What is object in JavaScript?
+
+A JavaScript object is an entity having state and behavior (properties and methods).
+Syntax:
+	var objectname =new Object();
+
+
+ex:1
+----
+<!DOCTYPE html>
+<html>
+<head>
+	<title>IHUB TALENT</title>
+</head>
+<body>
+		<script type="text/javascript">
+			class  Example
+			{
+				constructor()
+				{
+					document.writeln("Hello World");		
+				}	
+			}
+
+			var e=new Example();
+			
+
+		</script>
+</body>
+</html>
+
+
+ex:2
+------
+<!DOCTYPE html>
+<html>
+<head>
+	<title>IHUB TALENT</title>
+</head>
+<body>
+		<script type="text/javascript">
+			class  Example
+			{
+				constructor()
+				{
+					document.writeln("Hello World");		
+				}	
+			}
+
+			var e1=new Example();
+			var e2=new Example();
+
+
+		</script>
+</body>
+</html>
+
+ex:3
+-----
+<!DOCTYPE html>
+<html>
+<head>
+	<title>IHUB TALENT</title>
+</head>
+<body>
+		<script type="text/javascript">
+			class  Example
+			{
+				constructor(id)
+				{
+					document.writeln(id+"<br>");		
+				}	
+			}
+
+			var e1=new Example(101);
+			var e2=new Example(201);
+
+
+		</script>
+</body>
+</html>
+
+
+
+Q)What is Abstraction in JavaScript?
+
+Hiding internal implementation and highlighting the set of services is called Abstraction.
+
+The best example of Abstraction is GUI(Graphical User Interface) ATM machine where
+bank people will hide internal implementation and highlights the set of services like
+banking, withdrawal, mini statement, balance enquiry and etc.
+
+
+
+
+
+
+Q)What is Encapsulation in JavaScript?
+
+The process of wrapping property and function within a single unit is known as
+encapsulation.
+
+To achieve an encapsulation in JavaScript we need to do following things.
+> Use var keyword to make data members private.
+> Use setter methods to set the data and getter methods to get that data.
+
+ex:
+<!DOCTYPE html>
+<html>
+<head>
+	<title>IHUB TALENT</title>
+</head>
+<body>
+		<script type="text/javascript">
+			class  Example
+			{
+				//setter 
+				constructor(id,name,sal)
+				{
+					this.eid=id;
+					this.ename=name;
+					this.esal=sal;
+				}
+
+				//getter 
+				getId()
+				{
+					return this.eid;
+				}	
+				getName()
+				{
+					return this.ename;
+				}
+				getSal()
+				{
+					return this.esal;
+				}
+
+			}
+			var e=new Example(101,'Alan',1000.0);
+			document.writeln(e.getId()+"<br>");
+			document.writeln(e.getName()+"<br>");
+			document.writeln(e.getSal()+"<br>");
+
+		</script>
+</body>
+</html>
+
+ex:2
+------
+<!DOCTYPE html>
+<html>
+<head>
+	<title>IHUB TALENT</title>
+</head>
+<body>
+		<script type="text/javascript">
+			class  Example
+			{
+				//setter 
+				setId(id)
+				{
+					this.eid=id;
+				}
+				setName(name)
+				{
+					this.ename=name;
+				}
+				setSal(sal)
+				{
+					this.esal=sal;
+				}
+
+				//getter 
+				getId()
+				{
+					return this.eid;
+				}	
+				getName()
+				{
+					return this.ename;
+				}
+				getSal()
+				{
+					return this.esal;
+				}
+
+			}
+			var e=new Example(101,'Alan',1000.0);
+			e.setId(501);
+			e.setName("Jose");
+			e.setSal(2000.0);
+			document.writeln(e.getId()+"<br>");
+			document.writeln(e.getName()+"<br>");
+			document.writeln(e.getSal()+"<br>");
+
+		</script>
+</body>
+</html>
+
+
+Q)What is Inheritance in JavaScript?
+
+The JavaScript inheritance is a mechanism that allows us to create new classes on the
+basis of already existing classes.
+
+It provides flexibility to the child class to reuse the methods and variables of a parent class.
+
+The JavaScript extends keyword is used to create a child class on the basis of a parent class.
+
+ex:
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>IHUB TALENT</title>
+</head>
+<body>
+		<script type="text/javascript">
+			class A
+			{
+				f1()
+				{
+					document.writeln("A-class <br>");
+				}
+			}
+			class B extends A
+			{
+				f2()
+				{
+					document.writeln("B-class <br>");
+				}	
+			}
+			var a=new A();
+			a.f1();
+			var b=new B();
+			b.f1();
+			b.f2();
+		</script>
+</body>
+</html>
+
+
+
+Q)What is polymorphism in JavaScript?
+
+The ability to represent in a different forms is called polymorphism.
+Ex:
+	class A
+	{
+		display()
+		{
+			document.writeln("A is invoked<br>");
+		}
+	}
+	class B extends A
+	{
+		display()
+		{
+			document.writeln("B is invoked");
+		}
+	}
+	A a=new A();
+	a.display(); // A is invoked
+	B b=new B();
+	b.display(); // B is invoked
+

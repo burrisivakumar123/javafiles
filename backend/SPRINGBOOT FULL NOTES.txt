@@ -1,0 +1,2646 @@
+Limitations With Spring Framework
+=================================
+In spring framework a programmer is responsible for following things.
+
+1) Adding dependencies or jar files. 
+
+2) Performing configurations in applicationContext.xml file.
+
+3) Arranging physical server like Tomcat.
+
+4) Managing physical database like MySQL. 
+
+To overcome above limitations we need to use Spring Boot.
+
+
+Spring Boot
+============
+It is a java based application framework developed by Pivotal Team.
+
+It provides RAD(Rapid Application Development) features for spring based applications.
+
+It is a standalone, production ready grade spring based applications with minimum configurations.
+
+In short, spring boot is a combination of
+
+ex:
+	spring framework       +   Embedded  Server   +   Embedded Database
+
+Spring Boot does not support xml configurations instead it will use annotations.
+
+Note:
+-----
+	Developer  ---------------> Spring Boot ----------------> Spring Framework 
+
+
+
+Advantages with Spring Boot
+=============================
+1) It is used to develop standalone applications which can be run by using java -jar.
+
+2) It provides optionate starters to simplify the maven development process.
+
+3) It tests the web applications by using HTTP servers like Tomcat, Jetty and Undertow.
+
+4) It does not support xml configurations.
+
+5) It provides product ready grade features like metrix, Healthcheck, externalized configurations
+   and etc.
+
+6) It provides CLI(Command Line Interface)  Tool to develop and testing spring boot application.
+
+Q) What is Spring?
+
+It is a open source,leight weight, non-invensive, loosely coupled, aspect oriented, dependency injection java base application framework which is used to develop all kinds of applications. 
+
+
+Q) Explain modules in Spring ?
+
+Diagram: sb2.1
+
+CORE Module
+----------
+It is a base module to learn other modules in spring framework.
+
+Using core module we perform following things.
+
+1) To obtain the containers
+
+2) To perform dependency injections 
+
+3) To create spring beans
+
+
+AOP Module
+-----------
+AOP stands for Aspect Oriented Programming.
+This module is used to inject and remove the middleware services to/from application.
+
+
+DAO Module
+----------
+DAO stands Data Access Object.
+It is a abstract layer on JDBC.
+DAO module is used to convert checked exceptions to unchecked exception so we don't need to handle the exceptions.
+
+
+ORM Module
+----------
+ORM stands for Object Relational Mapping.
+ORM is a abstract layer on ORM tools like hibernate.
+In hibernate, While sending the data in the form of objects we have some limitations and those limitations are removed from ORM module.
+
+
+JEE Module
+----------
+JEE module is used to develop middleware services.
+
+
+MVC Module
+----------
+MVC stands for Model View Controller.
+MVC module is used to develop MVC based web applications.
+
+
+
+
+
+Q) What is the difference between spring framework and spring boot?
+
+Spring framework				Spring boot
+------------------				------------
+It is a open source, leight weight,loosely 	Spring Boot is built on top of spring framework
+coupled, aspect oriented, dependency injection	and it is widely used to develop REST APIs.
+java base application framework which is used
+to develop all kinds of applications.
+					
+The most important feature of the Spring 	The most important feature of the Spring Boot is
+Framework is dependency injection.		Autoconfiguration.
+
+It helps to create a loosely coupled 		It helps to create a stand-alone application.
+application.					
+
+To run the Spring application we need to set 	Spring Boot provides embedded servers such as 
+the server explicitly.				Tomcat, Jetty and undertow.
+						
+It doesn’t provide support for the in-memory 	It provides support for the in-memory database 
+database.					such as H2, HSQL, Derby.
+							
+
+Dependencies will be added by the programmer 	Dependencies will be added by the spring boot 
+in pom.xml file. 				component called starters.	
+						
+
+						
+
+Q) How many components are there in spring boot?
+
+We have four components in spring boot.
+
+1) Autoconfiguration 
+
+2) Starters
+
+3) Actuators
+
+4) CLI tool
+
+
+Q) How many containers are there in spring framework?
+
+We have two containers.
+
+1) BeanFactory 
+
+2) ApplicationContext 
+
+
+
+
+Q) Explain spring MVC Architecture ?
+
+Diagram: sb2.2
+
+Q) In how many ways we can create a spring boot project?
+
+There are two ways to create a spring boot project.
+
+1) Using spring Initializr
+
+2) Using IDE's (STS / Intellij)
+
+
+
+
+Q) What is spring initializr?
+
+It is a web based tool for create spring boot project structures.
+ex:
+	https://start.spring.io/
+
+
+Q) Where do we perform configurations in spring boot?
+
+	application.properties 
+	or
+	application.yml 
+
+
+
+
+STS IDE
+========
+Download link:   https://spring.io/tools
+
+ex:
+D>java   -jar  spring-tool-suite-4-4.23.1.RELEASE-e4.32.0-win32.win32.x86_64.self-extracting.jar 
+
+
+
+
+First spring boot application development
+=========================================
+FirstSB
+|
+|---src/main/java
+	|
+	|---com.ihub.www (base package)
+		|
+		|---FirstSBApplication.java
+|
+|---src/main/resources
+		|
+		|---application.properties
+|
+|---src/java/test
+|
+|---pom.xml 
+
+step1:
+------
+	Launch STS IDE by choosing workspace location.
+
+step2:
+------
+	Create spring starter project i.e FirstSB.
+	ex:
+		File --> new --> spring starter project --> 
+
+		Name : FirstSB
+		
+		Type  : Maven		packaging : jar 
+		
+		Java version : 17 	language : java 
+
+		Group  : com.ihub.www
+
+		Artifact : FirstSB
+	
+		Description : Demo project for Spring Boot
+
+		package : com.ihub.www   --> Next --> Next --> Finish.
+
+step3:
+-----
+	Write custom message inside FirstSbApplication.java file.
+	
+FirstSbApplication.java
+------------------------
+package com.kits.www;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class FirstSbApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(FirstSbApplication.class, args);
+		
+		System.out.println("I Love Spring Boot");
+	}
+
+}
+
+step4:
+------
+	Run the spring boot project.
+	ex:
+		right click to FirstSB project --> run as --> Spring boot application.
+
+
+
+Q) What is @SpringBootApplication annotation?
+
+@SpringBootApplication annotation is a combination of three annotations.
+
+1) @EnableAutoConfiguration 
+---------------------------
+	It is used to enable auto configuration mechanism in spring boot.
+
+2) @ComponentScan
+----------------
+	It is used to scan on package in which our project is located.
+
+3) @Configuration 
+---------------
+	It is used to add extra beans on context.
+
+
+
+Spring Boot Starters
+=====================
+Spring boot contains number of starters to add jar files in the classpath.
+
+Spring boot having built-in starters to develop applications easily and rapidly.
+
+Spring boot starters are also known as dependency descriptors.
+
+In spring boot, built-in starts follow below naming pattern.
+
+ex:
+	spring-boot-starter-*
+
+	Here '*' indicates perticular name of the application.
+
+	spring-boot-starter-test 
+	spring-boot-starter-web 
+	spring-boot-starter-data-jpa
+	spring-boot-starter-validation
+	and etc.
+
+
+
+spring web dependency
+=====================
+If we want to develop web applications in spring boot then we need to use spring web dependency.
+
+There are two important features of spring-boot-starter-web.
+
+1) It is compatible with web application.
+
+2) It performs AutoConfiguration. 
+
+Spring web dependency internally uses Spring MVC, REST  and Tomcat embedded server.
+
+In spring-boot-starter-web , auto-configuration mechanism required following things.
+
+1) Dispatcher Servlet 
+2) Error Pages 
+3) Manage static dependencies
+4) Embedded Servlet container
+
+
+Second spring boot application development
+--------------------------------------------
+SecondSB
+|
+|---src/main/java
+	|
+	|---com.ihub.www (base package)
+		|
+		|---SecondSBApplication.java
+		|
+	|----com.ihub.www.controller
+		|
+		|---HomeController.java
+|
+|---src/main/resources
+		|
+		|---application.properties
+|
+|---src/java/test
+|
+|---pom.xml 
+
+step1:
+------
+	Launch STS IDE by choosing workspace location.
+
+step2:
+------
+	Create spring starter project i.e SecondSB.
+	ex:
+		File --> new --> spring starter project --> 
+
+		Name : SecondSB
+		
+		Type  : Maven		packaging : jar 
+		
+		Java version : 17 	language : java 
+
+		Group  : com.ihub.www
+
+		Artifact : SecondSB
+	
+		Description : Demo project for spring web application
+
+		package : com.ihub.www   --> Next 
+
+		starter  : spring  web 
+			
+		--> Next --> Finish.
+
+step3:
+-----
+	Create a HomeController.java class inside "com.ihub.www.controller" package.
+	ex:
+		right click to src/main/java -->  --> new --> class -->
+		Package : com.ihub.www
+		Name : HomeController 
+		--> Finish.
+
+HomeController.java
+--------------------
+package com.ihub.www.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+@Controller
+public class HomeController 
+{
+	@RequestMapping("/home")
+	@ResponseBody
+	public String home()
+	{
+		return "I Love Spring Boot Programming";
+	}
+}
+
+step4:
+-----
+	Configure Tomcat server port number in application.properties file.
+
+application.properties
+----------------------
+server.port=9090
+
+step5:
+------
+	Run the spring boot project.
+	ex:
+		right click to SecondSB  --> run as --> run on server.
+
+step6:
+-----
+	Test the application by using below  request url.
+	ex:
+		http://localhost:9090/home
+
+
+Q)List out some sterotype Annotation?
+
+	@Component
+	@Configuration
+	@Service	
+	@Repository
+	@Controller
+	and etc.
+
+
+Q)In spring boot mvc based web application who will pass HTTP request to controller?
+
+ans)	DispatcherServlet
+
+
+Q)Tomcat embedded server by default runs under which port no?
+	
+	8080
+
+Q)To create a spring mvc based web application we need to add which starter?
+	
+	spring-boot-stater-web
+
+
+Q)How to change default port number of Tomcat server in spring boot?
+ans)
+	application.properties
+	-----------------------------
+	server.port = 9090
+
+
+
+
+
+Spring Data JPA
+==================
+Spring Data JPA aims to improve the implementation of data access layer by reducing the efforts.
+
+It makes the implementation of our persistence layer easier and faster.
+
+It reduces the boilerplate code required by JPA(Java Persistence API). 
+
+It handles most of the complexity of JDBC-based database access and ORM (Object Relational Mapping).
+
+Spring Boot provides spring-boot-starter-data-jpa dependency to connect Spring application with relational database efficiently. 
+ex:
+
+	<dependency>  
+	<groupId>org.springframework.boot</groupId>  
+	<artifactId>spring-boot-starter-data-jpa</artifactId>  
+	<version>2.2.2.RELEASE</version>  
+	</dependency>  
+
+The spring-boot-starter-data-jpa internally uses the spring-boot-jpa dependency.
+
+
+Spring Data JPA provides three repositories are as follows:
+
+1) CrudRepository 
+---------------	
+	It provides CRUD functions.
+
+2) PagingAndSortingRepository
+----------------------------
+	It extends CrudRepository.
+	It provides methods to do pagination and sorting of records.
+
+3)JpaRepository
+----------------
+	It extends CrudRepository and PagingAndSortingRepository.
+	It provides JPA-related methods such as flushing the persistence context and 
+	deleting records in a batch.
+
+
+Spring Boot application interact with H2 Database
+===================================================
+
+Project structure
+-----------------
+MVCApp2
+|
+|---src/main/java
+	|
+	|---com.ihub.www
+		|
+		|----MVCApp2Application.java
+		|
+	|---com.ihub.www.controller
+		|
+		|----EmployeeController.java
+	|
+	|---com.ihub.www.model	
+		|
+		|----Employee.java
+		
+
+	|---com.ihub.www.repository
+		|
+		|----EmployeeRepository.java (interface)
+
+|---src/main/resources
+	|
+	|---aplication.properties
+
+|---src/test/java
+	|
+	|---com.ihub.www
+		|
+		|----MVCApp2ApplicationTests.java
+|
+|-----src
+	|
+	|-----main
+		|
+		|---index.jsp 
+|
+|-----pom.xml
+
+step1:
+------
+	Launch STS IDE by choosing workspace location.
+
+step2:
+------
+	create a spring boot project i.e "MVCApp2".
+	ex:
+		starters: 
+				Spring Web 		
+				Spring Data Jpa 
+				H2 Database 
+
+step2:
+------
+	Add Tomcat Embed Jasper dependency inside "pom.xml" file.
+	ex:
+		<dependency>
+    			<groupId>org.apache.tomcat.embed</groupId>
+    			<artifactId>tomcat-embed-jasper</artifactId>
+		</dependency>
+
+step3:
+------
+	create a "index.jsp" file inside "src/main" folder.
+	ex:
+		
+index.jsp
+---------
+<center>
+	<h1><u>Enter the Details</u></h1>
+	<br>
+	<form  action="">
+		<table>
+			<tr>
+				<td>Id:</td>
+				<td><input type="text" name="t1"/></td>
+			</tr>
+			<tr>
+				<td>Name:</td>
+				<td><input type="text" name="t1"/></td>
+			</tr>
+			<tr>
+				<td>Address:</td>
+				<td><input type="text" name="t1"/></td>
+			</tr>
+			<tr>
+				<td><input type="reset" value="reset"/></td>
+				<td><input type="submit" value="submit"/></td>
+			</tr>
+		</table>
+	</form>
+</center>
+
+step4:
+-----
+	Create  a "Employee.java" file inside "com.ihub.www.model" package.
+
+Employee.java
+-------------
+package com.ihub.www.model;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name="employees")
+public class Employee 
+{
+	@Id
+	private int empId;
+	
+	@Column
+	private String empName;
+	
+	@Column
+	private String empAdd;
+
+	public int getEmpId() {
+		return empId;
+	}
+
+	public void setEmpId(int empId) {
+		this.empId = empId;
+	}
+
+	public String getEmpName() {
+		return empName;
+	}
+
+	public void setEmpName(String empName) {
+		this.empName = empName;
+	}
+
+	public String getEmpAdd() {
+		return empAdd;
+	}
+
+	public void setEmpAdd(String empAdd) {
+		this.empAdd = empAdd;
+	}
+}
+
+
+step5:
+-----
+	Create a "EmployeeRepository.java" file inside "com.ihub.www.repostory" pkg.
+
+EmployeeRepository.java
+-----------------------
+package com.ihub.www.repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import com.ihub.www.model.Employee;
+
+@Repository
+public interface EmployeeRepository extends JpaRepository<Employee,Integer>
+{
+
+}
+
+
+
+
+step6:
+-----
+
+	Create a "HomeController.java" file inside 
+	"src/main/java/com.ihub.www" package.
+
+HomeController.java
+-------------------
+package com.ihub.www.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.ihub.www.model.Employee;
+import com.ihub.www.repository.EmployeeRepository;
+
+@Controller
+public class EmployeeController 
+{
+	@Autowired
+	EmployeeRepository employeeRepository;
+	
+	@RequestMapping("/test")
+	public String home()
+	{
+		return "index.jsp";
+	}
+	
+	@RequestMapping("/addEmp")
+	public String addEmployee(Employee employee)
+	{
+		employeeRepository.save(employee);
+		
+		return "index.jsp";
+	}
+}
+
+
+
+
+
+step7:
+----
+	Add port number and database configurations inside 
+	application.properties file.	
+
+application.properties 
+--------------------
+server.port=9191
+
+
+spring.datasource.url= jdbc:h2:mem:testdb
+spring.datasource.driverClassName=org.h2.Driver
+spring.datasource.username=sa
+spring.datasource.password=
+spring.h2.console.enabled=true
+spring.jpa.database-platform=org.hibernate.dialect.H2Dialect
+spring.jpa.hibernate.ddl-auto=update
+
+
+
+
+step8:
+------
+	Test the spring boot application.
+	ex:
+		http://localhost:9191
+		http://localhost:9191/h2-console
+
+RestController
+==============
+RestController is used for creating Restful web services with the help of @RestController annotation.
+
+This annotation is used at the class level and allows the class to handle all the request made by the client.
+
+@RestController annotation is a combination of two annotations i.e @Controller and @ResponseBody.
+
+We have following HTTP methods along with REST Annotations.
+
+ex:
+	HTTP Method			Annotation
+	-----------			----------
+	GET				GetMapping
+	POST				PostMapping
+	PUT				PutMapping
+	DELETE				DeleteMapping
+	and etc.
+
+
+Spring Boot Application using @RestController annotation
+------------------------------------------------------
+
+Project structure 
+-----------------
+
+FourthSB
+|
+|---src/main/java
+|	|
+	|---com.ihub.www
+		|
+		|---FourthSBApplication.java
+
+	|---com.ihub.www.controller
+		|
+		|---HomeController.java
+
+|---src/main/resources
+|		|
+		|---application.properties
+
+|---src/test/java
+|
+|---pom.xml 
+
+step1:
+------
+	Create a spring boot starter project i.e fourthSB.
+	ex:
+		staters :		
+				Spring Web 
+
+
+step2:
+-----
+	Create a com.ihub.www.controller package inside "src/main/java" folder.
+	
+
+step3:
+-----
+	Create a HomeController.java file inside "com.ihub.www.controller" package.
+
+HomeController.java
+-------------------
+package com.ihub.www.controller;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class HomeController 
+{
+	@GetMapping("/home")
+	public String home()
+	{
+		return "This is RestController Annotation";
+	}
+}
+
+
+
+step4:
+------
+	Configure server port in application.properties file.
+
+application.properties
+---------------------
+server.port=9191
+
+
+step5:
+-----
+	Run the spring boot starter project.
+
+
+step6:
+-----
+	Test the application by using below request url.
+	ex:
+		http://localhost:9191/home
+
+
+
+Q) What is the difference between @Controller and @RestController?
+
+
+@Controller					@RestController
+---------------					----------------
+It is used to develop spring MVC based 		It is used to develop RESTful Web Services. 
+applications.
+	
+It is a specialized version of @Component 	It is a specialized version of @Controller annotation.					annotation.
+
+We need to use @ResponseBody in every handler 	It is a combination of @Controller and 
+method.						@ResponseBody annotation.
+
+It returns view in spring MVC.			It does not return view.
+
+It is added to Spring 2.5 version.		It is added to Spring 4.0 version.
+
+Q) What is the difference between Monolethic Architecture vs Microservice Architecture?
+
+
+Monolethic Architecture
+-----------------------
+Monolethic means composed all in one place.
+
+In Monolethic architecture we will develop services individually.At the end of the development we are packing all the services in a single war file and deploying in a server.
+
+Diagram: sb5.1
+
+Advantages:
+
+1) Simple to develop 
+
+2) Simple to deploy
+
+3) Simple to test 
+
+4) Simple to scale
+
+Disadvantages:
+
+1) Large and complex application 
+
+2) Slow Development 
+
+3) Blocks contineous development
+
+4) Unreliable
+
+5) Inflexible 
+
+
+Microservice Architecture
+========================
+Microservices are the small/mini services that work together.
+
+In microservice architecture, each service is self contained and implements a single business capabilities.
+
+The microservice architectural style is an approach to develop a single application as a suit 
+of small services.
+
+
+Diagram: sb5.2
+
+
+Advantages:
+
+> Independent Development 
+
+> Independent Deployment 
+
+> Fault Tolerance 
+
+> Mixed Technology Stack
+
+> Granular Scaling 
+
+customer micro service
+=======================
+To develop a micro service in a spring boot we need to follow layered architecture.
+
+Diagram: sb6.1
+
+
+Project Structure
+-------------------
+customer-service
+|
+|---src/main/java
+	|
+	|---com.ihub.www (base pkg)
+		|
+		|---CustomerServiceApplication.java
+	|
+	|---com.ihub.www.controller
+		|
+		|---CustomerController.java
+
+	|---com.ihub.www.service
+		|
+		|---CustomerService.java
+
+	|---com.ihub.www.repo
+		|
+		|---CustomerRepository.java (Interface)
+
+	|---com.ihub.www.model
+		|
+		|---Customer.java
+|
+|---src/main/resources
+	|
+	|---application.yml 
+|
+|---pom.xml 
+
+
+step1:
+------
+	Download and install project lombok.
+	ex:
+		https://projectlombok.org/download
+
+step2:
+-----
+	Open the command prompt and run lombok jar file.
+	ex:
+		cmd> java  -jar  lombok.jar
+
+step3:
+------
+	Create a "customer-service" project.
+	ex:
+		starters: 	
+				spring web 
+				spring data jpa 
+				lombok
+				mysql driver 
+
+step4:
+------
+	Create a "demo" schema inside mysql database and use the schema.
+	ex:
+		MySQL> show databases;
+
+		MYSQL> create schema demo;
+
+		MYSQL> use demo;
+
+step5:
+------
+	Create a Customer model class inside "com.kits.www.model" package.
+
+Customer.java
+-------------
+package com.kits.www.model;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Entity
+@Table
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class Customer                   
+{
+	@Id                            
+	private int custId;
+	
+	@Column
+	private String custName;
+	
+	@Column
+	private String custAdd;
+}
+
+
+
+step6:
+------
+	Create a CustomerRepository interface inside "com.kits.www.repo" package.
+
+CustomerRepository.java
+----------------------
+package com.kits.www.repo;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import com.kits.www.model.Customer;
+
+@Repository
+public interface CustomerRepository extends JpaRepository<Customer, Integer>
+{
+
+}
+
+step7:
+-----
+	Create a CustomerController class inside "com.kits.www.controller" package.
+
+CustomerController.java
+----------------------
+package com.kits.www.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.kits.www.model.Customer;
+import com.kits.www.service.CustomerService;
+
+@RestController
+@RequestMapping("/customer")
+public class CustomerController {
+
+	@Autowired
+	CustomerService customerService;
+	
+	@PostMapping("/add")
+	public Customer addCustomer(@RequestBody Customer customer)
+	{
+		return customerService.addCustomer(customer);
+	}
+	
+	@GetMapping("/fetch")
+	public List<Customer> getAllCustomers()
+	{
+		return customerService.getAllCustomers();
+	}
+	
+	@GetMapping("/fetch/{custId}")
+	public Customer getCustomer(@PathVariable int custId)                
+	{
+		return customerService.getCustomer(custId);
+	}
+	
+	@PutMapping("/update")
+	public String updateCustomer(@RequestBody Customer customer)
+	{
+		return customerService.updateCustomer(customer);
+	}
+	
+	@DeleteMapping("/delete/{custId}")
+	public String deleteCustomer(@PathVariable int custId)
+	{
+		return customerService.deleteCustomer(custId);
+	}
+}
+
+
+
+step8:
+------
+	Create a CustomerService class inside "com.kits.www.service" package.
+
+CustomerService.java
+--------------------
+package com.kits.www.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
+
+import com.kits.www.model.Customer;
+import com.kits.www.repo.CustomerRepository;
+
+@Service
+public class CustomerService 
+{
+	@Autowired
+	CustomerRepository  customerRepository;
+	
+	public Customer addCustomer(Customer customer)
+	{
+		return customerRepository.save(customer);
+	}
+	
+	public List<Customer> getAllCustomers()
+	{
+		return customerRepository.findAll();
+	}
+	
+	public Customer getCustomer( int custId)
+	{
+		return customerRepository.findById(custId).get();
+	}
+	
+	public String updateCustomer(Customer customer) 
+	{
+		Customer cust=customerRepository.findById(customer.getCustId()).get(); 
+		cust.setCustName(customer.getCustName());
+		cust.setCustAdd(customer.getCustAdd());
+		customerRepository.save(cust);
+		
+		return "Record Updated";
+	}
+	
+	public String deleteCustomer(int custId)
+	{
+		Customer customer=customerRepository.findById(custId).get();
+		customerRepository.delete(customer);
+		return "Record Deleted";
+	}
+}
+
+
+step9:
+-----
+	Configure server port, application name, database properties and hibernate properties 
+	inside application.yml file.
+
+application.yml
+---------------
+server:
+  port: 9090
+  
+spring:
+  application:
+    name: CUSTOMER-SERVICE
+    
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/demo
+    username: root
+    password: root
+  jpa:
+    hibernate.ddl-auto: update
+    generate-ddl: true
+    show-sql: true   
+
+
+step10:
+------
+	Run spring boot application and check by using below request url's.
+
+	Method					URL
+	-------					-----
+	POST					http://localhost:9090/customer/add
+						> body 
+							> raw
+							{	
+								"custId":101,
+								"custName":"Alan",
+								"custAdd":"Texas"
+							}
+	GET					http://localhost:9090/customer/fetch
+	GET					http://localhost:9090/customer/fetch/101
+	PUT					http://localhost:9090/customer/update		
+						> body 
+							> raw
+							{	
+								"custId":101,
+								"custName":"Jose",
+								"custAdd":"Chicago"
+							}	
+	DELETE					http://localhost:9090/customer/delete/101
+
+Exception Handling in Spring Boot
+==================================
+If we give/pass wrong request to our application then we will get exception.
+ex:
+	http://localhost:9090/customer/fetch/102
+
+Here 102 record is not available so immediately our controller will throw below exception.
+ex:
+	{
+   		"timestamp": "2024-06-28T02:40:52.640+00:00",
+    		"status": 500,
+    		"error": "Internal Server Error",
+    		"path": "/customer/fetch/102"
+	}
+
+Handling exceptions and errors in API's and sending the proper response to the client is good for enterprise applications.
+
+In Spring Boot exception handling can be performed by using following annotations.
+
+@ControllerAdvice
+-----------------
+The @ControllerAdvice is an annotation is used to handle the exceptions globally.
+
+@ExceptionHandler
+----------------- 
+The @ExceptionHandler is an annotation is used to handle specific exceptions and sending custom response to the client.
+
+
+Project Structure 
+-----------------
+customer-service
+|
+|---src/main/java
+	|
+	|---com.kits.www
+		|
+		|---CustomerServiceApplication.java
+	|
+	|---com.kits.www.controller
+		|
+		|---CustomerController.java
+	|
+	|---com.kits.www.service	
+		|
+		|---CustomerService.java
+
+	|---com.kits.www.repo
+		|
+		|---CustomerRepository.java
+
+	|---com.kits.www.model 
+		|
+		|---Customer.java
+	|
+	|---com.kits.www.exception
+		|
+		|---ErrorDetails.java	
+		|---ResourceNotFoundException.java
+		|---GlobalExceptionHandler.java
+
+|
+|---src/main/resources
+	|
+	|---application.yml 
+|
+|---pom.xml 
+
+step1:
+-----
+	Make sure customer-service project is ready.
+
+step2:
+-----
+	Create a "com.kits.www.exception" package inside "src/main/java".
+
+step3:
+-----
+	Create a ErrorDetails class inside "com.kits.www.exception" package.
+
+
+ErrorDetail.java
+----------------
+package com.kits.www.exception;
+
+import java.util.Date;
+
+public class ErrorDetails 
+{
+	private Date timestamp;
+	private String message;
+	private String details;
+	
+	public Date getTimestamp() {
+		return timestamp;
+	}
+	public void setTimestamp(Date timestamp) {
+		this.timestamp = timestamp;
+	}
+	public String getMessage() {
+		return message;
+	}
+	public void setMessage(String message) {
+		this.message = message;
+	}
+	public String getDetails() {
+		return details;
+	}
+	public void setDetails(String details) {
+		this.details = details;
+	}
+}
+
+step4:
+-----
+	Create ResourceNotFoundException class inside "com.kits.www.exception" package.
+
+ResourceNotFoundException.java
+-------------------------------
+package com.kits.www.exception;
+
+public class ResourceNotFoundException extends RuntimeException 
+{
+	public ResourceNotFoundException(String msg)
+	{
+		super(msg);
+	}
+}
+
+
+step5:
+------
+	Create a GlobalExceptionHandler class inside "com.kits.www.exception" package.
+
+GlobalExceptionHandler.java
+---------------------------
+package com.kits.www.exception;
+
+import java.util.Date;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.ControllerAdvice;
+import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.context.request.WebRequest;
+
+@ControllerAdvice
+public class GlobalExceptionHandler 
+{
+
+	@ExceptionHandler(ResourceNotFoundException.class)
+	public ResponseEntity<?> handleResourceNotFoundException(ResourceNotFoundException exception,WebRequest request)
+	{
+		ErrorDetails errorDetails=new ErrorDetails(new Date(),exception.getMessage(),request.getDescription(false));
+		
+		return new ResponseEntity<>(errorDetails,HttpStatus.NOT_FOUND);
+	}
+	
+	@ExceptionHandler(Exception.class)
+	public ResponseEntity<?> handleException(Exception exception,WebRequest request)
+	{
+		ErrorDetails errorDetails=new ErrorDetails(new Date(),exception.getMessage(),request.getDescription(false));
+		
+		return new ResponseEntity<>(errorDetails,HttpStatus.INTERNAL_SERVER_ERROR);
+	}
+}
+
+step6:
+-----
+	Now add ResourceNotFoundException to CustomerService.java file.
+
+CustomerService.java
+---------------------
+package com.kits.www.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.kits.www.exception.ResourceNotFoundException;
+import com.kits.www.model.Customer;
+import com.kits.www.repo.CustomerRepository;
+
+@Service
+public class CustomerService 
+{
+	@Autowired
+	CustomerRepository  customerRepository;
+	
+	public Customer addCustomer(Customer customer)
+	{
+		return customerRepository.save(customer);
+	}
+	
+	public List<Customer> getAllCustomers()
+	{
+		return customerRepository.findAll();
+	}
+	
+	public Customer getCustomer( int custId)
+	{
+		return customerRepository.findById(custId).orElseThrow(()->new ResourceNotFoundException("Id Not Found"));
+	}
+	
+	public String updateCustomer(Customer customer) 
+	{
+		Customer cust=customerRepository.findById(customer.getCustId()).get(); 
+		cust.setCustName(customer.getCustName());
+		cust.setCustAdd(customer.getCustAdd());
+		customerRepository.save(cust);
+		
+		return "Record Updated";
+	}
+	
+	public String deleteCustomer(int custId)
+	{
+		Customer customer=customerRepository.findById(custId).orElseThrow(()->new ResourceNotFoundException("Id Not Found"));
+		customerRepository.delete(customer);
+		return "Record Deleted";
+	}
+}
+
+step7:
+-----
+	Relaunch the spring boot application 
+
+step8:
+----
+	Test the spring boot application by using below request url.
+	ex:
+		http://localhost:9090/customer/fetch/102
+
+Note:
+-----
+	Here exception will display in below format.
+	ex:
+		{
+    			"timestamp": "2024-06-28T03:08:34.856+00:00",
+    			"message": "Id Not Found",
+    			"details": "uri=/customer/fetch/102"
+		}
+
+
+
+What is API 
+===========
+API stands for Application Programming Interface.
+
+API is a mechanism that enables two software components to communicate with each other using set of rules and protocols.
+
+It acts like a interface between two software applications to exchange the data.
+
+Diagram: sb7.1
+
+We have four types of API's.
+
+1) public API 
+--------------
+	It is open and available for use by any outside developers.
+
+2) private API 
+-------------
+	It is also known as internal API.
+	It is available for use within the enterprise to connect the systems.	
+
+3) partner API 
+-------------
+	It is available to specficially selected and authorized outside developers.
+
+4) composite API 
+---------------
+	It is generally combination of two or more API's.
+
+
+
+Q) What is the Difference between @RequestBody and @ResponseBody?
+
+@RequestBody					@ResponseBody
+-------------					---------------
+This annotation indicates that Spring should 	This annotation indicates that Spring should
+deserialize HttpRequest body(JSON) into Java 	serialize java object into JSON or XML or simple
+object.						text.			
+
+It is used with POST, PUT & PATCH methods.	It is used with GET method.
+
+Applicable for incoming request data.		Applicable for outgoing response data.
+
+Custom Queries in Spring Boot 
+=============================
+To declare custom queries in spring boot we need to use @Query annotation.
+
+@Query Annotation supports both JPQL and native SQL queries. 
+
+
+
+Project structure
+----------------
+
+customer-service2
+|
+|---src/main/java
+	|
+	|---com.ihub.www	
+	|
+	|---com.ihub.www.model
+		|
+		|---Customer.java
+	|
+	|---com.ihub.www.repo
+		|
+		|---CustomerRepository.java (Interface)
+	|
+	|---com.ihub.www.controller
+		|
+		|---CustomerController.java
+	|
+	|---com.ihub.www.service
+		|
+		|---CustomerService.java 
+	
+|----src/main/resources
+	|
+	|---application.yml
+|
+|----pom.xml 
+
+
+Starters:
+---------
+	Spring Web 
+	Spring Data JPA
+	Lombok
+	MySQL Driver 
+
+
+Customer.java
+---------------
+package com.ihub.www.model;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Entity
+@Table
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class Customer 
+{
+	@Id
+	private int custId;  
+	
+	@Column
+	private String custName;
+	
+	@Column
+	private String custAdd;
+}
+
+CustomerRepository
+-----------------
+package com.ihub.www.repo;
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import com.ihub.www.model.Customer;
+
+@Repository
+public interface CustomerRepository extends JpaRepository<Customer, Integer>
+{
+	public List<Customer> findByCustName(String custName);
+
+	//JPQL query 
+	@Query("select c from Customer c")
+	public List<Customer> allCustomers();
+	
+	//native SQL query
+	@Query(value="select * from customer", nativeQuery = true)
+	public List<Customer> getCustomers2();
+}
+
+CustomerController.java
+--------------------
+package com.ihub.www.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.ihub.www.model.Customer;
+import com.ihub.www.service.CustomerService;
+
+@RestController
+@RequestMapping("/customer")
+public class CustomerController {
+	
+	@Autowired
+	CustomerService customerService;
+	
+	@GetMapping("/find/{custName}")
+	public List<Customer> getUserByName(@PathVariable String custName)
+	{
+		return customerService.getUserByName(custName);
+	}
+
+	@GetMapping("/find")
+	public List<Customer> findAllCustomers()
+	{
+		return customerService.findAllCustomers();
+	}
+	
+	@GetMapping("/search")
+	public List<Customer> findAllCustomers2()
+	{
+		return customerService.findAllCustomers2();
+	}
+	
+}
+
+
+CustomerService.java
+---------------------
+package com.ihub.www.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import com.ihub.www.exception.ResourceNotFoundException;
+import com.ihub.www.model.Customer;
+import com.ihub.www.repo.CustomerRepository;
+
+@Service
+public class CustomerService 
+{
+	@Autowired
+	CustomerRepository customerRepository;
+	
+	public List<Customer> getUserByName(String custName)
+	{
+		return customerRepository.findByCustName(custName);
+	}
+
+	public List<Customer> findAllCustomers()
+	{
+		return customerRepository.allCustomers();
+	}
+	
+	public List<Customer> findAllCustomers2()
+	{
+		return customerRepository.getCustomers2();
+	}
+}
+
+application.yml
+--------------------
+server:
+  port: 9090
+  
+spring:
+  application:
+    name: CUSTOMER-SERVICE
+    
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/demo
+    username: root
+    password: root
+  jpa:
+    hibernate.ddl-auto: update
+    generate-ddl: true
+    show-sql: true 
+
+
+
+
+
+Eureka Server
+==============
+Eureka server is used to hold information about client service applications. 
+
+Each microservice registers into Eureka server and eureka server knows all client applications 
+running on each port and IP Address.
+
+Eureka server is also known as discovery server.
+
+Diagram: sb8.1
+
+step1:
+-----
+	Add Eureka client dependency in "customer-service" project.
+	ex:
+		starter:
+				Eureka Discovery Client
+
+step2:
+------
+	create a "service-registry" to register all microservices.
+	ex:
+		starter:
+				Eureka Server 
+
+step3:
+------
+	Add @EnableEurekaServer annotation in main spring boot application.
+
+
+ServiceRegistryApplication.java
+------------------------------
+package com.kits.www;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
+
+@SpringBootApplication
+@EnableEurekaServer
+public class ServiceRegistryApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(ServiceRegistryApplication.class, args);
+	}
+
+}
+
+step4:
+-----
+	Convert application.properties file to application.yml file.
+
+
+
+step5:
+------
+	Configure server port and register with eureka server as false.
+
+application.yml 
+---------------
+server:
+  port: 8761
+  
+
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+
+
+step6:
+-----
+	Open "customer-service" project and configure Register with eureka as 
+	true in application.yml file. 
+
+application.yml
+---------------
+server:
+  port: 9090
+  
+spring:
+  application:
+    name: CUSTOMER-SERVICE
+    
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/demo
+    username: root
+    password: root
+  jpa:
+    hibernate.ddl-auto: update
+    generate-ddl: true
+    show-sql: true   
+    
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    hostname: localhost    
+
+step7:
+------
+	Run two spring boot projects.
+
+	Note:
+		First run service-registry then customer-service.  
+      
+step8:
+-----
+	Test the application by using below request url.
+	ex:
+		http://localhost:8761/
+		http://localhost:9090/customer/fetch
+      
+
+Spring Cloud API Gateway
+=========================
+Spring cloud API gateway aims to provide a simple, effective way to route to API's and provide
+cross cutting concerns to them such as security, monitoring/metrics, authentication, 
+autherization,adaptor and etc.
+
+Diagram: sb9.1
+      
+step1:
+------
+	create a "cloud-apigateway" project.
+	ex:
+		starters:
+				Eureka Discovery Client 
+				Spring boot actuators
+				Spring reactive web 
+
+step2:
+------
+	Add spring cloud dependency in pom.xml file.
+	ex:
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-gateway</artifactId>
+		</dependency>
+
+
+step3:
+-----
+	Convert application.properties file to application.yml.
+
+
+step4:
+-----
+	Register server port, set application name, configure all microservices for routing 
+	in application.yml.
+
+application.yml
+-------------------
+server:
+  port: 7171
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    hostname: localhost 
+    
+spring:
+  application:
+    name: API-GATEWAY
+  cloud:
+    gateway:
+      routes:
+        - id: CUSTOMER-SERVICE
+          uri: lb://CUSTOMER-SERVICE
+          predicates:
+            - Path=/customer/**
+            
+step5:
+------
+	Run cloud-apigateway spring boot project.
+
+step6:
+-----
+	Test the application by using below request url.
+	ex:
+		http://localhost:8761/
+		http://localhost:7171/customer/fetch   
+
+
+
+
+
+
+
+
+
+Spring Cloud Hystrix
+=====================
+Hystrix is a fault tolerance library provided by Netflix.
+
+Using Hystrix we can prevent Deligation of failure from one service to another service.
+
+Hystrix internally follows Circuit Breaker Design pattern.
+
+In short circuit breaker is used to check availability of external services like web service call,database connection and etc.
+
+Diagram: sb9.2
+
+
+notification-service
+========================
+
+step1:
+------
+	create a "notification-service" project in STS.
+	Starter:
+			Spring Web.
+
+step2:
+------
+	Add the following code in main sprping boot application.
+
+
+NotificationServiceApplication.java
+--------------------------------------	
+package com.ihub.www;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@SpringBootApplication
+@RestController
+@RequestMapping("/notification")
+public class NotificationServiceApplication {
+
+	@GetMapping("/send")
+	public String sendEmail()
+	{
+		return "Email sending method is called from notification-service";
+	}
+	public static void main(String[] args) {
+		SpringApplication.run(NotificationServiceApplication.class, args);
+	}
+
+}
+
+step3:
+------
+	convert application.properties file to application.yml file.
+
+
+step4:
+------
+	configure server port number in application.yml file.
+
+application.yml
+------------------
+server:
+  port: 7171
+
+
+step5:
+-------
+	Run "notification-service" project as spring boot application.
+
+
+step6:
+-----
+	Test the application with below request url.
+	ex:
+		http://localhost:7171/notification/send
+
+
+
+paytm-service
+========================
+
+step1:
+------
+	create a "paytm-service" project in STS.
+	Starter:
+			Spring Web.
+
+step2:
+------
+	Add the following code in main sprping boot application.
+
+
+PaytmServiceApplication.java
+--------------------------------------	
+package com.ihub.www;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@SpringBootApplication
+@RestController
+@RequestMapping("/paytm")
+public class PaytmServiceApplication {
+
+	@GetMapping("/pay")
+	public String paymentProcess()
+	{
+		return "Payment Pocess method called in paytm-service";
+	}
+	
+	
+	public static void main(String[] args) {
+		SpringApplication.run(PaytmServiceApplication.class, args);
+	}
+
+}
+
+
+step3:
+------
+	convert application.properties file to application.yml file.
+
+
+step4:
+------
+	configure server port number in application.yml file.
+
+application.yml
+------------------
+server:
+  port: 8181
+
+
+step5:
+-------
+	Run "paytm-service" project as spring boot application.
+
+
+step6:
+-----
+	Test the application with below request url.
+	ex:
+		http://localhost:8181/paytm/pay
+
+
+bookmyshow-service
+=====================
+
+step1:
+-----
+	create a "bookmyshow-service" project in STS.
+	Starter:	
+			Spring Web
+
+step2:
+-----
+	Add Spring Cloud Hystrix dependency in pom.xml file.
+
+	ex:
+	<dependency>
+	<groupId>org.springframework.cloud</groupId>
+	<artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
+	<version>2.2.10.RELEASE</version>
+	</dependency>
+
+
+step3:
+------
+	Change <parent> tag inside pom.xml file for hystrix compatability.
+	ex:
+	<parent>
+    		<groupId>org.springframework.boot</groupId>
+    		<artifactId>spring-boot-starter-parent</artifactId>
+    		<version>2.3.3.RELEASE</version>
+    		<relativePath /> <!-- lookup parent from repository -->
+	</parent>
+
+step4:
+-----
+	Add the following code in main spring boot application.
+
+
+BookmyshowServiceApplication
+-----------------------------
+
+package com.ihub.www;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.netflix.hystrix.EnableHystrix;
+import org.springframework.context.annotation.Bean;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.RestTemplate;
+
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
+
+@SpringBootApplication
+@RestController
+@EnableHystrix
+public class BookmyshowServiceApplication {
+
+	@Autowired
+	RestTemplate restTemplate;
+	
+	@HystrixCommand(groupKey = "ihub" , commandKey = "ihub" ,fallbackMethod = "bookMyShowFallBack")
+	@GetMapping("/book")
+	public String bookShow()
+	{
+		String paytmServiceResponse=restTemplate.getForObject("http://localhost:8181/paytm/pay", String.class);
+		String notificationServiceResponse=restTemplate.getForObject("http://localhost:7171/notification/send",String.class);
+	
+		return paytmServiceResponse+"\n"+notificationServiceResponse;
+	}
+	
+	
+	public static void main(String[] args) {
+		SpringApplication.run(BookmyshowServiceApplication.class, args);
+		
+	}
+	
+	public String  bookMyShowFallBack()
+	{
+		return "service gateway failed";
+	}
+	
+	@Bean
+	public  RestTemplate    getRestTemplate() {
+	
+		return new RestTemplate();	
+		
+	}
+
+}
+
+
+step5:
+--------
+	convert application.properties file to application.yml file.
+
+
+step6:
+------
+	configure server port number inside application.yml file.
+
+application.yml
+---------------
+server:
+  port: 9191
+	
+
+step7:
+--------
+	Add spring core dependency inside pom.xml file.
+
+	ex:
+		<dependency>
+    			<groupId>org.springframework</groupId>
+    			<artifactId>spring-core</artifactId>
+    			<version>5.3.17</version>
+		</dependency>
+
+step8:
+-------
+	Run the "bookmyshow-service" application as spring boot application.	
+
+
+step9:
+-------
+	Test the application by using below request url.
+	ex:
+		http://localhost:9191/book
+
+
+step10:
+------
+	Now stop any micro service i.e notification-service or paytm-service.
+
+step11:
+--------
+	Test the "bookmyshow-service" application by using below url.
+	ex:
+		http://localhost:9191/book
+
+Note:
+----
+	Here fallback method will execute with the help of Hystrix.
+
+Spring Security
+===============
+Spring Security is a framework which provides various security features like: authentication, authorization to create secure Java Enterprise Applications.
+
+It is a sub project spring framework which is developed in 2003 by Ben Alex.
+
+Later , In 2004 it was released under the licence of Apache as Spring 2.0.0
+
+This framework targets two major areas i.e authentation and autherization.
+
+
+Authentication
+----------------
+The process of confirming the identity of a user is called authentication.
+
+
+Autherization 
+-------------
+It is a process of giving the privileges to the resources is called autherization.
+
+Project Structure
+------------------
+SpringSecurity
+|
+|---src/main/java
+|	|
+	|---com.ihub.www
+		|
+		|---SpringSecurityApplication.java
+	|
+	|---com.ihub.www.controller
+		|
+		|---MyController.java
+		|
+
+|---src/main/resources
+		|
+		|---application.properties 
+|
+|---src/test/java
+|
+|---pom.xml 
+
+
+step1:
+-----
+	Create a spring boot starter project i.e SpringSecurity.
+	ex:
+		staters:
+			spring web 
+			spring security
+
+step2:
+-----
+	Create a "com.ihub.www.controller" package inside "src/main/java".
+	
+	
+
+step3:
+-----
+	Create a MyController.java file inside "com.ihub.www.controller" package.
+	
+MyController.java
+-----------------
+package com.ihub.www.controller;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class MyController 
+{
+	@GetMapping("/home")
+	public String home()
+	{
+		return "I Love Spring Security";
+	}
+}
+
+step4:
+-----
+	Configure server port in application.properties.
+
+application.properties
+---------------------
+server.port= 9090
+
+spring.security.user.name=raja
+spring.security.user.password=rani
+
+
+step5:
+------
+	Run the spring boot project.
+
+
+
+Interview Question
+-----------------
+Q) What is the difference between application.properties and application.yml?
+
+application.properties			application.yml
+----------------------			----------------
+It follows non-hierarchical structure.	It follows hierarchical structure.
+
+
+We can configure only one spring 	We can configure multiple spring profiles.
+profile.				
+
+It is primarily used in java.		It is used in many languages like Java, python, 
+					Ruby and etc.
+
+Supports key/val, but doesn’t support 	Supports key/val, basically map, List and scalar 
+values beyond the string.		types (int, string etc.)
+
+
+
+					
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

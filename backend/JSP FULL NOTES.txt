@@ -1,0 +1,3047 @@
+JSP
+====
+JSP stands for Java/Jarkata Server Pages.
+
+JSP is a server side dynamic web resource program which is used to generate web applications.
+
+
+Limitations with Servlets
+-------------------------
+1) To work with servlet strong java knowledge required.
+
+2) It is not suitable for non-java programmers.
+
+3) It does not give any implicit object.
+
+4) Configuration of each servlet program in web.xml file is mandatory.
+
+5) Handling exceptions are mandatory.
+
+6) We can't maintain HTML code and Java code seperately.
+
+To overcome this above limitations we need to use JSP.
+
+
+Advantages of JSP 
+------------------
+1) To work with JSP strong java knowledge is not required.
+
+2) It is suitable for java and non-java programmers.
+
+3) It gives 9 implicit objects.
+
+4) It supports tag based language.
+
+5) It allows us to work with custom tags and third party supplied tags.
+
+6) Configuration of each jsp program in web.xml file is optional.
+
+7) Handling exceptions are optional.
+
+8) We can maintain HTML code and Java Code seperately.
+
+9) It contains all the features of servlets.
+
+
+
+Q) What is difference between HTML and JSP ?
+
+HTML						JSP
+-------						------
+HTML stands for Hypertext Markup Language.	JSP stands for Java Server Pages.'
+
+It is a client side web resource program.	It is a server side web resource program.
+
+It is used to develop static web pages.		It is used to develop dynamic web pages.
+
+It requires browser window for execution.	It requires server for execution.
+
+It does not support custom tags.		It supports custum tags.
+
+We can't write java code.			We can write java code.
+
+
+First Web Aplication Development Having JSP As Web Resource Program
+====================================================================
+
+Deployment Directory structure
+------------------------------
+JspApp1
+|
+|----Java Resources
+|
+|----WebContent
+	|
+	|----ABC.jsp
+	|
+	|----WEB-INF
+		|
+		|----web.xml 
+Note:
+----
+In above application we need to add "servlet-api.jar" file in project build path.
+
+
+ABC.jsp
+-------
+<center>
+	<h1>
+		Current Date and Time :  <br> 
+		<%
+			java.util.Date d=new java.util.Date();
+			out.println(d);
+		%>
+	</h1>
+</center>
+
+
+web.xml
+-------
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  
+  <welcome-file-list>
+  	<welcome-file>ABC.jsp</welcome-file>
+  </welcome-file-list>
+  
+</web-app>
+
+Request url
+---------
+	http://localhost:8080/JspApp1/	
+
+
+Configuration of JSP program in web.xml file
+=============================================
+Deployment Directory structure
+------------------------------
+JspApp1
+|
+|----Java Resources
+|
+|----WebContent
+	|
+	|----ABC.jsp
+	|
+	|----WEB-INF
+		|
+		|----web.xml 
+Note:
+----
+In above application we need to add "servlet-api.jar" file in project build path.
+
+
+ABC.jsp
+-------
+<center>
+	<h1>
+		Current Date and Time :  <br> 
+		<%
+			java.util.Date d=new java.util.Date();
+			out.println(d);
+		%>
+	</h1>
+</center>
+
+
+web.xml
+-------
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  
+ 
+    <servlet>
+ 	<servlet-name>ABC</servlet-name>
+ 	<jsp-file>/ABC.jsp</jsp-file>
+    </servlet> 
+    <servlet-mapping>
+    	<servlet-name>ABC</servlet-name>
+    	<url-pattern>/test</url-pattern>
+    </servlet-mapping>
+ 
+</web-app>
+
+
+Request url
+---------
+	http://localhost:8080/JspApp1/test 
+	http://localhost:8080/JspApp1/ABC.jsp
+
+
+
+How to hide web application accessible by using file name
+=========================================================
+To access web application by using only url pattern we need to keep ABC.jsp file inside WEB-INF folder.
+
+Deployment Directory structure
+------------------------------
+JspApp1
+|
+|----Java Resources
+|
+|----WebContent
+	|
+	|
+	|----WEB-INF
+		|
+		|----ABC.jsp
+		|
+		|----web.xml 
+Note:
+----
+In above application we need to add "servlet-api.jar" file in project build path.
+
+
+ABC.jsp
+-------
+<center>
+	<h1>
+		Current Date and Time :  <br> 
+		<%
+			java.util.Date d=new java.util.Date();
+			out.println(d);
+		%>
+	</h1>
+</center>
+
+
+web.xml
+-------
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  
+ 
+    <servlet>
+ 	<servlet-name>ABC</servlet-name>
+ 	<jsp-file>/WEB-INF/ABC.jsp</jsp-file>
+    </servlet> 
+    <servlet-mapping>
+    	<servlet-name>ABC</servlet-name>
+    	<url-pattern>/test</url-pattern>
+    </servlet-mapping>
+ 
+</web-app>
+
+
+Request url
+---------
+	http://localhost:8080/JspApp1/test    (valid)
+	http://localhost:8080/JspApp1/ABC.jsp (invalid)
+
+
+Life cycle Methods of JSP
+==========================
+JSP contains three life cycle methods.
+
+1) _jspInit()
+------------
+	It is used for instantiation event.
+	This method will execute just before JES class object creation.
+
+
+2) _jspService()
+----------------
+	It is used for request arrival event.
+	This method will execute when request goes to JSP file.
+
+3) _jspDestroy() 
+----------------
+	It is used for destruction event.
+	This method will execute just before JES class object destruction.
+
+
+
+
+
+Phases in JSP 
+==============
+We have two phases in JSP.
+
+1) Translation phase 
+
+2) Request Processing phase 
+
+1) Translation phase
+---------------------
+	In translation phase, our JSP program converts to JES class.
+	JES stands for Java Equivalent Servlet.
+
+2) Request Processing phase 
+------------------------------
+	In request processing phase,our JSP program will execute and result will send to 
+	browser window.
+
+Diagram: jsp1.1
+
+
+
+
+Q) How to enable <load-on-startup> and what happens if we enable <load-on-startup>?
+
+We can enable <load-on-startup> in web.xml file.
+
+web.xml
+-------
+	<web-app>
+		<servlet>
+ 			<servlet-name>ABC</servlet-name>
+ 			<jsp-file>/WEB-INF/ABC.jsp</jsp-file>
+			<load-on-startup>1</load-on-startup>
+ 		</servlet> 
+   	 	<servlet-mapping>
+    			<servlet-name>ABC</servlet-name>
+    			<url-pattern>/test</url-pattern>
+    		</servlet-mapping>
+	</web-app>
+
+If we enable <load-on-startup> then translation phase will be performed during the server startup or during the deployment of web application.
+
+In general, JES class object will be ready before we give the request.
+
+JSP Tags/Elements
+=================
+JSP mainly contains three tags.
+
+1) Scripting tags
+----------------
+	i) scriptlet tag 
+		ex:
+			<%   code Here   %>
+
+	ii) Expression tag 
+		ex:
+			<%=   code Here  %>
+
+	iii) Declaration tag 
+		ex:
+			<%!   code Here  %>
+
+2) Directive tags 
+-----------------
+	i) Page directive tag 
+		ex:
+			<%@page  attribute=value %>
+		
+	ii)Include directive tag 
+		ex:
+			<%@include  attribute=value %>
+
+3) Action tags 
+--------------
+	<jsp:include> 
+	<jsp:forward>
+	<jsp:useBean>
+	<jsp:setProperty>
+	<jsp:getProperty>
+	and etc.
+
+
+Comments in JSP
+------------
+	<%--  comment here --%>
+
+
+i) scriptlet tag 
+=================
+It is used to declare java code.
+
+syntax:
+-------
+	<%  code Here  %>
+
+
+Deployment Directory Structure
+-----------------------------
+JspApp2
+|
+|---Java Resources
+|	
+|---WebContent
+	|
+	|---form.html
+	|---process.jsp
+	|
+	|---WEB-INF
+		|
+		|----web.xml 
+Note:
+-----
+In above application we need to add "servlet-api.jar" file in project build path.
+
+form.html
+----------
+
+<form action="process.jsp">
+	
+	Name: <input type="text" name="t1"/> 
+	
+	<input type="submit" value="submit"/>
+	
+</form>
+
+process.jsp
+----------
+<center>
+<h1>
+<%
+	
+	String name=request.getParameter("t1");
+	out.println("Welcome :"+name);
+%>
+</h1>
+</center>
+
+web.xml
+--------
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  
+  <welcome-file-list>
+  	<welcome-file>form.html</welcome-file>
+  </welcome-file-list>
+  
+</web-app>
+
+Request url
+-----------
+	http://localhost:8080/JspApp2/
+
+
+ii) Expression tag
+==================
+The code which is written in expression tag will return to the output stream of a response.
+
+It means we don't need to use out.println() method to print the data.
+
+syntax:
+------
+	<%=   code Here %> 
+
+Note:
+----
+	Expression tag does not allow semicolon.
+
+
+Deployment Directory Structure
+-----------------------------
+JspApp2
+|
+|---Java Resources
+|	
+|---WebContent
+	|
+	|---form.html
+	|---process.jsp
+	|
+	|---WEB-INF
+		|
+		|----web.xml 
+Note:
+-----
+In above application we need to add "servlet-api.jar" file in project build path.
+
+form.html
+----------
+
+<form action="process.jsp">
+	
+	Name: <input type="text" name="t1"/> 
+	
+	<input type="submit" value="submit"/>
+	
+</form>
+
+process.jsp
+----------
+<center>
+<h1>
+<%
+	
+	String name=request.getParameter("t1");
+%>
+<%=  "Hey! Welcome :"+name %>
+</h1>
+</center>
+
+
+web.xml
+--------
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  
+  <welcome-file-list>
+  	<welcome-file>form.html</welcome-file>
+  </welcome-file-list>
+  
+</web-app>
+
+Request url
+-----------
+	http://localhost:8080/JspApp2/
+
+
+iii) Declaration tag 
+====================
+It is used to declare fields and methods.
+
+syntax:
+-------
+	<%!    code here  %>
+
+Deployment Directory Structure 
+------------------------------
+JspApp3
+|
+|---Java Resources
+|
+|---WebContent
+	|
+	|---index1.jsp
+	|---index2.jsp
+	|	
+	|---WEB-INF
+		|
+		|---web.xml 
+Note:
+------
+In above application we need to add "servlet-api.jar" file in project build path.
+
+index1.jsp
+----------
+<%!
+
+	int i=10;
+	
+%>
+<center>
+<h1>
+<%= "The value of I is ="+i %>
+</h1>
+</center>
+
+
+
+
+index2.jsp
+----------
+<%!
+	
+	int cube(int n)
+	{
+		return n*n*n;
+	}
+
+%>
+
+<center>
+	<h1>
+		<%=  "Cube of a given number is ="+cube(5) %>
+	</h1>
+</center>
+
+
+
+web.xml
+-------
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  
+</web-app>
+
+
+Request url
+-------
+	http://localhost:8080/JspApp3/index1.jsp
+	http://localhost:8080/JspApp3/index2.jsp 
+
+Exception Handling in JSP
+==========================
+Exceptions are runtime errors.
+
+We don't know when exception may raise in our application so handling exceptions is always safer side for the programmer.
+
+There are two ways to handle the exceptions in JSP.
+
+1) Using errorPage and isErrorPage attribute of page directive tag 
+
+2) Using <error-page> element in web.xml file 
+
+
+1) Using errorPage and isErrorPage attribute of page directive tag 
+--------------------------------------------------------------------
+
+Deployment Directory structure
+---------------------------
+JspApp4
+|
+|---Java Resources
+|
+|---WebContent
+	|
+	|----form.html
+	|----process.jsp
+	|----error.jsp
+	|	
+	|----WEB-INF
+		|		
+		|----web.xml 
+Note:
+------
+In above application we need to add "servlet-api.jar" file in project build path.
+
+form.html
+---------
+
+<form action="process.jsp">
+	
+	No1: <input type="text" name="t1"/> <br>
+	
+	No2: <input type="text" name="t2"/> <br>
+	
+	<input type="submit"  value="divide"/>
+	
+</form>
+
+process.jsp
+-----------
+<%@page  errorPage="error.jsp" %>
+<%
+	String sno1=request.getParameter("t1");
+	String sno2=request.getParameter("t2");
+	
+	int a=Integer.parseInt(sno1);
+	int b=Integer.parseInt(sno2);
+	int c=a/b;
+%>
+<%=  "Division of two numbers is ="+c %>
+	
+error.jsp
+-----------
+<%@page isErrorPage="true" %>
+
+<b><i>
+	Sorry! Exception occured!  <br>
+	
+	<%=  exception %>
+</i></b>
+
+web.xml
+---------
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  
+  <welcome-file-list>
+  	<welcome-file>form.html</welcome-file>
+  </welcome-file-list>
+  
+</web-app>
+
+Request url
+-------
+	http://localhost:8080/JspApp4/
+
+
+
+
+2) Using <error-page> element in web.xml file 
+------------------------------------------
+This approach is recommanded to use because we don't need to define errorPage attribute in each JSP file. Defining a single entry in web.xml file can handle all types of exceptions.
+
+Deployment Directory structure
+---------------------------
+JspApp4
+|
+|---Java Resources
+|
+|---WebContent
+	|
+	|----form.html
+	|----process.jsp
+	|----error.jsp
+	|	
+	|----WEB-INF
+		|		
+		|----web.xml 
+Note:
+------
+In above application we need to add "servlet-api.jar" file in project build path.
+
+form.html
+---------
+
+<form action="process.jsp">
+	
+	No1: <input type="text" name="t1"/> <br>
+	
+	No2: <input type="text" name="t2"/> <br>
+	
+	<input type="submit"  value="divide"/>
+	
+</form>
+
+process.jsp
+-----------
+<%
+	String sno1=request.getParameter("t1");
+	String sno2=request.getParameter("t2");
+	
+	int a=Integer.parseInt(sno1);
+	int b=Integer.parseInt(sno2);
+	int c=a/b;
+%>
+<%=  "Division of two numbers is ="+c %>
+	
+error.jsp
+-----------
+<%@page isErrorPage="true" %>
+
+<b><i>
+	Sorry! Exception occured!  <br>
+	
+	<%=  exception %>
+</i></b>
+
+web.xml
+---------
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  
+  <error-page>
+  	<exception-type>java.lang.Exception</exception-type>
+  	<location>/error.jsp</location>
+  </error-page>
+  
+  <welcome-file-list>
+  	<welcome-file>form.html</welcome-file>
+  </welcome-file-list>
+  
+</web-app>
+
+
+
+Request url
+-------
+	http://localhost:8080/JspApp4/
+
+
+Servlets					JSP
+--------					-----
+To work with servlets strong java knowledge 
+is required.					To work with JSP strong java knowledge is 
+						not required.
+
+It is not suitable for non-java programmers.	It is suitable for non-java programmers.
+
+It does not support tags.			It supports tags.
+
+It does not give any implicit object.		It gives 9 implicit objects.
+
+Configuration of servlet program in web.xml 
+file is mandatory.				Configuration of jsp program in web.xml file 
+						is optional.
+
+Handling exceptions are mandatory.		Handing exceptions is optional.
+
+We can’t maintain HTML code and Java code 
+separately.					We can maintain HTML code and Java code separately.
+
+It runs faster than JSP.			It runs slower than servlet because it takes 
+						time to compile the program and convert into 
+						Servlets.
+
+Jsp to Database Communication
+=============================
+
+Deployment Directory structure
+------------------------------
+JspApp5
+|
+|---Java Resources
+|
+|---WebContent
+	|
+	|---form.html
+	|---process.jsp
+	|
+	|---WEB-INF
+		|
+		|---web.xml 
+		|
+		|-----lib
+			|	
+			|---ojdbc11.jar
+Note:
+----
+In above application we need to add "servlet-api.jar" and "ojdbc11.jar" file in project build path.
+
+Copy and paste ojdbc11.jar file inside "WEB-INF/lib" folder sperately.
+
+
+form.html
+---------
+
+<form action="process.jsp">
+	
+	No: <input type="text" name="t1"/> <br>
+	
+	Name: <input type="text" name="t2"/> <br>
+	
+	Address: <input type="text" name="t3"/> <br>
+	
+	<input type="submit" value="submit"/>
+	
+</form>
+
+web.xml
+---------
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  
+  <welcome-file-list>
+  	<welcome-file>form.html</welcome-file>
+  </welcome-file-list>
+  
+</web-app>
+
+process.jsp
+-----------
+<%@page  import="java.sql.*"  buffer="8kb"   language="java"%>
+<%
+
+	String sno=request.getParameter("t1");
+	int no=Integer.parseInt(sno);
+	
+	String name=request.getParameter("t2");
+	
+	String add=request.getParameter("t3");
+	
+	//insert the data into database
+	Connection con=null;
+	PreparedStatement ps=null;
+	String qry=null;
+	int result=0;
+	try
+	{
+		Class.forName("oracle.jdbc.driver.OracleDriver");
+		con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE","system","admin");
+		qry="insert into student values(?,?,?)";
+		ps=con.prepareStatement(qry);
+		
+		//set the values
+		ps.setInt(1,no);
+		ps.setString(2,name);
+		ps.setString(3,add);
+		
+		//execute 
+		result=ps.executeUpdate();
+		if(result==0)
+			out.println("No Record Inserted ");
+		else
+			out.println("Record Inserted");
+		
+		ps.close();
+		con.close();
+	}
+	catch(Exception e)
+	{
+		e.printStackTrace();
+	}
+	
+%>
+
+Request url
+---------
+	http://localhost:8080/JspApp5/
+Action Tags
+============
+Action tags are used to perform perticular operation.
+
+Action tags are used to control the web pages and uses java bean.
+
+Action tags are executed dynamically at runtime.
+
+Action tags having only standard tags.
+
+Action tags are divided into two types.
+
+1) Standard Action tags 
+
+2) Custom Action tags 
+
+
+1) Standard Action tags 
+----------------------
+Built-In tags are called standard action tags.
+ex:
+	<jsp:forward>
+	<jsp:include>
+	<jsp:useBean>
+	<jsp:setProperty>
+	<jsp:getProperty>
+	and etc.
+
+
+Action forward
+================
+In action forward, output of source JSP program will be discarded and output of destination JSP program goes to browser window as dynamic response.
+
+It internally uses servlet API functionality called rd.forward(req,res).
+
+syntax:
+-------
+	<jsp:forward   page="page_name"/>
+
+
+Deployment Directory structure
+------------------------------
+JspApp6
+|
+|---Java Resources
+|
+|---WebContent
+	|		
+	|---A.jsp
+	|---B.jsp
+	|
+	|---WEB-INF
+		|
+		|---web.xml 
+Note:
+-----
+In above application we need to add "servlet-api.jar" file in project build path.
+
+
+A.jsp
+-----
+<b><i> Begining of A.jsp </i></b>
+<br>
+<jsp:forward page="B.jsp"/>
+<br>
+<b><i> Ending of A.jsp </i></b>
+
+B.jsp
+------
+<b><i> This is B.jsp </i></b>
+
+web.xml
+---------
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  
+  <welcome-file-list>
+  	<welcome-file>A.jsp</welcome-file>
+  </welcome-file-list>
+  
+</web-app>
+
+Request url
+---------
+	http://localhost:8080/JspApp6/
+
+
+
+Action include
+================
+In action include, the output of source jsp program and output of destination jsp program combinely goes to browser window as dynamic response.
+
+It internally uses servlet API functionality called rd.include(req,res).
+
+syntax:
+------
+	<jsp:include  page="page_name"/>
+
+
+
+Deployment Directory structure
+------------------------------
+JspApp7
+|
+|---Java Resources
+|
+|---WebContent
+	|		
+	|---A.jsp
+	|---B.jsp
+	|
+	|---WEB-INF
+		|
+		|---web.xml 
+Note:
+-----
+In above application we need to add "servlet-api.jar" file in project build path.
+
+
+A.jsp
+-----
+<b><i> Begining of A.jsp </i></b>
+<br>
+<jsp:include page="B.jsp"/>
+<br>
+<b><i> Ending of A.jsp </i></b>
+
+B.jsp
+------
+<b><i> This is B.jsp </i></b>
+
+web.xml
+---------
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  
+  <welcome-file-list>
+  	<welcome-file>A.jsp</welcome-file>
+  </welcome-file-list>
+  
+</web-app>
+
+Request url
+---------
+	http://localhost:8080/JspApp7/
+
+
+
+JSP to Java Bean Communication
+==============================
+JSP to java bean communication is possible by using three tags.
+
+1) <jsp:useBean> tag
+--------------------
+	It is used to create and locate bean class object. 
+
+2) <jsp:setProperty> tag 
+---------------------
+	It is used to set the values to bean object and calls setter method.
+
+3) <jsp:getProperty> tag 
+--------------------
+	It is used to get the values from bean object and calls getter methods
+
+Note:
+-----
+	All the above tags are independen tags.
+
+Example1
+----------
+
+Deployment Directory Structure
+------------------------------
+JspApp8
+|
+|---Java Resources
+|	|
+	|------src
+		|
+		|---com.ihub.www
+			|
+			|---CubeNumber.java 
+|---WebContent
+	|
+	|---process.jsp	
+	|	
+	|---WEB-INF
+		|
+		|----web.xml 
+Note:
+-----
+In above application we need to add "servlet-api.jar" file in project build path.
+
+process.jsp
+-----------
+<jsp:useBean id="cn" class="com.ihub.www.CubeNumber"></jsp:useBean>
+
+<%=  "Cube of a given number is ="+cn.cube(5) %>
+
+
+web.xml
+------
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  
+  <welcome-file-list>
+  	<welcome-file>process.jsp</welcome-file>
+  </welcome-file-list>
+  
+</web-app>
+
+
+CubeNumber.java
+----------------
+package com.ihub.www;
+
+public class CubeNumber 
+{
+	public int cube(int n)
+	{
+		return n*n*n;
+	}
+}
+
+Request url
+----------
+	http://localhost:8080/JspApp8/
+
+Example2:
+-----------
+
+Deployment Directory Structure
+-------------------------------
+JspApp9
+|
+|---Java Resources
+|	|
+	|------src
+		|
+		|---com.ihub.www
+			|
+			|----User.java
+|---WebContent
+	|
+	|---form.html
+	|---process.jsp
+	|
+	|---WEB-INF
+		|
+		|---web.xml 
+Note:
+----
+In above application we need to add "servlet-api.jar" file in project build path.
+
+
+form.html
+-----------
+<form action="process.jsp">
+	
+	UserName: <input type="text" name="username"/> <br>
+	
+	Password: <input type="password" name="password"/> <br>
+	
+	Email: <input type="email" name="email"/> <br>
+	
+	<input type="submit" value="submit"/>
+	
+</form>
+
+web.xml
+-------
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  
+  <welcome-file-list>
+  	<welcome-file>form.html</welcome-file>
+  </welcome-file-list>
+  
+</web-app>
+
+User.java
+----------
+package com.ihub.www;
+
+public class User                     
+{
+	private String username;
+	private String password;
+	private String email;
+	
+	public String getUsername() {
+		return username;
+	}
+	public void setUsername(String username) {
+		this.username = username;
+	}
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+}
+
+process.jsp
+------------
+<jsp:useBean id="u" class="com.ihub.www.User"></jsp:useBean>
+
+<jsp:setProperty property="*" name="u"/>
+
+Records Are <br>
+
+<jsp:getProperty property="username" name="u"/> <br>
+<jsp:getProperty property="password" name="u"/> <br>
+<jsp:getProperty property="email" name="u"/> <br>
+
+Request url
+----------
+	http://localhost:8080/JspApp9/
+
+2) Custom Tags in JSP
+====================
+Tags which are created by the user based on the application requirement is called custom tags. 
+
+ex:
+	<ihub:qualitythought>
+	<ihub:student> 	
+	<ihub:faculty>
+	and etc.
+
+To create custom tags we need to use taglib directive.
+
+syntax:
+-------
+	<%@taglib   uri="urioftaglibdirective"    prefix="prefixoftaglibdirective" %>
+
+To configure tag information we need to create TLD (Tag Library Descriptor) file. 
+
+
+Deployment Directory Structure
+-----------------------------
+JspApp10
+|
+|---Java Resources
+	|
+	|------src
+		|
+		|---com.ihub.www
+			|
+			|---CubeNumber.java
+|---WebContent
+	|
+	|----process.jsp
+	|
+	|----WEB-INF
+		|
+		|------web.xml
+		|------mytags.tld
+		|
+		|------lib 
+			|
+			|---jsp-api.jar 
+			
+Note:
+----
+In above application we need to add "servlet-api.jar" and "jsp-api.jar" file in project build path.
+
+Copy and paste "jsp-api.jar" file inside "WEB-INF/lib" folder seperately.
+
+
+process.jsp
+-----------
+
+<%@taglib uri="/WEB-INF/mytags.tld"  prefix="ihub" %>
+
+<center>
+	<h1>
+		Cube Of a Given Number is =<ihub:cube  number="5"/>
+		
+	</h1>
+</center>
+
+
+web.xml
+-------
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  
+  <welcome-file-list>
+  	<welcome-file>process.jsp</welcome-file>
+  </welcome-file-list>
+  
+</web-app>
+
+mytags.tld
+----------
+<?xml version="1.0" encoding="ISO-8859-1" ?>  
+<!DOCTYPE taglib  
+        PUBLIC "-//Sun Microsystems, Inc.//DTD JSP Tag Library 1.2//EN"  
+    "http://java.sun.com/j2ee/dtd/web-jsptaglibrary_1_2.dtd">  
+  
+<taglib>  
+  
+  <tlib-version>1.0</tlib-version>  
+  <jsp-version>1.2</jsp-version>  
+  <short-name>simple</short-name>  
+  <uri>http://tomcat.apache.org/example-taglib</uri>  
+  
+  <tag>
+  	<name>cube</name>
+  	<tag-class>com.ihub.www.CubeNumber</tag-class>
+  	<attribute>
+  		<name>number</name>
+  		<required>true</required>
+  	</attribute>
+  </tag>
+ 
+
+</taglib> 
+
+CubeNumber.java
+--------------
+package com.ihub.www;
+
+import javax.servlet.jsp.JspException;
+import javax.servlet.jsp.JspWriter;
+import javax.servlet.jsp.tagext.TagSupport;
+
+public class CubeNumber extends TagSupport
+{
+	private int number;
+	
+	//setter method
+	public void setNumber(int number)
+	{
+		this.number=number;
+	}
+
+	public int doStartTag()throws JspException
+	{
+		JspWriter out=pageContext.getOut();
+		try
+		{
+			out.println(number*number*number);
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+		
+		return SKIP_BODY;
+	}
+}
+
+Request url
+--------
+	http://localhost:8080/JspApp10/
+
+MVC in JSP
+==========
+MVC stands for Model View Controller.
+
+It is one of the design patter which seperates business logic, persistence logic and data.
+
+Controller acts like a mediator or interface between Model and View.
+
+Controller is used ot intercept all incoming request.
+
+Model contains data and some times it contains business logic.
+
+View represent User Interface.
+
+Diagram: jsp4.1
+
+
+Deployment Directory Structure
+------------------------------
+JspApp11
+|
+|---Java Resources
+	|
+	|------src
+		|
+		|---com.ihub.www
+			|
+			|---LoginSrv.java
+			|---LoginBean.java
+|
+|---WebContent 
+	|
+	|---form.html
+	|---view.jsp
+	|---error.jsp 
+	|
+	|---WEB-INF
+		|
+		|---web.xml 
+Note:
+-----
+In above application we need to add "servlet-api.jar" file in project build path.
+
+form.html
+---------
+<form action="test">
+
+	<table align="center">
+		
+		<tr>
+			<td>UserName:</td>
+			<td><input type="text" name="username"/></td>
+		</tr>
+		<tr>
+			<td>Password:</td>
+			<td><input type="password" name="password"/></td>
+		</tr>
+		<tr>
+			<td><input type="reset" value="reset"/></td>
+			<td><input type="submit" value="submit"/></td>
+		</tr>
+		
+	</table>
+
+</form>
+
+web.xml
+--------
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  
+  <welcome-file-list>
+  	<welcome-file>form.html</welcome-file>
+  </welcome-file-list>
+  
+  <servlet>
+  	<servlet-name>LoginSrv</servlet-name>
+  	<servlet-class>com.ihub.www.LoginSrv</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>LoginSrv</servlet-name>
+  	<url-pattern>/test</url-pattern>
+  </servlet-mapping>
+  
+  
+</web-app>
+
+
+LoginBean.java
+---------------
+package com.ihub.www;
+
+public class LoginBean 
+{
+	private String username;
+	private String password;
+	
+	public String getUsername() {
+		return username;
+	}
+	public void setUsername(String username) {
+		this.username = username;
+	}
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
+	}
+}
+
+
+LoginSrv.java
+-------------
+package com.ihub.www;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+public class LoginSrv extends HttpServlet 
+{
+	protected void doGet(HttpServletRequest req,HttpServletResponse res)throws ServletException,IOException
+	{
+		PrintWriter pw=res.getWriter();
+		res.setContentType("text/html");
+		
+		//reading form data
+		String uname=req.getParameter("username");
+		String pass=req.getParameter("password");
+		
+		//set the data to bean class 
+		LoginBean lb=new LoginBean();
+		lb.setUsername(uname);
+		lb.setPassword(pass);
+		
+		//send the bean object to jsp
+		req.setAttribute("bean", lb);
+		
+		if(pass.equals("admin"))
+		{
+			RequestDispatcher rd=req.getRequestDispatcher("view.jsp");
+			rd.forward(req, res);
+		}
+		else
+		{
+			RequestDispatcher rd=req.getRequestDispatcher("error.jsp");
+			rd.forward(req, res);
+		}
+		
+		pw.close();
+	}
+}
+
+view.jsp
+-------
+<%@page   import="com.ihub.www.LoginBean" %>
+
+<%
+	LoginBean lb=(LoginBean)request.getAttribute("bean");
+%>
+
+UserName : <%= lb.getUsername() %> <br>
+Password : <%= lb.getPassword() %> <br>
+
+
+
+error.jsp
+--------
+<center>
+	<b style="color:red">Sorry! Incorrect username or password </b>
+</center>
+
+<%@include  file="form.html" %>
+
+
+Request url
+-----------
+	http://localhost:8080/JspApp11/	
+
+
+
+Steps to deploy war file in a Tomcat server
+===========================================
+step1:
+------
+	Make sure dynamic web project is ready.
+
+step2:
+-----
+	Convert dynamic web project to war file.
+	ex:
+		right click to JspApp11 ---> Export ---> war file --> 
+		select destination(desktop) ---> finish.
+
+step3:
+------
+	Goto Tomcat home folder and start tomcat server manually.
+	ex:
+		C:\Program Files\Apache Software Foundation\Tomcat 9.0\bin
+
+step4:
+-----
+	Goto Tomcat console page and click to Manager App.
+	ex:
+		http://localhost:8080
+
+		username : admin 
+		password : admin 
+
+step5:
+------
+	Scroll down and click to Choose file to deploy the web application.
+	
+Implicit objects in JSP
+=======================
+Object which can be used directly without any configuration is called implicit object.
+
+Implicit objects are created by the web container which are available for every JSP page.
+
+We have nine implicit objects in JSP.
+
+ex:
+	Object			Type
+	-------			------
+	out			JspWriter 
+	request			HttpServletRequest
+	response		HttpServletResponse	
+	config			ServletConfig
+	application		ServletContext
+	session			HttpSession
+	pageContext		pageContext
+	exception 		Throwable 	
+	page 			Object
+
+
+
+response object
+================
+A response is a implicit object of type HttpServletResponse.
+
+It is used to redirect the response or errors to other resources.
+
+
+Deployment Directory Structure
+------------------------------
+JspApp12
+|
+|----Java Resources
+|
+|----WebContent
+	|
+	|---index.html
+	|---process.jsp4
+	|
+	|---WEB-INF
+		|
+		|---web.xml 
+
+Note:
+-----
+In above application we need to add "servlet-api.jar" file in project build path.
+
+
+index.html
+-----------
+<center>
+	<h1>
+		<a href="process.jsp"> Facebook </a>
+	</h1>
+</center>
+
+
+process.jsp
+-------------
+
+<%
+	response.sendRedirect("http://www.facebook.com/login");
+%>
+
+web.xml
+-------
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  
+  <welcome-file-list>
+  	<welcome-file>index.html</welcome-file>
+  </welcome-file-list>
+  
+</web-app>
+
+Request url
+---------
+	http://localhost:8080/JspApp12/
+
+
+config object
+============
+A config is a implicit object of type ServletConfig.
+
+This object created by the web container for every JSP.
+
+It is used to get initialized parameters for perticular JSP page from web.xml file.
+
+In short, it reads the configuration information from web.xml file.
+
+
+Deployment Directory Structure
+------------------------------
+JspApp13
+|
+|---Java Resources
+|
+|---WebContent
+	|
+	|---index.html 
+	|---process.jsp
+	|
+	|---WEB-INF
+		|
+		|---web.xml 
+Note:
+-----
+In above application we need to add "servlet-api.jar" file in project build path.
+
+
+index.html
+----------
+<center>
+	<h1>
+		<a href="test"> Click Here </a>
+	</h1>
+</center>
+
+
+process.jsp
+----------
+<center>
+<h1>
+<%
+	String name=config.getInitParameter("driver");
+	out.println(name);
+%>
+</h1>
+</center>
+
+
+
+web.xml
+-------
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  
+  
+  <servlet>
+  	<servlet-name>XYZ</servlet-name>
+  	<jsp-file>/process.jsp</jsp-file>
+  	<init-param>
+  		<param-name>driver</param-name>
+  		<param-value>oracle.jdbc.driver.OracleDriver</param-value>
+  	</init-param>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>XYZ</servlet-name>
+  	<url-pattern>/test</url-pattern>
+  </servlet-mapping>
+  
+  
+  <welcome-file-list>
+  	<welcome-file>index.html</welcome-file>
+  </welcome-file-list>
+  
+</web-app>
+
+Request url
+------------
+	http://localhost:8080/JspApp13
+
+
+application object
+====================
+A application is an implicit object of type ServletContext.
+
+This object created by the web container for every web application.
+
+It is used to get initialized parameters from web.xml file which is global.
+
+It is used to set , get and remove attributes in application scope.
+
+
+Deployment Directory Structure
+------------------------------
+JspApp14
+|
+|---Java Resources
+|
+|---WebContent
+	|
+	|---index.html 
+	|---process.jsp
+	|
+	|---WEB-INF
+		|
+		|---web.xml 
+Note:
+-----
+In above application we need to add "servlet-api.jar" file in project build path.
+
+
+index.html
+----------
+<center>
+	<h1>
+		<a href="test"> Click Here </a>
+	</h1>
+</center>
+
+
+process.jsp
+----------
+<center>
+<h1>
+<%
+	String name=application.getInitParameter("driver");
+	out.println(name);
+%>
+</h1>
+</center>
+
+
+
+web.xml
+-------
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  
+  
+  <servlet>
+  	<servlet-name>XYZ</servlet-name>
+  	<jsp-file>/process.jsp</jsp-file>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>XYZ</servlet-name>
+  	<url-pattern>/test</url-pattern>
+  </servlet-mapping>
+
+  <context-param>
+  	<param-name>driver</param-name>
+  	<param-value>oracle.jdbc.driver.OracleDriver</param-value>
+  </context-param>	
+  
+  
+  <welcome-file-list>
+  	<welcome-file>index.html</welcome-file>
+  </welcome-file-list>
+  
+</web-app>
+
+Request url
+------------
+	http://localhost:8080/JspApp14
+
+
+
+session object
+==============
+A session is an implicit object of type HttpSession.
+
+It is used to set,get and remove the data from session.
+
+
+Deployment Directory Structure
+------------------------------
+JspApp15
+|
+|---Java Resources
+|
+|---WebContent
+	|
+	|---form.html
+	|---first.jsp
+	|---second.jsp
+	|
+	|---WEB-INF
+		|
+		|---web.xml 
+Note:
+-----
+In above application we need to add "servlet-api.jar" file in project build path.
+
+form.html
+---------
+
+<form action="first.jsp">
+	
+	Name: <input type="text" name="t1"/> 
+	
+	<input type="submit" value="submit"/>
+	
+</form>
+
+first.jsp
+-----------
+<%
+	
+	String name=request.getParameter("t1");
+	out.println("Welcome :"+name);
+	
+	session.setAttribute("pname", name);
+	
+%>
+<br>
+<a href="second.jsp"> click Here for second.jsp </a>
+
+
+second.jsp
+----------
+<%
+	String name=(String)session.getAttribute("pname");
+	out.println("Hey ! ="+name);
+%>
+
+
+web.xml
+--------
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  
+  <welcome-file-list>
+  	<welcome-file>form.html</welcome-file>
+  </welcome-file-list>
+  
+</web-app>
+
+
+Request url
+----------
+	http://localhost:8080/JspApp15
+
+
+pageContext object
+===================
+A pageContext is an implicit object of type pageContext.
+
+The pageContext object can be used to set,get or remove attribute from one of the following scopes.
+ex:
+	page	
+	request
+	session	
+	application
+
+
+Deployment Directory Structure
+------------------------------
+JspApp16
+|
+|---Java Resources
+|
+|---WebContent
+	|
+	|---form.html
+	|---first.jsp
+	|---second.jsp
+	|
+	|---WEB-INF
+		|
+		|---web.xml 
+Note:
+-----
+In above application we need to add "servlet-api.jar" file in project build path.
+
+form.html
+---------
+
+<form action="first.jsp">
+	
+	Name: <input type="text" name="t1"/> 
+	
+	<input type="submit" value="submit"/>
+	
+</form>
+
+first.jsp
+-----------
+<%
+	
+	String name=request.getParameter("t1");
+	out.println("Welcome :"+name);
+	
+	pageContext.setAttribute("pname", name,pageContext.SESSION_SCOPE);
+	
+%>
+<br>
+<a href="second.jsp"> click Here for second.jsp </a>
+
+
+
+second.jsp
+----------
+
+<%
+	String name=(String)pageContext.getAttribute("pname",pageContext.SESSION_SCOPE);
+	out.println("Hey Bro! ="+name);
+%>
+
+
+web.xml
+--------
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  
+  <welcome-file-list>
+  	<welcome-file>form.html</welcome-file>
+  </welcome-file-list>
+  
+</web-app>
+
+
+Request url
+----------
+	http://localhost:8080/JspApp16
+
+
+page object
+===========
+A page is an implicit object of type Object.
+
+It acts as this object for current jsp page.
+
+Maven 
+=====
+Maven is a project building management tool.
+
+It is a product of Apache Software Foundation.
+
+It is an open source tool.
+
+It provides following details.
+
+1) Project structure 
+
+2) pom.xml (project object model)
+
+3) Reports
+
+4) Documentations 
+
+5) Packaging 
+
+
+Diagram: jsp6.1
+
+
+Steps to develop Maven Archetype Web Project
+============================================
+step1:
+------
+	Launch eclipse IDE by choosing workspace location.
+
+step2:
+-----
+	Create a maven project.
+	ex:
+		File --> new --> Maven Project --> Next --> Uncheck (show the latest version)
+		----> Group id : org.apache.maven.archetype 
+	 	      Artifact id : maven-archetype-webapp 
+		      version : 1.0 
+
+		----> Next  ---> Group id : com.ihub.www
+				 Artifact id : MavenProj
+				 version : (keep same)
+				 package : com.ihub.www   
+		---> Finish. 
+
+step3:
+-----
+	Add "servlet-api" maven dependency in pom.xml file.
+	ex:
+		<dependency>
+   			<groupId>javax.servlet</groupId>
+    			<artifactId>servlet-api</artifactId>
+    			<version>2.5</version>
+    			<scope>provided</scope>
+		</dependency>
+
+
+step4:
+-----
+	Write a the logic inside index.js file. 
+	ex:
+	
+	index.jsp
+	----------
+	<center>
+	<h1>
+		<a href="test"> Click Me </a>
+	</h1>
+	</center>
+
+step5:
+------
+	Create a "java" folder inside "src/main" folder.
+
+step6:
+------
+	Create a TestSrv.java file inside "src/main/java" folder.
+	ex:
+		right click to java folder --> new ---> others ---> class --> Next -->
+		package : com.ihub.www
+		Name : TestSrv  --> finish. 
+
+TestSrv.java
+-----------
+package com.ihub.www;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+public class TestSrv extends HttpServlet
+{
+	protected void doGet(HttpServletRequest req,HttpServletResponse res)throws ServletException,IOException
+	{
+		PrintWriter pw=res.getWriter();
+		res.setContentType("text/html");
+		
+		pw.println("<center><h1> This is Servlet Program </h1></center>");
+		
+		pw.close();
+	}
+}
+
+step7:
+-----
+	Configure the servlet program in web.xml file .
+
+web.xml
+--------
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN" 
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  <servlet>
+  	<servlet-name>TestSrv</servlet-name>
+  	<servlet-class>com.ihub.www.TestSrv</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>TestSrv</servlet-name>
+  	<url-pattern>/test</url-pattern>
+  </servlet-mapping>
+  
+  <welcome-file-list>
+  	<welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+  
+</web-app>
+	
+step8:
+-----
+	Run the maven project.
+
+	ex:
+		right to MavenProj --> run as --> run on server --> Next --> removeAll --> Finish.
+
+
+step9:
+------
+	Test the application by using below request url.
+	ex:
+		http://localhost:8080/MavenProj/
+
+
+
+WinIT interview Program
+========================
+Q) Write a java program to count number of 2's?
+
+input:
+	22
+
+output:
+	6 (2,12,20,21,22)
+
+ex:
+---
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		int num=22;
+		
+		StringBuffer sb=new StringBuffer();
+		
+		for(int i=1;i<=num;i++)
+		{
+			sb.append(i);
+		}
+		
+		String str=sb.toString(); //123456789.....22
+		
+		int count=0;
+		
+		for(int i=0;i<str.length();i++)
+		{
+			//convert character to string
+			int n=Integer.parseInt(String.valueOf(str.charAt(i)));
+			
+			if(n==2)
+			{
+				count++;		
+			}
+		}
+		
+		System.out.println(count);
+	}
+}
+
+
+
+Appollo Dart Interview Question
+===============================
+
+Q) What is the difference between Normalization and Denormalization ?
+
+Normalization					Denormalization
+--------------					----------------
+It increases the complexity due to multiple 	It reduces the complexity due to single table.
+tables.						
+
+No redundant data				Redundant data
+
+No waste of memory				Waste of memory
+
+Slower reads 					Slower writes 
+
+Low data availability				High data availability
+
+Need of joins					No need of joins
+
+JUnit
+=======
+Junit is a unit testing framework for java programming.
+
+Unit testing means testing small piece of code independently.
+
+In realtime, developers are responsible to perform unit testing.
+
+Unit testing plays important role in TDD (Test Driven Development).
+
+The latest version of JUnit is 5.
+
+To perform unit testing we need to create test cases or test suit.
+
+
+Steps to perform unit testing in java
+=======================================
+
+JunitProj
+|
+|---src/main/java
+|	|
+	|---com.ihub.www
+		|
+		|---Demo.java
+
+|---src/main/resources
+|
+|---src/test/java
+	|	
+	|---com.ihub.www
+		|
+		|---DemoTest.java
+|
+|---pom.xml 
+
+
+step1:
+-----
+	Create a simple maven archetype project.
+	ex:
+		File --> new --> Maven project --> create simple project (select on checkbox)
+		---> Next -->  
+
+		Group id : com.ihub.www
+		Artifact id : JunitProj
+		version : (keep same)
+		packaging : jar 
+		Name : JunitProj
+		Description : Demostration on Junit  --> Finish. 
+
+step2:
+-----
+	Create a "com.ihub.www" package inside "src/main/java" folder.
+	ex:
+		right click to src/main/java --> new --> package --> 
+		Name : com.ihub.www --> Finish. 
+
+step3:
+------
+	Create a Demo.java file inside "com.ihub.www" package.
+	ex:
+		right click to com.ihub.www pkg --> new --> class -->
+		Name : Demo  --> finish.
+
+Demo.java
+--------
+package com.ihub.www;
+
+public class Demo 
+{
+	public static int sum(int a,int b)
+	{
+		return a+b;
+	}
+	
+	public static String concatination(String str1,String str2)
+	{
+		return str1+str2;
+	}
+}
+
+step4:
+-----
+	Create test cases for two methods i.e sum() and concatination() method.
+	ex:
+		Right click to Demo.java --> new --> others --> Junit --> Junit Test case 
+		--> Next --> Next --> Select sum() and concatination() (select checkbox) -->
+		Finish --> ok.
+
+step5:
+------
+	Write the logic inside DemoTest.java file.
+
+DemoTest.java
+-------------
+package com.ihub.www;
+
+import static org.junit.Assert.assertEquals;
+
+import org.junit.Test;
+
+public class DemoTest {
+
+	@Test
+	public void testSum() 
+	{
+		int result=Demo.sum(10,20);
+		assertEquals(30,result);
+	}
+
+	@Test
+	public void testConcatination() 
+	{
+		String result=Demo.concatination("ihub","talent");
+		assertEquals("ihubtalent",result);
+	}
+
+}
+
+step6:
+------
+	Run the Junit Test cases.
+	ex:
+		Right click to DemoTest.java file --> run as --> Junit Test 
+		
+Note:
+------
+	Green color indicates test cases are passed.
+	Brown color indicates test cases are failed.		
+	
+GIT/GITHUB
+==========
+
+Q) What is the difference between GIT and GITHUB ?
+
+GIT						GITHUB 
+------						------
+It is a distributed version control 		It is a hosting server for GIT.		
+system which is used track the changes 
+in a file during the project development.
+
+It is a software.				It is a service.
+
+It is locally installed on a computer.		It is hosted on web.
+
+It contains local repository.			It contains remote repository.
+
+It is command line.				It is GUI (Graphical User Interface).
+
+
+Types Of GIT Stages 
+===================
+We have three GIT stages.
+
+1) Working Directory 
+
+2) Staging Area 
+
+3) Repository 
+
+Diagram: jsp7.1
+ 
+	
+Steps to push the code to GITHUB
+==================================
+step1:
+-----
+	Create a account in GITHUB.
+	ex:
+		https://github.com
+
+
+step2:
+-----
+	Login to GITHUB account with username and password.
+
+step3:
+------
+	Create a remote repository. 
+	ex:
+		https://github.com/NiyazulHasan/ih-java-033
+
+step4:
+-----
+	Download and Install GIT software.
+	ex:
+		https://git-scm.com/downloads
+
+step5:
+------
+	Create a "mydata" folder on desktop and keep some files.
+
+step6:
+------
+	Open the git bash from mydata folder.
+
+
+step7:
+------
+	Initialize the git empty repository.
+	ex:
+		git init 
+
+step8:
+-------
+	
+	
+Steps to push the code to GITHUB
+==================================
+step1:
+-----
+	Create a account in GITHUB.
+	ex:
+		https://github.com
+
+
+step2:
+-----
+	Login to GITHUB account with username and password.
+
+step3:
+------
+	Create a remote repository. 
+	ex:
+		https://github.com/NiyazulHasan/ih-java-033
+
+step4:
+-----
+	Download and Install GIT software.
+	ex:
+		https://git-scm.com/downloads
+
+step5:
+------
+	Create a "mydata" folder on desktop and keep some files.
+
+step6:
+------
+	Open the git bash from mydata folder.
+
+
+step7:
+------
+	Initialize the git empty repository.
+	ex:
+		git init 
+
+step8:
+-------
+	To see the list branches we need to run below command.
+	ex:
+		git  branch 
+
+step9:
+------
+	Change branch from master to main.
+	ex:
+		git branch --move master main 
+
+step10:
+-------
+	Check the status.
+	ex:
+		git status
+
+step11:
+-------
+	Add the files to staging area.
+	ex:
+		git  add  . 
+
+step12:
+-------
+	Commit the changes.
+	ex:
+		git commit -m "my first commit"
+
+step13:
+-------
+	Execute below command for identity.
+	ex:
+
+	git config --global user.email "ulhasan7867@gmail.com"
+	or
+  	git config --global user.name "Niyazul"
+
+step14:
+------
+	Add remote origin.
+	ex:
+		git remote add origin https://github.com/NiyazulHasan/ih-java-033	
+
+step15:
+------
+	Push the code to remote origin.
+	ex:
+		git push -f origin main 
+
+step16:
+--------
+	Refresh remote repository.
+	ex:
+		https://github.com/NiyazulHasan/ih-java-033
+
+
+How to pull the code from GITHUB
+================================
+step1:
+------
+	Create a "java-data" folder on desktop.
+
+step2:
+-----
+	Open git from "java-data" folder.
+	
+step3:
+-----
+	Initialize git empty repository.
+	ex:
+		git init
+
+step4:
+-----
+	Pull the code from github.
+	ex:
+		git pull https://github.com/NiyazulHasan/ih-java-033
+
+
+
+
+
+
+
+
+	 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

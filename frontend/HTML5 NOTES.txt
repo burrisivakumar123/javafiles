@@ -1,0 +1,2477 @@
+HTML5
+=====
+HTML stands for Hypertext Markup Language.
+
+It is widely used language on web to develop web pages and web applications.
+
+It is developed by Burners Lee in late 1991.
+
+HTML elements are represented in a tags so it is also known as tag based language.
+
+HTML tag contains opening tag and closing tag.
+ex:
+	<html>  --> opening tag 
+
+	</html> --> closing tag 
+
+It is a case insensitive language.
+ex:
+	<html>  --> valid 
+	<HTML>  --> valid 
+
+HTML tag contains attribute and each attribute contains attribute name and attribute value.
+ex:
+	<font  color="red">
+
+If a tag contains multiple attributes then each attribute must be seperated with space.
+ex:
+	<font  color="red"  size="10">
+
+HTML document we need to save with .html or .html extension.
+
+All HTML documents executed on browser window.
+ex:
+	Chrome 
+	Mozilla
+	Edge
+	IE 
+	Opera 
+	UCBrowser 
+	and etc.
+
+We will develop HTML document in following editors.
+ex:
+	Notepad 
+	Notepad++
+	Atom
+	Sublime 
+	VSC 
+	DreamViewer 
+	and etc.
+
+A simple HTML document is known as component.
+
+HTML is used to develop client side components.
+
+HTML2.0 was released to the public in the year of 1995.
+
+HTML4.0 was released in the year of 1999.
+
+HTML5 which is extension of HTML4.0 was released in the year of 2005.
+
+The main objective of HTML5 is to build leight weight components.
+
+HTML5 is also known as Advanced Hypertext Markup Language.
+
+
+HTML5 Skeleton
+=============
+<!DOCTYPE>
+<html>
+	<head>
+		-
+		- //head related tags
+		-
+	</head>
+	<body>
+		-
+		- //body related tags 
+		-
+	</body>
+</html>
+
+or 
+
+<!DOCTYPE html>
+<html>
+	<head>
+		-
+		- //head related tags
+		-
+	</head>
+	<body>
+		-
+		- //body related tags 
+		-
+	</body>
+</html>
+
+Note:
+----
+	A <!DOCTYPE> represent HTML document.
+	A <!DOCTYPE html> represent HTML5 document. 
+
+<html> tag
+===========
+It is a root tag for entire HTML document.
+
+It contains two child/sub tags i.e <head> tag and <body> tag.
+
+
+<head> tag
+===========
+A <head> tag is used to declare following things.
+ex:
+	title of a page 
+	favicon of a page 
+	MetaData 
+	Scripts
+	Styles
+
+<body> tag
+==========
+A <body> tag is used to declare actual content of a web page.
+ex:
+	table 
+	list 
+	paragraph
+	headings
+	and etc.
+
+ex:
+----
+<!DOCTYPE html>
+<html>
+	<head>
+	</head>
+	<body>
+		Welcome to HTML classes
+	</body>
+</html>
+
+ex:
+----
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>IHUB TALENT</title>
+	</head>
+	<body>
+		Welcome to HTML classes
+	</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>IHUB TALENT</title>
+		<link rel="icon" href="icon.png"/>
+	</head>
+	<body>
+		Welcome to HTML classes
+	</body>
+</html>
+
+How to set the background color in a html document
+------------------------------------------------
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>IHUB TALENT</title>
+		<link rel="icon" href="icon.png"/>
+	</head>
+	<body bgcolor="yellow">
+		Welcome to HTML classes
+	</body>
+</html>
+
+
+How to set an image in a html document
+------------------------------------
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>IHUB TALENT</title>
+		<link rel="icon" href="icon.png"/>
+	</head>
+	<body background="bg.jpg">
+		Welcome to HTML classes
+	</body>
+</html>
+
+HTML comments
+==============
+Comments  are created for documentation purpose.
+
+Comments are used to improve readability of our code.
+
+Comments will not appear in output/browser window.
+
+We can declare HTML comment as follow.
+
+syntax:
+------
+	<!--    comment here  --> 
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<!-- title -->
+		<title>IHUB TALENT</title>
+
+		<!-- favicon -->
+		<link rel="icon" href="icon.png"/>
+	</head>
+	<body>
+		<!-- custom msg -->
+		Welcome to HTML classes
+	</body>
+</html>
+
+Metadata
+=========
+A <meta> tag is used to declare metadata of a document.
+
+Here metadata means data of a data.
+
+Metadata is used by search engine, browser window and other web services.
+
+To declare metadata we need to use <meta> tag.
+
+A <meta> tag must declare inside <head> tag.
+
+A <meta> tag is used to declare following things.
+
+1) Description 
+
+2) Author 
+
+3) Keywords
+
+4) Viewport
+
+5) Refresh 
+
+6) copyright 
+
+and etc.
+
+UTF-8
+------
+UTF stands for Unicode Transformation Format.
+It is a encoding method which describes what characters used to create a website.
+
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<!-- metadata -->
+		<meta  charset="UTF-8">
+		<meta name="description" content="Training websiste for freshers">
+		<meta name="author" content="Niyaz Sir">
+		<meta name="keywords" content="HTML CSS JAVASCRIPT Bootstrap">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+		<meta name="copyright" content="It is copyright by Niyaz sir">
+		<meta http-equiv="refresh" content="05">
+	</head>
+	<body>
+		<!-- custom msg -->
+		Welcome to HTML classes 
+	</body>
+</html>
+
+HTML Basic Tags
+===============
+
+Heading Tags
+-------------
+Heading tags are used to declare heading in a web page.
+
+Heading tags will display the text in bold and size of the text is depends upon number of heading tag.
+
+We have six heading tags i.e <h1> to <h6>.
+
+ex:
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<!-- Heading tags -->
+		<h1> This is heading1 tag </h1>
+		<h2> This is heading2 tag </h2>
+		<h3> This is heading3 tag </h3>
+		<h4> This is heading4 tag </h4>
+		<h5> This is heading5 tag </h5>
+		<h6> This is heading6 tag </h6>
+	</body>
+</html>
+
+Paragraph tag
+---------------
+A <p> tag is used to declare the paragaph in a web page.
+
+ex:
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<!-- Paragraph -->
+		<p>
+			Our expert team has done all the hard work and knowledge sharing to accomplish various levels of application development projects.
+		</p>
+	</body>
+</html>
+
+Bold tag
+--------
+A <b> tag is used to display the text in bold without importance.
+
+ex:
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<b> This is bold style</b>
+	</body>
+</html>
+
+strong tag
+----------
+A <strong> tag is used to display the text in bold with importance.
+
+ex:
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<strong> This is bold style</strong>
+	</body>
+</html>
+
+
+Italic tag
+----------
+A <i> tag is used to display text in italic without force.
+
+ex:
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<i> It is italic style </i>
+	</body>
+</html>
+
+Emphasize tag
+--------------
+A <em> tag is used to display the text in italic with force.
+
+ex:
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<em> It is italic style </em>
+	</body>
+</html>
+
+underline tag
+-------------
+A <u> tag is used to display the text in underline.
+
+HTML5 does not support <u> tag.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<u> It is underline text </u>
+	</body>
+</html>
+
+center tag
+-----------
+A <center> tag is used to display the text in center.
+
+HTML5 does not support <center> tag.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<center>Text in Center </center>
+	</body>
+</html>
+
+Horizontal line 
+----------------
+A <hr> tag is used to display the horizontal line.
+
+ex:
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<p> Before </p>
+		<hr/>
+		<p> After </p>
+	</body>
+</html>
+
+Break line tag
+---------------
+A <br> tag is used to break the line in a web page.
+
+ex:
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		This is HTML class
+		<br>
+		This is IHUB TALENT 
+	</body>
+</html>
+ 
+
+marquee tag
+------------
+A <marquee> tag is used to add scroll to the text.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<marquee>This is HTML classes for Freshers </marquee>
+	</body>
+</html>
+
+font tag
+---------
+It is used to specify font face, color and size of the text.
+
+ex:
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<font color="blue" size="30" face="cursive">
+			This is HTML classes
+		</font>
+	</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<font color="blue" size="30" face="monospace">
+			This is HTML classes
+		</font>
+	</body>
+</html>
+
+Nested Tags in HTML
+=====================
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<center>
+			<h1>
+				<font color="red">
+					This is HTML classes
+				</font>
+			</h1>
+		</center>
+	</body>
+</html>
+
+Interview Question
+------------------
+Q) Types of Tags in HTML?
+
+We have two types of tags in HTML.
+
+1) Paired  Tags / Container Tags
+--------------------------------
+Tags which contain opening tag and closing tag are called paired tags.
+ex:
+ 	<h1>, <p>, <body>, <head> , <title> and etc.
+
+2) Unpaired Tags / Empty Tags 
+----------------------------
+Tags which contain opening tag and does not have any closing tag are called unparied tags.
+ex:
+	<meta>, <br> , <hr> and etc.
+
+Phrase Tags
+============
+Phrase tags are special purpose tags because they define structural meaning to block of code or text.
+
+We have following list of phrase tags.
+
+1) Abbrevation - <abbr> 
+
+2) Short quote - <q> 
+
+3) Code  - <code>		
+
+4) Strike  - <strike> or <s> 
+
+5) Address - <address> 
+
+6) Keyboard - <kbd> 
+
+and etc.
+
+
+1) Abbrevation - <abbr> 
+------------------------
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<h1>
+			ReactJs is used to develop 
+			<abbr title="Single Page Application">SPA</abbr>.
+		</h1>
+	</body>
+</html>
+
+2) Short quote - <q> 
+--------------------
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<h1>
+			<p>"HTML is a tag based language"</p>
+		</h1>
+
+		<h1>
+			<p><q>HTML is a tag based language</q></p>
+		</h1>
+	</body>
+</html>
+
+3) Code  - <code>
+-----------------
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<code>
+			void main()
+			{
+				clrscr();
+				printf("Hello World");
+				getch();
+			}
+		</code>
+	</body>
+</html>
+
+4) Strike  - <strike> or <s>
+-----------------------------
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<h1> My Hero is <strike>Mahesh Babu</strike> Allu Arjun </h1>
+
+		<h1> My Hero is <s>Mahesh Babu</s> Allu Arjun </h1>	
+	</body>
+</html>
+
+5) Address - <address>
+-----------------------
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<address>
+			1-4-6/A/1 , Nilgiri Block , Ameerpet, Hyderabad, Telangana-36.
+		</address>
+	</body>
+</html>
+
+6) Keyboard - <kbd> 
+---------------------
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<h1> To copy press CTRL+C in your laptop</h1>
+
+		<h1> To copy press <kbd>CTRL+C</kbd> in your laptop</h1>
+	</body>
+</html>
+
+HTML Colors
+============
+There are four ways to define a color in HTML.
+
+1) Valid color name 
+
+2) Hexa value 
+
+3) RGB value 
+
+4) HSL value 
+
+
+1) Valid color name 
+-------------------
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body bgcolor="cyan">
+				
+			<font color="brown" size="30">
+				Welcome to HTML class
+			</font>
+	</body>
+</html>
+
+2) Hexa value 
+-----------------
+Hexa value starts with '#' symbol followed by 6 characters.
+
+ex:
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body bgcolor="#FFFF00">
+				
+			<font color="#FF0000" size="30">
+				Welcome to HTML class
+			</font>
+	</body>
+</html>
+
+3) RGB value
+-------------
+RGB stands Red Green Blue.
+
+RGB value having range from 0 to 255.
+
+HTML does not support RGB value directly.
+
+ex:
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body bgcolor="rgb(0,0,255)">
+				
+			<font color="rgb(0,255,0)" size="30">
+				Welcome to HTML class
+			</font>
+	</body>
+</html>
+
+4) HSL value 
+---------------
+HSL stands for Hue Saturation and Lightness.
+
+HTML does not support HSL value directly.
+
+ex:
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body bgcolor="hsl(240, 100%, 50%)">
+				
+			<font color="hsl(120, 100%, 50%)" size="30">
+				Welcome to HTML class
+			</font>
+	</body>
+</html>
+
+
+Interview Questions
+====================
+
+Q) Types of elements in HTML?
+
+We have two types of elements.
+
+1) Block elements
+--------------------
+Block elements always start with new line.
+
+The will occupy 100% of width.
+
+ex:
+	<h1>,<p>,<div> and etc.
+
+
+ex:
+----
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<p>
+			This is paragraph tag
+		</p>		
+		<div>
+			This is division tag 
+		</div>
+	</body>
+</html>
+
+ 
+
+2) Inline elements 
+------------------
+Inline elements always start with same line.
+
+They will take width as much as required.
+
+ex:
+	<b>,<i>,<u>,<span> and etc.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<b> 
+			It is a Bold Tag
+		</b>
+		<span>
+			It is a Span Tag
+		</span>
+	</body>
+</html>
+
+
+Q) What is the difference between Tag and Element?
+
+Tag
+=====
+HTML tag contains '<' symbol and '>' symbol.
+ex:
+	<h1>,<br>,<p>,<div> and etc.
+
+Element
+========
+HTML element contains opening tag , children  and closing tag.
+ex:
+	<h1> This is heading tag </h1>
+	<p> This is paragraph tag </p>
+	and etc.
+
+
+Q) What is HTML Entity?
+
+HTML entity is a group of characters starts with '&' symbol and ends with semicolon.
+
+HTML entities are used to display reversed characters or hidden characters.
+
+We have following list of HTML entities.
+
+ex:
+	HTML Entity		Symbol
+	-----------		------
+	&gt;			>
+	&lt;			<
+	&laquo;			>>
+	&raquo;			<<
+	&copy;							
+	&nbsp;			(space)
+	and etc.
+
+HTML Images
+============
+A <img> tag is used to display the image on a web page.
+
+It is a opening tag and contains only attributes and does not have any closing tag.
+
+We have following list of attributes in <img> tag.
+
+ex:
+	
+	Attributes	Description
+	---------	-----------
+	src		It is used to locate an image.
+	width		It is used to set the width of an image.
+	height		It is used to set the height of an image.
+	alt 		It is used to display alternate message if image not found.
+
+Note:
+-----
+	File Format		Abbreviation
+	-----------		-------------
+	JPEG			Joint Photographic Expert Group
+	GIF			Graphic Interchange Format
+	SVG			Scalable Vector Graphics
+	PNG			Portable Network Graphics
+	and etc.
+	
+ex:
+----
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<meta http-equiv="refresh" content="05">
+	</head>
+	<body>
+		<img src="images/amber.jpg" width="300px" height="300px"/>
+	</body>
+</html>
+	
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<meta http-equiv="refresh" content="05">
+	</head>
+	<body>
+		<img src="images/amber.png"> 
+			width="300px" height="300px" alt="No Image Found"/>
+	</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<meta http-equiv="refresh" content="05">
+	</head>
+	<body>
+		<img src="https://parade.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTk0NTU3MTgyMTA3MTk5MDg2/amber-heard-daughter-oonagh-paige-heard.jpg" width="300px" height="300px"
+				alt="No Image Found"/>
+	</body>
+</html>
+
+HTML Hyperlink
+==============
+A anchor tag i.e <a> is used to create hyperlink in html. 
+
+It contains href attribute to navigate from one resource to another resource.
+
+ex:
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<meta http-equiv="refresh" content="05">
+	</head>
+	<body>
+		<center>
+			<a href="http://www.google.com"> Google </a>
+		</center>
+	</body>
+</html>
+
+ex:2
+----
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		
+	</head>
+	<body>
+		<center>
+			<a href="https://en.wikipedia.org/wiki/Dwayne_Johnson">
+				<img src="images/rock.png"/>
+			</a>
+		</center>
+	</body>
+</html>
+
+A "target" attribute describes where the document should open.
+
+ex:3
+----
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		
+	</head>
+	<body>
+		<center>
+		<a href="https://en.wikipedia.org/wiki/Dwayne_Johnson" target="_self">
+				<img src="images/rock.png"/>
+			</a>
+		</center>
+	</body>
+</html>
+
+ex:4
+----
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		
+	</head>
+	<body>
+		<center>
+		<a href="https://en.wikipedia.org/wiki/Dwayne_Johnson" target="_blank">
+				<img src="images/rock.png"/>
+			</a>
+		</center>
+	</body>
+</html>
+
+
+Types of List in HTML5
+======================
+We have three types of list in HTML5.
+
+1) Ordered list 
+
+2) Unordered list 
+
+3) Description list 
+
+1) Ordered list 
+----------------
+An ordered list is used to represent the list using numerics and alphabets.
+
+A <ol> tag is used to represent ordered list.
+
+An Ordered list contains list of items.
+
+Each list of item we can represent by using <li> tag.
+
+ex:
+----
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		
+	</head>
+	<body>
+		Courses:
+		<ol>
+			<li>HTML5</li>
+			<li>CSS3</li>
+			<li>JAVASCRIPT</li>
+			<li>BOOTSTRAP5</li>
+		</ol>	
+	</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		
+	</head>
+	<body>
+		Courses:
+		<ol start="101">
+			<li>HTML5</li>
+			<li>CSS3</li>
+			<li>JAVASCRIPT</li>
+			<li>BOOTSTRAP5</li>
+		</ol>	
+	</body>
+</html>
+
+ex:
+----
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		
+	</head>
+	<body>
+		Courses:
+		<ol type="I">
+			<li>HTML5</li>
+			<li>CSS3</li>
+			<li>JAVASCRIPT</li>
+			<li>BOOTSTRAP5</li>
+		</ol>	
+	</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		
+	</head>
+	<body>
+		Courses:
+		<ol type="a">
+			<li>HTML5</li>
+			<li>CSS3</li>
+			<li>JAVASCRIPT</li>
+			<li>BOOTSTRAP5</li>
+		</ol>	
+	</body>
+</html>
+
+2) Unordered list 
+-------------------
+An Unorder list  is used to represent the list in bullets.
+
+A <ul> tag is used to represent unordered list.
+
+An unordered list contains list of items.
+
+Each list of item we need to represent by using <li> tag.
+
+ex:
+--
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		
+	</head>
+	<body>
+		Courses:
+		<ul>
+			<li>MongoDB</li>
+			<li>ExpressJS</li>
+			<li>ReactJS</li>
+			<li>NodeJS</li>	
+		</ul>
+	</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		
+	</head>
+	<body>
+		Courses:
+		<ul type="disc">
+			<li>MongoDB</li>
+			<li>ExpressJS</li>
+			<li>ReactJS</li>
+			<li>NodeJS</li>	
+		</ul>
+	</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		
+	</head>
+	<body>
+		Courses:
+		<ul type="square">
+			<li>MongoDB</li>
+			<li>ExpressJS</li>
+			<li>ReactJS</li>
+			<li>NodeJS</li>	
+		</ul>
+	</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		
+	</head>
+	<body>
+		Courses:
+		<ul type="circle">
+			<li>MongoDB</li>
+			<li>ExpressJS</li>
+			<li>ReactJS</li>
+			<li>NodeJS</li>	
+		</ul>
+	</body>
+</html>
+
+
+3) Description list 
+---------------------
+A <dl> tag is used to represent description list.
+
+A description list contains description term and descrition definition.
+
+A <dt> tag is used to represent description term.
+
+A <dd> tag is used to represent description definition.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		
+	</head>
+	<body>
+		<dl>
+			<dt>Native Code</dt>
+			<dd>JVM is responsible to convert byte code to native code</dd>
+		</dl>
+
+		<dl>
+			<dt>Byte Code Verifier</dt>
+			<dd>JVM contains Byte code verifier</dd>
+		</dl>	
+	</body>
+</html>
+
+
+HTML Tables
+===========
+Tables are used to represent the data in the form of rows and columns.
+
+A <table> tag is used to create a table.
+
+A <tr> tag is used to create a table row.
+
+A <th> tag is used to create a table heading.
+
+A <td> tag is used to create a table data.
+
+In table headings will display in bold and centered.
+
+In table data will display in normal text and left align.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		
+	</head>
+	<body>
+		<table>
+			<tr>
+				<th>SNO</th>
+				<th>SNAME</th>
+				<th>SADD</th>
+			</tr>
+			<tr>
+				<td>101</td>
+				<td>Alan</td>
+				<td>Texas</td>	
+			</tr>
+			<tr>
+				<td>102</td>
+				<td>Jose</td>
+				<td>Florida</td>	
+			</tr>
+			<tr>
+				<td>103</td>
+				<td>Nancy</td>
+				<td>Vegas</td>	
+			</tr>
+		</table>
+	</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		
+	</head>
+	<body>
+		<table border="1" width="100%" bgcolor="cyan">
+			<tr>
+				<th>SNO</th>
+				<th>SNAME</th>
+				<th>SADD</th>
+			</tr>
+			<tr>
+				<td>101</td>
+				<td>Alan</td>
+				<td>Texas</td>	
+			</tr>
+			<tr>
+				<td>102</td>
+				<td>Jose</td>
+				<td>Florida</td>	
+			</tr>
+			<tr>
+				<td>103</td>
+				<td>Nancy</td>
+				<td>Vegas</td>	
+			</tr>
+		</table>
+	</body>
+</html>
+
+ex:
+----
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		
+	</head>
+	<body>
+		<table border="1" width="50%" bgcolor="orange" align="center">
+			<caption>Student Details</caption>
+			<tr>
+				<th>SNO</th>
+				<th>SNAME</th>
+				<th>SADD</th>
+			</tr>
+			<tr>
+				<td>101</td>
+				<td>Alan</td>
+				<td>Texas</td>	
+			</tr>
+			<tr>
+				<td>102</td>
+				<td>Jose</td>
+				<td>Florida</td>	
+			</tr>
+			<tr>
+				<td>103</td>
+				<td>Nancy</td>
+				<td>Vegas</td>	
+			</tr>
+		</table>
+	</body>
+</html>
+
+ex:
+----
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		
+	</head>
+	<body>
+		<table border="1" width="50%" bgcolor="lime" align="center">
+			<caption>Student Details</caption>
+			<tr>
+				<th>SNO</th>
+				<th>SNAME</th>
+				<th>SADD</th>
+			</tr>
+			<tr>
+				<td>101</td>
+				<td>Alan</td>
+				<td>Texas</td>	
+			</tr>
+			<tr>
+				<td>102</td>
+				<td>Jose</td>
+				<td>Florida</td>	
+			</tr>
+			<tr>
+				<td>103</td>
+				<td>Nancy</td>
+				<td>Vegas</td>	
+			</tr>
+			<tr>
+				<td colspan="3"> <center>Thank You </center> </td>
+			</tr>
+		</table>
+	</body>
+</html>
+
+
+Q) What are the advantages of HTML ?
+
+ HTML is easy to learn and easy to use
+ It is free to use.
+ HTML is supported by all browsers
+ No special software needed to run HTML.
+ It is platform independent.
+ HTML can integrate easy with other languages
+ It supports powerful formatting facilities.
+ It allows us to add Graphics, Videos, and audios in web page.
+ Finding Errors are easy.
+
+Notepad++ Editor
+================
+Download link : https://notepad-plus-plus.org/downloads/
+
+
+HTML form
+==========
+Forms are used to take accept the data from the enduser.
+
+It will pass that data to server or database for processing.
+
+To create a form we need to use <form> tag.
+
+A form contains following form components.
+
+ex:
+	Label 
+	TextField
+	Checkbox
+	TextArea
+	Radio Button
+	Buttons 
+	Select Box 
+	and etc.
+
+ex:
+----
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<form>
+			<label>Name</label>
+			<input type="text" name="t1"/> <br> 
+			
+			<label>Age</label>
+			<input type="number" name="t2"/> <br>
+			
+			<label>Password</label>
+			<input type="password" name="t3"/> <br>
+			
+			<label>Maritial Status</label>
+			<input type="checkbox" name="t4" value="married"/> MARRIED
+			<input type="checkbox" name="t4" value="single"/> SINGLE  <br> 
+			
+			<label>Gender</label>
+			<input type="radio" name="t5" value="male"/> MALE
+			<input type="radio" name="t5" value="female"/> FEMALE  <br> 	
+			
+			<label>Address:</label>
+			<textarea cols="10" rows="5"> </textarea>  <br>
+			
+			<label>Qualification </label>
+			<select name="t6">
+				<option value="">none</option>
+				<option value="b.tech">B.TECH</option>
+				<option value="bsc">B.SC</option>
+				<option value="bcom">B.COM</option>
+			</select>
+			<br>
+			<input type="submit" value="submit"/> 
+			<input type="reset" value="reset"/>
+		</form>
+	</body>
+</html>
+
+ex:
+----
+index.html
+-----------
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<form  action="a.html">
+			<label>Name</label>
+			<input type="text" name="t1"/> <br> 
+			
+			<label>Age</label>
+			<input type="number" name="t2"/> <br>
+			
+			<label>Password</label>
+			<input type="password" name="t3"/> <br>
+			
+			<label>Maritial Status</label>
+			<input type="checkbox" name="t4" value="married"/> MARRIED
+			<input type="checkbox" name="t4" value="single"/> SINGLE  <br> 
+			
+			<label>Gender</label>
+			<input type="radio" name="t5" value="male"/> MALE
+			<input type="radio" name="t5" value="female"/> FEMALE  <br> 	
+			
+			<label>Address:</label>
+			<textarea cols="10" rows="5"> </textarea>  <br>
+			
+			<label>Qualification </label>
+			<select name="t6">
+				<option value="">none</option>
+				<option value="b.tech">B.TECH</option>
+				<option value="bsc">B.SC</option>
+				<option value="bcom">B.COM</option>
+			</select>
+			<br>
+			<input type="submit" value="submit"/> 
+			<input type="reset" value="reset"/>
+		</form>
+	</body>
+</html>
+
+a.html
+------
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body bgcolor="#00ff00">
+			<h1>This is A.html file</h1>
+	</body>
+</html
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+			<form action="#">
+				<table align="center">
+				<caption>Please Enter the Details</caption>
+					<tr>
+						<td><label>Name</label></td>
+						<td><input type="text" name="t1" autocomplete="off" required/></td>	
+					</tr>
+					<tr>
+						<td><label>Age</label></td>
+						<td><input type="number" name="t2" required/></td>	
+					</tr>
+					<tr>
+						<td><label>Password</label></td>
+						<td><input type="password" name="t3" required/></td>	
+					</tr>
+					<tr>
+						<td><label>Gender</label></td>
+						<td>
+							<input type="radio" value="male" name="t4"/>MALE
+							<input type="radio" value="female" name="t4"/>FEMALE
+						</td>	
+					</tr>
+					<tr>
+						<td><label>Qualification</label></td>
+						<td>
+							<select name="t5">
+								<option value="">none</option>
+								<option value="btech">B.Tech</option>
+								<option value="bsc">B.Sc</option>
+								<option value="bcom">B.Com</option>
+							</select>
+						</td>	
+					</tr>
+					<tr>
+						<td><input type="reset" value="reset"/></td>
+						<td><input type="submit" value="submit"/></td>	
+					</tr>
+				</table>
+			</form>
+	</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+			<form action="#">
+				<table align="center">
+					<tr>
+						<td>
+							<input type="email" name="t1" autocomplete="off" placeholder="Enter Email" required/> 
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<input type="password" name="t2" placeholder="Enter Password" required/> 
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<center>
+								<input type="submit" value="Login"/>
+							</center>
+						</td>
+					</tr>
+							
+					
+				</table>
+			</form>
+	</body>
+</html>
+
+
+
+datalist tag
+==============
+A <datalist> tag/element is used to specify list of predefine options for an <input> tag/element.
+
+A <datalist> tag/element provides autocomplete features for an <input> element/tag.
+
+User will see a drop-down list of predefine options for an <input> tag/element.
+
+A <datalist> tag/element  "id" attribute must be same as <input> tag/element
+"list" attribute.
+
+
+ex:
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+			
+			State : <input type="text" list="myId" /> 
+
+			<datalist id="myId">
+				<option value="Telangana">
+				<option value="Tamil Nadu">
+				<option value="Andhra">
+				<option value="Kerala">
+			</datalist>
+			
+	</body>
+</html>
+
+
+Details tag and summary tag
+===========================
+A <details> tag/element is used display special content where a user can open and close on demand. 
+
+A <details> tag is used to design interactive widgets where user can
+open and close.
+
+A <details> tag contains <summary> tag.
+
+We can keep any sort of tags inside <details> tags.
+
+ex:
+
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+			
+			<details>
+				<summary> HTML5 </summary>
+				<h2> It is a markup language to develop static web pages</h2>
+				<p>  It is widely used to develop client side components </p>
+				<div>It creates static web pages only</div>
+			</details>
+			
+	</body>
+</html>
+
+
+HTML <mark> tag
+----------------
+The HTML <mark> tag is used to mark or highlight text that has special interest.
+ex:
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>IHUB</title>
+	</head>
+	<body>
+		
+			<h1>
+			HTML is a <mark>markup language</mark> to develop web pages and 
+				web applications.
+			</h1>
+	</body>
+</html>
+
+
+
+HTML <cite> tag
+----------------
+The <cite> tag defines the title of a creative work i.e movie , songs, Poems and etc.
+
+The text in the <cite> element usually renders in italic.
+
+ex:
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>IHUB</title>
+	</head>
+	<body>
+		
+			<h1>Movie Name : <cite>RRR</cite> </h1>
+	</body>
+</html>
+
+
+HTML <bdo> tag
+-------------------
+BDO stands for Bi-Directional Override. 
+
+The <bdo> tag is used to override the current text direction.
+
+ex:
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>IHUB</title>
+	</head>
+	<body>
+		
+			<h1> 
+				<bdo dir="ltr">Hello</bdo> 
+			</h1>
+			
+			<h1> 
+				<bdo dir="rtl">Hello</bdo> 
+			</h1>
+	</body>
+</html>
+
+
+
+HTML <sub> tag
+------------------
+The <sub> tag defines subscript text. 
+
+Subscript text appears half a character below the normal line, and is sometimes rendered in a smaller font.
+
+ex:
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>IHUB</title>
+	</head>
+	<body>
+		
+			<h1> 
+				H<sub>2</sub>O
+			</h1>
+			
+	</body>
+</html>
+
+
+
+HTML <sup> tag
+-----------------
+The <sup> tag defines superscript text. 
+
+Superscript text appears half a character above the normal line, and is sometimes 
+rendered in a smaller font.
+
+ex:
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>IHUB</title>
+	</head>
+	<body>
+		
+			<h1> 
+				X <sup>2</sup> + Y <sup>2</sup>
+			</h1>
+			
+	</body>
+</html>
+
+
+
+
+HTML <del> and <ins> tag  
+---------------------
+The <del> HTML element represents a range of text that has been deleted from a document. 
+
+The <ins> element can be used for the opposite purpose: to indicate text that has been added to the document.
+
+ex:
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>IHUB</title>
+	</head>
+	<body>
+		
+			<h1> 
+			I love <del>java</del> <ins>frontend</ins> programming 
+			</h1>
+			
+	</body>
+</html>
+
+
+HTML <header> and <nav> tag
+------------------------------
+
+The <header> element represents a container for introductory content or a set of navigational links.
+
+The <nav> tag defines a set of navigation links. 
+
+ex:
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>IHUB</title>
+	</head>
+	<body>
+		
+			<header>
+					<center>
+						<nav>
+							<a href="" style="text-decoration:none">HOME</a>	&nbsp;&nbsp;&nbsp;&nbsp;
+							<a href="" style="text-decoration:none">ABOUT</a> &nbsp;&nbsp;&nbsp;&nbsp;	
+							<a href="" style="text-decoration:none">PORTFOLIO</a>&nbsp;&nbsp;&nbsp;&nbsp;	
+							<a href="" style="text-decoration:none">SERVICE</a>&nbsp;&nbsp;&nbsp;&nbsp;	
+							<a href="" style="text-decoration:none">GALLERY</a>&nbsp;&nbsp;&nbsp;&nbsp;	
+							<a href="" style="text-decoration:none">CONTACT</a>&nbsp;&nbsp;&nbsp;&nbsp;	
+						</nav>
+					</center>
+			</header>
+			
+	</body>
+</html>
+
+
+footer tag in html
+--------------------
+The <footer> tag defines a footer for a document or section. 
+ex:
+
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<footer>
+			<center>
+				<small>&copy;AllRightReserved-2024</small>
+			</center>
+		</footer>
+	</body>
+</html>
+
+
+HTML <section> tag, <article> tag and <figure> tag 
+==================================================
+
+The <section> tag defines a section in a document.
+
+The <article> tag specifies independent, self-contained content. 
+
+The <figure> tag specifies self-contained content, like illustrations, diagrams, photos, code listings, etc.
+
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>IHUB</title>
+	</head>
+	<body>
+		<section>
+			<article>
+					<center>
+							<h1>WHAT WE DO</h1>
+							<p>Our amazing features & services and others listed below</p>
+							<figure>
+								<img src="images/rock.jpg" width="400px" height="400px"/>
+								<figcaption>
+									Dwayne Johnson	
+								</figcaption>
+							</figure>
+					</center>
+			</article>
+		</section>
+	</body>
+</html>
+
+
+HTML <big> tag 
+================
+The <small> HTML element represents  small print like copyright and legal text.
+
+
+ex:
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>IHUB</title>
+	</head>
+	<body>
+		<h1>This is html tag</h1>
+		<h1>This is <big>html</big> tag</h1>
+	</body>
+</html>
+
+
+HTML <small> tag 
+=================
+The <big> tag is used to make the text one size bigger i.e from small to medium, 
+medium to large, large to x-large.
+ex:
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>IHUB</title>
+	</head>
+	<body>
+	<small>Copyright 2016 Designed by : Compumaxllc. All Rights Reserved.</small>
+	</body>
+</html>
+
+
+HTML frames
+============
+To use frames on a web page we need to use <frameset> tag instead of <body> tag.
+
+The <frameset> tag defines how to divide the window into frames.
+
+The "rows" attribute of <frameset> tag defines horizontal frames.
+
+The "cols" attribute of <frameset> tag defines vertical frames.
+
+Each frame is indicated by <frame> tag and it defines which document should 
+be open into that place.
+
+ex:1
+-----
+
+index.html
+---------
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>IHUB</title>
+	</head>
+	<frameset  cols="33%,*,33%">
+		<frame src="a.html"/>
+		<frame src="b.html"/>
+		<frame src="c.html"/>
+	</frameset>
+</html>
+
+a.html
+------
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>A.html</title>
+	</head>
+	<body bgcolor="red">
+	</body>
+</html>
+
+b.html
+-------
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>B.html</title>
+	</head>
+	<body bgcolor="blue">
+	</body>
+</html>
+
+c.html 
+--------
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>C.html</title>
+	</head>
+	<body bgcolor="green">
+	</body>
+</html>
+
+
+ex:2
+-----
+
+index.html
+---------
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>IHUB</title>
+	</head>
+	<frameset  rows="33%,*,33%">
+		<frame src="a.html"/>
+		<frame src="b.html"/>
+		<frame src="c.html"/>
+	</frameset>
+</html>
+
+a.html
+--------
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>A.html</title>
+	</head>
+	<body bgcolor="#EE5A24">
+	</body>
+</html>
+
+b.html
+------
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>B.html</title>
+	</head>
+	<body bgcolor="#FFFFFF">
+		<center>
+			<img src="images/chakra.png" width="180px" height="180px"/>
+		</center>
+	</body>
+</html>
+
+c.html
+-------
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>C.html</title>
+	</head>
+	<body bgcolor="#009432">
+	</body>
+</html>
+
+
+HTML <iframe> tag 
+==================
+It is used to specify inline frame.
+
+A <iframe> tag/element is used to embed a document into current HTML document.
+
+
+ex:1
+----
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>IHUB</title>
+	</head>
+	<body>
+		<iframe src="http://www.ihubtalent.com" width="400px" height="400px"/>
+	</body>
+</html>
+
+
+ex:2
+----
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>IHUB</title>
+	</head>
+	<body>
+		<iframe src="a.html" width="400px" height="400px"/>
+	</body>
+</html>
+
+
+Steps to display Google Map on a web page
+===========================================
+
+step1:
+-----
+	Goto Google Maps.
+	ex:
+		https://www.google.com/maps
+
+step2:
+-----
+	Type Ihub Talent in Google Map Search Box.
+
+
+step3:
+-------
+	Click on "menu" button.
+
+step4:
+------
+	Click on "share and embed Map"
+
+step5:
+-----
+	Click on "embeded a map" link.
+
+step6:
+-----
+	Click to "Copy Html".
+
+step7:
+-------
+	Paste the code inside <body> tag of index.html file.
+
+step8:
+------
+	Check the output on browser window.
+
+ex:
+----
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>IHUB</title>
+	</head>
+	<body>
+		<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.4876564063966!2d78.44241401390272!3d17.436358405982574!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb919633f78bef%3A0xbb63515db9bc2eba!2siHub%20Talent%20(Innovative%20Placement%20Solutions)!5e0!3m2!1sen!2sin!4v1681291760392!5m2!1sen!2sin" 
+		width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+	</body>
+</html>
+
+
+
+HTML <audio> tag 
+=================
+The HTML <audio> tag/element is used to play an audio file on a web page.
+
+<audio> tag contains "controls" attribute adds audio control like play,pause ,volume and etc.
+
+The <source > tag/element allows us to specify alternate audio file which the
+browser my choose.
+
+HTML audio formats can be MP3,WAV,OGG and etc.
+
+HTML Audio Media types are 
+
+File Formats		Media Type
+------------		----------
+MP3			audio/mpeg
+
+OGG			audio/ogg
+
+WAV			audio/wav
+
+ex:
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>IHUB</title>
+	</head>
+	<body>
+			<audio controls>
+				<source src="media/sajda.mp3" type="audio/mpeg">
+			</audio>
+	</body>
+</html>
+
+
+HTML <video> tag 
+=================
+
+The <video> tag or element is used to embed video content in a document such as
+movie clip,other video streams.
+
+The <video> tag contains one or more <source> tag with different video source.
+
+There are three supported video fromats in html are MP4,webM and OGG.
+
+HTML video media types are 
+
+File format		Media Type
+-----------		-----------
+MP4			video/mp4
+
+OGG			video/ogg
+
+and etc.
+
+ex:
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>IHUB</title>
+	</head>
+	<body>
+			<video controls width="200px" height="200px">
+				<source src="media/video.mp4" type="video/mp4">
+			</video>
+	</body>
+</html>
+
+
+
+
+Q) What is the difference between HTML and HTML5?
+
+HTML						HTML5
+---------					-----
+A <!DOCTYPE> is used to represent html.		A <!DOCTYPE html> is used to represent html5.
+
+It is bit slow.					It is more faster because it is leight weight.
+
+It is less mobile friendly.			It is more mobile friendly.
+
+It is insufficient for the programmer.		It is sufficient for the programmer.
+
+It does not allow to execute javascript 	It allows to execute javascript on browser window
+on browser window.				with the help of JS Web Work API.
+
+It does not support drag and drop effects.	It supports drag and drop effects.
+
+We can't play audio and video without using 	We can play audio or video with help of 
+flash player.					<audio> and <video> tag.
+
+Vector graphics is possible by using 		Vector graphics is possible by using internal
+Silver light, Adobe flash, VML and etc.		technologies like SVG and CANVAS.
+
+It can't handle inaccurate syntax.		It can handle inaccurate syntax.
+
+Shapes like circle, rectangle, triangle,	Shapes like circle, rectangle,triangle, polygon
+polygon and etc not easy to draw.		and etc are easy to draw.
+
+
+
+Q) List out some tags which are removed from HTML5?
+
+	<font>		<center>	<u>
+
+	<frameset>	<frame>		<big>
+
+	<strike>	<s>		<applet> 
+
+
+	
+Q) List out some tags introduced in HTML5?
+
+	<audio>		<video>		<canvas>
+
+	<mark>		<address>	<header>
+
+	<footer>	<section>	<article>	
+
+
+
+Q) List out HTML5 layout tags?
+	
+	<header>
+	<section>
+	<nav>
+	<article>
+	<aside>
+	<footer>
+
+
+Q) What is the difference between <div> tag and <span> tag ?
+
+div						span
+-----						-------
+It is a block element.				It is a inline element.
+
+It is used to wrap the sections.		It is used to wrap the small portion of a text.
+
+It is used to create CSS based layouts.		It is used stylized the text.
+
+		
+
+Q) What are the disadvantages of HTML?
+
+> It is used to create only static web pages but not dyanmic web pages.
+
+> For a simple design , we need to write large code.
+
+> Security features are not good.
+
+
+
+ 
+Q) How HTML document execute on Browser window ? 
+
+Diagram: frontend7.1
+
+HTML parser will parse the data from HTML document.
+
+Later, HTML parser will handover this parsed to DOM.
+
+DOM stands for Document Object Model.
+
+DOM converts HTML document to Tree Node Structure.
+
+At last , Tree Node Structure will execute on browser window.
+
+Graphics in HTML
+================
+There are two ways to draw the graphics in html.
+
+1) SVG 
+
+2) CANVAS 
+
+1) SVG 
+--------
+SVG stands for Scalable Vector Graphics.
+
+HTML5 uses SVG technology to derived the graphics.
+
+SVG is used to draw two dimensional vector graphics.
+
+W3C (World Wide Web Consortium) prefers SVG technology to draw vector graphics.
+
+A <svg> is a container tag.
+
+A <svg> tag contains number of methods to display circle, rectangle ,polygon, graphic images and etc.
+
+
+ex:
+----
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<svg style="border:2px solid black">
+			
+			<circle cx="150"  cy="75"  r="50"  
+				fill="#FFFF00" stroke="#FF0000" stroke-width="5px"> 
+			
+		</svg>
+	</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<svg style="border:2px solid black">
+			
+			<rect  x="100"   y="50"   width="80"  height="60"
+			
+			fill="#FFFF00"  stroke="#FF0000" stroke-width="5px">
+			
+		</svg>
+	</body>
+</html>
+
+
+ex:
+----
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<svg style="border:2px solid black">
+			
+			<polygon points="210,245 180,110 189,89 160,100"
+			
+			fill="#FFFF00"  stroke="#FF0000" stroke-width="5px">
+			
+		</svg>
+	</body>
+</html>
+
+
+2) CANVAS
+---------
+It is used to draw two dimensional vector graphics via javascript.
+
+A <canvas> is a container tag.
+
+A <canvas> tag contains number of methods to draw lines, circle, rectangle, graphic images and etc.
+
+ex:1
+----
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<canvas style="border:2px solid black" id="myId">
+		
+		</canvas>
+		
+		<script>
+			var context=document.getElementById("myId");
+			var c=context.getContext("2d");
+			c.moveTo(0,0);
+			c.lineTo(800,400);
+			c.stroke();
+		</script>
+		
+	</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<canvas style="border:2px solid black" id="myId">
+		
+		</canvas>
+		
+		<script>
+			var context=document.getElementById("myId");
+			var c=context.getContext("2d");
+			c.beginPath();
+			c.arc(130, 70, 50, 0, 2 * Math.PI);
+			c.stroke();
+		</script>
+		
+	</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<canvas style="border:2px solid black" id="myId">
+		
+		</canvas>
+		
+		<script>
+			var context=document.getElementById("myId");
+			var c=context.getContext("2d");
+			c.font = "50px Arial";
+			c.fillText("Hello World",10,80);
+		</script>
+		
+	</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

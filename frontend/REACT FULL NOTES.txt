@@ -1,0 +1,3907 @@
+React/ReactJS
+==============
+It is a declarative, efficient and flexible javascript library that is used for building frontend applications and user interfaces.
+
+It is a open source, component based javascript frontend library responsible only for view layer of the application.
+
+It is developed by Jordan Walke who was the software engineer at Facebook.
+
+It was release to the public in the month of May , 2013.
+
+It is initially developed by Facebook and later it used in their own products like whatsapp and instagram.
+
+The latest version of reactjs is v18.2.2.
+
+The official website of reactjs is https://react.dev.
+
+It is used to develop reusable components.
+
+A component is a building block of any react application.
+
+
+
+Advantages of ReactJS
+=====================
+1) It easy to learn and easy to use.
+
+2) It is used to create resuable components.
+
+3) It supports virtual DOM.
+
+4) It supports one way data binding.
+
+5) It supported by all major browsers.
+
+6) Good documentation and community support.
+
+
+ReactJS Pre-Requisition 
+=======================
+1) knowledge on HTML5,CSS3,JavaScript and Bootstrap5.
+
+2) Basic idea of JSX.
+
+3) Hands on npm commands.
+
+4) Basics of ES6 standards.
+
+
+Q) What is the difference between Angular and React?
+
+Angular						React
+-------------					-------
+It is a product of Google.			It is a product of Facebook.
+
+It was developed in the month of Oct,2015.	It was developed in the month of May,2013.
+
+It is a javascript framework for web and 	It is a javascript frontend library responsible
+mobile applications.				only for view layer of the application.
+
+It supports two way data binding.		It supports one way data binding.
+
+It supports traditional DOM.			It supports virtual DOM.	
+
+It is used to develop rich featured		It is used to develop Single Page Applications. 
+applications.
+
+Typescript language is used.			JSX language is used.
+
+Jasmine and Karma is used as a testing 		Jest and Enzyme is used as a testing frameworks	
+frameworks.
+
+Angular used by Google, Mc'Donalds, 		ReactJs used by Facebook, Instagram , Whatsapp,
+Paypal, Gmail and etc.				Nike and etc.
+
+How ReactJS Works
+==================
+ReactJS internally uses Virtual DOM.
+
+Virtual DOM is also a Tree Node Structure.
+
+ReactJS Virtual DOM finds effective way to manipulate real DOM. 
+
+Hence performance of reactjs is faster.
+
+
+Diagram: react2.1
+
+
+JSX
+====
+JSX stands for JavaScript XML.
+
+JSX allows us to write HTML code in javascript.
+
+JSX elements contain tags,attributes and childrens.
+
+JSX is not necessity to develop react applications instead we can use Babel.
+
+JSX makes our application simple and elegant.
+
+JSX ultimately transpile to pure javascript.
+
+
+JSX elements
+-------------
+JSX elements allows us to write html code without using createElement() and appendChild() method.
+
+ex:
+---	JSX
+	---
+		<h1> Heading Tag </h1>
+	Babel
+	-----
+		React.createElement("h1",null,"Heading Tag");
+
+		Here h1 is a tag name 
+		Here null is a optional attribute
+		Here Heading Tag is a children
+
+ex:
+----
+	JSX
+	---
+		<div>
+			<h1>Heading Tag</h1>
+		</div>
+
+	Babel
+	-----
+		React.createElement("div",null,
+			React.createElement("h1",null,"Heading Tag"));
+
+
+ex:
+---
+	JSX
+	----
+		<h1 id="myId"> Heading Tag </h1>
+	
+	Babel
+	-----
+		React.createElement("h1",{id:"myId"},"Heading Tag");
+
+ex:
+---
+	JSX
+	----
+		<h1 className="myClass"> Heading Tag </h1>
+	
+	Babel
+	-----
+		React.createElement("h1",{className:"myClass"},"Heading Tag");
+
+
+JSX Expression
+--------------
+JSX expression represent in curly braces i.e {}.
+
+JSX expression can be a variable, data or any valid javascript expression.
+
+ex:
+	var i=10;
+	<h1> {i} </h1>
+
+ex:
+	<h1> {10 + 20} </h1>
+
+ex:
+	<h1> {Math.pow(2,3)}</h1>
+
+
+npm
+=====
+NPM stands for Node Package Manager.
+
+It is a integrated tool for nodejs. 
+
+It is used to download node modules or dependencies.
+
+We will use below command to download node modules or dependencies.
+
+ex:
+	cmd> npm  install -g   node_module/node_dependency
+
+All node modules installed in node_modules folder.
+
+
+Steps to work with npm commands
+-------------------------------
+step1:
+------
+	Download and Install NodeJS software.
+	ex:
+		https://nodejs.org/en/blog/release/v18.12.0
+
+step2:
+-----
+	Copy nodejs directory from C drive.
+	ex:
+		C:\Program Files\nodejs
+
+step3:
+-----
+	Paste nodejs directory in environmental variables.
+	ex:
+		right click to This pc --> properties --> Advanced System settings 
+		--> user variables --> click to new button -->
+		variable name : path 
+		variable value : C:\Program Files\nodejs;C:\Users\JAVA\AppData\Roaming\npm;
+		-->ok  --> ok   --> ok. 
+
+step4:
+------
+	Check the node version and npm version.
+	ex:
+		cmd> node  -v
+		cmd> npm   -v
+
+step5:
+------
+	To create react projects we need to install node module.
+	ex:
+		cmd> npm install -g   create-react-app
+
+Steps to develop First React Application
+========================================
+step1:
+------
+	Download and Install VSC editor.
+	ex:
+		https://code.visualstudio.com
+
+step2:
+------
+	Create a "reactprojects" folder inside 'E' drive.
+
+step3:
+------
+	Open the command prompt from "reactprojects" location.
+
+step4:
+------
+	Create a react project i.e myapp1.
+	ex:
+		reactprojects> npx  create-react-app  myapp1
+
+
+step5:
+-----
+	Open the VSC editor by using below command.
+	ex:
+		reactprojects> code  . 
+
+step6:
+------
+	Switch to react project i.e myapp1
+	ex:
+		reactprojects> cd   myapp1
+
+
+step7:
+-----
+	Run the react project by using below command.
+	ex:
+		reactprojects/myapp1> npm start 
+
+
+step8:
+-----
+	To test the react application we need to use below request url.
+	ex:
+		http://localhost:3000
+
+Note:
+-----
+	React application runs on leight weight server with 3000 port number.
+
+
+Project Execution Flow
+---------------------
+		     loads			pass				render  
+	App.js ----------------- index.js ----------------- index.html ------------------ Browser 
+
+
+
+Explain React Project Structure
+===============================
+myapp1
+|
+|---node_modules
+|
+|---public
+	|
+	|---favicon.ico
+	|---manifest.json
+	|---index.html 
+|
+|------src
+	|
+	|---index.js
+	|---index.css
+	|
+	|---App.js
+	|---App.css
+	|---App.test.js
+	|
+|
+|---package.json
+|---README.md
+
+"myapp1" is a react application name.
+
+"node_modules" contains all dependencies and packages installed.
+
+"favicon.ico" is a favorite icon of react application.
+
+"manifest.json" contains metadata which is used when we install our web application on user's computer or desktop.
+
+"index.html" is a main template of react application.
+
+"index.css" is related to index.js and it is global.
+
+"index.js" is a entry point.
+
+"App.css" is related to App.js and it is global.
+
+"App.js" is a parent component in react application.
+
+"App.test.js" is used to perform unit testing in react.
+
+"package.json" contains project dependencies along with their version.
+
+
+Steps to develop Second React Application
+========================================
+step1:
+-----
+	Open the command prompt from reactprojects location.
+
+step2:
+------
+	Open the VSC editor.
+	ex:
+		code . 
+
+step3:
+-----
+	Open the VSC terminate and create project.
+	ex:
+		reactprojects> npx  create-react-app myapp2
+
+step4:
+------
+	Delete and create App.js file.
+	ex:
+	App.js
+	------
+	function App()
+	{
+    		return (
+        			<h1> This is Second React Application </h1>
+    			)
+	}
+	export default App;	
+
+Note:
+-----
+	We should not do any changes in index.js file and index.html file.
+
+step5:
+-----	
+	Switch to react project i.e myapp2.
+	ex:
+		reactprojects> cd myapp2
+step6:
+------
+	Run the react application.
+	ex:
+		reactprojects/myapp2> npm  start 
+
+step7:
+-----
+	Test the react application by using below request url.
+	ex:
+		http://localhost:3000
+
+
+React Fragment
+==============
+React Fragment is a group of list childrends/elements without adding extra node to the DOM.
+
+By default, every component returns single element.
+
+If we want to return more then one element then we need to use react fragment.
+
+
+In below application, we are adding extra node to DOM which is cost to the company and not recommanded.
+
+ex:
+-----
+function App()
+{
+    return (
+        <div>
+            <h1> Welcome to IhubTalent </h1>
+            <h1> This is Second React Application </h1>
+        </div>
+    )
+}
+export default App;
+
+To avoid extra node in DOM we will use react fragment.
+
+ex:1
+----
+import { Fragment } from "react";
+
+function App()
+{
+    return (
+        <Fragment>
+            <h1> Welcome to IhubTalent Institute </h1>
+            <h1> This is Second React Application </h1>
+        </Fragment>
+    )
+}
+export default App;
+
+
+ex:2
+----
+import React from 'react';
+function App()
+{
+    return (
+        <React.Fragment>
+            <h1> Welcome to IhubTalent Institute </h1>
+            <h1> This is Second React Application </h1>
+        </React.Fragment>
+    )
+}
+export default App;
+
+
+ex:3
+----
+
+function App()
+{
+    return (
+        <>
+            <h1> Welcome to IhubTalent  </h1>
+            <h1> This is React Application </h1>
+        </>
+    )
+}
+export default App;
+
+React Components
+=================
+Components are building block of react applications.
+
+Components allow us to split our UI into resuable independent pieces.
+ex:
+	Header, Footer, Section, Table, List , Form and etc.
+
+Components are like javascript functions because they accept arbitary inputs like props and returns react element to describe who an element should look like.
+
+React component name always starts with uppercase letter.
+
+In react, there are two ways to create react components.
+
+1) Function component 
+
+2) Class component 
+
+
+1) Function component 
+----------------------
+Function component is a javascript function which takes props as an argument and returns react element.
+
+Function component is a also known as stateless component because it won't support and manage state.
+
+Project Structure
+-----------------
+myapp3
+|
+|---node_modules
+|
+|---public
+	|
+	|---favicon.ico
+	|---manifest.json
+	|---index.html
+
+|-----src
+|	|
+	|---index.js	
+	|---App.js
+	|
+|
+|-----package.json
+|-----README.md
+
+step1:
+-----
+	Goto reactprojects folder and open the command prompt.
+
+step2:
+-----
+	Open the VSC editor.
+	ex:
+		reactprojects> code  . 
+
+step3:
+------
+	Goto VSC terminal and create a react project i.e myapp3.
+	ex:
+		reactprojects> npx create-react-app myapp3
+
+
+step4:
+----
+	Goto App.js file and create a function component.
+
+App.js
+------
+//named function 
+function App()
+{
+   return (
+      <>
+          <h1> This is React Class </h1>
+          <p> This is Ihub Talent</p>
+      </>
+   )
+}
+export default App
+
+or 
+---
+//anonymous function 
+const App=function(){
+   return (
+      <>
+          <h1> This is React Class </h1>
+          <p> This is Ihub Talent Management</p>
+      </>
+   )
+}
+export default App
+
+or
+----
+//arrow function 
+const App=()=>{
+   return (
+      <>
+          <h1> This is React Class </h1>
+          <p> This is Ihub Institute</p>
+      </>
+   )
+}
+export default App
+
+
+
+step5:
+-----
+	Switch to react myapp3 project.
+	ex:
+		reactprojects> cd  myapp3
+
+step6:
+------
+	Run the react project.
+	ex:
+		reactprojects/myapp3> npm start 
+
+
+step7:
+-----
+	Test the react project by using below request url.
+	ex:
+		http://localhost:3000
+
+
+Passing props to function component
+=====================================
+To pass the props to function component we need to perform following changes inside 
+index.js and App.js.
+
+index.js
+-------
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.css';
+import App from './App';
+import reportWebVitals from './reportWebVitals';
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+    <App  rollno="101" name="Alan"/>
+  </React.StrictMode>
+);
+reportWebVitals();
+
+
+App.js
+-------
+ //arrow function 
+const App=(props)=>{
+   return (
+      <>
+          <h1> Roll No : {props.rollno} </h1>
+          <h1> Name : {props.name} </h1>
+      </>
+   )
+}
+export default App
+
+
+2) Class component
+----------------------
+A class Component requires to extends from React Component.
+
+The class must implements a render() method function which returns A react
+Element to be render.This is Similar to return value of a functional 
+component.
+
+In a class based component props are accessible via this.props.
+
+The class component is also known as a stateful component because they can hold or manage local state.
+
+
+Project structure
+-----------------
+myapp4
+|
+|---node_modules
+|
+|-----public
+	|
+	|---manifest.json
+	|---index.html
+	|---favicon.ico
+|
+|------src
+	|	
+	|---index.js
+	|
+	|---App.js 
+
+|------package.json
+|------README.md
+
+step1:
+------
+	create a react application i.e myapp4.
+	ex:
+		Reactprojects> npx  create-react-app myapp4
+
+
+step2:
+-------
+	Open VSC editor from Reactprojects folder.
+	ex:
+		Reactprojects> code  . 
+
+step3:
+------
+	Jump/Switch to myapp4 project.
+	ex:
+		Reactprojects> cd   myapp4
+
+step4:
+------
+	Run the react application.
+	ex:
+		Reactprojects/myapp4> npm start
+
+step5:
+-----
+	Test the react application by using below request url.
+	ex:
+		http://localhost:3000
+
+step6:
+------
+	Declare below code inside App.js file.
+	ex:
+	App.js
+	------
+	import {Component} from 'react';
+	class App extends Component
+	{
+    		render()
+    		{
+        		return(
+          		<h1>Class Component</h1>
+        		)
+    		}
+	}
+	export default App
+
+
+Class component with props
+------------------------------
+index.js
+-------
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import App from './App';
+import reportWebVitals from './reportWebVitals';
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+    <App name="Jose" rollno="501"/>
+  </React.StrictMode>
+);
+
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+reportWebVitals();
+
+
+App.js
+--------
+import {Component} from 'react';
+class App extends Component
+{
+    render()
+    {
+        return(
+          <>
+            <h1>Name :{this.props.name}</h1>
+            <h1>RollNo :{this.props.rollno}</h1>
+          </>
+        )
+    }
+}
+export default App
+
+
+
+
+Appollo Dart Interview Question
+===============================
+
+Q) What is the difference between Normalization and Denormalization ?
+
+Normalization					Denormalization
+--------------					----------------
+It increases the complexity due to multiple 	It reduces the complexity due to single table.
+tables.						
+
+No redundant data				Redundant data
+
+No waste of memory				Waste of memory
+
+Slower reads 					Slower writes 
+
+Low data availability				High data availability
+
+Need of joins					No need of joins
+
+Composing Component
+====================
+Composition component refers to the process of combining smaller, reusable components together to create larger and  more complex component. 
+
+
+React project structure 
+----------------------
+myapp5
+|
+|----node_modules
+|
+|----public
+|	|
+	|---favicon.ico
+	|---manifest.json 
+	|---index.html 
+
+|------src
+|	|
+	|---index.js 
+	|---App.js 
+	|---Header.js
+	|---Section.js
+	|---Footer.js
+
+|-----package.json
+|-----README.md 
+
+step1:
+------	
+	Goto "reactprojects" folder and open the command prompt.
+
+step2:
+------
+	Open the VSC Editor.
+	ex:
+		reactprojects> code . 
+
+step3:
+------
+	Goto terminal and create react project i.e myapp5
+	ex:
+		reactprojects> npx  create-react-app myapp5
+
+step4:
+------
+	Create a Header.js component inside "src" folder.
+
+Header.js
+---------
+var Header=()=>
+{
+    return (
+           <h1> Header Section </h1> 
+    )
+}
+export default Header;
+
+
+
+step5:
+-----
+	Create a Section.js component inside "src" folder.
+
+Section.js
+----------
+var Section=()=>
+{
+    return (
+        <h1> Body Section </h1>
+    )
+}
+export default Section;
+
+
+
+step6:
+-----
+	Create a Footer.js component inside "src" folder. 
+
+Footer.js
+---------
+var Footer=()=>
+{
+    return (
+        <h1> Footer Section </h1>
+    )
+}
+export default Footer;
+
+
+
+step7:
+------	
+	Call the child components in parent component i.e App.js 
+
+
+step8:
+------
+	Switch to react project i.e myapp5
+	ex:
+		reactprojects> cd  myapp5
+
+
+step9:
+------
+	Run the react project.	
+	ex:
+		reactprojects/myapp5>  npm start 
+
+step10:
+------
+	Test the react application by using below request url.
+	ex:
+		http://localhost:3000
+
+
+JavaScript Interview Question
+=============================
+
+Q) How to change background colors in javascript?
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+	<style>
+		body
+		{
+			height: 100vh;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+	</style>
+</head>
+<body>
+		<button onclick="changeColor()"> Click Me </button>
+
+		<script>
+			var i=0;
+			function changeColor()
+			{
+				var colors=["red","blue","green","yellow","cyan"];
+				document.body.style.backgroundColor=colors[i];
+				i++;
+
+				if(i>colors.length-1)
+				{
+					i=0;
+				}
+				setInterval("changeColor",1000);
+			}
+		</script>
+</body>
+</html>
+
+
+ex:2
+----
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+	<style>
+		body
+		{
+			height: 100vh;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+	</style>
+</head>
+<body>
+		
+		<script>
+			window.onload=function(){changeColor()};
+
+			var i=0;
+			function changeColor()
+			{
+				var colors=["red","blue","green","yellow","cyan"];
+				document.body.style.backgroundColor=colors[i];
+				i++;
+				if(i>colors.length)
+				{
+					i=0;
+				}
+			}
+			setInterval(changeColor,1000);
+
+		</script>
+</body>
+</html>
+
+State
+======
+It is same like props but it is fully private and controlled by a component.
+
+It can be declare only in class component but not in function component.
+
+It can be updatable or modify where as props is read only.
+
+There are two ways to declare the state in react.
+
+1) Inside the class 
+
+2) Inside the constructor 
+
+
+1) Inside the class 
+--------------------
+
+Project structure
+-----------------
+myapp6
+|
+|---node_modules
+|
+|---public
+	|
+	|--favicon.ico
+	|--manifest.json
+	|--index.html
+|
+|-----src
+	|
+	|--index.js
+	|--App.js 
+	|
+|
+|-----package.json 
+|-----README.md 
+
+step1:
+------
+	Create a react project i.e myapp6.
+	ex:
+		reactprojects> npx create-react-app myapp6
+
+step2:
+------
+	Install "ES7 - React/Redux/..." Extension from VSC editor.
+
+step3:
+-----
+	Goto App.js file and remove the code.
+
+
+step4:
+------	
+	Create a class component inside App.js i.e "RCC + Enter".
+
+App.js
+------
+import React, { Component } from 'react'
+
+export default class App extends Component 
+{
+  //state declaration
+  state={
+    rollno:101,
+    name:"Alan"
+  }
+
+  render() 
+  {
+    return (
+      <>
+          <h1>Roll No :   {this.state.rollno} </h1>
+          <h1>Name :  {this.state.name} </h1>          
+      </>
+    )
+  }
+}
+
+step5:
+------
+	Switch to myapp6 project.
+	ex:
+		reactprojects> cd  myapp6
+
+step6:
+------
+	Run the react project.
+	ex:
+		reactprojects/myapp6>  npm start 
+
+step7:
+------
+	Test the application by using below request url.
+	ex:
+		http://localhost:3000
+
+
+
+2) Inside the constructor 
+---------------------------
+
+Project structure
+-----------------
+myapp7
+|
+|---node_modules
+|
+|---public
+	|
+	|--favicon.ico
+	|--manifest.json
+	|--index.html
+|
+|-----src
+	|
+	|--index.js
+	|--App.js 
+	|
+|
+|-----package.json 
+|-----README.md 
+
+step1:
+------
+	Create a react project i.e myapp7.
+	ex:
+		reactprojects> npx create-react-app myapp7
+
+step2:
+------
+	Install "ES7 - React/Redux/..." Extension from VSC editor.
+
+step3:
+-----
+	Goto App.js file and remove the code.
+
+
+step4:
+------	
+	Create a class component inside App.js i.e "RCC + Enter".
+
+App.js
+------
+import React, { Component } from 'react'
+
+export default class App extends Component 
+{
+  constructor()
+  {
+    super();
+
+    //state declaration 
+    this.state={
+      rollno:501,
+      name:"Jessica"
+    }
+  }
+  render() 
+  {
+      return (
+        <>
+            <h1>Roll No:  { this.state.rollno}  </h1>
+            <h1>Name:  { this.state.name} </h1>
+        </>
+      )
+  }
+}
+
+
+step5:
+------
+	Switch to myapp7 project.
+	ex:
+		reactprojects> cd  myapp7
+
+step6:
+------
+	Run the react project.
+	ex:
+		reactprojects/myapp7>  npm start 
+
+step7:
+------
+	Test the application by using below request url.
+	ex:
+		http://localhost:3000
+
+
+
+Event Handling in React
+=======================
+An action to which a javascript react is called event.
+
+Handling events on react elements is similar to handling events on DOM elements.
+
+ex:
+	Javascript
+	----------
+		<button onclick="handleClick()"> click Here </button>
+	React
+	------
+		<button onClick={handleClick}> click Here </button>  (function component)
+		<button onClick={this.handleClick}> click Here </button>  (class component)
+
+Project structure
+-----------------
+myapp8
+|
+|---node_modules
+|
+|---public
+	|
+	|--favicon.ico
+	|--manifest.json
+	|--index.html
+|
+|-----src
+	|
+	|--index.js
+	|--App.js 
+	|
+|
+|-----package.json 
+|-----README.md 
+
+step1:
+------
+	Create a react project i.e myapp8.
+	ex:
+		reactprojects> npx create-react-app myapp8
+
+step2:
+------
+	Install "ES7 - React/Redux/..." Extension from VSC editor.
+
+step3:
+-----
+	Goto App.js file and remove the code.
+
+
+step4:
+------	
+	Create a class or function component inside App.js i.e "RCC + Enter" or "RFC".
+
+App.js
+------
+import React, { Component } from 'react'
+
+export default class App extends Component {
+
+  handleClick=()=>
+  {
+      console.log("This is react event handling example1")
+  }
+  render() {
+    return (
+      <>
+          <button onClick={this.handleClick}> click Here  </button>
+      </>
+    )
+  }
+}
+
+or
+
+App.js
+-------
+import React from 'react'
+
+export default function App() 
+{
+
+  const handleClick=()=>
+  {
+    console.log("This is second react event handling program");
+  }
+
+  return (
+    <>
+        <button onClick={handleClick}> click Here </button>
+    </>
+  )
+}
+
+
+
+step5:
+------
+	Switch to myapp8 project.
+	ex:
+		reactprojects> cd  myapp8
+
+step6:
+------
+	Run the react project.
+	ex:
+		reactprojects/myapp8>  npm start 
+
+step7:
+------
+	Test the application by using below request url.
+	ex:
+		http://localhost:3000
+
+
+
+Update the state using React Event Handling
+============================================
+Project structure
+-----------------
+myapp9
+|
+|---node_modules
+|
+|---public
+	|
+	|--favicon.ico
+	|--manifest.json
+	|--index.html
+|
+|-----src
+	|
+	|--index.js
+	|--App.js 
+	|
+|
+|-----package.json 
+|-----README.md 
+
+step1:
+------
+	Create a react project i.e myapp9.
+	ex:
+		reactprojects> npx create-react-app myapp9
+
+step2:
+------
+	Install "ES7 - React/Redux/..." Extension from VSC editor.
+
+step3:
+-----
+	Goto App.js file and remove the code.
+
+
+step4:
+------	
+	Create a class inside App.js i.e "RCC + Enter".
+
+App.js
+------
+import React, { Component } from 'react'
+
+export default class App extends Component 
+{
+    //state declaration
+    state={
+          rollno:101,
+          name:"Alan"
+    }
+                        
+    handleClick=(e)=>
+    {
+        e.preventDefault();
+        this.setState({"rollno":601,"name":"Jose"});
+    }
+
+  render() 
+  {
+    return (
+     <>
+        <h1>Roll No :  {this.state.rollno} </h1>
+        <h1>Name :  {this.state.name} </h1>
+        <button onClick={this.handleClick}> Click Here </button>        
+     </>
+    )
+  }
+}
+
+
+
+
+step5:
+------
+	Switch to myapp9 project.
+	ex:
+		reactprojects> cd  myapp9
+
+step6:
+------
+	Run the react project.
+	ex:
+		reactprojects/myapp9>  npm start 
+
+step7:
+------
+	Test the application by using below request url.
+	ex:
+		http://localhost:3000
+
+React CSS
+==========
+There are two ways to apply the CSS in react.
+
+1) Inline CSS 
+
+2) CSS stylesheet
+
+
+1) Inline CSS
+--------------
+To use inline css we need to use style attribute.
+ex:
+	<h1 style={{color:"red"}}> Heading Tag </h1>
+	<h1 style={{color:"red",backgroundColor:"cyan"}}> Heading Tag </h1>
+
+
+Project Structure
+-----------------
+myapp10
+|
+|---node_modules
+|
+|---public 
+	|
+	|---fevicon.ico
+	|---manifest.json
+	|---index.html
+|------src
+	|
+	|---index.js
+	|---App.js 
+|
+|-----package.json 
+|-----READMD.md
+|
+step1:
+-----
+	Create a react project i.e myapp10.
+	ex:
+		reactprojects>  npx  create-react-app  myapp10
+
+
+step2:
+------
+	Goto to App.js and remove the data.
+
+step3:
+-----
+	Create a function component in App.js file using "RFC".
+
+App.js
+-------
+import React from 'react'
+
+export default function App() {
+
+  const myStyle={
+    textAlign:"center",
+    color:"blue",
+    fontSize:"30px"
+  }
+
+  return (
+    <>
+        <h1 style={{color:"yellow",backgroundColor:"cyan"}}> This is Heading Tag </h1>
+        <p style={myStyle}> This is Paragraph Tag </p>
+    </>
+  )
+}
+	
+
+
+step4:
+------
+	Switch to the project.
+	ex:
+		reactprojects> cd myapp10
+
+step5:
+------
+	Start the react project.
+	ex:
+		reactprojects/myapp10> npm  start 
+
+step6:
+-----
+	Test the application by using below request url.
+	ex:
+		http://localhost:3000
+
+
+
+
+
+
+
+2) CSS stylesheet
+------------------
+In CSS stylesheet, we need to add css code inside App.css file.
+
+
+
+Project Structure
+-----------------
+myapp11
+|
+|---node_modules
+|
+|---public 
+	|
+	|---fevicon.ico
+	|---manifest.json
+	|---index.html
+|------src
+	|
+	|---index.js
+	|---App.js 
+	|---App.css 
+|
+|-----package.json 
+|-----READMD.md
+|
+
+step1:
+-----
+	Create a react project i.e myapp11.
+	ex:
+		reactprojects>  npx  create-react-app  myapp11
+
+
+step2:
+------
+	Goto to App.js and remove the data.
+
+step3:
+-----
+	Create a function component in App.js file using "RFC".
+
+App.js
+-------
+import React from 'react'
+import './App.css';
+
+export default function App() {
+  return (
+    <>
+        <h1 className='myStyle'> This is Heading Tag </h1>
+
+        <p id='paraStyle'> This is paragraph Tag </p>
+    </>
+  )
+}
+
+
+
+step4:
+-----
+	Goto to App.css and remove the data 
+
+
+
+step5:
+------
+	Add the below code in App.css file.
+
+App.css 
+-------
+.myStyle
+{
+    color:blue;
+    background-color: cyan;
+}
+
+#paraStyle
+{
+    text-align: center;
+    font-size:30px;
+    color:red;
+}
+
+
+step6:
+------
+	Switch to the project.
+	ex:
+		reactprojects> cd myapp11
+
+step7:
+------
+	Start the react project.
+	ex:
+		reactprojects/myapp11> npm  start 
+
+step8:
+-----
+	Test the application by using below request url.
+	ex:
+		http://localhost:3000
+
+
+
+Interview Questions
+===================
+
+Q) Difference between function component vs class component?
+
+function component			class component
+------------------			----------------
+It is also known as stateless 		It is a statefull component.
+component.
+
+In a function component we will use	In a class component we will use 
+return keyword.				render() method.
+
+It supports hooks.			It does not support hooks.
+
+Constructor is not used.		Constructor is used.
+
+ex:					ex:
+						import {Component} from 'react';
+	function App				export default class App extends Component
+	{					{
+		return (				render()
+		<h1> Hello </h1>			{
+		)						return (
+	}								<h1>Hello</h1>
+	export default App;						)	
+							}
+						}
+
+
+Q)Difference between real dom vs virtual dom ?
+
+Real dom 				virtual dom 
+-----------				--------------
+It updates slow.			It updates faster.
+
+Can directly updates HTML.		Can't directly updates HTML.
+
+Creates a new dom if element updates.	Update the jsx if element updates.
+
+DOM manipulation is very expensive.	DOM manipulation is very easy.
+
+Too much of memory wastage.		No memory wastage.
+
+
+
+
+Q)Difference between props and state ?
+
+props						state
+----------					---------
+Props are read-only.				States are updatable.
+
+Props are immutable.				State is mutable.
+
+
+Props allow us to pass data from one 		State holds information 
+component to other components as an argument.   about the components.
+
+
+Props can be accessed by the child component.	State cannot be accessed by 									child components because it is 
+						private.
+
+Stateless component can have Props.		Statefull components can have state.
+
+
+
+Q) Phases of ReactJS component ?
+
+There are four Phases of components in ReactJS.
+
+1)Mounting
+
+2)Updating
+
+3)Error Handling
+
+4)Unmounting
+
+
+1)Mounting
+-----------
+Mounting is a process of creating an element and inserting it in a DOM tree.
+
+
+2)Updating
+-------------
+Updating is a process of changing state or props of a component and update changes to nodes already existing in the DOM.
+
+3)Error Handling
+----------------
+Error Handling used when there is a error during rendering ,in lifecycle
+method or in the constructor of any child component.
+
+
+4)Unmounting 
+---------------
+Unmounting is a process of removing elements from the DOM.
+In general it will clear the reserved memory.
+
+
+
+
+Q)Explain life cycle methods of mounting ?
+
+ Mounting phase contains four methods.
+ 1) constructor
+ 2) getDerivedStateFromProps
+ 3) render()
+ 4) coumponentDidMount() 
+
+
+Q)Explain life cycle methods of unmounting?
+
+ Unmounting phase contains one method.
+
+ 1) componentWillUnmount()
+
+
+
+Q)Explain life cycle methods of updating?
+
+  updating phase contains five methods.
+  1) getDerivedStateFromProps
+  2) shouldComponentUpdate()
+  3) render()
+  4) getSnapshotBeforeUpdate()
+  4) ComponentDidUpdate() 	
+
+Assets/Images in ReactJS
+========================
+We can declare react assets/images in two places.
+
+1) Inside public folder
+
+2) Inside src folder 
+
+
+2) Inside src folder 
+--------------------
+
+myapp12
+|
+|----node_modules
+|
+|----public
+|	|
+	|---favicon.ico
+	|---manifest.json
+	|---index.html
+
+|-----src
+	|
+	|---index.js
+	|---App.js 
+	|	
+	|---images
+		|
+		|---thumbnail1.jpg
+		|---thumbnail2.jpg
+		|---thumbnail3.jpg
+|
+|-----package.json
+|-----README.md
+
+step1:
+-----
+	Create a react project i.e myapp12.
+	ex:
+		reactprojects>  npx  create-react-app  myapp12
+
+step2:
+------
+	Create a image folder inside "src".
+
+step3:
+-----	
+	Add the images inside "src/images" folder.
+
+step4:
+------
+	Goto App.js and remove the code.
+
+step5:
+------
+	Add the below code in App.js file.
+
+App.js
+------
+import pic1 from './images/thumbnail1.jpg';
+import pic2 from './images/thumbnail2.jpg';
+import pic3 from './images/thumbnail3.jpg';
+function App()
+{
+  const imgStyle={
+    width:"300px",
+    height:"300px"
+  }
+
+  return (
+
+      <>
+        <img src={pic1}  style={imgStyle}/>
+        <img src={pic2}  style={imgStyle}/>
+        <img src={pic3}  style={imgStyle}/>
+      </>
+  )
+}
+export default App;
+
+step6:
+-----
+	Switch to react project.
+	ex:
+		reactprojects> cd   myapp12
+
+step7:
+-----
+	Run the react project.
+	ex:
+		reactprojects/myapp12>  npm start 
+
+
+step8:
+------
+	Test the react application by using below request url.
+	ex:
+		http://localhost:3000/
+
+React Hooks
+============
+It is a latest version introduced in react 16v.
+
+React hooks work only for function components.
+
+React hooks allows function components to have access to state ,life cycle methods and other react features.
+
+React contains two types of Hooks.
+
+1) Predefined Hooks 
+
+2) Custom Hooks 
+
+1) Predefined Hooks 
+------------------
+Built-in hooks are called predefined hooks.
+
+Hooks which are given by react are called predefined hooks.
+
+ex:
+	useState() hook
+	useEffect() hook
+	useReducer() hook
+	useNavigate() hook 
+	and etc.
+
+
+useState() hook
+================
+A useState() is a Hook that allows us to add React state to function components.
+
+We call it inside a function component to add some local state to it.
+
+A useState() returns a pair - the current state value and a function that let us update it.
+
+React will preserve this state between re-renders.
+
+We can call this function from an event handler or somewhere else.
+
+
+React Project
+--------------
+
+myapp12
+|
+|----node_modules
+|
+|----public
+|	|
+	|---favicon.ico
+	|---manifest.json
+	|---index.html
+
+|-----src
+	|
+	|---index.js
+	|---App.js 
+
+|
+|-----package.json
+|-----README.md
+
+step1:
+-----
+	Create a react project i.e myapp12.
+	ex:
+		reactprojects>  npx  create-react-app  myapp12
+
+
+step2:
+------
+	Goto App.js and remove the code.
+
+step3:
+------
+	Add the below code in App.js file.
+
+App.js
+------
+import {useState} from 'react';
+
+function App()
+{
+  const[name,setName]=useState("Alan");
+
+  const handleClick=()=>
+  {
+    setName("Jose");
+  }
+
+  return (
+    <>
+        <h1> Name : { name } </h1>
+        <button onClick={handleClick}> click </button>
+    </>
+  )
+}
+export default App;
+
+
+
+step4:
+-----
+	Switch to react project.
+	ex:
+		reactprojects> cd   myapp12
+
+step5:
+-----
+	Run the react project.
+	ex:
+		reactprojects/myapp12>  npm start 
+
+
+step6:
+------
+	Test the react application by using below request url.
+	ex:
+		http://localhost:3000/
+
+
+useEffect() hook
+================
+The useEffect Hook allows you to perform side effects in your components. 
+
+It is used to call the API, directly updating the DOM, and timers. 
+
+React's useEffect hook combines componentDidMount ,componentDidUpdate and componentWillUnmount lifecycle methods.
+
+ex:
+
+
+
+myapp12
+|
+|----node_modules
+|
+|----public
+|	|
+	|---favicon.ico
+	|---manifest.json
+	|---index.html
+
+|-----src
+	|
+	|---index.js
+	|---App.js 
+
+|
+|-----package.json
+|-----README.md
+
+step1:
+-----
+	Create a react project i.e myapp12.
+	ex:
+		reactprojects>  npx  create-react-app  myapp12
+
+
+step2:
+------
+	Goto App.js and remove the code.
+
+step3:
+------
+	Add the below code in App.js file.
+
+App.js
+------
+import {useState,useEffect} from 'react';
+
+function App()
+{
+  const [count,setCount]=useState(0);
+
+  const handleClick=()=>
+  {
+    setCount(count+1);
+  }
+
+  useEffect(()=>
+  {
+    document.title=` The count is ${count}`;
+  })
+
+
+  return(
+      <>
+        <h1> Count : {count} </h1>
+        <button onClick={handleClick}> Increment </button>
+      </>
+  )
+
+}
+export default App;
+
+
+
+step4:
+-----
+	Switch to react project.
+	ex:
+		reactprojects> cd   myapp12
+
+step5:
+-----
+	Run the react project.
+	ex:
+		reactprojects/myapp12>  npm start 
+
+
+step6:
+------
+	Test the react application by using below request url.
+	ex:
+		http://localhost:3000/
+
+React useReducer Hook
+========================
+The useReducer() Hook is similar to the useState() Hook.
+
+It allows for custom state logic.
+
+The useReducer Hook accepts two arguments.
+ex:
+
+	useReducer(<reducer>, <initialState>)
+
+The useReducer Hook returns the current state and a dispatch method.
+ex:
+	const [state,dispatch]= userReducer(reducer,initialState);
+
+
+App.js
+----------
+import {useReducer} from 'react';
+
+const initialState=0;
+const reducer=(state,action)=>
+{
+    switch(action)
+    {
+        case 'increment': return state+1;
+        case 'decrement': return state-1;
+        case 'reset': return initialState;
+        default: return state;
+    }
+}
+function App()
+{
+ const [count,dispatch]=useReducer(reducer,initialState);
+    
+    return (
+        <div>
+            <h1>Count : {count}</h1>
+            <button onClick={()=>dispatch('increment')}>Increment</button>
+            <button onClick={()=>dispatch('decrement')}>Decrement</button>
+            <button onClick={()=>dispatch('reset')}>Reset</button>
+           
+        </div>
+    )
+}
+export default App;
+
+
+index.js
+-----------
+
+import Student from './Student';
+import ReactDOM from 'react-dom/client';
+import React from 'react';
+import App from './App';
+
+const root=ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+      <React.StrictMode>
+             <App />
+      </React.StrictMode>
+)
+
+
+
+
+React useContext Hook (Context API)
+======================================
+Context provides a way to pass the data through the component tree without 
+passing  props down manually at several level.
+
+To do this without Context, we will need to pass the state(useState) as "props" through each nested component. This is called "props drilling".
+
+Diagram:  react9.1
+
+
+Project  structure
+--------------------
+myapp13
+|
+|------node-modules
+|
+|------public
+|	|
+|	|------favicon.ico
+|	|------index.html 
+|	|------manifest.json
+|
+|------src
+	|
+	|------index.js
+	|------App.js     (Provider)  
+	|------Acomponent.js 
+	|------Bcomponent.js
+	|------Ccomponent.js (consumer) 
+|
+|------package.json
+|------README.md
+
+
+App.js
+------------
+import React from 'react';
+import Acomponent from "./Acomponent";
+export const UseContext=React.createContext();
+function App()
+{
+    
+    return (
+        <div>
+            <UseContext.Provider value={'IHUB'}>
+            <Acomponent/>
+            </UseContext.Provider>
+           
+        </div>
+    )
+}
+export default App;
+
+Acomponent.js
+---------------
+import Bcomponent from "./Bcomponent";
+
+function Acomponent()
+{
+    return (
+        <Bcomponent/>
+    )
+}
+export default  Acomponent;
+
+
+Bcomponent.js
+----------------
+import Ccomponent from "./Ccomponent";
+
+function Bcomponent()
+{
+    return (
+       <Ccomponent/>
+    )
+}
+export default  Bcomponent;
+
+
+Ccomponent.js
+--------------
+import {useContext} from "./App";
+
+function Ccomponent()
+{
+    return (
+    <div>
+     <UseContext.Consumer>
+         {
+             user => {
+                 return <div>The value is : {user} </div>
+             }
+         }
+     </UseContext.Consumer>
+    </div>
+    )
+}
+export default  Ccomponent;
+
+
+
+index.js
+-----------
+import Student from './Student';
+import ReactDOM from 'react-dom/client';
+import React from 'react';
+import App from './App';
+
+const root=ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+      <React.StrictMode>
+             <App />
+      </React.StrictMode>
+)
+
+
+
+
+Custom Hooks
+==============
+Hooks which are created by the user based on the application requirement are called custom hooks.
+ex:
+	myCustomHook()
+	customHook()
+	ihubHook()
+	myCustomCounter()
+
+Project Structure
+-------------------
+myapp14
+|
+|----node_modules
+|
+|----public
+|	|
+	|----favicon.ico
+	|----index.html
+	|----manifest.json
+|
+|-----src
+|	|
+	|----index.js
+	|----App.js
+	|----CustomHook.js
+|
+|-----package.json 
+|-----README.md
+
+
+ex:1
+----------
+
+CustomHook.js
+---------------
+import React from 'react'
+import {useState} from 'react'
+
+
+function CustomHook() 
+{
+  
+  const [count,setCount]=useState(0);
+
+  const handleClick=()=>
+  {
+    setCount(count+1);
+  }
+  
+    return(
+        {
+        count,
+        handleClick
+        })
+}
+
+export default CustomHook
+
+
+App.js
+--------
+import React from 'react'
+import customHook from './CustomHook';
+
+function App() {
+
+  const data=customHook();
+
+  return (
+    <div>
+      <h1>Count : {data.count}</h1>
+      <button onClick={data.handleClick}>Increment</button>
+    </div>
+  )
+}
+
+export default App
+
+
+index.js
+-----------
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.css';
+import App from './App';
+import reportWebVitals from './reportWebVitals';
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
+
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+reportWebVitals();
+
+React Router           
+================
+Routing is a process in which a user is directed to different pages based on their 
+action or request.
+
+ReactJS Router is mainly used for developing Single Page Web Applications. 
+
+React Router is used to define multiple routes in the application. 
+
+When a user types a specific URL into the browser, and if this URL path matches any 
+'route' inside the router file, the user will be redirected to that particular route.
+
+React Router is a standard library system built on top of the React and used to 
+create routing in the React application using React Router Package.
+
+React contains three different packages for routing.
+
+1)react-router: 
+----------------
+It provides the core routing components and functions for the React Router applications.
+
+2)react-router-native: 
+--------------------
+It is used for mobile applications.
+
+3)react-router-dom: 
+-------------------
+It is used for web applications design.
+
+Note:
+-------
+It is not possible to install react-router directly in your application. 
+To use react routing, first, you need to install react-router-dom modules in your application. 
+
+
+We have two types of router components.
+
+1)<BrowserRouter>: 
+-------------------
+		It is used for handling the dynamic URL.
+2)<HashRouter>: 
+--------------
+		It is used for handling the static request.
+
+
+Project  structure
+--------------------
+myapp15
+|
+|------node-modules
+|
+|------public
+|	|
+|	|------favicon.ico
+|	|------index.html 
+|	|------manifest.json
+|
+|------src
+	|
+	|------index.js
+	|------App.js  (Routing File)   
+	|------Home.js
+	|------About.js
+	|------Contact.js
+	|------Error.js
+|
+|------package.json
+|------README.md
+
+step1:
+------
+	create react "myapp15" project in VSC.
+	ex:
+	projects>create-react-app myapp15
+
+step2:
+--------
+	Move to myapp15 project.
+	ex:
+	project> cd   myapp15
+
+
+step3:
+------
+	install react router dom.
+	ex:
+	project/myapp15>npm install --save react-router-dom	
+
+
+step4:
+-------
+	Restart the application .
+	ex:
+	myapp15> npm start
+
+
+step5:
+--------
+	create App.js,Home.js,About.js ,Contact.js and Error.js component inside "src" folder.
+
+App.js
+-------
+
+
+import Home from './Home';
+import Contact from './Contact';
+import About from './About';
+import Error from './Error'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+function App() {
+  return (
+    <div>
+       <BrowserRouter>
+      <Routes>
+        <Route exact path="/" element={<Home />}/>
+        <Route path="/about" element={<About />}/>
+        <Route path="/contact" element={<Contact />}/>
+        <Route path="*" element={<Error />}/>
+      </Routes>
+      </BrowserRouter>
+    </div>
+  );
+}
+export default App;
+
+Home.js
+----------
+function Home()
+{
+    return (
+        <div>
+          <h1>Home</h1>
+       </div>
+    )
+}
+export default Home;
+
+
+About.js
+---------
+function About()
+{
+    return (
+        <div>
+          <h1>About</h1>
+       </div>
+    )
+}
+export default About;
+
+Contact.js
+----------
+function Contact()
+{
+    return (
+        <div>
+          <h1>Contact</h1>
+       </div>
+    )
+}
+export default Contact;
+
+
+Error.js
+----------
+function Error()
+{
+    return(
+        <div>
+            <h1>OOPS! 404 Error </h1>
+        </div>
+    )
+}
+export default Error;
+
+
+step6:
+------
+	create index.js component to render the output inside "src" folder.
+
+index.js
+---------
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.css';
+import App from './App';  
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+
+    <App/>
+    
+  </React.StrictMode>
+);
+
+step7:
+-------
+	Test the application by using below url's.
+	ex:
+	http://localhost:3000/
+	http://localhost:3000/home
+	http://localhost:3000/about
+	http://localhost:3000/contact
+	http://localhost:3000/gallery
+	http://localhost:3000/services
+	
+
+
+Adding Navigation using Link component
+==========================================
+A Link component is used to create links which allow to navigate on different URLs and render its content without reloading the webpage.
+
+ex:2
+-------
+
+App.js
+---------
+
+import Home from './Home';
+import Contact from './Contact';
+import About from './About';
+import Error from './Error'
+
+import {Link, Routes,Route,BrowserRouter } from 'react-router-dom'  
+function App() {
+  return (
+    <div>
+      <BrowserRouter>
+   
+      <nav >
+        <Link style={{display:"block"}} to="/">Home</Link>
+        <Link style={{display:"block"}} to="/about">About Us</Link>
+        <Link style={{display:"block"}} to="/contact">Contact US</Link>
+      </nav>
+      <Routes>
+        <Route exact path="/" element={<Home />}/>
+        <Route path="/about" element={<About />}/>
+        <Route path="/contact" element={<Contact />}/>
+        <Route path="*" element={<Error />}/>
+      </Routes>
+      </BrowserRouter>
+    </div>
+  );
+}
+export default App;
+
+Home.js
+-----------
+function Home()
+{
+    return (
+        <div>
+          <h1>Home</h1>
+       </div>
+    )
+}
+export default Home;
+
+About.js
+------------
+function About()
+{
+    return (
+        <div>
+          <h1>About</h1>
+       </div>
+    )
+}
+export default About;
+
+Contact.js
+--------------
+function Contact()
+{
+    return (
+        <div>
+          <h1>Contact</h1>
+       </div>
+    )
+}
+export default Contact;
+
+
+Error.js
+----------
+function Error()
+{
+    return(
+        <div>
+            <h1>OOPS! 404 Error </h1>
+        </div>
+    )
+}
+export default Error;
+
+
+index.js
+-----------
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.css';
+import App from './App';  
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+
+    <App/>
+    
+  </React.StrictMode>
+);
+
+
+Bootstrap in React
+=================
+A Single-page applications gaining popularity over the last few years, so many front-end frameworks have introduced such as Angular, Vue, Ember, etc. As a result, jQuery is not a necessary requirement for building web apps. 
+
+Currently, React is mostly used JavaScript library for building web applications, and Bootstrap become the most popular CSS framework. 
+
+Let see how to use bootstrap in react applications.
+
+
+Project structure
+-------------------
+myapp16
+|
+|----node_modules
+|
+|----public
+	|
+	|---favicon.ico
+	|---index.html
+	|---manifest.json
+|
+|------src
+|	|
+	|---index.js
+	|	
+|	|---App.js
+|
+|------package.json
+|
+|------README.md
+
+step1:
+-----
+	create  a react project i.e myapp16.
+	ex:
+		Reactprojects> npx create-react-app myapp16	
+
+step2:
+------
+	Open the VSC code editor.
+	ex:
+		Reactprojects> code . 
+
+step3:
+-----
+	Move/Switch to myapp16 project.
+	ex:
+		Reactprojects> cd myapp16
+
+step4:
+-------
+	Install Bootstrap package.
+	ex:
+		Reactprojects/myapp16> npm install bootstrap
+
+
+step5:
+-------
+	Run the react application.
+	ex:
+		Reactprojecs/myapp13> npm start 		
+
+
+step6:
+-----
+	Create a App.js file inside "src" folder.
+
+App.js
+-------
+function App()
+{
+  return(
+      <div className="container mt-5">
+          <button className="btn btn-outline-primary">clickMe</button>
+      </div>
+  )
+}
+export default App;
+
+step7:
+------
+	Import bootstrap package inside "index.js" file.
+
+index.js
+---------
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.css';
+import App from './App';
+import reportWebVitals from './reportWebVitals';
+import '../node_modules/bootstrap/dist/css/bootstrap.css';
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
+
+reportWebVitals();
+
+step8:
+------
+	Test the application by using below request url.
+	ex:
+		http://localhost:3000
+
+
+
+React Forms
+===============
+Forms are an integral part of any modern web application.
+
+It allows the users to interact with the application as well as gather information from the users. 
+
+Forms can perform many tasks that depend on the nature of your business requirements and logic such as authentication of the user, adding user, searching, filtering, booking, ordering, etc.
+
+A form can contain text fields, buttons, checkbox, radio button, etc.
+
+
+Creating Form
+------------
+React offers a stateful, reactive approach to build a form. 
+
+The component rather than the DOM usually handles the React form.
+
+In React, the form is usually implemented by using controlled components.
+
+
+Controlled component
+------------------------
+In the controlled component, the input form element is handled by the component rather than the DOM. Here, the mutable state is kept in the state property and will be updated only with setState() method.
+
+Controlled components have functions that govern the data passing into them on every onChange event, rather than grabbing the data only once, e.g., when you click a submit button.This data is then 
+saved to state and updated with setState() method. This makes component have better control over the form elements and data.
+
+Project structure
+------------------
+myapp16
+|
+|----node_modules
+|
+|----public
+	|
+	|---favicon.ico
+	|---index.html
+	|---manifest.json
+
+|------src
+	|
+	|---index.js
+	|
+	|---App.js
+
+|
+|-------package.json
+|
+|-------README.md
+
+step1:
+------
+	create a react project i.e myapp16.
+	ex:
+		Reactprojects> npx create-react-app myapp16
+
+
+step2:
+-------
+	Open the VSC code Editor.
+	ex:
+		Reactprojects> code .
+
+step3:
+-----
+	Switch/Move to myapp16  project.
+	ex:
+		Reactprojects> cd  myapp16
+
+
+step4:
+------
+	Install bootstrap package.
+	ex:
+		Reactprojects/myapp16> npm install bootstrap
+
+step5:
+------
+	Run the react application.
+	ex:
+		Reactprojects/myapp16> npm start 
+
+step6:
+-------
+	Import Bootstrap package inside "index.js" file.
+
+index.js
+---------
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.css';
+import App from './App';
+import reportWebVitals from './reportWebVitals';
+import '../node_modules/bootstrap/dist/css/bootstrap.css';
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
+
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+reportWebVitals();
+
+step7:
+------
+	Create App.js file inside "src" folder.
+
+App.js
+-----
+import {useState} from 'react';
+function App()
+{
+  const [userRegistration,setUserRegistration]=useState({
+    username:"",
+    password:"",
+    date:"",
+    category:""
+})
+
+const handleClick=(e)=>
+{
+  const name=e.target.name;
+  const value=e.target.value;
+  //set to state
+  setUserRegistration({... userRegistration,[name]:value});
+}
+
+const handleSubmit=(e)=>
+{
+    e.preventDefault();
+    setUserRegistration({username:"",password:"",date:"",category:""});
+}
+
+
+  return(
+
+    <div className="container mt-4">
+        
+       <form onSubmit={handleSubmit}>
+       <div className="row w-50">
+       <h1 className="text-center" ><u>React Form </u></h1>
+        <label htmlFor="username" className="my-3">UserName:</label>
+        <input type="text" name="username" autocomplete="off" 
+              className="form-control"
+              value={userRegistration.username}
+              onChange={handleClick}/>
+    
+        <label htmlFor="password" className="my-3">Password:</label>
+        <input type="password" name="password" autocomplete="off" 
+               className="form-control"
+               value={userRegistration.password}
+               onChange={handleClick}/>
+    
+        <label htmlFor="date" className="my-3">Date:</label>
+        <input type="date" name="date" autocomplete="off" 
+               className="form-control"
+               value={userRegistration.date}
+               onChange={handleClick}/>
+    
+        <label htmlFor="category" className="my-3">Category</label>
+        <select name="category" className="form-control"
+                value={userRegistration.category}
+                onChange={handleClick}>
+            <option value="">none</option>
+            <option value="entertainment">Entertainment</option>
+            <option value="drama">Drama</option>
+            <option value="action">Action</option>
+        </select>
+
+        <button className="btn btn-primary mt-4 w-100"> submit </button>
+        </div> 
+
+        </form> 
+    </div>    
+
+  )
+
+}
+export default App;
+
+step8:
+------
+	Test the application by using below request url.
+	ex:
+		http://localhost:3000
+
+List in ReactJS
+===============
+List is used to display the data in ordered format and mainly used to display menus on a website.
+
+A map() function is used for traversing the list.
+
+Project structure
+-----------------
+myapp17
+|
+|---node_modules
+|
+|---public
+|	|
+	|---favicon.ico
+	|---index.html
+	|---manifest.json 
+
+|-----src
+	|
+	|---index.js
+	|---App.js
+|
+|---package.json
+|---README.md
+
+step1:
+----
+	Create a react project i.e myapp17.
+	ex:
+		npx create-react-app myapp17
+
+step2:
+----
+	Switch to the project.
+	ex:
+		cd  myapp17
+
+step3:
+------
+	Run the react application.
+	ex:
+		npm start 
+
+step4:
+-----
+	Add below code in App.js file.
+App.js
+------
+import React from 'react'
+
+export default function App() 
+{
+
+  var arr=[10,20,30,40];
+
+  var newArr=arr.map((element)=>
+  {
+    return <li> {element} </li>
+  })
+
+  return (
+    <ul>
+        {newArr}
+    </ul>
+  )
+}
+
+or 
+
+App.js
+------
+import React, { Component } from 'react'
+
+export default class App extends Component {
+
+  state={
+    items:[
+      {pid:101,pname:"LG",pprice:1000},
+      {pid:102,pname:"LAVA",pprice:2000},
+      {pid:103,pname:"OPPO",pprice:3000}
+    ]
+  }
+  render() {
+
+    var newArr=this.state.items.map( item => {
+      return <p>Item Id : {item.pid} Item Name : {item.pname} Item Price :{item.pprice}</p>
+    })
+
+    return (
+      <div>
+        {newArr}
+      </div>
+    )
+  }
+}
+
+
+step5:
+-----
+	Test the application by using below request url.
+	ex:
+		http://localhost:3000
+
+
+Axios
+======
+Axios is used to make HTTP request like GET,POST,PUT,DELETE.
+
+Using axios we can give the request to REST API's.
+
+We can install axios library by using below command.
+
+ex:
+	npm install axios 
+
+
+Project structure
+-----------------
+myapp18
+|
+|---node_modules
+|
+|---public
+|	|
+	|---favicon.ico
+	|---index.html
+	|---manifest.json 
+
+|-----src
+	|
+	|---index.js
+	|---App.js
+	|---FetchApi.js
+|
+|---package.json
+|---README.md
+
+step1:
+----
+	Create a react project i.e myapp18.
+	ex:
+		npx create-react-app myapp18
+
+step2:
+-----
+	Switch to the project.
+	ex:
+		cd  myapp18
+
+
+step3:
+----
+	Install axios library.
+	ex:
+		npm install axios 
+
+step4:
+-----
+	Run the react application.
+	ex:
+		npm start 
+
+step5:
+-----
+	Take any REST API for fetching the data.
+	ex:
+		https://jsonplaceholder.typicode.com/users
+
+step6:
+-------
+	Create FetchApi.js file inside "src" folder.
+
+FetchApi.js 
+------------
+import React from 'react'
+import {useState} from 'react';
+import axios from 'axios';
+
+export default function FetchApi() 
+{
+    const [data,setData]=useState([]);
+
+    const handleClick=()=>
+    {
+        axios.get("https://jsonplaceholder.typicode.com/users")
+        .then(response =>{
+            setData(response.data);
+        })
+        .catch(error=>
+        {
+            this.setData(error);
+        })
+    }
+
+
+  return (
+    <div>
+        <center>
+            <button onClick={handleClick}> Fetch API </button>
+        </center> 
+        <table border="1" width="100%">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>NAME</th>
+                    <th>USERNAME</th>
+                    <th>EMAIL</th>
+                </tr>
+            </thead>
+            <tbody>
+                {
+                    data.map(data=>{
+                        return <tr>
+                                    <td>{data.id}</td>
+                                    <td>{data.name}</td>
+                                    <td>{data.username}</td>
+                                    <td>{data.email}</td>
+                                </tr>
+                    })
+                }
+            </tbody>
+        </table>
+    </div>
+  )
+}
+
+
+step7:
+-----
+	Now call FetchApi.js file from App.js file.
+
+App.js
+-------
+import React from 'react'
+import FetchApi from './FetchApi'
+
+export default function App() {
+  return (
+    <div>
+      <FetchApi/>
+    </div>
+  )
+}
+
+step8:
+-----
+	Test the application by using below request url.
+	ex:
+		http://localhost:3000
+
+React Redux
+============
+Redux is an open-source JavaScript library for managing and centralizing application state.
+
+React redux is a state management library.
+
+Redux itself is a standalone library that can be used with any frontend frameworks like AngularJS, VueJS, ReactJS and etc.
+
+Diagram: react11.1
+
+1) store 
+--------
+Redux store is used to store entire state of our application.
+
+2) Action:
+---------
+It is only the way our application interacts with redux store.
+
+3) Reducer:
+---------
+Reducer reads the payloads from the action and then updates the store.
+It is a pure function to return a new state fro initital state.
+
+
+ 
+Project structure
+------------------
+
+react-redux
+|
+|---node_modules
+|
+|---public
+|	|
+	|---favicon.ico
+	|---index.html
+	|---manifest.json 
+
+|-----src
+	|
+	|---index.js
+	|---App.js
+	|
+	|---components
+		|
+		|---Counter.js
+	|---redux
+		|
+		|---CounterAction.js
+		|---CounterReducer.js
+|
+|---package.json
+|---README.md
+
+step1:
+----
+	Create a react project i.e myapp18.
+	ex:
+		npx create-react-app react-redux
+
+step2:
+-----
+	Switch to the project.
+	ex:
+		cd  react-redux
+
+
+step3:
+----
+	Install react, react-redux and redux library.
+	ex:
+		npm install react   react-dom  react-redux  redux
+		npm install @reduxjs/toolkit
+		npm install bootstrap
+
+step4:
+-----
+	Import the bootstrap inside index.js file.
+
+index.js
+--------
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.css';
+import App from './App';
+import reportWebVitals from './reportWebVitals';
+import '../node_modules/bootstrap/dist/css/bootstrap.css'
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
+
+reportWebVitals();
+
+
+
+step5:
+------
+	Run the react application.
+	ex:
+		npm start 
+
+step5:
+-----
+	Create a Counter.js file inside "src/components" folder.
+
+Counter.js
+-----------
+import React from 'react'
+
+export default function Counter() {
+  return (
+    <div className='container mt-5'>
+        <h2>Counter Application </h2>
+        <div class="container">
+                <button className='btn btn-primary'> Increment </button> 
+                <b style={{fontSize:"30px"}} className='mx-3'>{0}</b> 
+                <button className='btn btn-warning'> Decrement </button>
+        </div> 
+    </div>
+  )
+}
+
+
+step6:
+-----
+	Create a CounterAction.js file inside "src/reducer" folder.
+
+CounterAction.js
+----------------
+export function Increment()
+{
+    return{
+        type:"INCREMENT"
+    }
+}
+export function Decrement()
+{
+    return {
+        type:"DECREMENT"
+    }
+}
+
+step7:
+------
+	Create CounterReducer.js file inside "src/reducer" folder.
+
+CounterReducer.js
+---------------
+export function CounterReducer(state=0,action)
+{
+    switch(action.type)
+    {
+        case "INCREMENT":
+            return state+1; 
+        case "DECREMENT":
+            return state-1;
+        default: 
+            return state;
+    }
+}
+
+step8:
+-----
+	Import useDispatch() hook inside "Counter.js" to call actions.
+
+Counter.js
+-----------
+import React from 'react'
+import {useDispatch} from 'react-redux';
+import { Increment,Decrement } from '../redux/CounterAction';
+
+export default function Counter() {
+
+    const dispatch=useDispatch();
+
+  return (
+    <div className='container mt-5'>
+        <h2>Counter Application </h2>
+        <div class="container">
+                <button className='btn btn-primary' onClick={()=>dispatch(Increment())}> Increment </button> 
+                <b style={{fontSize:"30px"}} className='mx-3'>{0}</b> 
+                <button className='btn btn-warning' onClick={()=>dispatch(Decrement())}> Decrement </button>
+        </div> 
+    </div>
+  )
+}
+
+step9:
+-----
+	Now to retrieve the data we need to declare redux store inside App.js file.
+
+App.js
+-----
+import React from 'react'
+import { Provider } from 'react-redux'
+import {configureStore} from '@reduxjs/toolkit'
+import { CounterReducer } from './redux/CounterReducer'
+import Counter from './components/Counter';
+
+const store=configureStore({
+  reducer:{
+      counter : CounterReducer
+  }
+});
+
+export default function App() {
+  return (
+    <Provider store={store}>
+      <Counter/>
+    </Provider>
+  )
+}
+
+step10:
+-----
+	To display the data we need to write below code in Counter.js file.
+
+Counter.js
+---------
+import React from 'react'
+import {useDispatch,useSelector} from 'react-redux';
+import { Increment,Decrement } from '../redux/CounterAction';
+
+export default function Counter() {
+
+    const dispatch=useDispatch();
+
+    const counter=useSelector(state => state.counter);
+
+  return (
+    <div className='container mt-5'>
+        <h2>Counter Application </h2>
+        <div class="container">
+                <button className='btn btn-primary' onClick={()=>dispatch(Increment())}> Increment </button> 
+                <b style={{fontSize:"30px"}} className='mx-3'>{counter}</b> 
+                <button className='btn btn-warning' onClick={()=>dispatch(Decrement())}> Decrement </button>
+        </div> 
+    </div>
+  )
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+s
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+			
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

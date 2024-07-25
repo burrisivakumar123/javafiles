@@ -1,0 +1,5734 @@
+CSS3
+=====
+CSS stands for Cascading Styles Sheet.
+
+It is used to apply the styles on elements.
+
+CSS3 was introduced in the year of 2001.
+
+The main objective of CSS3 are.
+
+1) To set the positioning of an element.
+
+2) To apply the styles on elements to describe how an element should look like.
+
+3) To perform some sort of animations.
+
+ex:
+----
+<!DOCTYPE html>
+<html>
+	<head>
+		<style type="text/css">
+			-
+			- // CSS properties 
+			-
+		</style>	
+	</head>
+	<body>
+		-
+		-
+		-	
+	</body>
+</html>
+
+ex:
+----
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style type="text/css">
+			h1
+			{
+				color:blue;
+				background-color:cyan;
+				text-align:center;
+			}
+		</style>
+	</head>
+	<body>
+			<h1>This is Heading Tag</h1>
+	</body>
+</html>
+
+Note:
+-----
+	Here styles cascading from head to body.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style type="text/css">
+			h1
+			{
+				color:blue;
+				background-color:hsl(60,100%,50%);
+				text-align:center;
+			}
+		</style>
+	</head>
+	<body>
+			<h1>This is Heading Tag</h1>
+	</body>
+</html>
+
+ex:
+----
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style type="text/css">
+			h1
+			{
+				color:blue;
+				background-color:rgb(0,255,0);
+				text-align:center;
+			}
+		</style>
+	</head>
+	<body>
+			<h1>This is Heading Tag</h1>
+	</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style type="text/css">
+			h1
+			{
+				color:blue;
+				background-color:#00ff00;
+				text-align:center;
+			}
+		</style>
+	</head>
+	<body>
+			<h1>This is Heading Tag</h1>
+	</body>
+</html>
+
+
+CSS syntax
+===========
+CSS rule set contains selector and declaration block.
+ex:
+				Declaration block
+					|
+	  |--------------------------------------------------|
+	h1{color:blue;background-color:cyan;text-align:center}
+	|
+	selector 	
+
+Selector indicates , to which element we need to apply the styles.
+
+Declaration block contains collection of CSS properties.
+
+Each CSS property seperated with semicolon(;).
+
+Each property contains property name and property value seperated with colon(:).
+
+
+Advantages of CSS
+=================
+1) It is easy to learn and easy to use.
+
+2) It saves lot of development time. 
+
+3) It supported by all major browsers.
+
+4) Flexibility 
+
+5) It supports global change.
+
+6) Performance is faster
+
+Disadvantages of CSS
+====================
+1) Fragmentation 
+
+2) Need to update all CSS versions.
+
+Types of CSS
+============
+We have three types of CSS.
+
+1) Inline CSS 
+
+2) Internal CSS 
+
+3) External CSS  
+
+
+1) Inline CSS
+--------------
+Inline CSS is used to apply unique style on single element.
+
+Using "style" attribute we can achieve inline CSS.
+
+ex:
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		
+	</head>
+	<body>
+		<h1 style="color:blue;background-color:cyan;">This is Heading Tag</h1>
+	</body>
+</html>
+
+2) Internal CSS 
+---------------
+If we want to apply unique styles on a single web page.
+
+Using <style> tag is used to achieve internal CSS.
+
+A <style> tag  we need to declare inside <head> tag.
+
+ex:
+--
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			h1
+			{
+				color:blue;
+				text-align:center;
+				background-color:cyan;
+			}
+		</style>
+	</head>
+	<body>
+			<h1>This is Heading Tag</h1>
+			
+			<h1>This is Heading Tag</h1>
+
+			<h1>This is Heading Tag</h1>	
+	</body>
+</html>
+
+3) External CSS 
+------------------
+If we want apply unique styles on entire website.
+
+In external CSS we will create .html file and .css file.
+
+A .html file contains HTML code and .css file contains CSS code.
+
+But we can't execute .css file directly on browser window.
+
+We need to embed .css file in  .html file by using a <link> tag.
+
+ex:
+---
+
+index.html 
+----------
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		
+		<!-- add external CSS -->
+		<link rel="stylesheet" type="text/css" href="mystyles.css">
+		
+	</head>
+	<body>
+		<h1>This is Heading Tag </h1>
+		<p> This is Paragraph Tag </p>
+	</body>
+</html>
+
+mystyles.css
+------------
+h1
+{
+	color:blue;
+	text-align:center;
+}
+p
+{
+	background:#00ff00;
+	font-size:40px;
+}
+
+CSS background property
+======================
+CSS background property is used to set the background in web page.
+
+If we set any background in a body then it will reflect to entire web page.
+
+If want we can set the background to any HTML element.
+ex:
+	<h1>, <p>, <div> and etc.
+
+We have following list of CSS background properties.
+
+1) background-color 
+
+2) background-image 
+
+3) background-repeat 
+
+4) background-size 
+
+5) background-position 
+
+6) background-attachment 
+
+7) background shorthand 
+
+8) background-blend-mode 
+
+and etc.
+
+
+1) background-color 
+-------------------
+
+ex:
+--
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			h1
+			{
+				background-color: tomato;
+			}
+		</style>
+	</head>
+	<body>
+			<h1> This is Heading Tag </h1>
+	</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			body
+			{
+				background-color: forestgreen;
+			}
+		</style>
+	</head>
+	<body>
+			<h1> This is Heading Tag </h1>
+	</body>
+</html>
+
+
+2) background-image 
+-------------------
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			body
+			{
+				background-color: #FFF;
+				background-image: url("images/bg.jpg");
+			}
+		</style>
+	</head>
+	<body>
+			<h1> This is Heading Tag </h1>
+	</body>
+</html>
+
+
+3) background-repeat
+---------------------
+
+ex:
+----
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			body
+			{
+				background-color: #FFF;
+				background-image: url("images/bg.jpg");
+				background-repeat:no-repeat;
+			}
+		</style>
+	</head>
+	<body>
+			<h1> This is Heading Tag </h1>
+	</body>
+</html>
+
+4) background-size 
+-------------------
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			body
+			{
+				background-color: #FFF;
+				background-image: url("images/bg.jpg");
+				background-repeat:no-repeat;
+				background-size:static;
+			}
+		</style>
+	</head>
+	<body>
+			<h1> This is Heading Tag </h1>
+	</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			body
+			{
+				background-color: #FFF;
+				background-image: url("images/bg.jpg");
+				background-repeat:no-repeat;
+				background-size:500px;
+			}
+		</style>
+	</head>
+	<body>
+			<h1> This is Heading Tag </h1>
+	</body>
+</html>
+
+ex:
+----
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			body
+			{
+				background-color: #FFF;
+				background-image: url("images/bg.jpg");
+				background-repeat:no-repeat;
+				background-size:900px  400px;
+			}
+		</style>
+	</head>
+	<body>
+			<h1> This is Heading Tag </h1>
+	</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			body
+			{
+				background-color: #FFF;
+				background-image: url("images/bg.jpg");
+				background-repeat:no-repeat;
+				background-size:cover;
+			}
+		</style>
+	</head>
+	<body>
+			<h1> This is Heading Tag </h1>
+	</body>
+</html>
+
+
+5) background-position 
+-----------------------
+
+ex:
+--
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			body
+			{
+				background-color: #FFF;
+				background-image: url("images/bg.jpg");
+				background-repeat:no-repeat;
+				background-size:300px;
+				background-position:right 0px;
+			}
+		</style>
+	</head>
+	<body>
+			<h1> This is Heading Tag </h1>
+	</body>
+</html>
+
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			body
+			{
+				background-color: #FFF;
+				background-image: url("images/bg.jpg");
+				background-repeat:no-repeat;
+				background-size:300px;
+				background-position:center 0px;
+			}
+		</style>
+	</head>
+	<body>
+			<h1> This is Heading Tag </h1>
+	</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			body
+			{
+				background-color: #FFF;
+				background-image: url("images/bg.jpg");
+				background-repeat:no-repeat;
+				background-size:300px;
+				background-position:left 0px;
+			}
+		</style>
+	</head>
+	<body>
+			<h1> This is Heading Tag </h1>
+	</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			body
+			{
+				background-color: #FFF;
+				background-image: url("images/bg.jpg");
+				background-repeat:no-repeat;
+				background-size:300px;
+				background-position:center 100px;
+			}
+		</style>
+	</head>
+	<body>
+			<h1> This is Heading Tag </h1>
+	</body>
+</html>
+
+6) background-attachment 
+-------------------------
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			body
+			{
+				background-color: #FFF;
+				background-image: url("images/bg.jpg");
+				background-repeat:no-repeat;
+				background-size:300px;
+				background-position:center 0px;
+				background-attachment:scroll;
+			}
+		</style>
+	</head>
+	<body>
+			<h1> This is Heading Tag </h1>
+			<h1> This is Heading Tag </h1>
+			<h1> This is Heading Tag </h1>
+			<h1> This is Heading Tag </h1>
+			<h1> This is Heading Tag </h1>
+			<h1> This is Heading Tag </h1>
+			<h1> This is Heading Tag </h1>
+			<h1> This is Heading Tag </h1>
+			<h1> This is Heading Tag </h1>
+			<h1> This is Heading Tag </h1>
+			<h1> This is Heading Tag </h1>
+			<h1> This is Heading Tag </h1>
+			<h1> This is Heading Tag </h1>
+			<h1> This is Heading Tag </h1>
+			<h1> This is Heading Tag </h1>
+			<h1> This is Heading Tag </h1>
+	</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			body
+			{
+				background-color: #FFF;
+				background-image: url("images/bg.jpg");
+				background-repeat:no-repeat;
+				background-size:300px;
+				background-position:center 0px;
+				background-attachment:fixed;
+			}
+		</style>
+	</head>
+	<body>
+			<h1> This is Heading Tag </h1>
+			<h1> This is Heading Tag </h1>
+			<h1> This is Heading Tag </h1>
+			<h1> This is Heading Tag </h1>
+			<h1> This is Heading Tag </h1>
+			<h1> This is Heading Tag </h1>
+			<h1> This is Heading Tag </h1>
+			<h1> This is Heading Tag </h1>
+			<h1> This is Heading Tag </h1>
+			<h1> This is Heading Tag </h1>
+			<h1> This is Heading Tag </h1>
+			<h1> This is Heading Tag </h1>
+			<h1> This is Heading Tag </h1>
+			<h1> This is Heading Tag </h1>
+			<h1> This is Heading Tag </h1>
+			<h1> This is Heading Tag </h1>
+	</body>
+</html>
+
+
+7) background shorthand
+------------------------
+background-color: #FFF;
+background-image: url("images/bg.jpg");
+background-repeat:no-repeat;
+background-position:center 0px;
+background-attachment:fixed;
+
+or 
+
+background :  #FFF  url("images/bg.jpg")  no-repeat  center 0px  fixed;
+
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			body
+			{
+				background :  #FFF  url("images/bg.jpg")  no-repeat  center 0px  fixed;
+				background-size:400px;
+				
+			}
+		</style>
+	</head>
+	<body>
+			<h1> This is Heading Tag </h1>
+			<h1> This is Heading Tag </h1>
+			<h1> This is Heading Tag </h1>
+			<h1> This is Heading Tag </h1>
+			<h1> This is Heading Tag </h1>
+			<h1> This is Heading Tag </h1>
+			<h1> This is Heading Tag </h1>
+			<h1> This is Heading Tag </h1>
+			<h1> This is Heading Tag </h1>
+			<h1> This is Heading Tag </h1>
+			<h1> This is Heading Tag </h1>
+			<h1> This is Heading Tag </h1>
+			<h1> This is Heading Tag </h1>
+			<h1> This is Heading Tag </h1>
+			<h1> This is Heading Tag </h1>
+			<h1> This is Heading Tag </h1>
+	</body>
+</html>
+
+
+
+
+8) background-blend-mode 
+------------------------
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			body
+			{
+				background-color:#FFF , #FFF;
+				background-image: url("images/bg.jpg"), url("images/micky.png");
+				background-repeat:no-repeat , no-repeat;
+				background-size:cover , 300px;
+				background-position:center 0px, right 100px;
+				background-attachment:fixed , fixed;
+				background-blend-mode: darken;
+			}
+		</style>
+	</head>
+	<body>
+			
+	</body>
+</html>
+
+CSS border property 
+===================
+CSS border property is used to specify  style, width and color for border of an element.
+
+We have following list of CSS border properties.
+
+1) border-style 
+
+2) border-color 
+
+3) border-width
+
+4) border shorthand 
+
+1) border-style 
+----------------
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			h1
+			{
+				border-style:solid;
+			}	
+			h2
+			{
+				border-style:dotted;
+			}
+			h3
+			{
+				border-style:double;
+			}
+			h4
+			{
+				border-style:dashed;
+			}
+			div
+			{
+				border-style:none;
+			}
+		</style>
+	</head>
+	<body>
+			<h1>This is heading tag</h1>
+			<h2> This is heading2 tag </h2>
+			<h3> This is heading3 tag </h3>	
+			<h4> This is heading4 tag </h4>
+			<div> This is division tag </div>	
+	</body>
+</html>
+
+2) border-color 
+---------------
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			h1
+			{
+				border-style:solid;
+				border-color:red;
+			}	
+			h2
+			{
+				border-style:dotted;
+				border-color:#00FF00;
+			}
+			h3
+			{
+				border-style:double;
+				border-color:rgb(255, 0, 102);
+			}
+			h4
+			{
+				border-style:dashed;
+				border-color:hsl(0, 100%, 25%);
+			}
+			div
+			{
+				border-style:inset;
+				border-color:lavendar;
+			}
+		</style>
+	</head>
+	<body>
+			<h1>This is heading tag</h1>
+			<h2> This is heading2 tag </h2>
+			<h3> This is heading3 tag </h3>	
+			<h4> This is heading4 tag </h4>
+			<div> This is division tag </div>	
+	</body>
+</html>
+
+3) border-width
+---------------
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			h1
+			{
+				border-style:solid;
+				border-color:red;
+				border-width:5px;
+			}	
+			h2
+			{
+				border-style:dotted;
+				border-color:#00FF00;
+				border-width:5px;
+			}
+			h3
+			{
+				border-style:double;
+				border-color:rgb(255, 0, 102);
+				border-width:5px;
+			}
+			h4
+			{
+				border-style:dashed;
+				border-color:hsl(0, 100%, 25%);
+				border-width:5px;
+			}
+			div
+			{
+				border-style:inset;
+				border-color:blue;
+				border-width:5px;
+			}
+		</style>
+	</head>
+	<body>
+			<h1>This is heading tag</h1>
+			<h2> This is heading2 tag </h2>
+			<h3> This is heading3 tag </h3>	
+			<h4> This is heading4 tag </h4>
+			<div> This is division tag </div>	
+	</body>
+</html>
+
+4) border shorthand 
+--------------------
+border-width : 2px;
+border-style : solid;
+border-color : red;
+
+or
+
+border : 2px solid red;
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			h1
+			{
+				border:2px solid red;
+			}	
+			h2
+			{
+				border:2px dotted #00ff00;
+			}
+			h3
+			{
+				border:2px double rgb(255, 0, 102);
+			}
+			h4
+			{
+				border:2px dashed hsl(0, 100%, 25%);
+			}
+			div
+			{
+				border:none;
+			}
+		</style>
+	</head>
+	<body>
+			<h1>This is heading tag</h1>
+			<h2> This is heading2 tag </h2>
+			<h3> This is heading3 tag </h3>	
+			<h4> This is heading4 tag </h4>
+			<div> This is division tag </div>	
+	</body>
+</html>
+
+
+CSS margin property 
+====================
+CSS margin property is used to add the space around the elements. Outside the defined border.
+
+We have following list of CSS margin properties.
+
+1) margin-top 
+
+2) margin-right 
+
+3) margin-bottom 
+
+4) margin-left 
+
+5) margin shorthand 
+
+CSS margin property will accept following types of values.
+
+ex:
+	Value			Description
+	-------			------------
+	auto 			Here browser will calculate the margin 	
+	value 			It specify margin in px, pt, cm, em and etc.
+	% 			It specify margin in percentage
+	inherit			It takes margin from parent element.
+
+ex:
+----
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			h1
+			{
+				border:2px solid black;
+				margin-top:100px;
+				margin-right:100px;
+				margin-bottom:100px;
+				margin-left:100px;
+			}
+		</style>
+	</head>
+	<body>
+			<h1>This is heading tag</h1>
+	</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			h1
+			{
+				border:2px solid black;
+				margin-top:10%;
+				margin-right:20%;
+				margin-bottom:30%;
+				margin-left:40%;
+			}
+		</style>
+	</head>
+	<body>
+			<h1>This is heading tag</h1>
+	</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			div
+			{
+				border:2px solid red;
+				margin-top:100px;
+			}
+			h1
+			{
+				border:2px solid blue;
+				margin-top:inherit;
+			}
+		</style>
+	</head>
+	<body>
+			<div>
+				<h1>This is heading tag</h1>
+			</div>
+	</body>
+</html>
+
+margin shorthand property
+-------------------------
+If margin contains four properties.
+
+ex:
+	margin: 50px  100px  150px  200px;
+
+	top, right, bottom , left 
+
+ex:
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+		
+			h1
+			{
+				border:2px solid blue;
+				margin: 50px  100px  150px  200px;
+			}
+		</style>
+	</head>
+	<body>
+				<h1>This is heading tag</h1>
+	</body>
+</html>
+
+
+If margin contains three values.
+
+ex:
+	margin : 50px  100px  150px;
+
+	top , left and right, bottom 
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+		
+			h1
+			{
+				border:2px solid blue;
+				margin : 50px  100px  150px;
+
+			}
+		</style>
+	</head>
+	<body>
+				<h1>This is heading tag</h1>
+	</body>
+</html>
+
+If margin contains two values.
+
+ex:
+	margin : 100px  200px;
+
+	top and bottom , left and right
+
+ex:
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+		
+			h1
+			{
+				border:2px solid blue;
+				margin : 100px  200px;
+
+			}
+		</style>
+	</head>
+	<body>
+				<h1>This is heading tag</h1>
+	</body>
+</html>
+
+If margin contains one value.
+
+ex:
+	margin: 100px;
+
+	All sides are 100px.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+		
+			h1
+			{
+				border:2px solid blue;
+				margin : 100px;
+
+			}
+		</style>
+	</head>
+	<body>
+				<h1>This is heading tag</h1>
+	</body>
+</html>
+
+CSS padding property 
+====================
+CSS padding property is used to add the space around the content. inside the defined border.
+
+We have following list of CSS padding properties.
+
+1) padding-top 
+
+2) padding-right 
+
+3) padding-bottom 
+
+4) padding-left 
+
+5) padding shorthand 
+
+CSS padding property will accept following types of values.
+
+ex:
+	Value			Description
+	-------			------------
+	auto 			Here browser will calculate the padding 	
+	value 			It specify padding in px, pt, cm, em and etc.
+	% 			It specify padding in percentage
+	inherit			It takes padding from parent element.
+
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+		
+			h1
+			{
+				border:2px solid blue;
+				padding-top:100px;
+				padding-right:100px;
+				padding-bottom:100px;
+				padding-left:100px;
+			}
+		</style>
+	</head>
+	<body>
+				<h1>This is heading tag</h1>
+	</body>
+</html>
+
+ex:
+----
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+		
+			h1
+			{
+				border:2px solid blue;
+				padding-top:10%;
+				padding-right:20%;
+				padding-bottom:30%;
+				padding-left:40%;
+			}
+		</style>
+	</head>
+	<body>
+				<h1>This is heading tag</h1>
+	</body>
+</html>
+
+ex:
+----
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+
+			div
+			{
+				border:2px solid red;
+				padding-top:100px;
+			}
+			h1
+			{
+				border:2px solid blue;
+				padding-top:inherit;
+			}
+		</style>
+	</head>
+	<body>
+			<div>
+				<h1>This is heading tag</h1>
+			</div>
+	</body>
+</html>
+
+
+padding shorthand property
+-------------------------
+If padding contains four properties.
+
+ex:
+	padding: 50px  100px  150px  200px;
+
+	top, right, bottom , left 
+
+ex:
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+		
+			h1
+			{
+				border:2px solid blue;
+				padding: 50px  100px  150px  200px;
+			}
+		</style>
+	</head>
+	<body>
+				<h1>This is heading tag</h1>
+	</body>
+</html>
+
+
+If padding contains three values.
+
+ex:
+	padding : 50px  100px  150px;
+
+	top , left and right, bottom 
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+		
+			h1
+			{
+				border:2px solid blue;
+				padding : 50px  100px  150px;
+
+			}
+		</style>
+	</head>
+	<body>
+				<h1>This is heading tag</h1>
+	</body>
+</html>
+
+If padding contains two values.
+
+ex:
+	padding : 100px  200px;
+
+	top and bottom , left and right
+
+ex:
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+		
+			h1
+			{
+				border:2px solid blue;
+				padding : 100px  200px;
+
+			}
+		</style>
+	</head>
+	<body>
+				<h1>This is heading tag</h1>
+	</body>
+</html>
+
+If padding contains one value.
+
+ex:
+	padding: 100px;
+
+	All sides are 100px.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+		
+			h1
+			{
+				border:2px solid blue;
+				padding : 100px;
+
+			}
+		</style>
+	</head>
+	<body>
+				<h1>This is heading tag</h1>
+	</body>
+</html>
+
+CSS Height and Width property
+==============================
+CSS height and width property is used to set the height and width of an element.
+
+CSS height and width property does not include border, padding and margin.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			div
+			{
+				width:300px;
+				height:300px;
+				background-color:yellow;
+			}
+			
+		</style>
+	</head>
+	<body>
+			<div></div>
+	</body>
+</html>
+
+
+Inline elements do not allow width and height.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			span
+			{
+				width:300px;
+				height:300px;
+				background-color:yellow;
+			}
+			
+		</style>
+	</head>
+	<body>
+			<span></span>
+	</body>
+</html>
+
+
+
+
+
+CSS Text properties
+===================
+
+color
+-----
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			h1
+			{
+				color:red;
+			}
+			
+		</style>
+	</head>
+	<body>
+			<h1> This is Heading Tag </h1>
+	</body>
+</html>
+
+background-color
+---------------
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			h1
+			{
+				color:red;
+				background-color:#FFFF00;
+			}
+			
+		</style>
+	</head>
+	<body>
+			<h1> This is Heading Tag </h1>
+	</body>
+</html>
+
+
+
+text-transform 
+---------------
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			h1
+			{
+				color:red;
+				background-color:#FFFF00;
+				text-transform:uppercase;
+			}
+			
+		</style>
+	</head>
+	<body>
+			<h1> This is Heading Tag </h1>
+	</body>
+</html>
+
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			h1
+			{
+				color:red;
+				background-color:#FFFF00;
+				text-transform:lowercase;
+			}
+			
+		</style>
+	</head>
+	<body>
+			<h1> This is Heading Tag </h1>
+	</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			h1
+			{
+				color:red;
+				background-color:#FFFF00;
+				text-transform:capitalize;
+			}
+			
+		</style>
+	</head>
+	<body>
+			<h1> This is Heading Tag </h1>
+	</body>
+</html>
+
+text-decoration
+---------------
+
+ex:
+--
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			h1
+			{
+				color:red;
+				background-color:#FFFF00;
+				text-decoration:underline;
+			}
+			
+		</style>
+	</head>
+	<body>
+			<h1> This is Heading Tag </h1>
+	</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			h1
+			{
+				color:red;
+				background-color:#FFFF00;
+				text-decoration:none;
+			}
+			
+		</style>
+	</head>
+	<body>
+			<h1> This is Heading Tag </h1>
+	</body>
+</html>
+
+
+
+
+text-center
+----------
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			h1
+			{
+				color:red;
+				background-color:#FFFF00;
+				text-decoration:underline;
+				text-align:center;
+			}
+			
+		</style>
+	</head>
+	<body>
+			<h1> This is Heading Tag </h1>
+	</body>
+</html>
+
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			h1
+			{
+				color:red;
+				background-color:#FFFF00;
+				text-decoration:underline;
+				text-align:right;
+			}
+			
+		</style>
+	</head>
+	<body>
+			<h1> This is Heading Tag </h1>
+	</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			h1
+			{
+				color:red;
+				background-color:#FFFF00;
+				text-decoration:underline;
+				text-align:left;
+			}
+			
+		</style>
+	</head>
+	<body>
+			<h1> This is Heading Tag </h1>
+	</body>
+</html>
+
+
+letter-spacing 
+--------------
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			h1
+			{
+				color:red;
+				background-color:#FFFF00;
+				text-decoration:underline;
+				text-align:center;
+				letter-spacing:5px;
+			}
+			
+		</style>
+	</head>
+	<body>
+			<h1> This is Heading Tag </h1>
+	</body>
+</html>
+
+
+font-size
+----------
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			h1
+			{
+				color:red;
+				background-color:#FFFF00;
+				text-decoration:underline;
+				text-align:center;
+				letter-spacing:5px;
+				font-size:50px;
+			}
+			
+		</style>
+	</head>
+	<body>
+			<h1> This is Heading Tag </h1>
+	</body>
+</html>
+
+
+
+font-style
+----------
+ex:
+--
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			h1
+			{
+				color:red;
+				background-color:#FFFF00;
+				text-decoration:underline;
+				text-align:center;
+				letter-spacing:5px;
+				font-size:50px;
+				font-style:italic;
+			}
+			
+		</style>
+	</head>
+	<body>
+			<h1> This is Heading Tag </h1>
+	</body>
+</html>
+
+ex:
+--
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			h1
+			{
+				color:red;
+				background-color:#FFFF00;
+				text-decoration:underline;
+				text-align:center;
+				letter-spacing:5px;
+				font-size:50px;
+				font-style:bold;
+			}
+			
+		</style>
+	</head>
+	<body>
+			<h1> This is Heading Tag </h1>
+	</body>
+</html>
+
+
+font-family
+----------
+ex:
+--
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			h1
+			{
+				color:red;
+				background-color:#FFFF00;
+				text-decoration:underline;
+				text-align:center;
+				letter-spacing:5px;
+				font-size:50px;
+				font-style:italic;
+				font-family:arial;
+			}
+			
+		</style>
+	</head>
+	<body>
+			<h1> This is Heading Tag </h1>
+	</body>
+</html>
+
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			h1
+			{
+				color:red;
+				background-color:#FFFF00;
+				text-decoration:underline;
+				text-align:center;
+				letter-spacing:5px;
+				font-size:50px;
+				font-style:italic;
+				font-family:serif;
+			}
+			
+		</style>
+	</head>
+	<body>
+			<h1> This is Heading Tag </h1>
+	</body>
+</html>
+
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			h1
+			{
+				color:red;
+				background-color:#FFFF00;
+				text-decoration:underline;
+				text-align:center;
+				letter-spacing:5px;
+				font-size:50px;
+				font-style:italic;
+				font-family:cursive;
+			}
+			
+		</style>
+	</head>
+	<body>
+			<h1> This is Heading Tag </h1>
+	</body>
+</html>
+
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			h1
+			{
+				color:red;
+				background-color:#FFFF00;
+				text-decoration:underline;
+				text-align:center;
+				letter-spacing:5px;
+				font-size:50px;
+				font-style:italic;
+				font-family:monospace;
+			}
+			
+		</style>
+	</head>
+	<body>
+			<h1> This is Heading Tag </h1>
+	</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			h1
+			{
+				color:red;
+				background-color:#FFFF00;
+				text-decoration:underline;
+				text-align:center;
+				letter-spacing:5px;
+				font-size:50px;
+				font-style:italic;
+				font-family:sans-serif;
+			}
+			
+		</style>
+	</head>
+	<body>
+			<h1> This is Heading Tag </h1>
+	</body>
+</html>
+
+
+
+font-weight
+-----------
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			span
+			{
+				font-weight:600;
+			}
+			
+		</style>
+	</head>
+	<body>
+			<span>This is span tag </span>
+	</body>
+</html>
+
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			span
+			{
+				font-weight:bold;
+			}
+			
+		</style>
+	</head>
+	<body>
+			<span>This is span tag </span>
+	</body>
+</html>
+
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			span
+			{
+				font-weight:thin;
+			}
+			
+		</style>
+	</head>
+	<body>
+			<span>This is span tag </span>
+	</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			div
+			{
+				border:2px solid black;
+				width:200px;
+				height:200px;
+				margin: 120px auto;
+				padding:20px;
+				text-align:justify;
+				letter-spacing:2px;
+			}
+			
+		</style>
+	</head>
+	<body>
+			<div>
+				<p>
+					Web technology refers to the means by which computers communicate with each other using markup languages and multimedia packages. It gives us a way to interact with hosted information, like websites.
+				</p>
+			</div>
+	</body>
+</html>
+
+
+
+CSS overflow property
+=======================
+
+The overflow property specifies what should happen if content overflow.
+
+This property spcifies weither to clip content or to add scrollbars  when an element content is too big to fit in a specified area.
+
+Note:
+---------
+The overflow property works for block elements with  a specified height.
+
+value		Description
+---------	-----------------
+visible		The overflow is not clipped.It rendered outside the element 's box and 
+		it is default value.
+
+hidden		the overflow is clipped  and rest of the content will be invisible.
+
+scroll		The overflow is clipped,but a scroll-bar is added to see the rest of the 
+		content .
+
+auto		The overflow is clipped,a scroll-bar should be added to the rest of the 
+		content.
+
+
+
+overflow:visible 
+-----------------
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			div
+			{
+				border:2px solid black;
+				width:200px;
+				height:200px;
+				margin:100px auto;
+				overflow:visible;
+			}
+			
+		</style>
+	</head>
+	<body>
+			<div>
+				<p>
+					Web technology refers to the means by which computers communicate with each other using markup languages and multimedia packages. 
+					It gives us a way to interact with hosted information, like websites.
+					Web technology refers to the means by which computers communicate with each other using markup languages and multimedia packages. 
+				</p>
+			</div>
+	</body>
+</html>
+
+
+overflow :hidden
+----------------
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			div
+			{
+				border:2px solid black;
+				width:200px;
+				height:200px;
+				margin:100px auto;
+				overflow:hidden;
+			}
+			
+		</style>
+	</head>
+	<body>
+			<div>
+				<p>
+					Web technology refers to the means by which computers communicate with each other using markup languages and multimedia packages. 
+					It gives us a way to interact with hosted information, like websites.
+					Web technology refers to the means by which computers communicate with each other using markup languages and multimedia packages. 
+				</p>
+			</div>
+	</body>
+</html>
+
+overflow:scroll
+----------------
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			div
+			{
+				border:2px solid black;
+				width:200px;
+				height:200px;
+				margin:100px auto;
+				overflow:scroll;
+			}
+			
+		</style>
+	</head>
+	<body>
+			<div>
+				<p>
+					Web technology refers to the means by which computers communicate with each other using markup languages and multimedia packages. 
+					It gives us a way to interact with hosted information, like websites.
+					Web technology refers to the means by which computers communicate with each other using markup languages and multimedia packages. 
+				</p>
+			</div>
+	</body>
+</html>
+
+
+overflow:auto
+-------------
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			div
+			{
+				border:2px solid black;
+				width:200px;
+				height:200px;
+				margin:100px auto;
+				overflow:static;
+			}
+			
+		</style>
+	</head>
+	<body>
+			<div>
+				<p>
+					Web technology refers to the means by which computers communicate with each other using markup languages and multimedia packages. 
+					It gives us a way to interact with hosted information, like websites.
+					
+				</p>
+			</div>
+	</body>
+</html>
+
+
+CSS border-radius property 
+===========================
+The border-radius property defines  the radius of the element's corners.
+
+This property allows us to add rounded borders to elements.
+
+
+ex:
+--
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			div
+			{
+				border:5px solid black;
+				width:200px;
+				height:200px;
+				margin:100px auto;
+				border-radius: 15px;
+			}
+			
+		</style>
+	</head>
+	<body>
+			<div>
+				
+			</div>
+	</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			div
+			{
+				border:5px solid black;
+				width:200px;
+				height:200px;
+				margin:100px auto;
+				border-radius: 15px 5px; 
+			}
+			
+		</style>
+	</head>
+	<body>
+			<div>
+				
+			</div>
+	</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			div
+			{
+				border:5px solid black;
+				width:200px;
+				height:200px;
+				margin:100px auto;
+				border-radius: 15px 5px  20px; 
+			 /* top left ,  top right bottom left , bottom right*/
+			}
+			
+		</style>
+	</head>
+	<body>
+			<div>
+				
+			</div>
+	</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			div
+			{
+				border:5px solid black;
+				width:200px;
+				height:200px;
+				margin:100px auto;
+				border-radius: 15px 5px  20px  30px; 
+			 /* top left ,  top right,  bottom right, bottom left*/
+			}
+			
+		</style>
+	</head>
+	<body>
+			<div>
+				
+			</div>
+	</body>
+</html>
+
+
+
+CSS box-shadow property 
+=======================
+The box-shadow property attaches one or more shadows to an element.
+
+syntax
+--------
+	box-shadow: none |h-offset  v-offset  blur spread  color
+ex:
+	box-shadow: 2px 2px 3px 10px blue;
+
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			div
+			{
+				box-shadow:2px 2px 16px 4px #FF0000;
+				width:200px;
+				height:200px;
+				margin:100px auto;
+				
+			}
+			
+		</style>
+	</head>
+	<body>
+			<div>
+				
+			</div>
+	</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			div
+			{
+				box-shadow:2px 2px 16px 4px #FF0000 inset;
+				width:200px;
+				height:200px;
+				margin:100px auto;
+				
+			}
+			
+		</style>
+	</head>
+	<body>
+			<div>
+				
+			</div>
+	</body>
+</html>
+
+Types of selectors in CSS
+==========================
+We have five types of selectors in CSS.
+
+1) Element selector 
+
+2) Id selector 
+
+3) Class selector 
+
+4) Group selector 
+
+5) Universal selector 
+
+
+1) Element selector 
+-------------------
+The element selector selects HTML elements based on element name.
+
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			h1
+			{
+				color:blue;
+				text-align:center;
+				background-color:yellow;
+			}
+			
+		</style>
+	</head>
+	<body>
+			<h1> This is Heading Tag </h1>
+	</body>
+</html>
+
+ex:
+----
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			h1
+			{
+				color:blue;
+				text-align:center;
+				background-color:yellow;
+			}
+			
+		</style>
+	</head>
+	<body>
+			<h1> This is Heading Tag 1</h1>
+			
+			<h1> This is Heading Tag 2</h1>	
+	</body>
+</html>
+
+
+2) Id selector 
+---------------
+The id selector uses the id attribute of an HTML element to select a specific element.
+
+The id of an element is unique within a page, so the id selector is used to select one unique element.
+
+To select an element with a specific id, write a hash (#) character, followed by the id of the element.
+
+
+ex:
+--
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			#id1
+			{
+				color:blue;
+				text-align:center;
+				background-color:yellow;
+			}
+			#id2
+			{
+				font-style:italic;
+				font-size:50px;
+				text-align:center;
+				color:green;
+			}
+			
+		</style>
+	</head>
+	<body>
+			<h1 id="id1"> This is Heading Tag 1</h1>
+			
+			<h1 id="id2"> This is Heading Tag 2</h1>	
+	</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			#id1
+			{
+				color:blue;
+				text-align:center;
+				background-color:yellow;
+			}
+			#id2
+			{
+				font-style:italic;
+				font-size:50px;
+			}
+			
+		</style>
+	</head>
+	<body>
+			<h1 id="id1"> This is Heading Tag 1</h1>
+			
+			<h1 id="id2"> This is Heading Tag 2</h1>
+
+			<h1 id="id1  id2"> This is Heading Tag 3</h1>
+	</body>
+</html>
+
+
+3) Class selector
+-----------------
+The class selector selects HTML elements with a specific class attribute.
+
+To select elements with a specific class, write a period (.) character,
+followed by the class name.
+
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			.myClass1
+			{
+				color:blue;
+				text-align:center;
+				background-color:yellow;
+			}
+			.myClass2
+			{
+				font-style:italic;
+				font-size:50px;
+			}
+			
+		</style>
+	</head>
+	<body>
+			<h1 class="myClass1"> This is Heading Tag 1</h1>
+			
+			<h1 class="myClass2"> This is Heading Tag 2</h1>
+
+			
+	</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			.myClass1
+			{
+				color:blue;
+				text-align:center;
+				background-color:yellow;
+			}
+			.myClass2
+			{
+				font-style:italic;
+				font-size:50px;
+			}
+			
+		</style>
+	</head>
+	<body>
+			<h1 class="myClass1"> This is Heading Tag 1</h1>
+			
+			<h1 class="myClass2"> This is Heading Tag 2</h1>
+
+			<h1 class="myClass1  myClass2"> This is Heading Tag 3</h1>	
+	</body>
+</html>
+
+4) Group selector
+----------------
+The grouping selector selects all the HTML elements with the same style
+definitions.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			h1,p,div
+			{
+				color:blue;
+				background-color:cyan;
+			}
+			
+		</style>
+	</head>
+	<body>
+			<h1> This is heading Tag </h1>
+			<p> This is paragraph Tag </p>
+			<div> This is Division Tag </div>
+			
+	</body>
+</html>
+
+
+5) Universal selector
+-----------------------
+The universal selector (*) selects all HTML elements on the page.
+
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			*
+			{
+				color:blue;
+				background-color:cyan;
+			}
+			
+		</style>
+	</head>
+	<body>
+			<h1>This is heading1 tag </h1>
+			<h2> This is heading2 tag </h2>
+	</body>
+</html>
+
+
+
+CSS float property
+===================
+It is widely used property on a web page.
+
+The float property specifies how an element should float.
+
+value		Description
+-----------		-----------------
+none		The element does not float.
+
+left		the element floats to the left of its container.
+
+right		The element floats to the right of its container.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			.box1
+			{
+				width:300px;
+				height:300px;
+				background-color:red;
+				float:left;
+			}
+			.box2
+			{
+				width:300px;
+				height:300px;
+				background-color:blue;
+				float:left;
+			}
+		</style>
+	</head>
+	<body>
+			<div class="box1"></div>
+			<div class="box2"></div>
+	</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			.box1
+			{
+				width:300px;
+				height:300px;
+				background-color:red;
+				float:left;
+			}
+			.box2
+			{
+				width:300px;
+				height:300px;
+				background-color:blue;
+				float:right;
+			}
+		</style>
+	</head>
+	<body>
+			<div class="box1"></div>
+			<div class="box2"></div>
+	</body>
+</html>
+
+
+CSS clear property
+=================
+The clear property controls the flow next to floated elements. 
+
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			.box1
+			{
+				width:300px;
+				height:300px;
+				background-color:red;
+				float:left;
+			}
+			.box2
+			{
+				width:300px;
+				height:300px;
+				background-color:blue;
+				float:right;
+			}
+			.box3
+			{
+				height:300px;
+				width:100%;
+				background-color:green;
+				clear:both;
+			}
+		</style>
+	</head>
+	<body>
+			<div class="box1"></div>
+			<div class="box2"></div>
+			<div class="box3"></div>
+	</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			.box1
+			{
+				width:300px;
+				height:500px;
+				background-color:red;
+				float:left;
+			}
+			.box2
+			{
+				width:300px;
+				height:300px;
+				background-color:blue;
+				float:right;
+			}
+			.box3
+			{
+				height:300px;
+				width:100%;
+				background-color:green;
+				clear:left;
+			}
+		</style>
+	</head>
+	<body>
+			<div class="box1"></div>
+			<div class="box2"></div>
+			<div class="box3"></div>
+	</body>
+</html>
+
+ex:
+--
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			.box1
+			{
+				width:300px;
+				height:500px;
+				background-color:red;
+				float:left;
+			}
+			.box2
+			{
+				width:300px;
+				height:300px;
+				background-color:blue;
+				float:right;
+			}
+			.box3
+			{
+				height:300px;
+				width:100%;
+				background-color:green;
+				clear:right;
+			}
+		</style>
+	</head>
+	<body>
+			<div class="box1"></div>
+			<div class="box2"></div>
+			<div class="box3"></div>
+	</body>
+</html>
+
+
+CSS Design
+==========
+Task1
+|
+|------images
+	|
+	|---micky.png
+|-----css
+	|
+	|---mystyles.css
+|
+|-----index.html 
+
+index.html
+----------
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		
+		<!-- add external CSS -->
+		<link rel="stylesheet" type="text/css" href="css/mystyles.css">
+	</head>
+	<body>
+			<div class="container">
+				<div class="box1">
+					<h1> Micky Mouse </h1>
+					<p>
+						Mickey was created as a replacement for a prior Disney character, Oswald the Lucky
+						Rabbit. The character was originally to be named "Mortimer Mouse", until Walt Disney's wife, Lillian, suggested "Mickey". Mickey first appeared in two 1928 shorts Plane Crazy and The Gallopin' Gaucho (which were not picked up for distribution) before his public debut in Steamboat Willie (1928). The character went on to appear in over 130 films, mostly shorts (also featuring characters such as his 
+						girlfriend Minnie Mouse, his pet dog Pluto, and friends Donald Duck and Goofy), as well as features such as Fantasia (1940). Since 1930, Mickey has been featured extensively in comic strips (including the Mickey Mouse comic strip, which ran for 45 years) and comic books (such as Mickey Mouse). 
+						
+				</div>
+				<div class="box2">
+					<img src="images/micky.png"/>
+				</div>
+			</div>
+	</body>
+</html>
+
+mystyles.css
+-------------
+.container
+{
+		width:800px;
+		height:400px;
+		/*background-color:yellow;*/
+		margin:100px auto;
+}
+.box1
+{
+		width:400px;
+		height:400px;
+		/*background-color:red;*/
+		float:left;
+}
+.box1  h1
+{
+	text-align:center;
+}
+.box1  p{
+	padding:20px;
+	text-align:justify;
+}
+
+.box2
+{
+		width:400px;
+		height:400px;
+		/*background-color:blue*/;
+		float:right;
+}
+.box2  img
+{
+	width:100%;
+	height:100%;
+}
+
+CSS list 
+========
+In HTML, there are two types of lists.
+
+1)Order list (<ol>)
+------------------------
+	The list items are marked with numbers and letters.
+
+
+2)Unorder list (<ul>)
+------------------------------
+	The list items are marked with bullets.
+
+
+We will use same list in CSS with different styles.
+
+ex:
+--
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			.myClass
+			{
+				list-style-type:none;
+			}
+		</style>
+	</head>
+	<body>
+		Courses:
+		<ul class="myClass">
+			<li>ReactJS</li>
+			<li>AngularJS</li>
+			<li>VueJS</li>
+			<li>ExpressJS</li>
+		<ul>
+	</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			.myClass
+			{
+				list-style-type:disc;
+			}
+		</style>
+	</head>
+	<body>
+		Courses:
+		<ul class="myClass">
+			<li>ReactJS</li>
+			<li>AngularJS</li>
+			<li>VueJS</li>
+			<li>ExpressJS</li>
+		<ul>
+	</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			.myClass
+			{
+				list-style-type:square;
+			}
+		</style>
+	</head>
+	<body>
+		Courses:
+		<ul class="myClass">
+			<li>ReactJS</li>
+			<li>AngularJS</li>
+			<li>VueJS</li>
+			<li>ExpressJS</li>
+		<ul>
+	</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			.myClass
+			{
+				list-style-type:circle;
+			}
+		</style>
+	</head>
+	<body>
+		Courses:
+		<ul class="myClass">
+			<li>ReactJS</li>
+			<li>AngularJS</li>
+			<li>VueJS</li>
+			<li>ExpressJS</li>
+		<ul>
+	</body>
+</html>
+
+ex:
+----
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			.myClass
+			{
+				list-style-type:lower-alpha;
+			}
+		</style>
+	</head>
+	<body>
+		Courses:
+		<ol class="myClass">
+			<li>ReactJS</li>
+			<li>AngularJS</li>
+			<li>VueJS</li>
+			<li>ExpressJS</li>
+		<ol>
+	</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			.myClass
+			{
+				list-style-type:upper-alpha;
+			}
+		</style>
+	</head>
+	<body>
+		Courses:
+		<ol class="myClass">
+			<li>ReactJS</li>
+			<li>AngularJS</li>
+			<li>VueJS</li>
+			<li>ExpressJS</li>
+		<ol>
+	</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			.myClass
+			{
+				list-style-type:upper-roman;
+			}
+		</style>
+	</head>
+	<body>
+		Courses:
+		<ol class="myClass">
+			<li>ReactJS</li>
+			<li>AngularJS</li>
+			<li>VueJS</li>
+			<li>ExpressJS</li>
+		<ol>
+	</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			.myClass
+			{
+				list-style-type:lower-roman;
+			}
+		</style>
+	</head>
+	<body>
+		Courses:
+		<ol class="myClass">
+			<li>ReactJS</li>
+			<li>AngularJS</li>
+			<li>VueJS</li>
+			<li>ExpressJS</li>
+		<ol>
+	</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			.myClass
+			{
+				list-style-image:url("images/star.png");
+			}
+		</style>
+	</head>
+	<body>
+		Courses:
+		<ul class="myClass">
+			<li>ReactJS</li>
+			<li>AngularJS</li>
+			<li>VueJS</li>
+			<li>ExpressJS</li>
+		<ul>
+	</body>
+</html>
+
+
+
+CSS table 
+===========
+To specify table borders in CSS , use the border property.
+
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+				table,tr,th,td
+				{
+					border:2px solid black;
+					border-collapse:collapse;
+				}
+		</style>
+	</head>
+	<body>
+		<table>
+			<tr>
+				<th>sno</th>
+				<th>sname</th>
+				<th>sadd</th>
+			</tr>
+			<tr>
+				<td>101</td>
+				<td>Jose</td>
+				<td>Florida</td>
+			</tr>
+			<tr>
+				<td>102</td>
+				<td>Alan</td>
+				<td>Texas</td>
+			</tr>
+			<tr>
+				<td>103</td>
+				<td>Nelson</td>
+				<td>Vegas</td>
+			</tr>
+			<tr>
+				<td>104</td>
+				<td>Mark</td>
+				<td>New Jersey</td>
+			</tr>
+		</table>
+	</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+				table
+				{
+					border-collapse:collapse;
+					width:100%;
+				}
+				tr,th,td
+				{
+					border:2px solid black;
+				}
+		</style>
+	</head>
+	<body>
+		<table>
+			<tr>
+				<th>SNO</th>
+				<th>SNAME</th>
+				<th>SADD</th>
+			</tr>
+			<tr>
+				<td>101</td>
+				<td>Jose</td>
+				<td>Florida</td>
+			</tr>
+			<tr>
+				<td>102</td>
+				<td>Alan</td>
+				<td>Texas</td>
+			</tr>
+			<tr>
+				<td>103</td>
+				<td>Nelson</td>
+				<td>Vegas</td>
+			</tr>
+			<tr>
+				<td>104</td>
+				<td>Mark</td>
+				<td>New Jersey</td>
+			</tr>
+		</table>
+	</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+				table
+				{
+					border-collapse:collapse;
+					width:100%;
+				}
+				tr
+				{
+					border-bottom:2px solid black;
+				}
+		</style>
+	</head>
+	<body>
+		<table>
+			<tr>
+				<th>SNO</th>
+				<th>SNAME</th>
+				<th>SADD</th>
+			</tr>
+			<tr>
+				<td>101</td>
+				<td>Jose</td>
+				<td>Florida</td>
+			</tr>
+			<tr>
+				<td>102</td>
+				<td>Alan</td>
+				<td>Texas</td>
+			</tr>
+			<tr>
+				<td>103</td>
+				<td>Nelson</td>
+				<td>Vegas</td>
+			</tr>
+			<tr>
+				<td>104</td>
+				<td>Mark</td>
+				<td>New Jersey</td>
+			</tr>
+		</table>
+	</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+				table
+				{
+					border-collapse:collapse;
+					width:100%;
+				}
+				tr
+				{
+					border-bottom:2px solid black;
+				}
+				tr:hover
+				{
+					background-color:#C3C3C3;
+				}
+		</style>
+	</head>
+	<body>
+		<table>
+			<tr>
+				<th>SNO</th>
+				<th>SNAME</th>
+				<th>SADD</th>
+			</tr>
+			<tr>
+				<td>101</td>
+				<td>Jose</td>
+				<td>Florida</td>
+			</tr>
+			<tr>
+				<td>102</td>
+				<td>Alan</td>
+				<td>Texas</td>
+			</tr>
+			<tr>
+				<td>103</td>
+				<td>Nelson</td>
+				<td>Vegas</td>
+			</tr>
+			<tr>
+				<td>104</td>
+				<td>Mark</td>
+				<td>New Jersey</td>
+			</tr>
+		</table>
+	</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+				table
+				{
+					border-collapse:collapse;
+					width:100%;
+				}
+				tr,th,td
+				{
+					border:2px solid black;
+				}
+				tr:nth-child(even)
+				{
+					background-color:#C3C3C3;
+				}
+		</style>
+	</head>
+	<body>
+		<table>
+			<tr>
+				<th>SNO</th>
+				<th>SNAME</th>
+				<th>SADD</th>
+			</tr>
+			<tr>
+				<td>101</td>
+				<td>Jose</td>
+				<td>Florida</td>
+			</tr>
+			<tr>
+				<td>102</td>
+				<td>Alan</td>
+				<td>Texas</td>
+			</tr>
+			<tr>
+				<td>103</td>
+				<td>Nelson</td>
+				<td>Vegas</td>
+			</tr>
+			<tr>
+				<td>104</td>
+				<td>Mark</td>
+				<td>New Jersey</td>
+			</tr>
+		</table>
+	</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+				table
+				{
+					border-collapse:collapse;
+					width:100%;
+					background-color:#00FF00;
+				}
+				tr,th,td
+				{
+					border:2px solid black;
+				}
+				tr:nth-child(even)
+				{
+					background-color:#C3C3C3;
+				}
+		</style>
+	</head>
+	<body>
+		<table>
+			<tr>
+				<th>SNO</th>
+				<th>SNAME</th>
+				<th>SADD</th>
+			</tr>
+			<tr>
+				<td>101</td>
+				<td>Jose</td>
+				<td>Florida</td>
+			</tr>
+			<tr>
+				<td>102</td>
+				<td>Alan</td>
+				<td>Texas</td>
+			</tr>
+			<tr>
+				<td>103</td>
+				<td>Nelson</td>
+				<td>Vegas</td>
+			</tr>
+			<tr>
+				<td>104</td>
+				<td>Mark</td>
+				<td>New Jersey</td>
+			</tr>
+		</table>
+	</body>
+</html>
+
+
+CSS Display 
+============
+The display property spcifies the display behaviour of an element.
+
+syntax
+--------
+	display: value;
+
+value		description
+---------	-------------------
+none		The element is completely removed.
+
+inline 		displays an element as on inline element.
+		Any height and width properties will not effect.
+
+block		Displays an element as block element.
+		IT starts on a new line and takes up the whole width.
+
+inline-block	displays an element as an inline-level container.
+		The element itself is formatting  as an inline element.
+		but we can apply height and width values.
+
+inherit		Inherits this property from its parent element.
+
+
+
+display: none
+-------------
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			h1
+			{
+				display:none;
+			}
+			p
+			{
+				display:none;
+			}
+		</style>
+	</head>
+	<body>
+			<h1>This is Heading Tag </h1>
+			
+			<p>This is Paragraph Tag</p>
+	</body>
+</html>
+
+
+display:block
+-------------
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			b,i,span
+			{
+				display:block;
+				border:2px solid black;
+			}
+		</style>
+	</head>
+	<body>
+			<b>It is bold tag</b>
+			<i>It is italic tag</i>
+			<span>It is span tag</span>
+	</body>
+</html>
+
+
+display:inline
+--------------
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			h1,p,div
+			{
+				display:inline;
+			}
+		</style>
+	</head>
+	<body>
+			<h1>This is Heading tag</h1>
+			<p>This is paragraph</p>
+			<div>This is division tag</div>
+	</body>
+</html>
+
+
+display:inline-block
+--------------------
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			span
+			{
+				display:inline-block;
+				border:2px solid black;
+				width:300px;
+			}
+		</style>
+	</head>
+	<body>
+			<span>span1</span>
+			<span>span2</span>
+			<span>span3</span>	
+	</body>
+</html>
+
+
+CSS box-sizing 
+===============
+The CSS box-sizing property allows us to include the padding and border in an element's total width and height.
+
+ex:
+----
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			div
+			{
+				width:300px;
+				height:300px;
+				background-color:#FFFF00;
+				border:5px solid #FF0000;
+				padding:10px;
+				box-sizing: content-box;
+			}
+		</style>
+	</head>
+	<body>
+			<div>
+				
+			</div>	
+	</body>
+</html>
+
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			div
+			{
+				width:300px;
+				height:300px;
+				background-color:#FFFF00;
+				border:5px solid #FF0000;
+				padding:10px;
+				box-sizing: border-box;
+			}
+		</style>
+	</head>
+	<body>
+			<div>
+				
+			</div>	
+	</body>
+</html>
+
+
+CSS Design 
+===========
+
+index.html
+----------
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<!-- add external CSS -->
+		<link rel="stylesheet" type="text/css" href="mystyles.css">
+	</head>
+	<body>
+		<header class="container">
+			<h3>IHUBTALENT</h3>
+			<ul>
+				<li> <a href=""> Home </a></li>
+				<li> <a href=""> About </a></li>
+				<li> <a href=""> Service </a></li>
+				<li> <a href=""> Portfolio </a></li>
+				<li> <a href=""> Contact </a></li>
+			</ul>
+		</header>
+	</body>
+</html>
+
+mystyles.css
+------------
+*
+{
+	margin:0;
+	padding:0;
+}
+.container
+{
+	background-color:#55E6C1;
+	width:100%;
+	height:30px;
+}
+.container h3
+{
+	float:left;
+	padding: 5px 40px;
+}
+.container ul
+{
+	float:right;
+	list-style-type:none;
+}
+.container ul li 
+{
+	display:inline-block;
+	padding:5px 30px;
+}
+.container ul li  a 
+{
+	text-decoration:none;
+	color:#000;
+	font-size:12px;
+}
+.container ul li  a:hover
+{
+	color:#FFF;
+}
+
+CSS tranform
+==============
+CSS tranform property allows use to move ,rotate  or skew elements.
+
+CSS tranform property contains following transformation methods.
+
+ex:
+	translate()
+	rotate()
+	scaleX()
+	scaleY()
+	skewX()
+	skewY()
+	skew()
+
+
+transform: translate()
+-----------------------
+The translate() method moves  an element from its current position to the parameters given by the X-axis and the Y-axis.
+ex:
+
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>facebook</title>
+	<style type="text/css">
+		#box
+		{
+			width: 200px;
+			height: 200px;
+			background-color: red;
+			box-sizing: border-box;
+			transform: translate(400px,100px);
+		}
+	</style>
+</head>
+<body>
+		<div id="box">
+			
+		</div>
+</body>
+</html>
+
+transform: rotate()
+------------------
+The rotate() method rotates an element clockwise or counter-clockwise according to a given degree.
+ex:1
+-----
+<!DOCTYPE html>
+<html>
+<head>
+	<title>facebook</title>
+	<style type="text/css">
+		#box
+		{
+			width: 200px;
+			height: 200px;
+			background-color: red;
+			box-sizing: border-box;
+			margin: 100px auto;
+			transform: rotate(30deg);
+		}
+	</style>
+</head>
+<body>
+		<div id="box">
+			
+		</div>
+</body>
+</html>
+
+
+ex:2
+------
+<!DOCTYPE html>
+<html>
+<head>
+	<title>facebook</title>
+	<style type="text/css">
+		#box
+		{
+			width: 200px;
+			height: 200px;
+			background-color: red;
+			box-sizing: border-box;
+			margin: 100px auto;
+			transform: rotate(-30deg);
+		}
+	</style>
+</head>
+<body>
+		<div id="box">
+			
+		</div>
+</body>
+</html>
+
+If we pass negative value then it will rotate counter-clock wise.
+
+
+transform: scaleX()
+-----------------------
+The scaleX() method increases and decreases the width of the element.
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>facebook</title>
+	<style type="text/css">
+		#box
+		{
+			width: 200px;
+			height: 200px;
+			border:2px solid black;
+			box-sizing: border-box;
+			margin: 100px auto;
+			transform: scaleX(2);
+		}
+	</style>
+</head>
+<body>
+		<div id="box">
+			This is div tag
+		</div>
+</body>
+</html>
+
+
+transform: scaleY()
+--------------------
+The scaleY() method increases and decreases the height of the element.
+
+ex:
+<!DOCTYPE html>
+<html>
+<head>
+	<title>facebook</title>
+	<style type="text/css">
+		#box
+		{
+			width: 200px;
+			height: 200px;
+			border:2px solid black;
+			box-sizing: border-box;
+			margin: 100px auto;
+			transform: scaleY(2);
+		}
+	</style>
+</head>
+<body>
+		<div id="box">
+			This is div tag
+		</div>
+</body>
+</html>
+
+transform: scale()
+--------------------
+The scale() method increase and decrease the size of an element according to the parameters given for the width and height .
+
+ex:
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>facebook</title>
+	<style type="text/css">
+		#box
+		{
+			width: 200px;
+			height: 200px;
+			border:2px solid black;
+			box-sizing: border-box;
+			margin: 100px auto;
+			transform: scale(2);
+		}
+	</style>
+</head>
+<body>
+		<div id="box">
+			This is div tag
+		</div>
+</body>
+</html>
+
+
+transform: skewX()
+---------------------
+The skewX() method skews an element along the X-axis by the given angle.
+ex
+<!DOCTYPE html>
+<html>
+<head>
+	<title>facebook</title>
+	<style type="text/css">
+		#box
+		{
+			width: 200px;
+			height: 200px;
+			border:2px solid black;
+			box-sizing: border-box;
+			margin: 100px auto;
+			transform: skewX(30deg);
+		}
+	</style>
+</head>
+<body>
+		<div id="box">
+			This is div tag
+		</div>
+</body>
+</html>
+
+transform: skewY()
+--------------------
+The skewY() method skews an element along with y-axis by the given angle.
+ex:
+
+ex:
+<!DOCTYPE html>
+<html>
+<head>
+	<title>facebook</title>
+	<style type="text/css">
+		#box
+		{
+			width: 200px;
+			height: 200px;
+			border:2px solid black;
+			box-sizing: border-box;
+			margin: 100px auto;
+			transform: skewY(30deg);
+		}
+	</style>
+</head>
+<body>
+		<div id="box">
+			This is div tag
+		</div>
+</body>
+</html>
+
+
+transform : skew() 
+--------------------
+The skew() method skews an element along the X-axis and Y-axis by the given angle.
+
+ex:
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>facebook</title>
+	<style type="text/css">
+		#box
+		{
+			width: 200px;
+			height: 200px;
+			border:2px solid black;
+			box-sizing: border-box;
+			margin: 100px auto;
+			transform: skew(30deg);
+		}
+	</style>
+</head>
+<body>
+		<div id="box">
+			This is div tag
+		</div>
+</body>
+</html>
+
+
+
+
+CSS transition property
+=======================
+CSS transition property allows us to change property value smoothly , over a given duration.
+
+To see the effects on an element ,we need to use mouse over to the element.
+
+We have following properties in CSS transition.
+ex:
+	transition-delay
+	transition-duration
+	transition-property
+	transition-timing-function
+	transition
+
+
+
+transition-property
+--------------------
+
+ex:1
+------
+<!DOCTYPE html>
+<html>
+<head>
+	<title>facebook</title>
+	<style type="text/css">
+		#box
+		{
+			width: 200px;
+			height: 200px;
+			background-color: red;
+			box-sizing: border-box;
+			margin: 100px auto;
+			transition-property: width,height;
+		}
+		#box:hover
+		{
+			width:400px;
+			height: 400px;
+		}
+	</style>
+</head>
+<body>
+		<div id="box">
+			
+		</div>
+</body>
+</html>
+
+
+ex:2
+------
+<!DOCTYPE html>
+<html>
+<head>
+	<title>facebook</title>
+	<style type="text/css">
+		#box
+		{
+			width: 200px;
+			height: 200px;
+			background-color: red;
+			box-sizing: border-box;
+			margin: 100px auto;
+			transition-property: all;
+		}
+		#box:hover
+		{
+			width:400px;
+			height: 400px;
+		}
+	</style>
+</head>
+<body>
+		<div id="box">
+			
+		</div>
+</body>
+</html>
+
+transition-duration
+---------------------
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>facebook</title>
+	<style type="text/css">
+		#box
+		{
+			width: 200px;
+			height: 200px;
+			background-color: red;
+			box-sizing: border-box;
+			margin: 100px auto;
+			transition-property: all;
+			transition-duration: 2s;
+		}
+		#box:hover
+		{
+			width:400px;
+			height: 400px;
+		}
+	</style>
+</head>
+<body>
+		<div id="box">
+			
+		</div>
+</body>
+</html>
+
+transition-timing-function
+-------------------------
+
+ex:1
+-----
+<!DOCTYPE html>
+<html>
+<head>
+	<title>facebook</title>
+	<style type="text/css">
+		#box
+		{
+			width: 200px;
+			height: 200px;
+			background-color: red;
+			box-sizing: border-box;
+			margin: 100px auto;
+			transition-property: all;
+			transition-duration: 2s;
+			transition-timing-function: linear;
+		}
+		#box:hover
+		{
+			width:400px;
+			height: 400px;
+		}
+	</style>
+</head>
+<body>
+		<div id="box">
+			
+		</div>
+</body>
+</html>
+
+ex:2
+------
+<!DOCTYPE html>
+<html>
+<head>
+	<title>facebook</title>
+	<style type="text/css">
+		#box
+		{
+			width: 200px;
+			height: 200px;
+			background-color: red;
+			box-sizing: border-box;
+			margin: 100px auto;
+			transition-property: all;
+			transition-duration: 2s;
+			transition-timing-function: ease-in;
+		}
+		#box:hover
+		{
+			width:400px;
+			height: 400px;
+		}
+	</style>
+</head>
+<body>
+		<div id="box">
+			
+		</div>
+</body>
+</html>
+
+ex:3
+-------
+<!DOCTYPE html>
+<html>
+<head>
+	<title>facebook</title>
+	<style type="text/css">
+		#box
+		{
+			width: 200px;
+			height: 200px;
+			background-color: red;
+			box-sizing: border-box;
+			margin: 100px auto;
+			transition-property: all;
+			transition-duration: 2s;
+			transition-timing-function: ease-out;
+		}
+		#box:hover
+		{
+			width:400px;
+			height: 400px;
+		}
+	</style>
+</head>
+<body>
+		<div id="box">
+			
+		</div>
+</body>
+</html>
+
+ex:4
+-----
+<!DOCTYPE html>
+<html>
+<head>
+	<title>facebook</title>
+	<style type="text/css">
+		#box
+		{
+			width: 200px;
+			height: 200px;
+			background-color: red;
+			box-sizing: border-box;
+			margin: 100px auto;
+			transition-property: all;
+			transition-duration: 2s;
+			transition-timing-function: ease-in-out;
+		}
+		#box:hover
+		{
+			width:400px;
+			height: 400px;
+		}
+	</style>
+</head>
+<body>
+		<div id="box">
+			
+		</div>
+</body>
+</html>
+
+transition-delay 
+-----------------
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>facebook</title>
+	<style type="text/css">
+		#box
+		{
+			width: 200px;
+			height: 200px;
+			background-color: red;
+			box-sizing: border-box;
+			margin: 100px auto;
+			transition-property: all;
+			transition-duration: 2s;
+			transition-timing-function: ease-in-out;
+			transition-delay: 3s;
+		}
+		#box:hover
+		{
+			width:400px;
+			height: 400px;
+		}
+	</style>
+</head>
+<body>
+		<div id="box">
+			
+		</div>
+</body>
+</html>
+
+
+transition (shorthand property)
+--------------------------------
+<!DOCTYPE html>
+<html>
+<head>
+	<title>facebook</title>
+	<style type="text/css">
+		#box
+		{
+			width: 200px;
+			height: 200px;
+			background-color: red;
+			box-sizing: border-box;
+			margin: 100px auto;
+			transition:2s all linear 3s;
+		}
+		#box:hover
+		{
+			width:400px;
+			height: 400px;
+			background-color: blue;
+		}
+	</style>
+</head>
+<body>
+		<div id="box">
+			
+		</div>
+</body>
+</html>
+
+
+CSS Design 1 
+============
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			img
+			{
+				width:300px;
+				height:300px;
+				display:block;
+				margin:100px auto;
+				transition: 2s all linear;
+			}
+			img:hover
+			{
+				transform: rotate(360deg);
+			}
+		</style>
+	</head>
+	<body>
+				<img src="images/rock.jpg"/>
+	</body>
+</html>
+
+
+
+CSS Design 2 
+=============
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			img
+			{
+				width:350px;
+				height:350px;
+				margin:100px 60px;
+				transition:1s all linear;
+				filter: grayscale(100%);
+			}
+			img:hover
+			{
+				transform: scale(1.2,1.2);
+				filter: grayscale(0%);
+			}
+		</style>
+	</head>
+	<body>
+			<img src="images/girl1.jpg"/>
+			<img src="images/girl2.jpg"/>
+			<img src="images/girl3.jpg"/>
+	</body>
+</html>
+
+
+
+
+CSS opacity property 
+====================
+The opacity property specifies the opacity/transparency of an element.
+
+The opacity property can take a value from 0.0 - 1.0. The lower the value, the more transparent:
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			div
+			{
+				width:200px;
+				height:200px;
+				background-color:red;
+				opacity:1;
+			}
+		</style>
+	</head>
+	<body>
+				<div></div>
+	</body>
+</html>
+
+ex:
+--
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			div
+			{
+				width:200px;
+				height:200px;
+				background-color:red;
+				opacity:.5;
+			}
+		</style>
+	</head>
+	<body>
+				<div></div>
+	</body>
+</html>
+
+ex:
+--
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			div
+			{
+				width:200px;
+				height:200px;
+				background-color:red;
+				opacity:.1;
+			}
+		</style>
+	</head>
+	<body>
+				<div></div>
+	</body>
+</html>
+
+
+ex:
+--
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			div
+			{
+				width:200px;
+				height:200px;
+				background-color:red;
+				opacity:0;
+			}
+		</style>
+	</head>
+	<body>
+				<div></div>
+	</body>
+</html>
+
+
+
+
+CSS position property
+=====================
+The position property specifies the type of positioning method used for an element (static, relative, absolute, fixed, or sticky).
+
+The following are the list of values to position property.
+
+static 
+---------------
+	It is default value. Elements render in order, as they appear in the document flow 	
+
+absolute 
+--------------
+	The element is positioned relative to its first positioned (not static) ancestor element 	
+fixed 	
+-----------
+	The element is positioned relative to the browser window 	
+relative 
+-------------
+	The element is positioned relative to its normal position, so "left:20px" adds 20 pixels 	to the element's LEFT position.
+ 	
+sticky 	
+-----------
+	The element is positioned based on the user's scroll position 
+
+
+css position property mandatory should have following properties.
+i)left
+ii)right
+iii)top
+iv)bottom
+
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			img 
+			{
+				width:200px;
+				height:200px;
+				position:static;
+				top:0;
+				left:0;
+			}
+		</style>
+	</head>
+	<body>
+		<p>Web technology refers to the means by which computers communicate with each other using markup languages and multimedia packages. It gives us a way to interact with hosted information, like websites. Web technology involves the use of hypertext markup language (HTML) and cascading style sheets (CSS).</p>
+		<p>Web technology refers to the means by which computers communicate with each other using markup languages and multimedia packages. It gives us a way to interact with hosted information, like websites. Web technology involves the use of hypertext markup language (HTML) and cascading style sheets (CSS).</p>
+		<img src="images/rock.jpg" />
+		<p>Web technology refers to the means by which computers communicate with each other using markup languages and multimedia packages. It gives us a way to interact with hosted information, like websites. Web technology involves the use of hypertext markup language (HTML) and cascading style sheets (CSS).</p>
+		<p>Web technology refers to the means by which computers communicate with each other using markup languages and multimedia packages. It gives us a way to interact with hosted information, like websites. Web technology involves the use of hypertext markup language (HTML) and cascading style sheets (CSS).</p>
+		<p>Web technology refers to the means by which computers communicate with each other using markup languages and multimedia packages. It gives us a way to interact with hosted information, like websites. Web technology involves the use of hypertext markup language (HTML) and cascading style sheets (CSS).</p>
+		<p>Web technology refers to the means by which computers communicate with each other using markup languages and multimedia packages. It gives us a way to interact with hosted information, like websites. Web technology involves the use of hypertext markup language (HTML) and cascading style sheets (CSS).</p>
+	</body>
+</html>
+
+ex:
+----
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			img 
+			{
+				width:200px;
+				height:200px;
+				position:absolute;
+				top:100px;
+				left:100px;
+			}
+		</style>
+	</head>
+	<body>
+		<p>Web technology refers to the means by which computers communicate with each other using markup languages and multimedia packages. It gives us a way to interact with hosted information, like websites. Web technology involves the use of hypertext markup language (HTML) and cascading style sheets (CSS).</p>
+		<p>Web technology refers to the means by which computers communicate with each other using markup languages and multimedia packages. It gives us a way to interact with hosted information, like websites. Web technology involves the use of hypertext markup language (HTML) and cascading style sheets (CSS).</p>
+		<img src="images/rock.jpg" />
+		<p>Web technology refers to the means by which computers communicate with each other using markup languages and multimedia packages. It gives us a way to interact with hosted information, like websites. Web technology involves the use of hypertext markup language (HTML) and cascading style sheets (CSS).</p>
+		<p>Web technology refers to the means by which computers communicate with each other using markup languages and multimedia packages. It gives us a way to interact with hosted information, like websites. Web technology involves the use of hypertext markup language (HTML) and cascading style sheets (CSS).</p>
+		<p>Web technology refers to the means by which computers communicate with each other using markup languages and multimedia packages. It gives us a way to interact with hosted information, like websites. Web technology involves the use of hypertext markup language (HTML) and cascading style sheets (CSS).</p>
+		<p>Web technology refers to the means by which computers communicate with each other using markup languages and multimedia packages. It gives us a way to interact with hosted information, like websites. Web technology involves the use of hypertext markup language (HTML) and cascading style sheets (CSS).</p>
+	</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			img 
+			{
+				width:200px;
+				height:200px;
+				position:relative;
+				top:100px;
+				left:100px;
+			}
+		</style>
+	</head>
+	<body>
+		<p>Web technology refers to the means by which computers communicate with each other using markup languages and multimedia packages. It gives us a way to interact with hosted information, like websites. Web technology involves the use of hypertext markup language (HTML) and cascading style sheets (CSS).</p>
+		<p>Web technology refers to the means by which computers communicate with each other using markup languages and multimedia packages. It gives us a way to interact with hosted information, like websites. Web technology involves the use of hypertext markup language (HTML) and cascading style sheets (CSS).</p>
+		<img src="images/rock.jpg" />
+		<p>Web technology refers to the means by which computers communicate with each other using markup languages and multimedia packages. It gives us a way to interact with hosted information, like websites. Web technology involves the use of hypertext markup language (HTML) and cascading style sheets (CSS).</p>
+		<p>Web technology refers to the means by which computers communicate with each other using markup languages and multimedia packages. It gives us a way to interact with hosted information, like websites. Web technology involves the use of hypertext markup language (HTML) and cascading style sheets (CSS).</p>
+		<p>Web technology refers to the means by which computers communicate with each other using markup languages and multimedia packages. It gives us a way to interact with hosted information, like websites. Web technology involves the use of hypertext markup language (HTML) and cascading style sheets (CSS).</p>
+		<p>Web technology refers to the means by which computers communicate with each other using markup languages and multimedia packages. It gives us a way to interact with hosted information, like websites. Web technology involves the use of hypertext markup language (HTML) and cascading style sheets (CSS).</p>
+	</body>
+</html>
+
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			img 
+			{
+				width:200px;
+				height:200px;
+				position:fixed;
+				top:0;
+				left:0;
+			}
+		</style>
+	</head>
+	<body>
+		<p>Web technology refers to the means by which computers communicate with each other using markup languages and multimedia packages. It gives us a way to interact with hosted information, like websites. Web technology involves the use of hypertext markup language (HTML) and cascading style sheets (CSS).</p>
+		<p>Web technology refers to the means by which computers communicate with each other using markup languages and multimedia packages. It gives us a way to interact with hosted information, like websites. Web technology involves the use of hypertext markup language (HTML) and cascading style sheets (CSS).</p>
+		<img src="images/rock.jpg" />
+		<p>Web technology refers to the means by which computers communicate with each other using markup languages and multimedia packages. It gives us a way to interact with hosted information, like websites. Web technology involves the use of hypertext markup language (HTML) and cascading style sheets (CSS).</p>
+		<p>Web technology refers to the means by which computers communicate with each other using markup languages and multimedia packages. It gives us a way to interact with hosted information, like websites. Web technology involves the use of hypertext markup language (HTML) and cascading style sheets (CSS).</p>
+		<p>Web technology refers to the means by which computers communicate with each other using markup languages and multimedia packages. It gives us a way to interact with hosted information, like websites. Web technology involves the use of hypertext markup language (HTML) and cascading style sheets (CSS).</p>
+		<p>Web technology refers to the means by which computers communicate with each other using markup languages and multimedia packages. It gives us a way to interact with hosted information, like websites. Web technology involves the use of hypertext markup language (HTML) and cascading style sheets (CSS).</p>
+		<p>Web technology refers to the means by which computers communicate with each other using markup languages and multimedia packages. It gives us a way to interact with hosted information, like websites. Web technology involves the use of hypertext markup language (HTML) and cascading style sheets (CSS).</p>
+		<p>Web technology refers to the means by which computers communicate with each other using markup languages and multimedia packages. It gives us a way to interact with hosted information, like websites. Web technology involves the use of hypertext markup language (HTML) and cascading style sheets (CSS).</p>
+		<p>Web technology refers to the means by which computers communicate with each other using markup languages and multimedia packages. It gives us a way to interact with hosted information, like websites. Web technology involves the use of hypertext markup language (HTML) and cascading style sheets (CSS).</p>
+		<p>Web technology refers to the means by which computers communicate with each other using markup languages and multimedia packages. It gives us a way to interact with hosted information, like websites. Web technology involves the use of hypertext markup language (HTML) and cascading style sheets (CSS).</p>
+		<p>Web technology refers to the means by which computers communicate with each other using markup languages and multimedia packages. It gives us a way to interact with hosted information, like websites. Web technology involves the use of hypertext markup language (HTML) and cascading style sheets (CSS).</p>
+		<p>Web technology refers to the means by which computers communicate with each other using markup languages and multimedia packages. It gives us a way to interact with hosted information, like websites. Web technology involves the use of hypertext markup language (HTML) and cascading style sheets (CSS).</p>
+	</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			img 
+			{
+				width:200px;
+				height:200px;
+				position:sticky;
+				top:0;
+				left:0;
+			}
+		</style>
+	</head>
+	<body>
+		<p>Web technology refers to the means by which computers communicate with each other using markup languages and multimedia packages. It gives us a way to interact with hosted information, like websites. Web technology involves the use of hypertext markup language (HTML) and cascading style sheets (CSS).</p>
+		<p>Web technology refers to the means by which computers communicate with each other using markup languages and multimedia packages. It gives us a way to interact with hosted information, like websites. Web technology involves the use of hypertext markup language (HTML) and cascading style sheets (CSS).</p>
+		<img src="images/rock.jpg" />
+		<p>Web technology refers to the means by which computers communicate with each other using markup languages and multimedia packages. It gives us a way to interact with hosted information, like websites. Web technology involves the use of hypertext markup language (HTML) and cascading style sheets (CSS).</p>
+		<p>Web technology refers to the means by which computers communicate with each other using markup languages and multimedia packages. It gives us a way to interact with hosted information, like websites. Web technology involves the use of hypertext markup language (HTML) and cascading style sheets (CSS).</p>
+		<p>Web technology refers to the means by which computers communicate with each other using markup languages and multimedia packages. It gives us a way to interact with hosted information, like websites. Web technology involves the use of hypertext markup language (HTML) and cascading style sheets (CSS).</p>
+		<p>Web technology refers to the means by which computers communicate with each other using markup languages and multimedia packages. It gives us a way to interact with hosted information, like websites. Web technology involves the use of hypertext markup language (HTML) and cascading style sheets (CSS).</p>
+		<p>Web technology refers to the means by which computers communicate with each other using markup languages and multimedia packages. It gives us a way to interact with hosted information, like websites. Web technology involves the use of hypertext markup language (HTML) and cascading style sheets (CSS).</p>
+		<p>Web technology refers to the means by which computers communicate with each other using markup languages and multimedia packages. It gives us a way to interact with hosted information, like websites. Web technology involves the use of hypertext markup language (HTML) and cascading style sheets (CSS).</p>
+		<p>Web technology refers to the means by which computers communicate with each other using markup languages and multimedia packages. It gives us a way to interact with hosted information, like websites. Web technology involves the use of hypertext markup language (HTML) and cascading style sheets (CSS).</p>
+		<p>Web technology refers to the means by which computers communicate with each other using markup languages and multimedia packages. It gives us a way to interact with hosted information, like websites. Web technology involves the use of hypertext markup language (HTML) and cascading style sheets (CSS).</p>
+		<p>Web technology refers to the means by which computers communicate with each other using markup languages and multimedia packages. It gives us a way to interact with hosted information, like websites. Web technology involves the use of hypertext markup language (HTML) and cascading style sheets (CSS).</p>
+		<p>Web technology refers to the means by which computers communicate with each other using markup languages and multimedia packages. It gives us a way to interact with hosted information, like websites. Web technology involves the use of hypertext markup language (HTML) and cascading style sheets (CSS).</p>
+	</body>
+</html>
+
+
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			.class1 
+			{
+				width:300px;
+				height:300px;
+				position:relative;
+				left:600px;
+			}
+			.class2
+			{
+				width:300px;
+				height:300px;
+			}
+		</style>
+	</head>
+	<body>
+			<img class="class1" src="images/girl1.jpg"/>
+			<img class="class2" src="images/girl3.jpg"/>
+			
+	</body>
+</html>
+
+CSS z-index property 
+====================
+Stack order 
+position property 
+
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			img
+			{
+				width:250px;
+				height:250px;
+				position:absolute;
+				top:0;
+				left:0;
+				z-index:1;
+			}
+		</style>
+	</head>
+	<body>
+		<p>
+			Web technology refers to the means by which computers communicate with each other using markup languages and multimedia packages. It gives us a way to interact with hosted information, like websites. Web technology involves the use of hypertext markup language (HTML) and cascading style sheets (CSS).			
+		</p>
+		<p>
+			Web technology refers to the means by which computers communicate with each other using markup languages and multimedia packages. It gives us a way to interact with hosted information, like websites. Web technology involves the use of hypertext markup language (HTML) and cascading style sheets (CSS).			
+		</p>
+		<p>
+			Web technology refers to the means by which computers communicate with each other using markup languages and multimedia packages. It gives us a way to interact with hosted information, like websites. Web technology involves the use of hypertext markup language (HTML) and cascading style sheets (CSS).			
+		</p>
+		<p>
+			Web technology refers to the means by which computers communicate with each other using markup languages and multimedia packages. It gives us a way to interact with hosted information, like websites. Web technology involves the use of hypertext markup language (HTML) and cascading style sheets (CSS).			
+		</p>
+		
+		<img src="images/rock.jpg"/>
+		
+	</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			img
+			{
+				width:250px;
+				height:250px;
+				position:absolute;
+				top:0;
+				left:0;
+				z-index:-1;
+			}
+		</style>
+	</head>
+	<body>
+		<p>
+			Web technology refers to the means by which computers communicate with each other using markup languages and multimedia packages. It gives us a way to interact with hosted information, like websites. Web technology involves the use of hypertext markup language (HTML) and cascading style sheets (CSS).			
+		</p>
+		<p>
+			Web technology refers to the means by which computers communicate with each other using markup languages and multimedia packages. It gives us a way to interact with hosted information, like websites. Web technology involves the use of hypertext markup language (HTML) and cascading style sheets (CSS).			
+		</p>
+		<p>
+			Web technology refers to the means by which computers communicate with each other using markup languages and multimedia packages. It gives us a way to interact with hosted information, like websites. Web technology involves the use of hypertext markup language (HTML) and cascading style sheets (CSS).			
+		</p>
+		<p>
+			Web technology refers to the means by which computers communicate with each other using markup languages and multimedia packages. It gives us a way to interact with hosted information, like websites. Web technology involves the use of hypertext markup language (HTML) and cascading style sheets (CSS).			
+		</p>
+		
+		<img src="images/rock.jpg"/>
+		
+	</body>
+</html>
+
+
+
+CSS Flex box
+==============
+It is a one dimensional layout method to align the items.
+
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			.container
+			{
+				width:1000px;
+				height:400px;
+				border:2px solid black;
+			}
+			.container .item
+			{
+				width:150px;
+				height:150px;
+				box-sizing:boder-box;
+				border:2px solid red;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+				<div class="item"> Item 1 </div>
+				<div class="item"> Item 2 </div>
+				<div class="item"> Item 3 </div>
+				<div class="item"> Item 4 </div>
+				<div class="item"> Item 5 </div>
+				<div class="item"> Item 6 </div>
+		</div>	
+	</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			.container
+			{
+				width:1000px;
+				height:400px;
+				border:2px solid black;
+				display: flex;
+				flex-direction: row;
+			}
+			.container .item
+			{
+				width:150px;
+				height:150px;
+				box-sizing:boder-box;
+				border:2px solid red;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+				<div class="item"> Item 1 </div>
+				<div class="item"> Item 2 </div>
+				<div class="item"> Item 3 </div>
+				<div class="item"> Item 4 </div>
+				<div class="item"> Item 5 </div>
+				<div class="item"> Item 6 </div>
+		</div>	
+	</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			.container
+			{
+				width:1000px;
+				height:400px;
+				border:2px solid black;
+				display: flex;
+				flex-direction: row-reverse;
+			}
+			.container .item
+			{
+				width:150px;
+				height:150px;
+				box-sizing:boder-box;
+				border:2px solid red;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+				<div class="item"> Item 1 </div>
+				<div class="item"> Item 2 </div>
+				<div class="item"> Item 3 </div>
+				<div class="item"> Item 4 </div>
+				<div class="item"> Item 5 </div>
+				<div class="item"> Item 6 </div>
+		</div>	
+	</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			.container
+			{
+				width:1000px;
+				height:400px;
+				border:2px solid black;
+				display: flex;
+				flex-direction: column;
+			}
+			.container .item
+			{
+				width:150px;
+				height:150px;
+				box-sizing:boder-box;
+				border:2px solid red;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+				<div class="item"> Item 1 </div>
+				<div class="item"> Item 2 </div>
+				<div class="item"> Item 3 </div>
+				<div class="item"> Item 4 </div>
+				<div class="item"> Item 5 </div>
+				<div class="item"> Item 6 </div>
+		</div>	
+	</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			.container
+			{
+				width:1000px;
+				height:400px;
+				border:2px solid black;
+				display: flex;
+				flex-direction: column-reverse;
+			}
+			.container .item
+			{
+				width:150px;
+				height:150px;
+				box-sizing:boder-box;
+				border:2px solid red;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+				<div class="item"> Item 1 </div>
+				<div class="item"> Item 2 </div>
+				<div class="item"> Item 3 </div>
+				<div class="item"> Item 4 </div>
+				<div class="item"> Item 5 </div>
+				<div class="item"> Item 6 </div>
+		</div>	
+	</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			.container
+			{
+				width:1100px;
+				height:400px;
+				border:2px solid black;
+				display: flex;
+				flex-direction: row;
+				flex-wrap:no-wrap;
+			}
+			.container .item
+			{
+				width:150px;
+				height:150px;
+				box-sizing:boder-box;
+				border:2px solid red;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+				<div class="item"> Item 1 </div>
+				<div class="item"> Item 2 </div>
+				<div class="item"> Item 3 </div>
+				<div class="item"> Item 4 </div>
+				<div class="item"> Item 5 </div>
+				<div class="item"> Item 6 </div>
+		</div>	
+	</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			.container
+			{
+				width:1100px;
+				height:400px;
+				border:2px solid black;
+				display: flex;
+				flex-direction: row;
+				flex-wrap:wrap;
+			}
+			.container .item
+			{
+				width:150px;
+				height:150px;
+				box-sizing:boder-box;
+				border:2px solid red;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+				<div class="item"> Item 1 </div>
+				<div class="item"> Item 2 </div>
+				<div class="item"> Item 3 </div>
+				<div class="item"> Item 4 </div>
+				<div class="item"> Item 5 </div>
+				<div class="item"> Item 6 </div>
+		</div>	
+	</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			.container
+			{
+				width:1100px;
+				height:400px;
+				border:2px solid black;
+				display: flex;
+				flex-flow: row  wrap;
+			}
+			.container .item
+			{
+				width:150px;
+				height:150px;
+				box-sizing:boder-box;
+				border:2px solid red;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+				<div class="item"> Item 1 </div>
+				<div class="item"> Item 2 </div>
+				<div class="item"> Item 3 </div>
+				<div class="item"> Item 4 </div>
+				<div class="item"> Item 5 </div>
+				<div class="item"> Item 6 </div>
+		</div>	
+	</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			.container
+			{
+				width:1100px;
+				height:400px;
+				border:2px solid black;
+				display: flex;
+				flex-flow: row  wrap;
+				justify-content:center;
+				align-items:center;
+			}
+			.container .item
+			{
+				width:150px;
+				height:150px;
+				box-sizing:boder-box;
+				border:2px solid red;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+				<div class="item"> Item 1 </div>
+				<div class="item"> Item 2 </div>
+				<div class="item"> Item 3 </div>
+				<div class="item"> Item 4 </div>
+				<div class="item"> Item 5 </div>
+				<div class="item"> Item 6 </div>
+		</div>	
+	</body>
+</html>
+
+ex:
+--
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			.container
+			{
+				width:1100px;
+				height:400px;
+				border:2px solid black;
+				display: flex;
+				flex-flow: row  wrap;
+				justify-content:space-between;
+			}
+			.container .item
+			{
+				width:150px;
+				height:150px;
+				box-sizing:boder-box;
+				border:2px solid red;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+				<div class="item"> Item 1 </div>
+				<div class="item"> Item 2 </div>
+				<div class="item"> Item 3 </div>
+				<div class="item"> Item 4 </div>
+				<div class="item"> Item 5 </div>
+				<div class="item"> Item 6 </div>
+		</div>	
+	</body>
+</html>
+
+
+CSS Gradient property
+======================
+
+1) Linear Gradient 
+
+2) Radial Gradient 
+
+3) Conic Gradient 
+
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			body
+			{
+				height:100vh;
+				background:linear-gradient(yellow,red);
+			}
+		</style>
+	</head>
+	<body>
+		
+	</body>
+</html>
+
+ex:2
+----
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			body
+			{
+				height:100vh;
+				background:linear-gradient(to left,yellow,red);
+			}
+		</style>
+	</head>
+	<body>
+		
+	</body>
+</html>
+
+
+ex:
+--
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			body
+			{
+				height:100vh;
+				background:linear-gradient(to bottom,yellow,red);
+			}
+		</style>
+	</head>
+	<body>
+		
+	</body>
+</html>
+
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			body
+			{
+				height:100vh;
+				background-image:radial-gradient(yellow,red);
+			}
+		</style>
+	</head>
+	<body>
+		
+	</body>
+</html>
+
+
+ex:
+--
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			body
+			{
+				height:100vh;
+				background-image:conic-gradient(yellow,red);
+			}
+		</style>
+	</head>
+	<body>
+		
+	</body>
+</html>
+
+CSS Grid system 
+===============
+
+
+ex:
+----
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			.container
+			{
+				width:1100px;
+				height:400px;
+				border:2px solid black;
+			}
+			.item1{background-color:#25CCF7;}
+			.item2{background-color:#55E6C1;}
+			.item3{background-color:#F8EFBA;}
+			.item4{background-color:#B33771;}
+			.item5{background-color:#FC427B;}
+			.item6{background-color:#BDC581;}
+			
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="item1">item1</div>
+			<div class="item2">item2</div>
+			<div class="item3">item3</div>
+			<div class="item4">item4</div>
+			<div class="item5">item5</div>
+			<div class="item6">item6</div>
+		</div>
+	</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			.container
+			{
+				width:1100px;
+				height:400px;
+				border:2px solid black;
+				display:grid;
+			}
+			.item1{background-color:#25CCF7;}
+			.item2{background-color:#55E6C1;}
+			.item3{background-color:#F8EFBA;}
+			.item4{background-color:#B33771;}
+			.item5{background-color:#FC427B;}
+			.item6{background-color:#BDC581;}
+			
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="item1">item1</div>
+			<div class="item2">item2</div>
+			<div class="item3">item3</div>
+			<div class="item4">item4</div>
+			<div class="item5">item5</div>
+			<div class="item6">item6</div>
+		</div>
+	</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			.container
+			{
+				width:1100px;
+				height:400px;
+				border:2px solid black;
+				display:grid;
+				grid-template-rows: 150px 150px;
+				grid-template-columns: 150px 150px 150px;
+			}
+			.item1{background-color:#25CCF7;}
+			.item2{background-color:#55E6C1;}
+			.item3{background-color:#F8EFBA;}
+			.item4{background-color:#B33771;}
+			.item5{background-color:#FC427B;}
+			.item6{background-color:#BDC581;}
+			
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="item1">item1</div>
+			<div class="item2">item2</div>
+			<div class="item3">item3</div>
+			<div class="item4">item4</div>
+			<div class="item5">item5</div>
+			<div class="item6">item6</div>
+		</div>
+	</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			.container
+			{
+				width:1100px;
+				height:400px;
+				border:2px solid black;
+				display:grid;
+				grid-template-rows: repeat(2,150px); 
+				grid-template-columns: repeat(3,150px);
+			}
+			.item1{background-color:#25CCF7;}
+			.item2{background-color:#55E6C1;}
+			.item3{background-color:#F8EFBA;}
+			.item4{background-color:#B33771;}
+			.item5{background-color:#FC427B;}
+			.item6{background-color:#BDC581;}
+			
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="item1">item1</div>
+			<div class="item2">item2</div>
+			<div class="item3">item3</div>
+			<div class="item4">item4</div>
+			<div class="item5">item5</div>
+			<div class="item6">item6</div>
+		</div>
+	</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			.container
+			{
+				width:1100px;
+				height:400px;
+				border:2px solid black;
+				display:grid;
+				grid-template-rows: repeat(2,150px); 
+				grid-template-columns: repeat(3,1fr);
+			}
+			.item1{background-color:#25CCF7;}
+			.item2{background-color:#55E6C1;}
+			.item3{background-color:#F8EFBA;}
+			.item4{background-color:#B33771;}
+			.item5{background-color:#FC427B;}
+			.item6{background-color:#BDC581;}
+			
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="item1">item1</div>
+			<div class="item2">item2</div>
+			<div class="item3">item3</div>
+			<div class="item4">item4</div>
+			<div class="item5">item5</div>
+			<div class="item6">item6</div>
+		</div>
+	</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			.container
+			{
+				width:1100px;
+				height:400px;
+				border:2px solid black;
+				display:grid;
+				grid-template-rows: repeat(2,150px); 
+				grid-template-columns: repeat(3,1fr);
+				grid-row-gap:20px;
+				grid-column-gap:20px;
+			}
+			.item1{background-color:#25CCF7;}
+			.item2{background-color:#55E6C1;}
+			.item3{background-color:#F8EFBA;}
+			.item4{background-color:#B33771;}
+			.item5{background-color:#FC427B;}
+			.item6{background-color:#BDC581;}
+			
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="item1">item1</div>
+			<div class="item2">item2</div>
+			<div class="item3">item3</div>
+			<div class="item4">item4</div>
+			<div class="item5">item5</div>
+			<div class="item6">item6</div>
+		</div>
+	</body>
+</html>
+
+ex:
+--
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			.container
+			{
+				width:1100px;
+				height:400px;
+				border:2px solid black;
+				display:grid;
+				grid-template-rows: repeat(2,150px); 
+				grid-template-columns: repeat(3,1fr);
+				grid-gap:20px;
+			}
+			.item1{background-color:#25CCF7;}
+			.item2{background-color:#55E6C1;}
+			.item3{background-color:#F8EFBA;}
+			.item4{background-color:#B33771;}
+			.item5{background-color:#FC427B;}
+			.item6{background-color:#BDC581;}
+			
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="item1">item1</div>
+			<div class="item2">item2</div>
+			<div class="item3">item3</div>
+			<div class="item4">item4</div>
+			<div class="item5">item5</div>
+			<div class="item6">item6</div>
+		</div>
+	</body>
+</html>
+
+
+CSS Google Fonts
+=================
+If we do not want to use any of the standard fonts in HTML, you can use Google Fonts.
+
+Google Fonts are free to use, and have more than 1000 fonts to choose.
+
+
+To use any google fonts we need to use below url.
+ex:
+	https://fonts.google.com/
+
+We can use google font in two ways.
+
+1) <link> tag 
+
+2) @import 
+
+
+1) <link> tag 
+---------------
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<link href="https://fonts.googleapis.com/css2?family=Merienda:wght@300..900&display=swap" rel="stylesheet">
+		<style>
+			h1
+			{
+				font-family: "Merienda", cursive;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<h1> This is Heading tag </h1>
+	</body>
+</html>
+
+
+
+2) @import
+----------
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+		@import url('https://fonts.googleapis.com/css2?family=Merienda:wght@300..900&display=swap');
+			h1
+			{
+				font-family: "Merienda", cursive;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<h1> This is Heading tag </h1>
+	</body>
+</html>
+
+
+Fontawesome Icons 
+==================
+
+Font Awesome gives you scalable vector icons that can instantly be customized.
+
+To use fontawesome icons we need to add below <link> inside <head> tag.
+ex:
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<!-- add fontawesome cdn link -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	
+		<style>
+			h1
+			{
+				font-size:100px;
+				color:red;
+			}
+		
+		</style>	
+	</head>
+	<body>
+			<h1>
+			<i class="fa fa-heart"></i>
+			</h1>
+	</body>
+</html>
+
+
+ex:
+----
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<!-- add fontawesome cdn link -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		
+	</head>
+	<body>
+			<h1>
+				<i class="fa fa-home"></i>
+			</h1>
+			<h1>
+				<i class="fa fa-phone"></i>
+			</h1>
+			<h1>
+				<i class="fa fa-envelope"></i>
+			</h1>
+	</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<!-- add fontawesome cdn link -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		
+	</head>
+	<body>
+			<h1>
+				<i class="fa fa-instagram"></i>
+			</h1>
+			<h1 style="color:blue">
+				<i class="fa fa-facebook"></i>
+			</h1>
+			<h1>
+				<i class="fa fa-youtube"></i>
+			</h1>
+			<h1>
+				<i class="fa fa-twitter"></i>
+			</h1>
+			<h1 style="color:green">
+				<i class="fa fa-whatsapp"></i>
+			</h1>
+	</body>
+</html>
+
+
+
+
+CSS cursor property
+====================
+The cursor property specifies the mouse cursor to be displayed when pointing over an element.
+
+
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<!-- add fontawesome cdn link -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<style>
+			h1
+			{
+				text-align:center;
+				font-size:100px;
+			}
+			h1:hover
+			{
+				cursor:pointer;
+			}
+		</style>
+	</head>
+	<body>
+			<h1>
+				<i class="fa fa-instagram"></i>
+			</h1>
+			
+	</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<!-- add fontawesome cdn link -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<style>
+			h1
+			{
+				text-align:center;
+				font-size:100px;
+			}
+			h1:hover
+			{
+				cursor:zoom-in;
+			}
+		</style>
+	</head>
+	<body>
+			<h1>
+				<i class="fa fa-twitter"></i>
+			</h1>
+			
+	</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<!-- add fontawesome cdn link -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<style>
+			h1
+			{
+				text-align:center;
+				font-size:100px;
+			}
+			h1:hover
+			{
+				cursor:progress;
+			}
+		</style>
+	</head>
+	<body>
+			<h1>
+				<i class="fa fa-twitter"></i>
+			</h1>
+			
+	</body>
+</html>
+
+
+CSS Form 
+=========
+CSS forms are used to accept the values from the users and they will process the inputs to database or server for processing.
+
+
+Task2
+|
+|------images
+	|
+	|---micky.png 
+|
+|------css
+	|
+	|---mystyles.css
+|
+|------index.html 
+	
+
+index.html
+-----------
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		
+		<!-- add external css -->
+		<link rel="stylesheet" type="text/css" href="css/mystyles.css">
+		
+	</head>
+	<body>
+			<div class="container">
+				<div class="box1">
+				
+				<img src="images/vijay.jpg"/>
+				<h2> Login Here </h2>		
+				
+				<form action="">
+					<input type="text" name="t1" autocomplete="off" placeholder="username"/> 
+					<input type="password" name="t2" placeholder="password"/> 
+					<input type="submit" value="submit"/>
+				</form>	
+				
+				</div>
+				<div class="box2">
+					<img src="images/micky.png"/>
+				</div>
+			</div>
+	</body>
+</html>
+
+
+
+mystyles.css
+-----------
+*
+{
+		margin:0;
+		padding:0;
+}
+body
+{
+	height:100vh;
+	background:linear-gradient(yellow,red);
+	display:flex;
+	justify-content:center;
+	align-items:center;
+}
+.container
+{
+	width:800px;
+	height:400px;
+	box-shadow:2px 2px 16px 5px #FFF;
+}
+.container .box1
+{
+	width:400px;
+	height:400px;
+	box-sizing:border-box;
+	float:left;
+}
+.container .box1 img
+{
+	width:100px;
+	height:100px;
+	display:block;
+	margin:10px auto;
+	border-radius:50%;
+}
+.container .box1 h2
+{
+	text-align:center;
+}
+.container .box1 input[type="text"],input[type="password"]
+{
+	width:300px;
+	height:35px;
+	display:block;
+	margin: 20px auto;
+}
+.container  .box1  input[placeholder]
+{
+	text-align:center;
+	font-size:20px;
+}
+.container .box1 input[type="submit"]
+{
+	width:300px;
+	padding:10px;
+	display:block;
+	margin: 0 auto;
+	transition:1s all linear;
+	font-size:18px;
+}
+.container .box1 input[type="submit"]:hover
+{
+	width:100px;
+}
+
+
+.container .box2
+{
+	width:400px;
+	height:400px;
+	box-sizing:border-box;
+	float:right;
+}
+
+.container .box2 img
+{
+	width:90%;
+	height:90%;
+	padding:10px;
+}
+
+
